@@ -1,0 +1,13 @@
+#menu-reg{
+    float: right;
+    margin-left: 67px;
+    margin-right: 35px;
+}
+
+#menu-reg li a {
+    margin-right: -10px;
+}
+
+#menu-reg li a {
+    text-transform: none;
+}
