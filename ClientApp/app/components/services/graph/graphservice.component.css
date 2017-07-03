@@ -1,0 +1,114 @@
+#service-1 {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+}
+
+.c3 .c3-axis-x path, .c3 .c3-axis-x line {
+    stroke: red;
+}
+.c3 .c3-axis-y path, .c3 .c3-axis-y line {
+    stroke: red;
+}
+
+.region, .scenario, .variable {
+    color: black;
+    margin-left: 10px; 
+    cursor: pointer;
+}
+
+.selected {
+    color: orange;
+    font-weight: 600;
+}
+
+.selected:hover {
+    color: orange;
+}
+.region:hover  {
+    color: gray;
+}
+
+.accordion-heading {
+    line-height: 30px;
+}
+
+.accordion-toggle:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.accordion-toggle:before {
+    font-family: FontAwesome;
+    content: "\F077";   
+    float: left;       
+    color: black;
+    padding-right: 8px;
+}
+
+.accordion-toggle.collapsed:before {
+    content: "\F078";
+}
+
+#variables a {
+    text-decoration: none;
+}
+
+#variables a:hover {
+    color: gray;
+}
+
+#regions, #scenarios, #variables, #graph {
+    min-height: 350px;
+}
+
+#key-param .panel-body, #query-result .panel-body {
+    height: 150px;
+    overflow: scroll;
+}
+
+#regions {
+    padding-left: 4px;
+}
+
+#variables {
+    height: 350px;
+    overflow: scroll;
+}
+
+.panel-heading h3 {
+    font-size: 13px;
+}
+
+.panel-heading {
+    padding: 11px 11px;
+}
+
+.c3_line_chart table {
+    color: black;
+}
+
+.c3-tooltip table tr td {
+        color: black !important;
+}
+
+.accordion-body .radio {
+    padding-left: 13px;
+    font-size: 13px;
+}
+
+#query-result table {
+    font-size: 10px;
+}
+
+#query-result table thead {
+    background: gray;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#query-result table thead th {
+    font-weight: normal;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}

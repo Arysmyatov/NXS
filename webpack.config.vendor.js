@@ -8,10 +8,10 @@ module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
     const sharedConfig = {
         stats: { modules: false },
-        resolve: { extensions: [ '.js' ] },
+        resolve: { extensions: ['.js'] },
         module: {
             rules: [
-                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
+                { test: /\.(jpg|png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
             ]
         },
         entry: {
@@ -26,12 +26,16 @@ module.exports = (env) => {
                 '@angular/platform-browser-dynamic',
                 '@angular/router',
                 'bootstrap',
-                'bootstrap/dist/css/bootstrap.css',
+                'bootstrap/dist/css/bootstrap.css',   
+                'font-awesome/css/font-awesome.css',             
                 'es6-shim',
                 'es6-promise',
                 'event-source-polyfill',
                 'jquery',
-                'zone.js',
+                'd3',
+                'c3',
+                'c3/c3.css',
+                'zone.js'
             ]
         },
         output: {
@@ -41,6 +45,7 @@ module.exports = (env) => {
         },
         plugins: [
             new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
+            new webpack.ProvidePlugin({ c3: 'c3' }), // Maps these identifiers to the c3 package
             new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
             new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
             new webpack.IgnorePlugin(/^vertx$/) // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
@@ -51,7 +56,20 @@ module.exports = (env) => {
         output: { path: path.join(__dirname, 'wwwroot', 'dist') },
         module: {
             rules: [
-                { test: /\.css(\?|$)/, use: extractCSS.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
+                { 
+                    test: /\.css(\?|$)/, 
+                    use: extractCSS.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) },
+                {
+                    test: /\.less(\?|$)/,
+                    use: extractCSS.extract({
+                        use: [{
+                            loader: "css-loader"
+                        }, {
+                            loader: "less-loader"
+                        }],
+                        fallback: "style-loader"
+                    })
+                }
             ]
         },
         plugins: [
@@ -73,7 +91,7 @@ module.exports = (env) => {
             libraryTarget: 'commonjs2',
         },
         module: {
-            rules: [ { test: /\.css(\?|$)/, use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] } ]
+            rules: [{ test: /\.css(\?|$)/, use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize'] }]
         },
         entry: { vendor: ['aspnet-prerendering'] },
         plugins: [

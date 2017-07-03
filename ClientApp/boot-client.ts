@@ -1,8 +1,11 @@
 import 'reflect-metadata';
 import 'zone.js';
+import 'bootstrap/js/affix.js';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module.client';
+
+require('../wwwroot/less/creative.less')
 
 if (module['hot']) {
     module['hot'].accept();

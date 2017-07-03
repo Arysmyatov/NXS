@@ -1,5 +1,8 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
-declare var c3: any;
+
+require('d3');
+var c3 = require('c3');
+
 @Directive({
     selector: '[c3chart]'
 })
@@ -14,10 +17,10 @@ export class C3Chart implements OnChanges {
         this._element = this.element.nativeElement;
     }
     ngOnChanges() {
-        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this.chartAxis, this._element), 500);
+        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this.chartAxis, this._element), 1000);
     }
 
-    drawGraph(chartOptions, chartType, chartData, chartAxis, ele) {   
+    drawGraph(chartOptions, chartType, chartData, chartAxis, ele) {
         var chart = c3.generate({
             bindto: ele,
             data: chartData,

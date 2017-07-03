@@ -31,6 +31,9 @@
     "html-loader": "0.4.5",
     "isomorphic-fetch": "2.2.1",
     "jquery": "3.2.1",
+    "d3" :"^4.9.1",
+    "c3" : "0.4.14",
+    "ng2-affix": "1.0.0",
     "json-loader": "0.5.4",
     "preboot": "4.5.2",
     "raw-loader": "0.5.1",
@@ -43,18 +46,27 @@
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.0",
     "webpack-merge": "4.1.0",
-    "zone.js": "0.8.10"
+    "zone.js": "0.8.10",
+    "angular-in-memory-web-api": "0.3.2",
+    "font-awesome": "^4.7.0",
+    "ngx-accordion": "^0.0.17"
   },
   "devDependencies": {
     "@types/chai": "3.5.2",
     "@types/jasmine": "2.5.47",
+    "autoprefixer-loader": "^3.2.0",
     "chai": "3.5.0",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
     "jasmine-core": "2.6.1",
     "karma": "1.7.0",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "2.1.1",
     "karma-cli": "1.0.1",
     "karma-jasmine": "1.1.0",
-    "karma-webpack": "2.0.3"
+    "karma-webpack": "2.0.3",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "style-loader": "^0.17.0"
   }
 }

@@ -1,0 +1,21 @@
+.articles-list, .contributor-list {
+    margin-bottom: 4.5rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#public-header {
+    margin-bottom: 100px;
+}
+
+#publications h2 {
+  font-size: 47px;
+}
+#publications p {
+  font-size: 19px;
+}

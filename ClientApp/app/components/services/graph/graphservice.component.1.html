@@ -1,0 +1,162 @@
+<section class="bg-dark-blue" id="service-1">
+    <div class="container">
+        <div>
+            Select region(s), scenario(s) and variable
+        </div>
+
+        <div id="center" class="row">
+            <div class="col-lg-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Regions</h3>
+                    </div>
+                    <div id="regions" class="panel-body">
+                        <div class="region" [class.selected]="selectedRegion && selectedRegion.id == region.id" *ngFor="let region of regions" (click)="selectRegion(region)">
+                            {{region.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Scenarios</h3>
+                    </div>
+                    <div id="scenarios" class="panel-body">
+                        <div class="scenario" [class.selected]="selectedScenario && selectedScenario.id == scenario.id" *ngFor="let scenario of scenarios"
+                            (click)="selectScenario(scenario)">
+                            {{scenario.name}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-3">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Variables</h3>
+                    </div>
+                    <div id="variables" class="panel-body">
+
+                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:'0'"
+                            (click)="selectVariable(vr)">
+                            {{vr.name}}
+                        </div>
+
+                        <div class="accordion" id="acc-variables">
+                            <div class="accordion-group" *ngFor="let vg of variableGroups">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" [class.selected]="selectedVariable && selectedVariable.group == vg.id" data-toggle="collapse"
+                                        data-parent="#acc-variables" href="#variable-{{vg.id}}" (click)="openVg(vg)">
+                                        {{vg.name}} 
+                                    </a>
+                                </div>
+                                <div id="variable-{{vg.id}}" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:vg.id"
+                                            (click)="selectVariable(vr)">
+                                            {{vr.name}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:'00'"
+                            (click)="selectVariable(vr)">
+                            {{vr.name}}
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div id="graph" class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Graph</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="c3_line_chart" [chartData]="c3_ChartData" [chartAxis]="c3_axis" [chartOptions]="bubble_ChartOptions" [chartType]="LineChart"
+                            c3chart></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="row">
+            <div id="key-param" class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Key parameters</h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="accordion" id="acc-keyparam">
+                            <div class="accordion-group" *ngFor="let kpg of keyParameterGroups">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-keyparam" href="#kpg-{{kpg.id}}">
+                                {{kpg.name}} 
+                            </a>
+                                </div>
+                                <div id="kpg-{{kpg.id}}" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        <div class="radio variable" [class.selected]="selectedKeyParameters && isKeyParametersContainsObj(kp)" *ngFor="let kp of keyParameters | KeyParameterPipe:kpg.id"
+                                            (click)="selectKeyParameter(kp)">
+                                            {{kp.name}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="radio variable" [class.selected]="selectedKeyParameter && selectedKeyParameter.id == kp.id" *ngFor="let kp of keyParameters | KeyParameterPipe:'0'"
+                            (click)="selectKeyParameter(kp)">
+                            {{kp.name}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="query-result" class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Query results</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Region</th>
+                                    <th>Scenario</th>
+                                    <th>Variable</th>
+                                    <th>Key Parameter</th>
+                                    <th *ngFor="let year of tableEntities.yearList">{{year}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let entity of tableEntities.entities">
+                                    <td>{{entity.region}}</td>
+                                    <td>{{ entity.scenario }}</td>
+                                    <td>{{ entity.variable }}</td>
+                                    <td>{{ entity.keyParameter }}</td>
+                                    <td>{{ entity.data[0] }}</td>
+                                    <td>{{ entity.data[1] }}</td>
+                                    <td>{{ entity.data[2] }}</td>
+                                    <td>{{ entity.data[3] }}</td>
+                                    <td>{{ entity.data[4] }}</td>
+                                    <td>{{ entity.data[5] }}</td>
+                                    <td>{{ entity.data[6] }}</td>
+                                    <td>{{ entity.data[7] }}</td>
+                                    <td>{{ entity.data[8] }}</td>
+                                    <td>{{ entity.data[9] }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

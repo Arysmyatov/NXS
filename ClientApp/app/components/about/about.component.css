@@ -1,0 +1,15 @@
+:host-context(.navbar-right) .menu-item {
+    color: black;
+}
+
+#about-header {
+    margin-bottom: 100px;
+}
+
+#about h2 {
+  font-size: 47px;
+}
+
+#about p {
+  font-size: 19px;
+}

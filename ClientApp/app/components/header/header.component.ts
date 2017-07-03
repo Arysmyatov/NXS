@@ -1,6 +1,6 @@
 import { ViewChild, ElementRef, AfterViewInit, Component } from "@angular/core";
 
-declare var $: any;
+var $ = require('jquery');
 
 @Component({
     selector: "nxs-header",

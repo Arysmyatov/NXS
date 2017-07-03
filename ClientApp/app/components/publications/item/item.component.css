@@ -1,0 +1,49 @@
+.small-text {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+a {
+    color: white;
+}
+
+i:hover {
+    color: white;
+}
+
+
+h3 {
+    font-size: 4rem;
+    margin: 0 0 1.875rem;
+    line-height: 46px;;
+}
+
+h5 {
+    font-size: 1.75rem;
+    margin: 0 0 2.875rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+li {
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-top-color: gray;
+    border-top-style:solid;
+    border-top-width: 1px;    
+}
+
+li:hover {
+    background: #31708f;
+}
+
+.square-block {
+    margin: 0px;
+    padding: 0px;
+}
+
+.content.square-block {
+    padding-top: 76px;
+}
