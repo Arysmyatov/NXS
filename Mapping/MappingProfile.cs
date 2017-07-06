@@ -16,6 +16,7 @@ namespace NXS.Mapping
             CreateMap<KeyParameter, KeyParameterResource>();
             CreateMap<KeyParameterGroup, KeyParameterGroupResource>();
             CreateMap<KeyParameterLevel, KeyParameterLevelResource>();
+            CreateMap<Data, DataResource>();
         }
     }
 }

@@ -12,7 +12,7 @@ export class KeyParameterPipe {
         return [];
     }
     return value.filter(variable => {
-      return variable.group == filter;
+      return variable.name != filter;
     });
   }
 }

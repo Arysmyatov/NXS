@@ -1,11 +1,9 @@
-class KeyParameter {
-    id: string;
+export class KeyParameter {
+    id: number;
     name: string;
-    group: string;
 
-    constructor(idValue: string, nameValue: string, groupValue: string) {
+    constructor(idValue: number, nameValue: string) {
         this.id = idValue;
         this.name = nameValue;
-        this.group = groupValue;
     }
 }

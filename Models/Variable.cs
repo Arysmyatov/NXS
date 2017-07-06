@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,5 +17,12 @@ namespace NXS.Models
         public string Name { get; set; }
 
         public int VariableGroupId { get; set; }
+
+        public ICollection<Data> Data { get; set; }
+
+        public Variable() {
+            Data = new Collection<Data>();
+        }     
+        
     }
 }

@@ -39,21 +39,21 @@
                     </div>
                     <div id="variables" class="panel-body">
 
-                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:'0'"
+                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variablesTop"
                             (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
 
                         <accordion id="acc-variables" [showArrows]="true">
-                            <accordion-group *ngFor="let vg of variableGroups" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id" (click)="openVg(vg)">
-                                <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:vg.id"
+                            <accordion-group *ngFor="let vg of variables" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id" (click)="openVg(vg)">
+                                <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of vg.variables"
                                     (click)="selectVariable(vr)">
                                     {{vr.name}}
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variables | VariablePipe:'00'"
+                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variablesBottom"
                             (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
@@ -84,15 +84,15 @@
                     <div class="panel-body">
 
                         <accordion id="acc-keyparam" [showArrows]="true">
-                            <accordion-group *ngFor="let kpg of keyParameterGroups" heading="{{kpg.name}}">
-                                <div class="radio variable" [class.selected]="selectedKeyParameters && isKeyParametersContainsObj(kp)" *ngFor="let kp of keyParameters | KeyParameterPipe:kpg.id"
+                            <accordion-group *ngFor="let kpg of keyParameters | KeyParameterPipe:'Bottom'" heading="{{kpg.name}}">
+                                <div class="radio variable" [class.selected]="selectedKeyParameters && isKeyParametersContainsObj(kp)" *ngFor="let kp of kpg.keyParameters"
                                     (click)="selectKeyParameter(kp)">
                                     {{kp.name}}
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" [class.selected]="selectedKeyParameter && selectedKeyParameter.id == kp.id" *ngFor="let kp of keyParameters | KeyParameterPipe:'0'"
+                        <div class="radio variable" [class.selected]="selectedKeyParameter && selectedKeyParameter.id == kp.id" *ngFor="let kp of keyParametersBottom"
                             (click)="selectKeyParameter(kp)">
                             {{kp.name}}
                         </div>

@@ -1,4 +1,4 @@
-class GraphEntity {
+export class GraphEntity {
     region: string;   
     scenario: string;   
     variable: string;   

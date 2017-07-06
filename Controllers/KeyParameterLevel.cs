@@ -20,7 +20,7 @@ namespace NXS.Controllers
             this.context = context;
         }
 
-        [HttpGet("/api/keyparameterlevel")]
+        [HttpGet("/api/keyparameterlevels")]
         public async Task<IEnumerable<KeyParameterLevelResource>> GetKeyParameterLevels()
         {
             var keyParameterLevels = await context.KeyParameterLevels.ToListAsync();

@@ -1,3 +1,5 @@
+import { GraphEntity } from "./graphEntity";
+
 class GraphEntities {
     entities: Array<GraphEntity>;
     data: any[];

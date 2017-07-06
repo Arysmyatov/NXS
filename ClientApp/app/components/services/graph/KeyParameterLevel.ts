@@ -1,4 +1,4 @@
-export class Scenario {
+export class KeyParameterLevel {
     id: number;
     name: string;
 

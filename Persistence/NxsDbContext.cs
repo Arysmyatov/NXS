@@ -18,5 +18,6 @@ namespace NXS.Persistence
         public DbSet<KeyParameter> KeyParameters { get; set; }
         public DbSet<KeyParameterGroup> KeyParameterGroups { get; set; }
         public DbSet<KeyParameterLevel> KeyParameterLevels { get; set; }
+        public DbSet<Data> Data { get; set; }
     }
 }

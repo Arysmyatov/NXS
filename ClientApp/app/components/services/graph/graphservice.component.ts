@@ -1,9 +1,18 @@
-import { Component } from "@angular/core";
-import { Http } from "@angular/http";
+import { Component, OnInit } from "@angular/core";
 import { TableEntities } from './tableEntity';
 import { TableEntity } from './tableEntity';
 import { bootstrap } from "bootstrap";
 import { AccordionModule } from "ngx-accordion";
+import { GraphDataService } from "../../../services/graphdata.service";
+import { Region } from "./region";
+import { Scenario } from "./scenario";
+import { Variable } from "./variable";
+import { GraphEntity } from "./graphEntity";
+import { KeyParameter } from "./keyParameter";
+import { VariableGroup } from "./variableGroup";
+import { KeyParameterLevel } from "./KeyParameterLevel";
+import { KeyParameterGroup } from "./keyParametersGroup";
+import { Data } from "./data";
 
 @Component({
     selector: "graph-service",
@@ -16,6 +25,8 @@ export class GraphComponent {
     selectedVariableGroup: string;
     selectedVariable: Variable;
     selectedKeyParameters: KeyParameter[];
+    selectedKeyParameterLevel: KeyParameterLevel;
+
     variableGroup: number;
     graphData: GraphEntity[];
     graphColumns: any[];
@@ -24,9 +35,13 @@ export class GraphComponent {
     regions: Region[];
     scenarios: Scenario[];
     variableGroups: any[];
-    variables: any[];
-    keyParameterGroups: any[];
+    variables: VariableGroup[];
+    variablesTop: Variable[];
+    variablesBottom: Variable[];
     keyParameters: any[];
+    keyParametersBottom: KeyParameter[];
+    keyParameterLevels: KeyParameterLevel[];
+    data: Data[];
 
     public c3_ChartData = {
         x: 'x',
@@ -50,37 +65,60 @@ export class GraphComponent {
         }
     };
 
-    constructor(private http: Http) {
+    constructor(private graphDataService: GraphDataService) {
         this.variableGroup = 1;
-
-        this.http.get("app/regions").subscribe(
-            result => this.regions = result.json().data,
-            error => console.log(error.statusText)
-        );
-        this.http.get("app/scenarios").subscribe(
-            result => this.scenarios = result.json().data,
-            error => console.log(error.statusText)
-        );
-        this.http.get("app/variableGroups").subscribe(
-            result => this.variableGroups = result.json().data,
-            error => console.log(error.statusText)
-        );
-        this.http.get("app/variables").subscribe(
-            result => this.variables = result.json().data,
-            error => console.log(error.statusText)
-        );
-        this.http.get("app/keyParameterGroups").subscribe(
-            result => this.keyParameterGroups = result.json().data,
-            error => console.log(error.statusText)
-        );
-        this.http.get("app/keyParameters").subscribe(
-            result => this.keyParameters = result.json().data,
-            error => console.log(error.statusText)
-        );
 
         this.builHeadGraphColumns();
         this.initQueryColumns();
     }
+
+    ngOnInit() {
+        this.graphDataService.getRegions().subscribe(
+            regionGroups => this.regions = regionGroups[0].regions
+        );
+
+        this.graphDataService.getScenarios().subscribe(
+            scenarios => this.scenarios = scenarios
+        );
+
+        this.graphDataService.getVariables().subscribe(
+            variables => this.filterVariables(variables)
+        );
+
+        this.graphDataService.getKeyParameters().subscribe(
+            keyParameters => this.filterKeyParameters(keyParameters)
+        );
+
+        this.graphDataService.getKeyParameterLevels().subscribe(
+            keyParameterLevels => {
+                this.keyParameterLevels = keyParameterLevels;
+                this.selectedKeyParameterLevel = this.keyParameterLevels[0];
+            }
+        );
+    }
+
+    filterKeyParameters(keyParameters: KeyParameterGroup[]) {
+        this.keyParameters = keyParameters;
+        let keyParametersGroupBottom: KeyParameterGroup[] = this.keyParameters.filter(item => item.name == "Bottom");
+        this.keyParametersBottom = keyParametersGroupBottom[0].keyParameters;
+    }
+
+    filterVariables(variables: VariableGroup[]) {
+        this.variables = variables.filter(item => item.name != "Top" && item.name != "Bottom");
+        this.filterVariablesTop(variables);
+        this.filterVariablesBottom(variables);
+    }
+
+    filterVariablesTop(variables: VariableGroup[]) {
+        let variablesGroupTop: VariableGroup[] = variables.filter(item => item.name == "Top");
+        this.variablesTop = variablesGroupTop[0].variables;
+    }
+
+    filterVariablesBottom(variables: VariableGroup[]) {
+        let variablesGroupBottom: VariableGroup[] = variables.filter(item => item.name == "Bottom");
+        this.variablesBottom = variablesGroupBottom[0].variables;
+    }
+
 
     openVg(vg) {
         this.variableGroup = vg.id;
@@ -134,9 +172,10 @@ export class GraphComponent {
     }
 
 
-    builGraph() {
-        this.builHeadGraphColumns();
 
+
+
+    builGraph() {
         if (!this.selectedRegion ||
             !this.selectedScenario ||
             !this.selectedVariable ||
@@ -144,54 +183,41 @@ export class GraphComponent {
             this.selectedKeyParameters.length == 0) {
             return;
         }
-
-        // get Graph data
-        this.http.get("app/graphData").subscribe(
-            // build columns
-            result => this.setGraphColumns(result.json().data),
-            error => console.log(error.statusText)
-        );
-    }
-
-
-    setGraphColumns(graphData: GraphEntity[]) {
-        let filteredData: GraphEntity[] = this.filterByVariabes(graphData);
-                
-        this.tableEntities.entities = [];
-
-        if (!filteredData ||
-            filteredData.length === 0) {
-            return;
-        }
+        this.builHeadGraphColumns();
 
         for (let keyParameter of this.selectedKeyParameters) {
-            let dataItemByKeyParameter = filteredData.filter(
-                item => item.keyParameter === keyParameter.id);
-            this.addItemToGraph(keyParameter.name, dataItemByKeyParameter);
-
-            this.addItemToQuerieList(this.selectedRegion.name,
-                this.selectedScenario.name,
-                this.selectedVariable.name,
-                keyParameter.name,
-                dataItemByKeyParameter[0].data);
+            this.buildGraphForKeyParameter(keyParameter);
         }
     }
 
+    buildGraphForKeyParameter(keyParameter: KeyParameter) {
+        // get Graph data
+        this.graphDataService.getData(this.selectedRegion.id,
+            this.selectedScenario.id,
+            this.selectedVariable.id,
+            keyParameter.id,
+            this.selectedKeyParameterLevel.id).subscribe(
+                data => {
+                    this.data = data;
+                    this.addDataItemsToGraph(data, keyParameter);
+            });
+    }
 
-    filterByVariabes(graphData: GraphEntity[]): GraphEntity[] {
-        let filteredData: GraphEntity[] = [];
+    addDataItemsToGraph(data: Data[], keyParameter: KeyParameter) {
+        let graphData: any[] = [];
 
-        if (!graphData || graphData.length == 0 ||
-            !this.selectedVariable) {
-            return filteredData;
+        let years = ['2010', '2015', '2020', '2025', '2030', '2035', '2040', '2045', '2050'];
+
+        graphData.push(keyParameter.name);
+
+        for (let year of years) {
+            let dataItemByYear = data.filter(
+                item => item.year === year
+            );
+            graphData.push(Math.round(dataItemByYear[0].value));
         }
 
-        filteredData = graphData.filter(
-            item => item.region === this.selectedRegion.id &&
-                item.scenario === this.selectedScenario.id &&
-                item.variable === this.selectedVariable.id
-        );
-        return filteredData;
+        this.graphColumns.push(graphData);
     }
 
 
@@ -217,26 +243,6 @@ export class GraphComponent {
         }
 
         this.graphColumns.push(graphItem);
-
-        this.c3_ChartData.columns = this.graphColumns;
-    }
-
-    addItemToQuerieList(region: string, scenario: string, variable: string, keyParameter: string, data: GraphEntityData[]) {
-        let tebaleEntity = new TableEntity();
-        tebaleEntity.region = region;
-        tebaleEntity.scenario = scenario;
-        tebaleEntity.variable = variable;
-        tebaleEntity.keyParameter = keyParameter;
-        tebaleEntity.data = [];
-        if(!this.tableEntities.entities) {
-            this.tableEntities.entities = [];
-        }
-
-        for (var index = 0; index < data.length; index++) {
-            tebaleEntity.data.push(Math.round(data[index].value));
-        }
-
-        this.tableEntities.entities.push(tebaleEntity);
     }
 
     builHeadGraphColumns() {

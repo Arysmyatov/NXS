@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,5 +17,11 @@ namespace NXS.Models
         public string Name { get; set; }
 
         public int KeyParameterGroupId { get; set; }
+
+        public ICollection<Data> Data { get; set; }
+
+        public KeyParameter() {
+            Data = new Collection<Data>();
+        }           
     }
 }
