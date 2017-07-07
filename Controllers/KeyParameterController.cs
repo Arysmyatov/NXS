@@ -9,6 +9,7 @@ using NXS.Persistence;
 
 namespace NXS.Controllers
 {
+    [ResponseCache(Duration = 3600)]
     public class KeyParameterController : Controller
     {
         private readonly NxsDbContext context;
@@ -25,7 +26,7 @@ namespace NXS.Controllers
         {
             var keyParameters = await context.KeyParameterGroups.Include(m => m.KeyParameters).ToListAsync();
             return mapper.Map<List<KeyParameterGroup>, List<KeyParameterGroupResource>>(keyParameters);
-        }        
-        
+        }
+
     }
 }

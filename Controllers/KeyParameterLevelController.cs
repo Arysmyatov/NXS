@@ -9,6 +9,7 @@ using NXS.Persistence;
 
 namespace NXS.Controllers
 {
+    [ResponseCache(Duration = 3600)]
     public class KeyParameterLevelController : Controller
     {
         private readonly NxsDbContext context;
