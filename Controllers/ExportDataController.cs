@@ -8,16 +8,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using OfficeOpenXml;
 using OfficeOpenXml.Table;
+using static NXS.Services.VariableScope;
+using NXS.Persistence;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace NXS.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class ExportDataController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
 
-        public SampleDataController(IHostingEnvironment hostingEnvironment)
+        private readonly NxsDbContext context;
+
+        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context)
         {
+            this.context = context;
             _hostingEnvironment = hostingEnvironment;
         }
 
@@ -41,29 +48,27 @@ namespace NXS.Controllers
         [HttpGet("[action]")]
         public IActionResult XlsData()
         {
-
             string webRootPath = _hostingEnvironment.WebRootPath;
             string contentRootPath = _hostingEnvironment.ContentRootPath;
-            //specify the file name where its actually exist   
-            string filepath = contentRootPath + "/wwwroot/data/" + "test.xlsx";
-            var fileInfo = new FileInfo(filepath);
 
-            try
-            {
-                if (!fileInfo.Exists)
-                {
-                    using (var package = createExcelPackage())
-                    {
-                        package.SaveAs(fileInfo);
-                    }
-                }
+            var xlsService = new ExcelService();
 
+            xlsService.WorkBookBasePath = contentRootPath + "/wwwroot/data/test";
+            xlsService.VariablesXls = context.VariableXls.ToList();
+            xlsService.KeyParameters = context.KeyParameters.ToList();
+            var keyParameterLevel = context.KeyParameterLevels.First();
+
+            var region = context.Regions.FirstOrDefault(r => r.Name == "UKI");
+            var scenario = context.Scenarios.FirstOrDefault(r => r.Name == "Low Carbon");
+
+            var data = xlsService.GetDataFromXls(region, scenario, keyParameterLevel);
+
+            foreach(var d in data){
+                context.Data.Add(d);
+                context.SaveChanges();
             }
-            catch (Exception Ex)
-            {
-                var ex = Ex;
-            }
-            return Content(readExcelPackage(fileInfo, worksheetName: "Sheet 1"));
+
+            return Ok();
         }
 
         public class WeatherForecast

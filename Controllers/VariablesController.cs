@@ -9,7 +9,6 @@ using NXS.Persistence;
 
 namespace NXS.Controllers
 {
-    [ResponseCache(Duration = 3600)]
     public class VariablesController : Controller
     {
         private readonly NxsDbContext context;
@@ -24,7 +23,8 @@ namespace NXS.Controllers
         [HttpGet("/api/variables")]
         public async Task<IEnumerable<VariableGroupResource>> GetVariables()
         {
-            var variables = await context.VariableGroups.Include(m => m.Variables).ToListAsync();
+            var variables = await context.VariableGroups.Include(m => m.Variables)
+                                                        .ThenInclude(v => v.VariableXls).ToListAsync();
             return mapper.Map<List<VariableGroup>, List<VariableGroupResource>>(variables);
         }
     }

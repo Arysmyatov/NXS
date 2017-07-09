@@ -1,0 +1,78 @@
+<section class="bg-dark-blue" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Admin - Variable Xls settings</h2>
+                <hr class="light">
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col-lg-8 col-lg-offset-2"  #f="ngForm" (ngSubmit)="submit()" novalidate>
+                <div class="row">
+                    <div class="col-xs-6 form-group">
+                        <label for="variablegroups">Variable Groups</label>
+                        <select id="variablegroups" class="form-control" (change)="onVariableGroupChange()" [(ngModel)]="variableXls.variableGroupId"
+                        name="variableGroup">
+                            <option value=""></option>
+                            <option *ngFor="let vg of variableGroups" value="{{ vg.id }}">{{ vg.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6 form-group">
+                        <label for="variables">Variable</label>
+                        <select id="variables" class="form-control" (change)="onVariableChange()" [(ngModel)]="variableXls.variableId" name="variableXls.variableId">
+                            <option value=""></option>
+                            <option *ngFor="let v of variables" value="{{ v.id }}">{{ v.name }}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-xs-12 form-group">
+                        <label for="sheetName">Sheet name</label>
+                        <input id="sheetName" type="text" class="form-control" [(ngModel)]="variableXls.sheetName" name="sheetName" >
+                    </div>
+                </div>
+                <h3> Row and Col coordinates for Years </h3>
+                <div class="row">
+                    <div class="col-xs-3 form-group">
+                        <label for="yearBgRow">Begin Row index</label>
+                        <input id="yearBgRow" type="number" class="form-control" [(ngModel)]="variableXls.yearBgRow" name="yearBgRow">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="yearBgCol">Begin Col index</label>
+                        <input id="yearBgCol" type="number" class="form-control" [(ngModel)]="variableXls.yearBgCol" name="yearBgCol">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="yearEndRow">End Row index</label>
+                        <input id="yearEndRow" type="number" class="form-control" [(ngModel)]="variableXls.yearEndRow" name="yearEndRow">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="yearEndCol">End Col index</label>
+                        <input id="yearEndCol" type="number" class="form-control" [(ngModel)]="variableXls.yearEndCol" name="yearEndCol">
+                    </div>
+
+                </div>
+                <h3> Row and Col coordinates for Data </h3>
+                <div class="row">
+                    <div class="col-xs-3 form-group">
+                        <label for="dataBgRow">Begin Row index</label>
+                        <input id="dataBgRow" type="number" class="form-control" [(ngModel)]="variableXls.dataBgRow" name="dataBgRow">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="dataBgCol">Begin Col index</label>
+                        <input id="dataBgCol" type="number" class="form-control" [(ngModel)]="variableXls.dataBgCol" name="dataBgCol">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="dataEndRow">End Row index</label>
+                        <input id="dataEndRow" type="number" class="form-control" [(ngModel)]="variableXls.dataEndRow" name="dataEndRow">
+                    </div>
+                    <div class="col-xs-3 form-group">
+                        <label for="dataEndCol">End Col index</label>
+                        <input id="dataEndCol" type="number" class="form-control" [(ngModel)]="variableXls.dataEndCol" name="dataEndCol">
+                    </div>
+                </div>
+                <button class="btn btn-primary">Save</button>
+            </form>
+        </div>
+
+    </div>
+</section>

@@ -9,11 +9,11 @@ import { GraphComponent } from "./index";
             {
                 path: "services",
                 component: ServicesComponent
-            },
+            },          
             {
                 path: "services/:id",
                 component: GraphComponent
-            }
+            }  
         ])
     ],
     exports: [

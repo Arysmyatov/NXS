@@ -20,9 +20,11 @@ namespace NXS.Models
 
         public ICollection<Data> Data { get; set; }
 
+        public VariableXls VariableXls { get; set; }
+
         public Variable() {
             Data = new Collection<Data>();
-        }     
-        
+            VariableXls = new VariableXls();
+        }
     }
 }

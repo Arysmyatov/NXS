@@ -173,6 +173,43 @@ namespace NXS.Migrations
                     b.ToTable("VariableGroups");
                 });
 
+            modelBuilder.Entity("NXS.Models.VariableXls", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<int>("DataBgCol");
+
+                    b.Property<int>("DataBgRow");
+
+                    b.Property<int>("DataEndCol");
+
+                    b.Property<int>("DataEndRow");
+
+                    b.Property<string>("SheetName");
+
+                    b.Property<int>("VariableId");
+
+                    b.Property<int>("YearBgCol");
+
+                    b.Property<int>("YearBgRow");
+
+                    b.Property<int>("YearEndCol");
+
+                    b.Property<int>("YearEndRow");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VariableId")
+                        .IsUnique();
+
+                    b.ToTable("VariableXls");
+                });
+
             modelBuilder.Entity("NXS.Models.Data", b =>
                 {
                     b.HasOne("NXS.Models.KeyParameter")
@@ -217,6 +254,14 @@ namespace NXS.Migrations
                     b.HasOne("NXS.Models.VariableGroup")
                         .WithMany("Variables")
                         .HasForeignKey("VariableGroupId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NXS.Models.VariableXls", b =>
+                {
+                    b.HasOne("NXS.Models.Variable")
+                        .WithOne("VariableXls")
+                        .HasForeignKey("NXS.Models.VariableXls", "VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

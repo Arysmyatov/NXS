@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './components/app/app.component'
 import { MenuComponent } from './components/menu/menu.component';
+import { ToastyModule } from 'ng2-toasty';
 import { MenuRegistrationComponent } from './components/menu/registration/registration.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
@@ -29,9 +29,10 @@ export const sharedConfig: NgModule = {
         FetchDataComponent,
         HomeComponent,
         AboutComponent,
-        AboutItemComponent
+        AboutItemComponent,
     ],
     imports: [
+        ToastyModule.forRoot(),        
         PublicationsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
