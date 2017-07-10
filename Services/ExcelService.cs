@@ -83,11 +83,16 @@ namespace NXS.Services
                     {
                         break;
                     }
-                    if (val.ToString().Equals(keyParameter.Name))
-                    {
-                        baseDataValRow = row;
-                        isFound = true;
-                        break;
+                    try {
+                        var strVal = val.ToString();
+                        if (strVal.Equals(keyParameter.Name))
+                        {
+                            baseDataValRow = row;
+                            isFound = true;
+                            break;
+                        }                        
+                    } catch {
+                        continue;
                     }
                 }
 
@@ -155,8 +160,12 @@ namespace NXS.Services
                         break;
                     }
 
-                    var yearItem = new YearItem { Row = yearRow, Col = col, Value = val.ToString() };
-                    YearItems.Add(yearItem);
+                    try {
+                        var yearItem = new YearItem { Row = yearRow, Col = col, Value = val.ToString() };
+                        YearItems.Add(yearItem);
+                    } catch {
+
+                    }
                 }
             }
         }
