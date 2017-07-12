@@ -1,7 +1,9 @@
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { VariableFormComponent } from "./index";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BusyModule, BusyConfig } from 'angular2-busy';
+import { VariableFormComponent, UploadXlsFileComponent } from "./index";
 import { VariableXlsRoutingModule } from "./variablexls-routing.module";
 
 
@@ -9,10 +11,19 @@ import { VariableXlsRoutingModule } from "./variablexls-routing.module";
     imports: [
         FormsModule,
         CommonModule,
-        VariableXlsRoutingModule
+        VariableXlsRoutingModule,
+        BrowserAnimationsModule,
+        BusyModule.forRoot(
+            new BusyConfig({
+                message: 'Don\'t panic!',
+                delay: 200,
+                minDuration: 600,
+                wrapperClass: 'wrapper-busy'
+            }))        
     ],
     declarations: [
-        VariableFormComponent
+        VariableFormComponent,
+        UploadXlsFileComponent
     ]
 })
 export class VariableXlsModule { }

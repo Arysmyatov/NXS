@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
-    [Table("KeyParameterGroups")]
-    public class KeyParameterGroup
+    [Table("VariableGroups")]
+    public class VariableGroup
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -16,10 +16,10 @@ namespace NXS.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        public ICollection<KeyParameter> KeyParameters { get; set; }
+        public ICollection<Variable> Variables { get; set; }
 
-        public KeyParameterGroup() {
-            KeyParameters = new Collection<KeyParameter>();
+        public VariableGroup() {
+            Variables = new Collection<Variable>();
         }
     }
 }

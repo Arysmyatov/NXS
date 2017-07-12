@@ -1,4 +1,4 @@
-namespace NXS.Models
+namespace NXS.Core.Models
 {
     public class KeyParameterResource
     {

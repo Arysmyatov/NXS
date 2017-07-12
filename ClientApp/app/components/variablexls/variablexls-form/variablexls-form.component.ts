@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GraphDataService } from "../../services/graphdata.service";
-import { Variable } from "../services/graph/variable";
+import { GraphDataService } from "../../../services/graphdata.service";
+import { Variable } from "../../services/graph/variable";
 import { ToastyService } from "ng2-toasty";
-import { SaveVariableXls } from "../../../models/variablexls";
+import { SaveVariableXls } from "../../../../models/variablexls";
 
 @Component({
     selector: 'app-variablexls-form',

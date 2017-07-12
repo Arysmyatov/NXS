@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using NXS.Models;
+using NXS.Core.Models;
 
 namespace NXS.Persistence
 {
@@ -20,5 +20,6 @@ namespace NXS.Persistence
         public DbSet<KeyParameterGroup> KeyParameterGroups { get; set; }
         public DbSet<KeyParameterLevel> KeyParameterLevels { get; set; }
         public DbSet<Data> Data { get; set; }
+        public DbSet<XlsUpload> XlsUploads { get; set; }
     }
 }

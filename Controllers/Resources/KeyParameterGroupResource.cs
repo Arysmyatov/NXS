@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
     public class KeyParameterGroupResource
     {

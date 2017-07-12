@@ -17,7 +17,7 @@ namespace NXS.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("NXS.Models.ParentRegion", b =>
+            modelBuilder.Entity("NXS.Core.Models.ParentRegion", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -31,7 +31,7 @@ namespace NXS.Migrations
                     b.ToTable("ParentRegions");
                 });
 
-            modelBuilder.Entity("NXS.Models.Region", b =>
+            modelBuilder.Entity("NXS.Core.Models.Region", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -49,7 +49,7 @@ namespace NXS.Migrations
                     b.ToTable("Regions");
                 });
 
-            modelBuilder.Entity("NXS.Models.Scenario", b =>
+            modelBuilder.Entity("NXS.Core.Models.Scenario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -63,7 +63,7 @@ namespace NXS.Migrations
                     b.ToTable("Scenarios");
                 });
 
-            modelBuilder.Entity("NXS.Models.Variable", b =>
+            modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -81,7 +81,7 @@ namespace NXS.Migrations
                     b.ToTable("Variable");
                 });
 
-            modelBuilder.Entity("NXS.Models.VariableGroup", b =>
+            modelBuilder.Entity("NXS.Core.Models.VariableGroup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -95,17 +95,17 @@ namespace NXS.Migrations
                     b.ToTable("VariableGroups");
                 });
 
-            modelBuilder.Entity("NXS.Models.Region", b =>
+            modelBuilder.Entity("NXS.Core.Models.Region", b =>
                 {
-                    b.HasOne("NXS.Models.ParentRegion")
+                    b.HasOne("NXS.Core.Models.ParentRegion")
                         .WithMany("Regions")
                         .HasForeignKey("ParentRegionId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NXS.Models.Variable", b =>
+            modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
-                    b.HasOne("NXS.Models.VariableGroup")
+                    b.HasOne("NXS.Core.Models.VariableGroup")
                         .WithMany("Variables")
                         .HasForeignKey("VariableGroupId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NXS.Models;
+using NXS.Core.Models;
 using OfficeOpenXml;
 
 namespace NXS.Services

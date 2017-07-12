@@ -12,6 +12,7 @@ using static NXS.Services.VariableScope;
 using NXS.Persistence;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using NXS.Core;
 
 namespace NXS.Controllers
 {
@@ -22,9 +23,10 @@ namespace NXS.Controllers
 
         private readonly NxsDbContext context;
 
-        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context)
+        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context, IXlsService xlsService)
         {
             this.context = context;
+            this.xlsService = xlsService;
             _hostingEnvironment = hostingEnvironment;
         }
 
@@ -32,32 +34,45 @@ namespace NXS.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+        private readonly IXlsService xlsService;
 
-
-        [HttpGet("[action]")]
-        public IActionResult XlsData()
+        [HttpPost("[action]")]
+        public async Task<IActionResult> XlsData()
         {
             string webRootPath = _hostingEnvironment.WebRootPath;
             string contentRootPath = _hostingEnvironment.ContentRootPath;
 
             var xlsService = new ExcelService();
 
-            xlsService.WorkBookBasePath = contentRootPath + "/wwwroot/data/test";
+            xlsService.WorkBookBasePath = contentRootPath + "/wwwroot/uploads";
             xlsService.VariablesXls = context.VariableXls.ToList();
             xlsService.KeyParameters = context.KeyParameters.ToList();
-            var keyParameterLevel = context.KeyParameterLevels.First();
 
-            var region = context.Regions.FirstOrDefault(r => r.Name == "UKI");
-            var scenario = context.Scenarios.FirstOrDefault(r => r.Name == "Low Carbon");
-
-            var data = xlsService.GetDataFromXls(region, scenario, keyParameterLevel);
+            var regions = context.Regions.ToList();
+            var scenarios = context.Scenarios.ToList();
+            var keyParameterLevels = context.KeyParameterLevels.ToList();
 
             // Remove all the data before new adding
             XlsRemoveAllData();
 
-            foreach(var d in data){
-                context.Data.Add(d);
-                context.SaveChanges();
+            foreach(var region in regions)
+            {
+                foreach (var scenario in scenarios)
+                {   
+                    foreach (var keyParameterLevel in keyParameterLevels)
+                    {
+                        var lastUploadedFile = await this.xlsService.GetXlsLastUpload(region.Id, keyParameterLevel.Id, scenario.Id);
+                        if(lastUploadedFile == null || 
+                            string.IsNullOrEmpty(lastUploadedFile.FileName)) continue;
+
+                        var data = xlsService.GetDataFromXls(region, scenario, keyParameterLevel, lastUploadedFile.FileName);
+
+                        foreach(var d in data) {
+                            context.Data.Add(d);
+                            context.SaveChanges();
+                        }
+                    }
+                }
             }
 
             return Ok();

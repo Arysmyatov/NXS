@@ -1,0 +1,55 @@
+<section class="bg-dark-blue" id="uploadxls">
+    <div class="container" [ngBusy]="{busy: busy, message: 'Exporting data...'}">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Admin - Upload XLS fille with the data</h2>
+                <hr class="light">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 form-group">
+                <label for="regions">Regions</label>
+                <select id="regions" class="form-control" (change)="onRegionChange()" [(ngModel)]="regionId" name="region">
+                    <option value=""></option>
+                    <option *ngFor="let r of regions" value="{{ r.id }}">{{ r.name }}</option>
+                </select>
+            </div>
+
+            <div class="col-xs-4 form-group">
+                <label for="scenarios">Scenario</label>
+                <select id="scenarios" class="form-control" (change)="onScenarioChange()" [(ngModel)]="scenarioId" name="scenario">
+                    <option value=""></option>
+                    <option *ngFor="let s of scenarios" value="{{ s.id }}">{{ s.name }}</option>
+                </select>
+            </div>
+
+            <div class="col-xs-4 form-group">
+                <label for="keyparameterlevel">Key parameter level</label>
+                <select id="keyparameterlevel" class="form-control" (change)="onKeyParameterLevelChange()" [(ngModel)]="keyParameterLevelId"
+                    name="keyParameterLevel">
+                    <option value=""></option>
+                    <option *ngFor="let k of keyParameterLevels" value="{{ k.id }}">{{ k.name }}</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 form-group">
+                <h3> Files: </h3>
+                <ul>
+                    <li *ngFor="let f of xlsFiles"> {{ f.fileName }} </li>
+                </ul>
+                <input type="file" (change)="uploadXls()" #fileInput>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 form-group">
+                <button class="btn btn-primary" (click)="exportAllData()">Update all data</button>
+            </div>
+        </div>
+
+    </div>  
+</section>

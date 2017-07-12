@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NXS.Models;
+using NXS.Core.Models;
 using OfficeOpenXml;
 
 namespace NXS.Services
@@ -186,11 +186,11 @@ namespace NXS.Services
             public IEnumerable<VariableXls> VariablesXls { get; set; }
             public string SheetName { get; set; }
 
-            public IEnumerable<Data> GetDataFromXls(Region region, Scenario scenario, KeyParameterLevel keyParameterLevel)
+            public IEnumerable<Data> GetDataFromXls(Region region, Scenario scenario, KeyParameterLevel keyParameterLevel, string lasUploadedFileName)
             {
                 var data = new List<Data>();
 
-                var filePath = $"{this.WorkBookBasePath}_{region.Name}_{scenario.Name}_{keyParameterLevel.Name}.xlsx";
+                var filePath = $"{this.WorkBookBasePath}/{lasUploadedFileName}";
                 var fileInfo = new FileInfo(filePath);
 
                 using (var package = new ExcelPackage(fileInfo))

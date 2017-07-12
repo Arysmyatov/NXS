@@ -1,6 +1,6 @@
 using AutoMapper;
 using NXS.Controllers.Resources;
-using NXS.Models;
+using NXS.Core.Models;
 
 namespace NXS.Mapping
 {
@@ -21,6 +21,7 @@ namespace NXS.Mapping
             CreateMap<VariableXls, VariableXlsResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>()
                 .ForMember(v => v.Id, opt => opt.Ignore());
+            CreateMap<XlsUpload, XlsUploadResource>();
         }
     }
 }

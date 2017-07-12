@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
-    [Table("ParentRegions")]
-    public class ParentRegion
+    [Table("Regions")]    
+    public class Region 
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -16,10 +16,14 @@ namespace NXS.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        public ICollection<Region> Regions { get; set; }
+        public int ParentRegionId { get; set; }
 
-        public ParentRegion() {
-            Regions = new Collection<Region>();
-        }
+        public ICollection<Data> Data { get; set; }
+        public ICollection<XlsUpload> XlsUploads { get; set; }
+
+        public Region() {
+            Data = new Collection<Data>();
+            XlsUploads = new Collection<XlsUpload>();
+        }        
     }
 }

@@ -4,7 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NXS.Controllers.Resources;
-using NXS.Models;
+using NXS.Core.Models;
 using NXS.Persistence;
 
 namespace NXS.Controllers

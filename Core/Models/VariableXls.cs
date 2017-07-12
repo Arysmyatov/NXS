@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
     public class VariableXls
     {

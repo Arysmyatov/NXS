@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NXS.Persistence;
 using AutoMapper;
+using NXS.Core;
+using NXS.Core.Models;
 
 namespace NXS
 {
@@ -31,7 +33,12 @@ namespace NXS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<XlsUploadSettings>(Configuration.GetSection("XlsUploadSettings"));            
             services.AddAutoMapper();
+            services.AddScoped<IXlsUploadRepository, XLsUplodRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IXlsService, XlsService>();
+            services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
@@ -48,7 +55,8 @@ namespace NXS
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
                     HotModuleReplacement = true
                 });
             }

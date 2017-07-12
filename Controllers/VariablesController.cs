@@ -4,7 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NXS.Controllers.Resources;
-using NXS.Models;
+using NXS.Core.Models;
 using NXS.Persistence;
 
 namespace NXS.Controllers
@@ -16,7 +16,7 @@ namespace NXS.Controllers
 
         public VariablesController(NxsDbContext context, IMapper mapper)
         {
-            this.mapper = mapper;
+            this.mapper = mapper;   
             this.context = context;
         }
 

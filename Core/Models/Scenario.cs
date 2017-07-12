@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
     [Table("Scenarios")]
     public class Scenario
@@ -18,8 +18,11 @@ namespace NXS.Models
 
         public ICollection<Data> Data { get; set; }
 
+        public ICollection<XlsUpload> XlsUploads { get; set; }        
+
         public Scenario() {
             Data = new Collection<Data>();
+            XlsUploads = new Collection<XlsUpload>();
         }     
     }
 }

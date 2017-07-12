@@ -16,7 +16,7 @@ namespace NXS.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("NXS.Models.Data", b =>
+            modelBuilder.Entity("NXS.Core.Models.Data", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -49,7 +49,7 @@ namespace NXS.Migrations
                     b.ToTable("Data");
                 });
 
-            modelBuilder.Entity("NXS.Models.KeyParameter", b =>
+            modelBuilder.Entity("NXS.Core.Models.KeyParameter", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -67,7 +67,7 @@ namespace NXS.Migrations
                     b.ToTable("KeyParameters");
                 });
 
-            modelBuilder.Entity("NXS.Models.KeyParameterGroup", b =>
+            modelBuilder.Entity("NXS.Core.Models.KeyParameterGroup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -81,7 +81,7 @@ namespace NXS.Migrations
                     b.ToTable("KeyParameterGroups");
                 });
 
-            modelBuilder.Entity("NXS.Models.KeyParameterLevel", b =>
+            modelBuilder.Entity("NXS.Core.Models.KeyParameterLevel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -95,7 +95,7 @@ namespace NXS.Migrations
                     b.ToTable("KeyParameterLevels");
                 });
 
-            modelBuilder.Entity("NXS.Models.ParentRegion", b =>
+            modelBuilder.Entity("NXS.Core.Models.ParentRegion", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -109,7 +109,7 @@ namespace NXS.Migrations
                     b.ToTable("ParentRegions");
                 });
 
-            modelBuilder.Entity("NXS.Models.Region", b =>
+            modelBuilder.Entity("NXS.Core.Models.Region", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -127,7 +127,7 @@ namespace NXS.Migrations
                     b.ToTable("Regions");
                 });
 
-            modelBuilder.Entity("NXS.Models.Scenario", b =>
+            modelBuilder.Entity("NXS.Core.Models.Scenario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -141,7 +141,7 @@ namespace NXS.Migrations
                     b.ToTable("Scenarios");
                 });
 
-            modelBuilder.Entity("NXS.Models.Variable", b =>
+            modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -159,7 +159,7 @@ namespace NXS.Migrations
                     b.ToTable("Variables");
                 });
 
-            modelBuilder.Entity("NXS.Models.VariableGroup", b =>
+            modelBuilder.Entity("NXS.Core.Models.VariableGroup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -173,7 +173,7 @@ namespace NXS.Migrations
                     b.ToTable("VariableGroups");
                 });
 
-            modelBuilder.Entity("NXS.Models.VariableXls", b =>
+            modelBuilder.Entity("NXS.Core.Models.VariableXls", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -210,58 +210,104 @@ namespace NXS.Migrations
                     b.ToTable("VariableXls");
                 });
 
-            modelBuilder.Entity("NXS.Models.Data", b =>
+            modelBuilder.Entity("NXS.Core.Models.XlsUpload", b =>
                 {
-                    b.HasOne("NXS.Models.KeyParameter")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<int>("KeyParameterLevelId");
+
+                    b.Property<int>("RegionId");
+
+                    b.Property<int>("ScenarioId");
+
+                    b.Property<DateTime>("UploadDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("KeyParameterLevelId");
+
+                    b.HasIndex("RegionId");
+
+                    b.HasIndex("ScenarioId");
+
+                    b.ToTable("XlsUploads");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.Data", b =>
+                {
+                    b.HasOne("NXS.Core.Models.KeyParameter")
                         .WithMany("Data")
                         .HasForeignKey("KeyParameterId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Models.Region")
+                    b.HasOne("NXS.Core.Models.Region")
                         .WithMany("Data")
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Models.Scenario")
+                    b.HasOne("NXS.Core.Models.Scenario")
                         .WithMany("Data")
                         .HasForeignKey("ScenarioId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Models.Variable")
+                    b.HasOne("NXS.Core.Models.Variable")
                         .WithMany("Data")
                         .HasForeignKey("VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NXS.Models.KeyParameter", b =>
+            modelBuilder.Entity("NXS.Core.Models.KeyParameter", b =>
                 {
-                    b.HasOne("NXS.Models.KeyParameterGroup")
+                    b.HasOne("NXS.Core.Models.KeyParameterGroup")
                         .WithMany("KeyParameters")
                         .HasForeignKey("KeyParameterGroupId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NXS.Models.Region", b =>
+            modelBuilder.Entity("NXS.Core.Models.Region", b =>
                 {
-                    b.HasOne("NXS.Models.ParentRegion")
+                    b.HasOne("NXS.Core.Models.ParentRegion")
                         .WithMany("Regions")
                         .HasForeignKey("ParentRegionId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NXS.Models.Variable", b =>
+            modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
-                    b.HasOne("NXS.Models.VariableGroup")
+                    b.HasOne("NXS.Core.Models.VariableGroup")
                         .WithMany("Variables")
                         .HasForeignKey("VariableGroupId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("NXS.Models.VariableXls", b =>
+            modelBuilder.Entity("NXS.Core.Models.VariableXls", b =>
                 {
-                    b.HasOne("NXS.Models.Variable")
+                    b.HasOne("NXS.Core.Models.Variable")
                         .WithOne("VariableXls")
-                        .HasForeignKey("NXS.Models.VariableXls", "VariableId")
+                        .HasForeignKey("NXS.Core.Models.VariableXls", "VariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.XlsUpload", b =>
+                {
+                    b.HasOne("NXS.Core.Models.KeyParameterLevel")
+                        .WithMany("XlsUploads")
+                        .HasForeignKey("KeyParameterLevelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.Region")
+                        .WithMany("XlsUploads")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.Scenario")
+                        .WithMany("XlsUploads")
+                        .HasForeignKey("ScenarioId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

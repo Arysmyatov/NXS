@@ -1,13 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NXS.Models
+namespace NXS.Core.Models
 {
-    [Table("Regions")]    
-    public class Region 
+    [Table("KeyParameterLevels")]
+    public class KeyParameterLevel
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -16,12 +15,10 @@ namespace NXS.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        public int ParentRegionId { get; set; }
+        public ICollection<XlsUpload> XlsUploads { get; set; }
 
-        public ICollection<Data> Data { get; set; }
-
-        public Region() {
-            Data = new Collection<Data>();
-        }        
+        public KeyParameterLevel() {
+            XlsUploads = new Collection<XlsUpload>();
+        } 
     }
 }
