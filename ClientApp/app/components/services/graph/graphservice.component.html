@@ -45,7 +45,8 @@
                         </div>
 
                         <accordion id="acc-variables" [showArrows]="true">
-                            <accordion-group *ngFor="let vg of variables" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id" (click)="openVg(vg)">
+                            <accordion-group *ngFor="let vg of variables" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id"
+                                (click)="openVg(vg)">
                                 <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of vg.variables"
                                     (click)="selectVariable(vr)">
                                     {{vr.name}}
@@ -85,16 +86,24 @@
 
                         <accordion id="acc-keyparam" [showArrows]="true">
                             <accordion-group *ngFor="let kpg of keyParameters | KeyParameterPipe:'Bottom'" heading="{{kpg.name}}">
-                                <div class="radio variable" [class.selected]="selectedKeyParameters && isKeyParametersContainsObj(kp)" *ngFor="let kp of kpg.keyParameters"
-                                    (click)="selectKeyParameter(kp)">
-                                    {{kp.name}}
+                                <div class="radio variable" *ngFor="let kp of kpg.keyParameters">
+                                    <span style="min-width: 80px">{{kp.name}}</span>
+                                    <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)" >Low</button>
+                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)" >Middle</button>
+                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">Hight</button>
+                                    </div>                                    
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" [class.selected]="selectedKeyParameter && selectedKeyParameter.id == kp.id" *ngFor="let kp of keyParametersBottom"
-                            (click)="selectKeyParameter(kp)">
+                        <div class="radio variable" *ngFor="let kp of keyParametersBottom">
                             {{kp.name}}
+                            <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)">Low</button>
+                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)">Middle</button>
+                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">Hight</button>
+                            </div>
                         </div>
 
                     </div>
@@ -122,16 +131,7 @@
                                     <td>{{ entity.scenario }}</td>
                                     <td>{{ entity.variable }}</td>
                                     <td>{{ entity.keyParameter }}</td>
-                                    <td>{{ entity.data[0] }}</td>
-                                    <td>{{ entity.data[1] }}</td>
-                                    <td>{{ entity.data[2] }}</td>
-                                    <td>{{ entity.data[3] }}</td>
-                                    <td>{{ entity.data[4] }}</td>
-                                    <td>{{ entity.data[5] }}</td>
-                                    <td>{{ entity.data[6] }}</td>
-                                    <td>{{ entity.data[7] }}</td>
-                                    <td>{{ entity.data[8] }}</td>
-                                    <td>{{ entity.data[9] }}</td>
+                                    <td *ngFor="let d of entity.data">{{ d }}</td>
                                 </tr>
                             </tbody>
                         </table>

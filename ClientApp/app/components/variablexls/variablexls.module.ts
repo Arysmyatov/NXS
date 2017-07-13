@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BusyModule, BusyConfig } from 'angular2-busy';
-import { VariableFormComponent, UploadXlsFileComponent } from "./index";
+import { VariableFormComponent, UploadXlsFileComponent, AdminHomeComponent } from "./index";
 import { VariableXlsRoutingModule } from "./variablexls-routing.module";
 
 
@@ -23,7 +23,8 @@ import { VariableXlsRoutingModule } from "./variablexls-routing.module";
     ],
     declarations: [
         VariableFormComponent,
-        UploadXlsFileComponent
+        UploadXlsFileComponent,
+        AdminHomeComponent
     ]
 })
 export class VariableXlsModule { }

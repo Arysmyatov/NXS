@@ -13,6 +13,7 @@ import { VariableGroup } from "./variableGroup";
 import { KeyParameterLevel } from "./KeyParameterLevel";
 import { KeyParameterGroup } from "./keyParametersGroup";
 import { Data } from "./data";
+import { ToastyService } from "ng2-toasty";
 
 @Component({
     selector: "graph-service",
@@ -65,7 +66,8 @@ export class GraphComponent {
         }
     };
 
-    constructor(private graphDataService: GraphDataService) {
+    constructor(private graphDataService: GraphDataService,
+        private toasty: ToastyService) {
         this.variableGroup = 1;
 
         this.builHeadGraphColumns();
@@ -97,9 +99,10 @@ export class GraphComponent {
         );
     }
 
-    filterKeyParameters(keyParameters: KeyParameterGroup[]) {
-        this.keyParameters = keyParameters;
-        let keyParametersGroupBottom: KeyParameterGroup[] = this.keyParameters.filter(item => item.name == "Bottom");
+    filterKeyParameters(keyParametersAll: KeyParameterGroup[]) {
+        let keyParametersGroupBottom: KeyParameterGroup[] = keyParametersAll.filter(item => item.name == "Bottom");
+
+        this.keyParameters = keyParametersAll;
         this.keyParametersBottom = keyParametersGroupBottom[0].keyParameters;
     }
 
@@ -140,19 +143,24 @@ export class GraphComponent {
         this.builGraph();
     }
 
-    selectKeyParameter(keyParameter: KeyParameter) {
-        if (this.isKeyParametersContainsObj(keyParameter)) {
-            // remove from the list
-            var index = this.selectedKeyParameters.indexOf(keyParameter, 0);
-            if (index > -1) {
-                this.selectedKeyParameters.splice(index, 1);
-            }
-        } else {
+    selectKeyParameter(keyParameter: KeyParameter, keyParameterLevel: number) {
+        if (!this.isKeyParametersContainsObj(keyParameter)) {
             if (!this.selectedKeyParameters) {
                 this.selectedKeyParameters = [];
-            }
+            }            
+            keyParameter.level = keyParameterLevel;
             this.selectedKeyParameters.push(keyParameter);
+
+            // // remove from the list
+            // var index = this.selectedKeyParameters.indexOf(keyParameter, 0);
+            // if (index > -1) {
+            //     this.selectedKeyParameters.splice(index, 1);
+            // }
         }
+
+        let curentKeyParameter = this.selectedKeyParameters.filter(item => item.id == keyParameter.id);
+        curentKeyParameter[0].level = keyParameterLevel;
+        
         this.builGraph();
     }
 
@@ -171,8 +179,13 @@ export class GraphComponent {
         return false;
     }
 
-
-
+    isCurrentKeyParameterSelted(parameterId: number, levelId: number): boolean {
+        if(!this.selectedKeyParameters || this.selectedKeyParameters.length == 0){
+            return false;
+        }
+        let curentKeyParameter = this.selectedKeyParameters.filter(item => item.id == parameterId && item.level == levelId);
+        return curentKeyParameter.length > 0;
+    }
 
 
     builGraph() {
@@ -181,6 +194,7 @@ export class GraphComponent {
             !this.selectedVariable ||
             !this.selectedKeyParameters ||
             this.selectedKeyParameters.length == 0) {
+            this.builHeadGraphColumns();
             return;
         }
         this.builHeadGraphColumns();
@@ -197,10 +211,34 @@ export class GraphComponent {
             this.selectedVariable.id,
             keyParameter.id,
             this.selectedKeyParameterLevel.id).subscribe(
-                data => {
-                    this.data = data;
-                    this.addDataItemsToGraph(data, keyParameter);
+            data => {
+                if(!data || data.length == 0){
+                    //this.riseNoDataMessage();
+                    return;
+                }
+                this.addDataItemsToGraph(data, keyParameter);
             });
+
+            // ,
+            // err => {
+            //     this.toasty.warning({
+            //         title: 'Loading data',
+            //         msg: 'there is no data for such parameters',
+            //         theme: 'bootstrap',
+            //         showClose: true,
+            //         timeout: 5000
+            //     });
+            // });
+    }
+
+    riseNoDataMessage() {
+        this.toasty.warning({
+            title: 'Loading data',
+            msg: 'there is no data for such parameters',
+            theme: 'bootstrap',
+            showClose: true,
+            timeout: 3000
+        });
     }
 
     addDataItemsToGraph(data: Data[], keyParameter: KeyParameter) {
@@ -216,6 +254,15 @@ export class GraphComponent {
             );
             graphData.push(Math.round(dataItemByYear[0].value));
         }
+
+
+        this.addItemToQuerieList(this.selectedRegion.name,
+            this.selectedScenario.name,
+            this.selectedVariable.name,
+            keyParameter.name,
+            graphData);
+
+
 
         this.graphColumns.push(graphData);
     }
@@ -249,15 +296,40 @@ export class GraphComponent {
         this.graphColumns = [];
         this.graphColumns.push(['x', '2010', '2015', '2020', '2025', '2030', '2035', '2040', '2045', '2050']);
 
+        if (this.tableEntities && this.tableEntities.entities) {
+            this.tableEntities.entities = [];
+        }
+
         this.c3_ChartData = {
             x: 'x',
             xFormat: '%Y',
             columns: this.graphColumns,
             type: 'spline'
         };
+
+
     }
 
     initQueryColumns() {
         this.tableEntities = new TableEntities(['2010', '2015', '2020', '2025', '2030', '2035', '2040', '2045', '2050']);
     }
+
+    addItemToQuerieList(region: string, scenario: string, variable: string, keyParameter: string, data: any[]) {
+        let tebaleEntity = new TableEntity();
+        tebaleEntity.region = region;
+        tebaleEntity.scenario = scenario;
+        tebaleEntity.variable = variable;
+        tebaleEntity.keyParameter = keyParameter;
+        tebaleEntity.data = [];
+        if (!this.tableEntities.entities) {
+            this.tableEntities.entities = [];
+        }
+
+        for (var index = 1; index < data.length; index++) {
+            tebaleEntity.data.push(Math.round(data[index]));
+        }
+
+        this.tableEntities.entities.push(tebaleEntity);
+    }
+
 }

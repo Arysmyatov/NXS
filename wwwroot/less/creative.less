@@ -460,3 +460,34 @@ wrapper-busy {
     opacity: 0.3;
     filter: alpha(Opacity=30);
 }
+
+#admin-home {
+    .dash-buttons{
+        a {
+           &:hover {
+                text-decoration: none !important;
+           }
+        }
+    }
+    .admin-menu-item {
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 22px;
+            background: #eae9e9;
+            &:hover,
+            &:link {
+                    text-decoration: none !important;
+                        background: #f9f9f9;
+                }
+    }
+}
+
+.btn-keylevel {
+    font-size: 11px !important;
+    &.selected {
+        color: black !important;
+        background: #ffdb97 !important;
+    }
+
+}

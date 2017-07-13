@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { VariableFormComponent, UploadXlsFileComponent } from "./index";
+import { VariableFormComponent, UploadXlsFileComponent, AdminHomeComponent } from "./index";
 
 @NgModule({
     imports: [
@@ -11,7 +11,11 @@ import { VariableFormComponent, UploadXlsFileComponent } from "./index";
             },
             {
                 path: "uploadxls",
-                component:  UploadXlsFileComponent
+                component: UploadXlsFileComponent
+            },
+            {
+                path: "admin",
+                component: AdminHomeComponent
             }
         ])
     ],
