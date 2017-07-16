@@ -77,7 +77,7 @@
         </div>
 
         <div id="footer" class="row">
-            <div id="key-param" class="col-lg-6">
+            <div id="key-param" class="col-lg-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Key parameters</h3>
@@ -91,7 +91,7 @@
                                     <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)" >Low</button>
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)" >Middle</button>
-                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">Hight</button>
+                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
                                     </div>                                    
                                 </div>
                             </accordion-group>
@@ -102,14 +102,14 @@
                             <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
                                 <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)">Low</button>
                                 <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)">Middle</button>
-                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">Hight</button>
+                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div id="query-result" class="col-lg-6">
+            <div id="query-result" class="col-lg-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Query results</h3>
