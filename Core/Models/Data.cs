@@ -13,11 +13,11 @@ namespace NXS.Core.Models
         [Required]
         public int ScenarioId { get; set; }
         [Required]
+        public int KeyParameterLevelId { get; set; }
+        [Required]
         public int VariableId { get; set; }
         [Required]
-        public int KeyParameterId { get; set; }
-        [Required]
-        public int KeyParameterLevelId { get; set; }
+        public int SubVariableId { get; set; }
         [Required]
         public string Year { get; set; }
         [Required]

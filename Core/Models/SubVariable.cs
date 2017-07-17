@@ -5,8 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NXS.Core.Models
 {
-    [Table("Variables")]
-    public class Variable
+    [Table("SubVariables")]
+    public class SubVariable
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
@@ -16,16 +16,10 @@ namespace NXS.Core.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public int VariableGroupId { get; set; }
+        public ICollection<Variable> Variables { get; set; }
 
-        public VariableXls VariableXls { get; set; }
-
-        public ICollection<SubVariable> SubVariables { get; set; }
-
-        public Variable()
-        {
-            VariableXls = new VariableXls();            
-            SubVariables = new Collection<SubVariable>();
+        public SubVariable() {
+            Variables = new Collection<Variable>();
         }
     }
 }

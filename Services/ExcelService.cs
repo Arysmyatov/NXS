@@ -6,7 +6,6 @@ using OfficeOpenXml;
 
 namespace NXS.Services
 {
-
     internal class WorkSheetScope
     {
         public int RowCount { get; set; }
@@ -21,11 +20,17 @@ namespace NXS.Services
             this._excelPackage = excelPackage;
             _sheetName = sheetName;
             FindSheet();
+            UpdateRegionInSheet();
         }
 
         private void FindSheet()
         {
             Worksheet = _excelPackage.Workbook.Worksheets[_sheetName];
+        }
+
+        private void UpdateRegionInSheet()
+        {
+            Worksheet.Cells[1, 2].Value = "BNL";
         }
 
         public void GetRowColCount()
@@ -83,15 +88,18 @@ namespace NXS.Services
                     {
                         break;
                     }
-                    try {
+                    try
+                    {
                         var strVal = val.ToString();
                         if (strVal.Equals(keyParameter.Name))
                         {
                             baseDataValRow = row;
                             isFound = true;
                             break;
-                        }                        
-                    } catch {
+                        }
+                    }
+                    catch
+                    {
                         continue;
                     }
                 }
@@ -133,84 +141,158 @@ namespace NXS.Services
             return data;
         }
 
+    }
 
-        internal class YearScope
+    internal class YearScope
+    {
+        public List<YearItem> YearItems { get; set; }
+
+        private readonly VariableXls _variableXls;
+        private readonly WorkSheetScope _workSheetScope;
+
+        public YearScope(WorkSheetScope workSheetScope, VariableXls variableXls)
         {
-            public List<YearItem> YearItems { get; set; }
+            _workSheetScope = workSheetScope;
+            _variableXls = variableXls;
+        }
 
-            private readonly VariableXls _variableXls;
-            private readonly WorkSheetScope _workSheetScope;
+        public void GetYears()
+        {
+            YearItems = new List<YearItem>();
+            var yearRow = _variableXls.YearBgRow;
 
-            public YearScope(WorkSheetScope workSheetScope, VariableXls variableXls)
+            for (int col = _variableXls.YearBgCol; col <= _variableXls.YearEndCol; col++)
             {
-                _workSheetScope = workSheetScope;
-                _variableXls = variableXls;
-            }
-
-            public void GetYears()
-            {
-                YearItems = new List<YearItem>();
-                var yearRow = _variableXls.YearBgRow;
-
-                for (int col = _variableXls.YearBgCol; col <= _variableXls.YearEndCol; col++)
+                var val = _workSheetScope.Worksheet.Cells[yearRow, col].Value;
+                if (val == null)
                 {
-                    var val = _workSheetScope.Worksheet.Cells[yearRow, col].Value;
-                    if (val == null)
-                    {
-                        break;
-                    }
+                    break;
+                }
 
-                    try {
-                        var yearItem = new YearItem { Row = yearRow, Col = col, Value = val.ToString() };
-                        YearItems.Add(yearItem);
-                    } catch {
+                try
+                {
+                    var yearItem = new YearItem { Row = yearRow, Col = col, Value = val.ToString() };
+                    YearItems.Add(yearItem);
+                }
+                catch
+                {
 
-                    }
                 }
             }
         }
+    }
 
 
-        internal struct YearItem
+    internal struct YearItem
+    {
+        public int Row { get; set; }
+        public int Col { get; set; }
+        public string Value { get; set; }
+    }
+
+
+    internal struct RegionCell
+    {
+        public int Col { get; set; }
+        public int Row { get; set; }
+    }
+
+
+    public class ExcelService
+    {
+        #region Constants
+
+        private const string ByRegionSheetName = "By region";
+        private const string GlobalResultsSheetName = "Global Results";
+        private const string GeneralParametersSheetName = "General parameters";
+
+        #endregion
+
+        public string WorkBookBasePath { get; set; }
+        public IEnumerable<KeyParameter> KeyParameters { get; set; }
+        public IEnumerable<Region> Regions { get; set; }
+        public IEnumerable<KeyParameterLevel> KeyParameterLevels { get; set; }
+        public IEnumerable<Variable> Variables { get; set; }
+        private readonly ExcelPackage _excelPackage;
+        public ExcelWorksheet CurrentWorkSheet { get; private set; }
+        public string SheetName { get; set; }
+        private RegionCell _regionCell;
+
+
+        public ExcelService()
         {
-            public int Row { get; set; }
-            public int Col { get; set; }
-            public string Value { get; set; }
+            InitRegionXlsCell();
         }
 
-        public class ExcelService
+
+        public void SetByRegionWorkSheet()
         {
-            public string WorkBookBasePath { get; set; }
-            public IEnumerable<KeyParameter> KeyParameters { get; set; }
-            public IEnumerable<KeyParameterLevel> KeyParameterLevels { get; set; }
-            public IEnumerable<VariableXls> VariablesXls { get; set; }
-            public string SheetName { get; set; }
+            SetCurentWorkSheet(ByRegionSheetName);
+        }
 
-            public IEnumerable<Data> GetDataFromXls(Region region, Scenario scenario, KeyParameterLevel keyParameterLevel, string lasUploadedFileName)
+        public void SetGlobalResultsWorkSheet()
+        {
+            SetCurentWorkSheet(GlobalResultsSheetName);
+        }
+
+        public void SetGeneralParametersWorkSheet()
+        {
+            SetCurentWorkSheet(GeneralParametersSheetName);
+        }
+
+        public void SetCurrentRegionXls(string name)
+        {
+            CurrentWorkSheet.Cells[_regionCell.Row, _regionCell.Col].Value = name;
+        }
+
+        public Variable GetSubVariable(string subVariableName, Variable variable) {
+            this.
+        }
+
+        #region Private methods
+
+        private void SetCurentWorkSheet(string name)
+        {
+            if (_excelPackage == null || _excelPackage.Workbook == null)
             {
-                var data = new List<Data>();
-
-                var filePath = $"{this.WorkBookBasePath}/{lasUploadedFileName}";
-                var fileInfo = new FileInfo(filePath);
-
-                using (var package = new ExcelPackage(fileInfo))
-                {
-
-                    foreach (var varXls in VariablesXls)
-                    {
-                        // Get Sheet Row and Col count
-                        var workSheetScope = new WorkSheetScope(package, varXls.SheetName);
-                        workSheetScope.GetRowColCount();
-
-                        // Find Variable Scope
-                        var varScope = new VariableScope(workSheetScope, varXls, KeyParameters, region.Id, scenario.Id, keyParameterLevel.Id);
-                        var dataByVariable = varScope.GetDataFromXls();
-                        data.AddRange(dataByVariable);
-                    }
-                }
-
-                return data;
+                // ToDo: log this error
+                return;
             }
+            CurrentWorkSheet = _excelPackage.Workbook.Worksheets[name];
+        }
+
+        private void InitRegionXlsCell(){
+            _regionCell = new RegionCell();
+            _regionCell.Col = 2;
+            _regionCell.Row = 1;
+        }
+
+        #endregion
+
+        public IEnumerable<Data> GetDataFromXls(Region region, Scenario scenario, KeyParameterLevel keyParameterLevel, string lasUploadedFileName)
+        {
+            var data = new List<Data>();
+
+            var filePath = $"{this.WorkBookBasePath}/{lasUploadedFileName}";
+            var fileInfo = new FileInfo(filePath);
+
+            using (var package = new ExcelPackage(fileInfo))
+            {
+
+                foreach (var varXls in VariablesXls)
+                {
+                    // Get Sheet Row and Col count
+                    var workSheetScope = new WorkSheetScope(package, varXls.SheetName);
+                    workSheetScope.GetRowColCount();
+
+                    // Find Variable Scope
+                    var varScope = new VariableScope(workSheetScope, varXls, KeyParameters, region.Id, scenario.Id, keyParameterLevel.Id);
+                    var dataByVariable = varScope.GetDataFromXls();
+                    data.AddRange(dataByVariable);
+                }
+            }
+
+            return data;
         }
     }
 }
