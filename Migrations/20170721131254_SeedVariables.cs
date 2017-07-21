@@ -8,7 +8,7 @@ namespace NXS.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            // Top
+// Top
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('GDP', (SELECT ID FROM VariableGroups WHERE Name = 'Top'))");
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('Population', (SELECT ID FROM VariableGroups WHERE Name = 'Top'))");
 
@@ -42,6 +42,8 @@ namespace NXS.Migrations
             // Bottom
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('Carbon price', (SELECT ID FROM VariableGroups WHERE Name = 'Bottom'))");
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('System costs', (SELECT ID FROM VariableGroups WHERE Name = 'Bottom'))");
+                    
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

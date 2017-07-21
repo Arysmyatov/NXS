@@ -8,8 +8,8 @@ using NXS.Persistence;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    [Migration("20170721124730_SubVariables")]
-    partial class SubVariables
+    [Migration("20170721130722_SeedRegions")]
+    partial class SeedRegions
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

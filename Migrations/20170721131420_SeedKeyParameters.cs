@@ -25,6 +25,7 @@ namespace NXS.Migrations
             migrationBuilder.Sql("INSERT INTO KeyParameterLevels (Name) VALUES ('Low')");
             migrationBuilder.Sql("INSERT INTO KeyParameterLevels (Name) VALUES ('Medium')");
             migrationBuilder.Sql("INSERT INTO KeyParameterLevels (Name) VALUES ('High')");
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -38,11 +39,12 @@ namespace NXS.Migrations
                                                                           "'Oil'," +
                                                                           "'Gas'," +
                                                                           "'Coal'," +
-                                                                          "'GDP',");            
+                                                                          "'GDP',");
             // KeyParameterLevels
             migrationBuilder.Sql("DELETE FROM KeyParameterGroups WHERE Name IN ('Low'," +
                                                                                "'Medium'," +
-                                                                               "'High',");                                                                          
+                                                                               "'High',");
+
         }
     }
 }

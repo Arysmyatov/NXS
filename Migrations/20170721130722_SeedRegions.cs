@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NXS.Migrations
 {
-    public partial class SeedDatabase : Migration
+    public partial class SeedRegions : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("INSERT INTO ParentRegions (Name) VALUES ('EU')");
-            
+
             // Regions
             migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('BNL', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
             migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('DEU', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
@@ -22,14 +22,15 @@ namespace NXS.Migrations
             migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('UKI', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
             migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SWZ', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
             migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('NOI', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('World', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
 
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DELETE FROM ParentRegions WHERE Name IN ('EU', 'Make2', 'Make3')");
+            migrationBuilder.Sql("DELETE FROM ParentRegions WHERE Name IN ('EU')");
 
-            migrationBuilder.Sql("DELETE FROM Regions WHERE Name IN ('BNL', 'DEU', 'EEN', 'EES', 'FRA', 'IAM', 'IBE', 'SDF', 'UKI', 'SWZ', 'NOI')");
+            migrationBuilder.Sql("DELETE FROM Regions WHERE Name IN ('BNL', 'DEU', 'EEN', 'EES', 'FRA', 'IAM', 'IBE', 'SDF', 'UKI', 'SWZ', 'NOI', 'World')");
         }
     }
 }

@@ -20,21 +20,24 @@ namespace NXS.Migrations
             migrationBuilder.Sql("INSERT INTO VariableGroups (Name) VALUES ('Residential')");
             migrationBuilder.Sql("INSERT INTO VariableGroups (Name) VALUES ('Commercial')");
             migrationBuilder.Sql("INSERT INTO VariableGroups (Name) VALUES ('Agriculture')");
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+
             migrationBuilder.Sql("DELETE FROM VariableGroups WHERE Name IN ('Primary Energy'," +
                                                                            "'Top'," +
                                                                            "'Bottom'," +
                                                                            "'Final Energy Consumption'," +
-                                                                           "'Electricity'," + 
-                                                                           "'Emissiones'," + 
-                                                                           "'Transport'," + 
+                                                                           "'Electricity'," +
+                                                                           "'Emissiones'," +
+                                                                           "'Transport'," +
                                                                            "'Industry'," +
                                                                            "'Residential'," +
                                                                            "'Commercial'," +
                                                                            "'Agriculture',)");
+
         }
     }
 }

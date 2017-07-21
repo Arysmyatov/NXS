@@ -16,6 +16,6 @@ namespace NXS.Migrations
         {
             //remove scenarios 
             migrationBuilder.Sql("DELETE FROM Scenarios WHERE Name IN ('Low Carbon')");            
-        }
+        }  
     }
 }
