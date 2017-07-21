@@ -21,6 +21,8 @@ export class UploadXlsFileComponent implements OnInit {
   regionId: number = 0;
   scenarios: any[] = [];
   scenarioId: number = 0;
+  keyParameters: any[] = [];
+  keyParameterId: number = 0;
   keyParameterLevels: any[] = [];
   keyParameterLevelId: number = 0;
   xlsFiles: any[] = [];
@@ -47,12 +49,20 @@ export class UploadXlsFileComponent implements OnInit {
       }
     );
 
-    this.busy = this.graphDataService.getKeyParameterLevels().subscribe(
+    this.graphDataService.getKeyParameters().subscribe(
       keyParameters => {
-        this.keyParameterLevels = keyParameters
+        for (let keyParameter of keyParameters) {
+          this.keyParameters = this.keyParameters.concat(keyParameter.keyParameters);
+        }
       }
     );
-    
+
+    this.graphDataService.getKeyParameterLevels().subscribe(
+      keyParameterLevels => {
+        this.keyParameterLevels = keyParameterLevels
+      }
+    );
+
   }
 
   onRegionChange(region) {
@@ -67,10 +77,14 @@ export class UploadXlsFileComponent implements OnInit {
     this.getXlsFiles();
   }
 
-  getXlsFiles() {
-    if (!this.regionId || !this.scenarioId || !this.keyParameterLevelId) return;
+  onKeyParameterChange(region) {
+    this.getXlsFiles();
+  }
 
-    this.xlsFileService.getXlsFiles(this.regionId, this.scenarioId, this.keyParameterLevelId)
+  getXlsFiles() {
+    if (!this.scenarioId || !this.keyParameterId || !this.keyParameterLevelId) return;
+
+    this.xlsFileService.getXlsFiles(this.regionId, this.scenarioId, this.keyParameterId, this.keyParameterLevelId)
       .subscribe(xlsFiles => this.xlsFiles = xlsFiles);
   }
 
@@ -108,10 +122,6 @@ export class UploadXlsFileComponent implements OnInit {
   }
 
   uploadXls() {
-    if (!this.regionId) {
-      this.warningSelectRegionOrlevel("Select the region");
-      return;
-    }
     if (!this.keyParameterLevelId) {
       this.warningSelectRegionOrlevel("Select the key parameter level");
       return;
@@ -129,7 +139,7 @@ export class UploadXlsFileComponent implements OnInit {
     var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
     var file = nativeElement.files[0];
     nativeElement.value = '';
-    this.xlsFileService.upload(this.regionId, this.scenarioId, this.keyParameterLevelId, file)
+    this.xlsFileService.upload(this.regionId, this.scenarioId, this.keyParameterId, this.keyParameterLevelId, file)
       .subscribe(xlsFile => {
         this.xlsFiles.push(xlsFile);
         this.toasty.success({

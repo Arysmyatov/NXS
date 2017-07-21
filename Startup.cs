@@ -42,6 +42,7 @@ namespace NXS
             services.AddScoped<IVariableGroupRepository, VariableGroupRepository>();
             services.AddScoped<IVariableRepository, VariableRepository>();
             services.AddScoped<ISubVariableRepository, SubVariableRepository>();
+            services.AddScoped<IDataRepository, DataRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();

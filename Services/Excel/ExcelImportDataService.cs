@@ -30,7 +30,7 @@ namespace NXS.Services.Excel
         private readonly ISubVariableRepository _subVariableRepository;
         private readonly IDataRepository _dataRepository;
         private readonly NxsDbContext _context;
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         public string WorkBookBasePath { get; set; }
 
         public ExcelImportDataService(IScenarioRepository scenarioRepository,
@@ -38,7 +38,7 @@ namespace NXS.Services.Excel
                                         IVariableRepository variableRepository,
                                         ISubVariableRepository subVariableRepository,
                                         IDataRepository dataRepository,
-                                        UnitOfWork unitOfWork,
+                                        IUnitOfWork unitOfWork,
                                         NxsDbContext context)
         {
             _scenarioRepository = scenarioRepository;
@@ -47,14 +47,15 @@ namespace NXS.Services.Excel
             _subVariableRepository = subVariableRepository;
             _scenarioRepository = scenarioRepository;
             _dataRepository = dataRepository;
+            _context = context;
             _unitOfWork = unitOfWork;
         }
 
         public async Task ImportData()
         {
-            var scenarios = await _scenarioRepository.GetScenarios(null);
-            var keyParameters = _context.KeyParameters;
-            var keyParameterLevels = _context.KeyParameterLevels;
+            var scenarios = await _scenarioRepository.GetScenarios(new ScenarioQuery());
+            var keyParameters = _context.KeyParameters.ToList();
+            var keyParameterLevels = _context.KeyParameterLevels.ToList();
 
             foreach (var scenario in scenarios.Items)
             {
@@ -66,12 +67,17 @@ namespace NXS.Services.Excel
                                                                               x.KeyParameterId == keyParameter.Id &&
                                                                               x.KeyParameterLevelId == keyParameterLevel.Id);
 
+                        if (xlsFile == null)
+                        {
+                            continue;
+                        }
+
                         // Open file
                         var filePath = $"{WorkBookBasePath}/{xlsFile.FileName}";
                         var fileInfo = new FileInfo(filePath);
 
-                        var regions = _context.Regions;
-                        var variableXls = _context.VariableXls;
+                        var regions = _context.Regions.ToList();
+                        var variableXls = _context.VariableXls.ToList();
 
                         // Open Xls file
                         using (var package = new ExcelPackage(fileInfo))
@@ -87,17 +93,22 @@ namespace NXS.Services.Excel
                                 foreach (var varXls in variableXls)
                                 {
                                     var years = GetYears(varXls, regionSheet);
+                                    if (years == null)
+                                    {
+                                        continue;
+                                    }
 
                                     var variable = await _variableRepository.GetVariable(varXls.VariableId);
-                                    if(variable == null ||
+                                    if (variable == null ||
                                        variable.Name == "GDP" ||
-                                       variable.Name == "Population" ){
-                                           continue;
+                                       variable.Name == "Population")
+                                    {
+                                        continue;
                                     }
 
                                     for (var row = varXls.DataBgRow; row <= varXls.DataEndRow; row++)
                                     {
-                                        var subVariableName = regionSheet.Cells[RegionRow, varXls.DataBgCol].Value.ToString();
+                                        var subVariableName = regionSheet.Cells[row, varXls.DataBgCol].Value.ToString();
 
                                         var subVariable = await GetSubVariable(subVariableName);
                                         if (subVariable == null)
@@ -125,7 +136,8 @@ namespace NXS.Services.Excel
 
                                             // Create and save data
 
-                                            var data = new Data {
+                                            var data = new Data
+                                            {
                                                 RegionId = region.Id,
                                                 ScenarioId = scenario.Id,
                                                 KeyParameterId = keyParameter.Id,
@@ -152,10 +164,15 @@ namespace NXS.Services.Excel
 
         private string[] GetYears(VariableXls variableXls, ExcelWorksheet workSheet)
         {
-            var yeras = new string[variableXls.YearBgCol - variableXls.YearBgCol + 1];
+            if (variableXls.YearBgRow == 0 && variableXls.YearBgCol == 0 &&
+               variableXls.YearEndRow == 0 && variableXls.YearEndCol == 0)
+            {
+                return null;
+            }
+            var yeras = new string[variableXls.YearEndCol - variableXls.YearBgCol + 1];
             var yearIndex = 0;
 
-            for (var col = variableXls.YearBgCol; col <= variableXls.YearBgCol; col++)
+            for (var col = variableXls.YearBgCol; col <= variableXls.YearEndCol; col++)
             {
                 var yearVal = workSheet.Cells[variableXls.YearBgRow, col].Value;
                 if (yearVal == null)

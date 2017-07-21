@@ -30,6 +30,9 @@ namespace NXS.Extensions
 
       public static IQueryable<SubVariable> ApplyFiltering(this IQueryable<SubVariable> query, SubVariableQuery queryObj)
       {
+        if (!string.IsNullOrEmpty(queryObj.Name))
+          query = query.Where(v => v.Name == queryObj.Name);
+
         return query; 
       }
       
