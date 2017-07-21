@@ -16,10 +16,10 @@ namespace NXS.Core.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public ICollection<Variable> Variables { get; set; }
+        public ICollection<Data> Data { get; set; }
 
         public SubVariable() {
-            Variables = new Collection<Variable>();
-        }
+            Data = new Collection<Data>();
+        }           
     }
 }

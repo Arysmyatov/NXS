@@ -14,18 +14,17 @@ namespace NXS.Persistence
         {
             this.context = context;
         }
-        public async Task<IEnumerable<XlsUpload>> GetXlsUploadsAsync(int regionId, int keyParameterId, int scenarioId)
+        public async Task<IEnumerable<XlsUpload>> GetXlsUploadsAsync(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId)
         {
             return await context.XlsUploads
-              .Where(x => x.RegionId == regionId && x.KeyParameterLevelId == keyParameterId && x.ScenarioId == scenarioId)
+              .Where(x => x.KeyParameterId == keyParameterId && x.KeyParameterLevelId == keyParameterLevelId && x.ScenarioId == scenarioId)
               .ToListAsync();
         }
 
-        public async Task<XlsUpload> GetXlsLastUplod(int regionId, int keyParameterId, int scenarioId)
+        public async Task<XlsUpload> GetXlsLastUplodAsync(int regionId, int keyParameterId,  int keyParameterLevelId, int scenarioId)
         {
             return await context.XlsUploads
-              .Where(x => x.RegionId == regionId &&
-                          x.KeyParameterLevelId == keyParameterId && x.ScenarioId == scenarioId)
+              .Where(x => x.KeyParameterLevelId == keyParameterId &&  x.KeyParameterLevelId == keyParameterLevelId &&  x.ScenarioId == scenarioId)
                               .OrderByDescending(x => x.UploadDate)
                               .FirstOrDefaultAsync();
         }

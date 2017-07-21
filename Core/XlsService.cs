@@ -20,20 +20,20 @@ namespace NXS.Core
             this.xlsUploadRepository = xlsUploadRepository;
         }
 
-        public async Task<IEnumerable<XlsUpload>> GetXlsUploads(int regionId, int keyParameterId, int scenarioId)
+        public async Task<IEnumerable<XlsUpload>> GetXlsUploads(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId)
         {
-            var uploads = await xlsUploadRepository.GetXlsUploadsAsync(regionId, keyParameterId, scenarioId);
+            var uploads = await xlsUploadRepository.GetXlsUploadsAsync(regionId, keyParameterId, keyParameterLevelId, scenarioId);
             return uploads;
         }
 
-        public async Task<XlsUpload> GetXlsLastUpload(int regionId, int keyParameterId, int scenarioId)
+        public async Task<XlsUpload> GetXlsLastUpload(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId)
         {
-            var upload = await xlsUploadRepository.GetXlsLastUplod(regionId, keyParameterId, scenarioId);
+            var upload = await xlsUploadRepository.GetXlsLastUplodAsync(regionId, keyParameterId, keyParameterLevelId, scenarioId);
             return upload;
         }
         
 
-        public async Task<XlsUpload> UploadFile(int regionId, int keyParameterId, int scenarioId, IFormFile file, string uploadsFolderPath)
+        public async Task<XlsUpload> UploadFile(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
         {
             var fileName = await xlsStorage.StoreXls(uploadsFolderPath, file);
 
@@ -41,8 +41,8 @@ namespace NXS.Core
 
             var xlsUpload = new XlsUpload
             {
-                RegionId = regionId,
-                KeyParameterLevelId = keyParameterId,
+                KeyParameterId = keyParameterId,
+                KeyParameterLevelId = keyParameterLevelId,
                 ScenarioId = scenarioId,
                 FileName = fileName,
                 UploadDate = DateTime.Now

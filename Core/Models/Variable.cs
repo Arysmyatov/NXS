@@ -20,12 +20,9 @@ namespace NXS.Core.Models
 
         public VariableXls VariableXls { get; set; }
 
-        public ICollection<SubVariable> SubVariables { get; set; }
-
         public Variable()
         {
-            VariableXls = new VariableXls();            
-            SubVariables = new Collection<SubVariable>();
+            VariableXls = new VariableXls();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace NXS.Core.Models
         [Required]
         public int ScenarioId { get; set; }
         [Required]
+        public int KeyParameterId { get; set; }        
+        [Required]
         public int KeyParameterLevelId { get; set; }
         [Required]
         public int VariableId { get; set; }
@@ -21,6 +23,12 @@ namespace NXS.Core.Models
         [Required]
         public string Year { get; set; }
         [Required]
+        public Region Region { get; set; }
+        public Scenario Scenario { get; set; }
+        public KeyParameter KeyParameter { get; set; }
+        public KeyParameterLevel KeyParameterLevel { get; set; }
+        public Variable Variable { get; set; }
+        public SubVariable SubVariable { get; set; }
         public decimal Value { get; set; }
     }
 }

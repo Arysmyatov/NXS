@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NXS.Controllers.Resources;
+using NXS.Core;
 using NXS.Core.Models;
 using NXS.Persistence;
 
@@ -15,31 +16,53 @@ namespace NXS.Controllers
     {
 
         private readonly NxsDbContext context;
+        private readonly IDataRepository repository;
         private readonly IMapper mapper;
 
-        public DataController(NxsDbContext context, IMapper mapper)
+        public DataController(NxsDbContext context, IDataRepository dataRepository, IMapper mapper)
         {
-            this.mapper = mapper;
             this.context = context;
+            this.repository = dataRepository;
+            this.mapper = mapper;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public async Task<IEnumerable<DataResource>> GetData()
         {
             var data = await context.Data.ToListAsync();
             return mapper.Map<List<Data>, List<DataResource>>(data);
         }
 
-        [HttpGet("region/{regionId}/scenario/{scenarioId}/variable/{variableId}/keyparameter/{keyparameterId}/level/{levelId}")]
-        public async Task<IEnumerable<DataResource>> GetByParams(int regionId, int scenarioId, int variableId, int keyparameterId, int levelId)
-        {
-            var data = await context.Data.Where(d => d.RegionId == regionId && 
-                                                     d.ScenarioId == scenarioId && 
-                                                     d.VariableId == variableId && 
-                                                     d.KeyParameterId == keyparameterId && 
-                                                     d.KeyParameterLevelId == levelId).ToListAsync();
 
-            return mapper.Map<List<Data>, List<DataResource>>(data);
+        [HttpGet]
+        public async Task<DataResource> GetData(DataQueryResource filterResource)
+        {
+            var filter = mapper.Map<DataQueryResource, DataQuery>(filterResource);
+            var queryResult = await repository.GetData(filter);
+
+            var newDataResource = new DataResource();
+
+            if (queryResult == null ||
+              !queryResult.Items.Any())
+            {
+                return newDataResource;
+            }
+
+            var years = queryResult.Items.Select(i => i.Year).Distinct();
+            var subVariables = queryResult.Items.Select(i => i.SubVariable.Name).Distinct().ToList();
+
+            newDataResource.Years = years;
+            newDataResource.SubVariables = subVariables;
+            newDataResource.Values = new List<decimal[]>();
+
+            for (var i = 0; i < subVariables.Count(); i++)
+            {
+                var items = queryResult.Items.Where(d => d.SubVariable.Name == subVariables[i]).Select(d => d.Value).ToArray();
+                newDataResource.Values.Add(items);
+            }
+
+            return newDataResource;
         }
-    }        
+
+    }
 }

@@ -16,6 +16,7 @@ namespace NXS.Persistence
         public DbSet<VariableGroup> VariableGroups { get; set; }
         public DbSet<Variable> Variables { get; set; }
         public DbSet<VariableXls> VariableXls { get; set; }
+        public DbSet<SubVariable> SubVariables { get; set; }        
         public DbSet<KeyParameter> KeyParameters { get; set; }
         public DbSet<KeyParameterGroup> KeyParameterGroups { get; set; }
         public DbSet<KeyParameterLevel> KeyParameterLevels { get; set; }

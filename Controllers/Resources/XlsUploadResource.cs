@@ -4,7 +4,8 @@ namespace NXS.Controllers.Resources
     {
         public int Id { get; set; }
         public string FileName { get; set; }
-        public int RegionId  { get; set; }
+        public int ScenarioId  { get; set; }
+        public int KeyParameterId  { get; set; }
         public int KeyParameterLevelId  { get; set; }        
         
     }

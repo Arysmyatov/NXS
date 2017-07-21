@@ -13,6 +13,7 @@ using NXS.Persistence;
 using AutoMapper;
 using NXS.Core;
 using NXS.Core.Models;
+using NXS.Services.Excel;
 
 namespace NXS
 {
@@ -36,8 +37,14 @@ namespace NXS
             services.Configure<XlsUploadSettings>(Configuration.GetSection("XlsUploadSettings"));            
             services.AddAutoMapper();
             services.AddScoped<IXlsUploadRepository, XLsUplodRepository>();
+            services.AddScoped<IRegionRepository, RegionRepository>();
+            services.AddScoped<IScenarioRepository, ScenarioRepository>();
+            services.AddScoped<IVariableGroupRepository, VariableGroupRepository>();
+            services.AddScoped<IVariableRepository, VariableRepository>();
+            services.AddScoped<ISubVariableRepository, SubVariableRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
+            services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));

@@ -6,9 +6,9 @@ namespace NXS.Core
 {
     public interface IXlsUploadRepository
     {
-        Task<IEnumerable<XlsUpload>> GetXlsUploadsAsync(int regionId, int keyParameterId, int scenarioId);
+        Task<IEnumerable<XlsUpload>> GetXlsUploadsAsync(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId);
 
-        Task<XlsUpload> GetXlsLastUplod(int regionId, int keyParameterId, int scenarioId);
+        Task<XlsUpload> GetXlsLastUplodAsync(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId);
 
         void Add(XlsUpload vehicle);
     }

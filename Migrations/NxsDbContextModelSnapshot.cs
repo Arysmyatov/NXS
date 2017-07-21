@@ -29,6 +29,8 @@ namespace NXS.Migrations
 
                     b.Property<int>("ScenarioId");
 
+                    b.Property<int>("SubVariableId");
+
                     b.Property<decimal>("Value");
 
                     b.Property<int>("VariableId");
@@ -40,9 +42,13 @@ namespace NXS.Migrations
 
                     b.HasIndex("KeyParameterId");
 
+                    b.HasIndex("KeyParameterLevelId");
+
                     b.HasIndex("RegionId");
 
                     b.HasIndex("ScenarioId");
+
+                    b.HasIndex("SubVariableId");
 
                     b.HasIndex("VariableId");
 
@@ -141,6 +147,20 @@ namespace NXS.Migrations
                     b.ToTable("Scenarios");
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.SubVariable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SubVariables");
+                });
+
             modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
                     b.Property<int>("Id")
@@ -219,9 +239,11 @@ namespace NXS.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
+                    b.Property<int>("KeyParameterId");
+
                     b.Property<int>("KeyParameterLevelId");
 
-                    b.Property<int>("RegionId");
+                    b.Property<int?>("RegionId");
 
                     b.Property<int>("ScenarioId");
 
@@ -240,23 +262,33 @@ namespace NXS.Migrations
 
             modelBuilder.Entity("NXS.Core.Models.Data", b =>
                 {
-                    b.HasOne("NXS.Core.Models.KeyParameter")
+                    b.HasOne("NXS.Core.Models.KeyParameter", "KeyParameter")
                         .WithMany("Data")
                         .HasForeignKey("KeyParameterId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Core.Models.Region")
+                    b.HasOne("NXS.Core.Models.KeyParameterLevel", "KeyParameterLevel")
+                        .WithMany()
+                        .HasForeignKey("KeyParameterLevelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.Region", "Region")
                         .WithMany("Data")
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Core.Models.Scenario")
+                    b.HasOne("NXS.Core.Models.Scenario", "Scenario")
                         .WithMany("Data")
                         .HasForeignKey("ScenarioId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("NXS.Core.Models.Variable")
+                    b.HasOne("NXS.Core.Models.SubVariable", "SubVariable")
                         .WithMany("Data")
+                        .HasForeignKey("SubVariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.Variable", "Variable")
+                        .WithMany()
                         .HasForeignKey("VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -302,8 +334,7 @@ namespace NXS.Migrations
 
                     b.HasOne("NXS.Core.Models.Region")
                         .WithMany("XlsUploads")
-                        .HasForeignKey("RegionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("RegionId");
 
                     b.HasOne("NXS.Core.Models.Scenario")
                         .WithMany("XlsUploads")

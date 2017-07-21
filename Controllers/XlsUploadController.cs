@@ -34,8 +34,8 @@ namespace NXS.Controllers
         }
 
         [HttpPost]
-        [Route("/api/region/{regionId}/scenario/{scenarioId}/keyparameterlevel/{keyparameterLevelId}/xls")]
-        public async Task<IActionResult> Upload(int regionId, int keyparameterLevelId, int scenarioId, IFormFile file)
+        [Route("/api/region/{regionId}/scenario/{scenarioId}/keyparameter/{keyParameterId}/keyparameterlevel/{keyparameterLevelId}/xls")]
+        public async Task<IActionResult> Upload(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file)
         {
             if (file == null) return BadRequest("Null file");
             if (file.Length == 0) return BadRequest("Empty file");
@@ -43,16 +43,16 @@ namespace NXS.Controllers
             if (!xlsUploadSettings.IsSupported(file.FileName)) return BadRequest("Invalid file type.");
 
             var uploadsFolderPath = Path.Combine(host.WebRootPath, "uploads");
-            var xlsFile = await xlsService.UploadFile(regionId, keyparameterLevelId, scenarioId, file, uploadsFolderPath);
+            var xlsFile = await xlsService.UploadFile(regionId, keyParameterId, keyParameterLevelId, scenarioId, file, uploadsFolderPath);
 
             return Ok(mapper.Map<XlsUpload, XlsUploadResource>(xlsFile));
         }
 
         [HttpGet]
-        [Route("/api/region/{regionId}/scenario/{scenarioId}/keyparameterlevel/{keyparameterLevelId}/xls")]
-        public async Task<IEnumerable<XlsUploadResource>> GetXlsFiles(int regionId, int scenarioId, int keyparameterLevelId)
+        [Route("/api/region/{regionId}/scenario/{scenarioId}/keyParameter/{keyParameterId}/keyparameterlevel/{keyparameterLevelId}/xls")]
+        public async Task<IEnumerable<XlsUploadResource>> GetXlsFiles(int regionId, int scenarioId, int keyParameterId, int keyparameterLevelId)
         {
-            var xlsFiles = await xlsService.GetXlsUploads(regionId, keyparameterLevelId, scenarioId);
+            var xlsFiles = await xlsService.GetXlsUploads(regionId, keyParameterId, keyparameterLevelId, scenarioId);
 
             if(xlsFiles == null) return null;
 

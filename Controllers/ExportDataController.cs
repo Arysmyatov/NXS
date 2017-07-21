@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using OfficeOpenXml;
 using OfficeOpenXml.Table;
-using static NXS.Services.VariableScope;
 using NXS.Persistence;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -20,67 +19,35 @@ namespace NXS.Controllers
     public class ExportDataController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IExcelImportDataService _excelImportDataService;
+        private readonly IXlsService _xlsService;
 
-        private readonly NxsDbContext context;
+        private readonly NxsDbContext _context;
 
-        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context, IXlsService xlsService)
+        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context, IXlsService xlsService, IExcelImportDataService excelImportDataService)
         {
-            this.context = context;
-            this.xlsService = xlsService;
+            _context = context;
+            _xlsService = xlsService;
+            _excelImportDataService = excelImportDataService;
             _hostingEnvironment = hostingEnvironment;
         }
 
-        private static string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
         private readonly IXlsService xlsService;
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> XlsData()
+        public async Task<IActionResult> XlsImportData()
         {
             string webRootPath = _hostingEnvironment.WebRootPath;
             string contentRootPath = _hostingEnvironment.ContentRootPath;
 
-            var xlsService = new ExcelService();
-
-            xlsService.WorkBookBasePath = contentRootPath + "/wwwroot/uploads";
-            xlsService.VariablesXls = context.VariableXls.ToList();
-            xlsService.KeyParameters = context.KeyParameters.ToList();
-
-            var regions = context.Regions.ToList();
-            var scenarios = context.Scenarios.ToList();
-            var keyParameterLevels = context.KeyParameterLevels.ToList();
-
-            // Remove all the data before new adding
-            XlsRemoveAllData();
-
-            foreach(var region in regions)
-            {
-                foreach (var scenario in scenarios)
-                {   
-                    foreach (var keyParameterLevel in keyParameterLevels)
-                    {
-                        var lastUploadedFile = await this.xlsService.GetXlsLastUpload(region.Id, keyParameterLevel.Id, scenario.Id);
-                        if(lastUploadedFile == null || 
-                            string.IsNullOrEmpty(lastUploadedFile.FileName)) continue;
-
-                        var data = xlsService.GetDataFromXls(region, scenario, keyParameterLevel, lastUploadedFile.FileName);
-
-                        foreach(var d in data) {
-                            context.Data.Add(d);
-                            context.SaveChanges();
-                        }
-                    }
-                }
-            }
+            _excelImportDataService.WorkBookBasePath = contentRootPath + "/wwwroot/uploads";
+            await _excelImportDataService.ImportData();
 
             return Ok();
         }
 
-
-        public void XlsRemoveAllData() {
-            context.Database.ExecuteSqlCommand("DELETE FROM dbo.Data"); 
+        public async Task XlsRemoveAllData() {
+            await _context.Database.ExecuteSqlCommandAsync("DELETE FROM dbo.Data"); 
         }
 
     }
