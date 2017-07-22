@@ -1,5 +1,6 @@
 using AutoMapper;
 using NXS.Controllers.Resources;
+using NXS.Core;
 using NXS.Core.Models;
 
 namespace NXS.Mapping
@@ -18,6 +19,7 @@ namespace NXS.Mapping
             CreateMap<KeyParameterGroup, KeyParameterGroupResource>();
             CreateMap<KeyParameterLevel, KeyParameterLevelResource>();
             CreateMap<Data, DataResource>();
+            CreateMap<DataQueryResource, DataQuery>();
             CreateMap<VariableXls, VariableXlsResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>()
                 .ForMember(v => v.Id, opt => opt.Ignore());

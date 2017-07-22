@@ -26,16 +26,9 @@ namespace NXS.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<IEnumerable<DataResource>> GetData()
-        {
-            var data = await context.Data.ToListAsync();
-            return mapper.Map<List<Data>, List<DataResource>>(data);
-        }
-
 
         [HttpGet]
-        public async Task<DataResource> GetData(DataQueryResource filterResource)
+        public async Task<DataResource> GetData_(DataQueryResource filterResource)
         {
             var filter = mapper.Map<DataQueryResource, DataQuery>(filterResource);
             var queryResult = await repository.GetData(filter);

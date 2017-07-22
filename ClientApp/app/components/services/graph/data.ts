@@ -1,5 +1,6 @@
 export class Data {
     id: number;
-    year: string;
-    value: number;
+    years: string[];
+    subVariables: string[];
+    values: any[];
 }

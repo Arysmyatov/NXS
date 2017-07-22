@@ -5,6 +5,7 @@ import { SaveVariableXls } from "../../models/variablexls";
 
 @Injectable()
 export class GraphDataService {
+  private readonly dataEndpoint = '/api/data';  
 
   constructor(private http: Http) { }
 
@@ -53,8 +54,12 @@ export class GraphDataService {
       .map(res => res.json());
   }
   
+   getData(filter) {
+    return this.http.get(this.dataEndpoint + '?' + this.toQueryString(filter))
+      .map(res => res.json());
+  } 
 
-  getData(region: number, scenario: number, variable: number, keyparameter: number, keyparameterlevel: number) {
+  getData_(region: number, scenario: number, variable: number, keyparameter: number, keyparameterlevel: number) {
     let url: string = '/api/data/region/' + region
       + '/scenario/' + scenario 
       + '/variable/' + variable 
@@ -64,4 +69,16 @@ export class GraphDataService {
     return this.http.get(url)
       .map(res => res.json());
   }
+
+  toQueryString(obj) {
+    var parts = [];
+    for (var property in obj) {
+      var value = obj[property];
+      if (value != null && value != undefined) 
+        parts.push(encodeURIComponent(property) + '=' + encodeURIComponent(value));
+    }
+
+    return parts.join('&');
+  }
+  
 }

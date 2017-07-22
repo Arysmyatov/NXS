@@ -5,7 +5,6 @@ namespace NXS.Controllers.Resources
         public int? RegionId { get; set; }
         public int? ScenarioId { get; set; }
         public int? VariableId { get; set; }
-        public int? SubVariableId { get; set; }
         public int? KeyParameterId { get; set; }
         public int? KeyParameterLevelId { get; set; }
         public string SortBy { get; set; }

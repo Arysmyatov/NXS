@@ -11,7 +11,7 @@
                         <h3 class="panel-title">Regions</h3>
                     </div>
                     <div id="regions" class="panel-body">
-                        <div class="region" [class.selected]="selectedRegion && selectedRegion.id == region.id" *ngFor="let region of regions" (click)="selectRegion(region)">
+                        <div class="region" [class.selected]="query.regionId == region.id" *ngFor="let region of regions" (click)="selectRegion(region)">
                             {{region.name}}
                         </div>
                     </div>
@@ -23,8 +23,8 @@
                         <h3 class="panel-title">Scenarios</h3>
                     </div>
                     <div id="scenarios" class="panel-body">
-                        <div class="scenario" [class.selected]="selectedScenario && selectedScenario.id == scenario.id" *ngFor="let scenario of scenarios"
-                            (click)="selectScenario(scenario)">
+                        <div class="scenario" [class.selected]="query.scenarioId == scenario.id" *ngFor="let scenario of scenarios"
+                             (click)="selectScenario(scenario)">
                             {{scenario.name}}
                         </div>
                     </div>
@@ -39,22 +39,22 @@
                     </div>
                     <div id="variables" class="panel-body">
 
-                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variablesTop"
-                            (click)="selectVariable(vr)">
+                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesTop"
+                             (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
 
                         <accordion id="acc-variables" [showArrows]="true">
                             <accordion-group *ngFor="let vg of variables" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id"
                                 (click)="openVg(vg)">
-                                <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of vg.variables"
-                                    (click)="selectVariable(vr)">
+                                <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of vg.variables"
+                                     (click)="selectVariable(vr)">
                                     {{vr.name}}
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" [class.selected]="selectedVariable && selectedVariable.id == vr.id" *ngFor="let vr of variablesBottom"
+                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesBottom"
                             (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
@@ -86,8 +86,8 @@
 
                         <accordion id="acc-keyparam" [showArrows]="true">
                             <accordion-group *ngFor="let kpg of keyParameters | KeyParameterPipe:'Bottom'" heading="{{kpg.name}}">
-                                <div class="radio variable" *ngFor="let kp of kpg.keyParameters">
-                                    <span style="min-width: 80px">{{kp.name}}</span>
+                                <div class="radio keyparameter" *ngFor="let kp of kpg.keyParameters">
+                                    <span style="min-width: 80px; color: black">{{kp.name}}</span>
                                     <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)" >Low</button>
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)" >Middle</button>
