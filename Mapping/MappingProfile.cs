@@ -21,8 +21,8 @@ namespace NXS.Mapping
             CreateMap<Data, DataResource>();
             CreateMap<DataQueryResource, DataQuery>();
             CreateMap<VariableXls, VariableXlsResource>();
-            CreateMap<SaveVariableXlsResource, VariableXls>()
-                .ForMember(v => v.Id, opt => opt.Ignore());
+            CreateMap<XlsRegionType, XlsRegionTypeResource>();
+            CreateMap<SaveVariableXlsResource, VariableXls>();
             CreateMap<XlsUpload, XlsUploadResource>();
         }
     }

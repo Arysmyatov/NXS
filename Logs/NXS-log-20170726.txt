@@ -1,0 +1,1213 @@
+2017-07-26T13:37:22.9469800+03:00 0HL6K296DALUN [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-26T13:37:24.2008140+03:00 0HL6K296DALUN [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:37:29.7082500+03:00 0HL6K296DALUN [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-26T13:37:30.0450040+03:00 0HL6K296DALUN [INF] User profile is available. Using '"/Users/andriyarysmyatov/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2017-07-26T13:37:32.9908130+03:00 0HL6K296DALUN [ERR] ERROR Error: jQuery requires a window with a document
+    at module.exports.module.exports (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:19055:12)
+    at HeaderComponent.ngAfterViewInit (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js:13654:9)
+    at callProviderLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15689:18)
+    at callElementProvidersLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15664:13)
+    at callLifecycleHooksChildrenFirst (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15648:17)
+    at checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16680:5)
+    at callViewAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:17035:21)
+    at execComponentViewsAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16967:13)
+    at Object.checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16678:5)
+    at ViewRef_.module.exports.ViewRef_.detectChanges (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:14746:63) (34058d77)
+2017-07-26T13:37:33.6737320+03:00 0HL6K296DALUN [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 9738.0139ms (afa2e885)
+2017-07-26T13:37:33.7614320+03:00 0HL6K296DALUN [INF] Request finished in 10887.7272ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:37:34.0007300+03:00 0HL6K296DALUO [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gs9CuABfQKCtL-Q4LPfoQ4hbv3Rsz6MGH7oOziAIsAI   (e5be5b71)
+2017-07-26T13:37:34.4517050+03:00 0HL6K296DALUP [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:37:34.4632240+03:00 0HL6K296DALUQ [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:37:35.5661170+03:00 0HL6K296DALUO [INF] Node will restart because file changed: /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js (23d2f42c)
+2017-07-26T13:37:37.1281210+03:00  [INF] webpack built 58c21f0dd06b3b8bb7f9 in 16003ms (1dca9a07)
+2017-07-26T13:37:37.4586380+03:00 0HL6K296DALUO [INF] Request finished in 3457.6473ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-26T13:37:39.1999570+03:00 0HL6K296DALUR [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-07-26T13:37:39.2171200+03:00 0HL6K296DALUS [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:37:39.4838340+03:00 0HL6K296DALUR [INF] Request finished in 283.8487ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-07-26T13:38:01.1485850+03:00  [INF] Connection id ""0HL6K2963IQL3"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-07-26T13:38:01.1485700+03:00  [INF] Connection id ""0HL6K2963IQL2"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-07-26T13:38:01.4172800+03:00 0HL6K296DALUQ [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:38:01.4173820+03:00 0HL6K296DALUP [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:38:01.4428960+03:00 0HL6K296DALUQ [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-26T13:38:01.4689000+03:00 0HL6K296DALUP [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-26T13:38:01.4883520+03:00 0HL6K296DALUQ [ERR] Connection id ""0HL6K2963IQL3"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-26T13:38:01.4924380+03:00 0HL6K296DALUP [ERR] Connection id ""0HL6K2963IQL2"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-26T13:38:01.5090600+03:00 0HL6K296DALUQ [INF] Request finished in 27044.6097ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-26T13:38:01.5374230+03:00 0HL6K296DALUP [INF] Request finished in 27059.4599ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-26T13:38:11.7169100+03:00 0HL6K296DALUT [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/region/0/scenario/1/keyparameter/1/keyparameterlevel/1/xls   (e5be5b71)
+2017-07-26T13:38:12.3012240+03:00 0HL6K296DALUT [INF] Executing action method "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" with arguments (["0", "1", "1", "1"]) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:38:14.4348880+03:00 0HL6K296DALUT [INF] Executed DbCommand (134ms) [Parameters=[@__keyParameterId_0='?', @__keyParameterLevelId_1='?', @__scenarioId_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[KeyParameterId] = @__keyParameterId_0) AND ([x].[KeyParameterLevelId] = @__keyParameterLevelId_1)) AND ([x].[ScenarioId] = @__scenarioId_2) (6438bdd5)
+2017-07-26T13:38:14.5458110+03:00 0HL6K296DALUT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T13:38:14.5710960+03:00 0HL6K296DALUT [INF] Executed action "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" in 2794.6511ms (afa2e885)
+2017-07-26T13:38:14.5815820+03:00 0HL6K296DALUT [INF] Request finished in 2864.5058ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T13:38:16.3566860+03:00 0HL6K296DALUU [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/region/0/scenario/1/keyparameter/4/keyparameterlevel/1/xls   (e5be5b71)
+2017-07-26T13:38:16.3664440+03:00 0HL6K296DALUU [INF] Executing action method "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" with arguments (["0", "1", "4", "1"]) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:38:16.8162350+03:00 0HL6K296DALUU [INF] Executed DbCommand (125ms) [Parameters=[@__keyParameterId_0='?', @__keyParameterLevelId_1='?', @__scenarioId_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[KeyParameterId] = @__keyParameterId_0) AND ([x].[KeyParameterLevelId] = @__keyParameterLevelId_1)) AND ([x].[ScenarioId] = @__scenarioId_2) (6438bdd5)
+2017-07-26T13:38:16.9968850+03:00 0HL6K296DALUU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T13:38:17.0062810+03:00 0HL6K296DALUU [INF] Executed action "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" in 640.6058ms (afa2e885)
+2017-07-26T13:38:17.0151140+03:00 0HL6K296DALUU [INF] Request finished in 658.5216ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T13:39:02.1793090+03:00 0HL6K296DALUV [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T13:39:02.2071660+03:00 0HL6K296DALUV [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:39:02.3182600+03:00 0HL6K296DALUV [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T13:39:02.5703200+03:00 0HL6K296DALUV [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T13:39:02.8015640+03:00 0HL6K296DALUV [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T13:39:02.9125310+03:00 0HL6K296DALUV [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T13:39:02.9482580+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T13:39:03.1660430+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.1800260+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.1870600+03:00 0HL6K296DALUV [INF] Executed DbCommand (0ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.1951830+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2032980+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2127380+03:00 0HL6K296DALUV [INF] Executed DbCommand (2ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2195600+03:00 0HL6K296DALUV [INF] Executed DbCommand (0ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2279350+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2363610+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.2433950+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:39:03.3027570+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T13:39:03.3509300+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T13:39:03.4025240+03:00 0HL6K296DALUV [INF] Executed DbCommand (1ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)
+2017-07-26T13:39:24.6601650+03:00 0HL6K296DALUV [INF] EXCEL - Region is: BNL (48fe0d47)
+2017-07-26T13:39:24.8225640+03:00 0HL6K296DALUV [INF] Executed DbCommand (54ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [v].[Id], [v].[Name], [v].[VariableGroupId], [v0].[Id], [v0].[Code], [v0].[DataBgCol], [v0].[DataBgRow], [v0].[DataEndCol], [v0].[DataEndRow], [v0].[SheetName], [v0].[VariableId], [v0].[XlsRegionTypeId], [v0].[YearBgCol], [v0].[YearBgRow], [v0].[YearEndCol], [v0].[YearEndRow]
+FROM [Variables] AS [v]
+LEFT JOIN [VariableXls] AS [v0] ON [v0].[VariableId] = [v].[Id]
+WHERE [v].[Id] = @__id_0 (6438bdd5)
+2017-07-26T13:39:24.9890410+03:00 0HL6K296DALUV [INF] Executed DbCommand (60ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0 (6438bdd5)
+2017-07-26T13:39:25.1160430+03:00 0HL6K296DALUV [INF] Executed DbCommand (39ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255), @__p_1='?', @__p_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name]
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY (6438bdd5)
+2017-07-26T13:39:25.2014090+03:00 0HL6K296DALUV [INF] EXCEL CELL Value: #VALUE! (ad9aa0ae)
+2017-07-26T13:39:26.0012690+03:00 0HL6K296DALUV [INF] Executed action "NXS.Controllers.ExportDataController.XlsImportData (NXS)" in 23797.1317ms (afa2e885)
+2017-07-26T13:39:26.0206940+03:00 0HL6K296DALUV [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Decimal.Parse(String s)
+   at NXS.Services.Excel.ExcelImportDataService.<ImportData>d__19.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Services/Excel/ExcelImportDataService.cs:line 154
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at NXS.Controllers.ExportDataController.<XlsImportData>d__6.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Controllers/ExportDataController.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__25.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:39:26.1788150+03:00 0HL6K296DALUV [INF] Request finished in 23998.5672ms 500 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:44:04.8780410+03:00 0HL6K2CU6F7B9 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-26T13:44:05.7785500+03:00 0HL6K2CU6F7B9 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:44:11.6309770+03:00 0HL6K2CU6F7B9 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-26T13:44:12.2233610+03:00 0HL6K2CU6F7B9 [INF] User profile is available. Using '"/Users/andriyarysmyatov/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2017-07-26T13:44:17.3906910+03:00 0HL6K2CU6F7B9 [ERR] ERROR Error: jQuery requires a window with a document
+    at module.exports.module.exports (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:19055:12)
+    at HeaderComponent.ngAfterViewInit (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js:13654:9)
+    at callProviderLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15689:18)
+    at callElementProvidersLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15664:13)
+    at callLifecycleHooksChildrenFirst (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15648:17)
+    at checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16680:5)
+    at callViewAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:17035:21)
+    at execComponentViewsAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16967:13)
+    at Object.checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16678:5)
+    at ViewRef_.module.exports.ViewRef_.detectChanges (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:14746:63) (34058d77)
+2017-07-26T13:44:18.7339290+03:00 0HL6K2CU6F7B9 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 13050.9725ms (afa2e885)
+2017-07-26T13:44:18.8505570+03:00 0HL6K2CU6F7B9 [INF] Request finished in 14054.6182ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:44:19.1554730+03:00 0HL6K2CU6F7BA [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gs9CuABfQKCtL-Q4LPfoQ4hbv3Rsz6MGH7oOziAIsAI   (e5be5b71)
+2017-07-26T13:44:22.7358320+03:00 0HL6K2CU6F7BA [INF] Node will restart because file changed: /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js (23d2f42c)
+2017-07-26T13:44:25.7826280+03:00  [INF] webpack built 58c21f0dd06b3b8bb7f9 in 22563ms (5e993e16)
+2017-07-26T13:44:26.0764420+03:00 0HL6K2CU6F7BA [INF] Request finished in 6920.6264ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-26T13:44:28.4906910+03:00 0HL6K2CU6F7BB [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-07-26T13:44:28.6434710+03:00 0HL6K2CU6F7BC [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:44:28.8227530+03:00 0HL6K2CU6F7BB [INF] Request finished in 332.5827ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-07-26T13:46:27.2972490+03:00 0HL6K2CU6F7BD [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/region/0/scenario/1/keyparameter/4/keyparameterlevel/1/xls   (e5be5b71)
+2017-07-26T13:46:27.9069950+03:00 0HL6K2CU6F7BD [INF] Executing action method "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" with arguments (["0", "1", "4", "1"]) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:46:30.9297130+03:00 0HL6K2CU6F7BD [INF] Executed DbCommand (170ms) [Parameters=[@__keyParameterId_0='?', @__keyParameterLevelId_1='?', @__scenarioId_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[KeyParameterId] = @__keyParameterId_0) AND ([x].[KeyParameterLevelId] = @__keyParameterLevelId_1)) AND ([x].[ScenarioId] = @__scenarioId_2) (6438bdd5)
+2017-07-26T13:46:31.2400400+03:00 0HL6K2CU6F7BD [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T13:46:31.2771070+03:00 0HL6K2CU6F7BD [INF] Executed action "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" in 3856.7016ms (afa2e885)
+2017-07-26T13:46:31.3237650+03:00 0HL6K2CU6F7BD [INF] Request finished in 4027.66ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T13:46:38.6537140+03:00 0HL6K2CU6F7BE [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T13:46:38.6762670+03:00 0HL6K2CU6F7BE [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:46:38.8424080+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T13:46:39.2585660+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T13:46:39.3582940+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T13:46:39.4607990+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T13:46:39.4991080+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T13:46:39.7205700+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.7670120+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.7785860+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8018160+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8117120+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8424900+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (2ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8518540+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8816420+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8894160+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.8983080+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:46:39.9360980+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T13:46:40.0135610+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T13:46:40.0481520+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (2ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)
+2017-07-26T13:47:04.7833210+03:00 0HL6K2CU6F7BE [INF] EXCEL - Region is: BNL (48fe0d47)
+2017-07-26T13:47:11.9587210+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [v].[Id], [v].[Name], [v].[VariableGroupId], [v0].[Id], [v0].[Code], [v0].[DataBgCol], [v0].[DataBgRow], [v0].[DataEndCol], [v0].[DataEndRow], [v0].[SheetName], [v0].[VariableId], [v0].[XlsRegionTypeId], [v0].[YearBgCol], [v0].[YearBgRow], [v0].[YearEndCol], [v0].[YearEndRow]
+FROM [Variables] AS [v]
+LEFT JOIN [VariableXls] AS [v0] ON [v0].[VariableId] = [v].[Id]
+WHERE [v].[Id] = @__id_0 (6438bdd5)
+2017-07-26T13:47:12.1812900+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (13ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0 (6438bdd5)
+2017-07-26T13:47:12.2602450+03:00 0HL6K2CU6F7BE [INF] Executed DbCommand (15ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255), @__p_1='?', @__p_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name]
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY (6438bdd5)
+2017-07-26T13:47:12.3029830+03:00 0HL6K2CU6F7BE [INF] EXCEL CELL Value: #VALUE! (ad9aa0ae)
+2017-07-26T13:47:13.3003030+03:00 0HL6K2CU6F7BE [INF] Executed action "NXS.Controllers.ExportDataController.XlsImportData (NXS)" in 34628.1157ms (afa2e885)
+2017-07-26T13:48:06.4217060+03:00 0HL6K2CU6F7BF [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:48:06.6288520+03:00  [INF] Connection id ""0HL6K2CTU3KO9"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-07-26T13:48:06.7752280+03:00 0HL6K2CU6F7BC [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:48:06.8605860+03:00 0HL6K2CU6F7BC [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-26T13:48:06.9144750+03:00 0HL6K2CU6F7BC [ERR] Connection id ""0HL6K2CTU3KO9"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-26T13:48:06.9197540+03:00 0HL6K2CU6F7BE [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Decimal.Parse(String s)
+   at NXS.Services.Excel.ExcelImportDataService.<ImportData>d__19.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Services/Excel/ExcelImportDataService.cs:line 155
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at NXS.Controllers.ExportDataController.<XlsImportData>d__6.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Controllers/ExportDataController.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__25.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:48:06.9446180+03:00 0HL6K2CU6F7BC [INF] Request finished in 218295.556ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-26T13:48:07.2338520+03:00 0HL6K2CU6F7BE [INF] Request finished in 88576.0986ms 500 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:48:35.4595060+03:00 0HL6K2CU6F7BG [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T13:48:35.4946570+03:00 0HL6K2CU6F7BG [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:48:35.5171040+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T13:48:35.6096060+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T13:48:35.6803940+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T13:48:36.0685710+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T13:48:36.0905030+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T13:48:36.1084580+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.1521070+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.1854720+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.2167140+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (2ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.2440160+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (3ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.2563830+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.2696400+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.3004630+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (2ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.3149330+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.3269480+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:48:36.3417340+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T13:48:36.3534770+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T13:48:36.3694180+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (1ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)
+2017-07-26T13:48:52.8517180+03:00 0HL6K2CU6F7BG [INF] EXCEL - Region is: BNL (48fe0d47)
+2017-07-26T13:48:58.8965300+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [v].[Id], [v].[Name], [v].[VariableGroupId], [v0].[Id], [v0].[Code], [v0].[DataBgCol], [v0].[DataBgRow], [v0].[DataEndCol], [v0].[DataEndRow], [v0].[SheetName], [v0].[VariableId], [v0].[XlsRegionTypeId], [v0].[YearBgCol], [v0].[YearBgRow], [v0].[YearEndCol], [v0].[YearEndRow]
+FROM [Variables] AS [v]
+LEFT JOIN [VariableXls] AS [v0] ON [v0].[VariableId] = [v].[Id]
+WHERE [v].[Id] = @__id_0 (6438bdd5)
+2017-07-26T13:48:59.0190470+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (16ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0 (6438bdd5)
+2017-07-26T13:48:59.0723650+03:00 0HL6K2CU6F7BG [INF] Executed DbCommand (44ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255), @__p_1='?', @__p_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name]
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY (6438bdd5)
+2017-07-26T13:48:59.0786780+03:00 0HL6K2CU6F7BG [INF] EXCEL CELL Value: #VALUE! (ad9aa0ae)
+2017-07-26T13:49:16.4313360+03:00 0HL6K2CU6F7BG [INF] Executed action "NXS.Controllers.ExportDataController.XlsImportData (NXS)" in 40936.4559ms (afa2e885)
+2017-07-26T13:49:16.4488310+03:00 0HL6K2CU6F7BG [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Decimal.Parse(String s)
+   at NXS.Services.Excel.ExcelImportDataService.<ImportData>d__19.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Services/Excel/ExcelImportDataService.cs:line 155
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at NXS.Controllers.ExportDataController.<XlsImportData>d__6.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Controllers/ExportDataController.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__25.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:49:16.4805460+03:00 0HL6K2CU6F7BG [INF] Request finished in 41019.3415ms 500 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:50:46.8793980+03:00 0HL6K2GM07MQ9 [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-26T13:50:47.7787940+03:00 0HL6K2GM07MQ9 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:50:52.4898330+03:00 0HL6K2GM07MQ9 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-26T13:50:52.8123860+03:00 0HL6K2GM07MQ9 [INF] User profile is available. Using '"/Users/andriyarysmyatov/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2017-07-26T13:50:55.7624920+03:00 0HL6K2GM07MQ9 [ERR] ERROR Error: jQuery requires a window with a document
+    at module.exports.module.exports (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:19055:12)
+    at HeaderComponent.ngAfterViewInit (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js:13654:9)
+    at callProviderLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15689:18)
+    at callElementProvidersLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15664:13)
+    at callLifecycleHooksChildrenFirst (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15648:17)
+    at checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16680:5)
+    at callViewAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:17035:21)
+    at execComponentViewsAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16967:13)
+    at Object.checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16678:5)
+    at ViewRef_.module.exports.ViewRef_.detectChanges (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:14746:63) (34058d77)
+2017-07-26T13:50:56.6049170+03:00 0HL6K2GM07MQ9 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 8921.7462ms (afa2e885)
+2017-07-26T13:50:56.6832980+03:00 0HL6K2GM07MQ9 [INF] Request finished in 9853.0571ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-26T13:50:56.7326270+03:00 0HL6K2GM07MQA [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gs9CuABfQKCtL-Q4LPfoQ4hbv3Rsz6MGH7oOziAIsAI   (e5be5b71)
+2017-07-26T13:50:58.1541610+03:00 0HL6K2GM07MQB [INF] Node will restart because file changed: /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js (23d2f42c)
+2017-07-26T13:50:59.4329410+03:00  [INF] webpack built 58c21f0dd06b3b8bb7f9 in 14256ms (2f96504e)
+2017-07-26T13:50:59.9507290+03:00 0HL6K2GM07MQA [INF] Request finished in 3221.112ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-26T13:51:01.9273900+03:00 0HL6K2GM07MQC [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-07-26T13:51:01.9358150+03:00 0HL6K2GM07MQB [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:51:02.2595180+03:00 0HL6K2GM07MQC [INF] Request finished in 332.1644ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-07-26T13:51:06.7051860+03:00 0HL6K2GM07MQD [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T13:52:33.1014010+03:00 0HL6K2GM07MQE [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T13:52:33.4855960+03:00 0HL6K2GM07MQE [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T13:52:34.4365180+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T13:52:35.2416760+03:00  [INF] Connection id ""0HL6K2GLNT1L4"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-07-26T13:52:35.4435440+03:00 0HL6K2GM07MQD [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T13:52:35.4534840+03:00 0HL6K2GM07MQD [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-26T13:52:35.4642770+03:00 0HL6K2GM07MQD [ERR] Connection id ""0HL6K2GLNT1L4"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-26T13:52:35.4742600+03:00 0HL6K2GM07MQD [INF] Request finished in 88765.1156ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-26T13:52:35.8917090+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T13:52:36.1395610+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (73ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T13:52:36.2696400+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T13:52:36.3016660+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T13:52:36.5615840+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6234080+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6336680+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6403850+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6485070+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6554820+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6644030+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (2ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6719880+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6790400+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.6870420+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T13:52:36.7749330+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T13:52:36.8251180+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T13:52:36.8564270+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (1ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)
+2017-07-26T13:52:48.9936360+03:00 0HL6K2GM07MQE [INF] EXCEL - Region is: BNL (48fe0d47)
+2017-07-26T13:52:56.0671990+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [v].[Id], [v].[Name], [v].[VariableGroupId], [v0].[Id], [v0].[Code], [v0].[DataBgCol], [v0].[DataBgRow], [v0].[DataEndCol], [v0].[DataEndRow], [v0].[SheetName], [v0].[VariableId], [v0].[XlsRegionTypeId], [v0].[YearBgCol], [v0].[YearBgRow], [v0].[YearEndCol], [v0].[YearEndRow]
+FROM [Variables] AS [v]
+LEFT JOIN [VariableXls] AS [v0] ON [v0].[VariableId] = [v].[Id]
+WHERE [v].[Id] = @__id_0 (6438bdd5)
+2017-07-26T13:52:56.2000760+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (14ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255)], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0 (6438bdd5)
+2017-07-26T13:52:56.3233190+03:00 0HL6K2GM07MQE [INF] Executed DbCommand (9ms) [Parameters=[@__queryObj_Name_0='?' (Size = 255), @__p_1='?', @__p_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name]
+FROM [SubVariables] AS [v]
+WHERE [v].[Name] = @__queryObj_Name_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY (6438bdd5)
+2017-07-26T13:52:56.3673740+03:00 0HL6K2GM07MQE [INF] EXCEL CELL Value: #VALUE! (ad9aa0ae)
+2017-07-26T15:22:26.4551700+03:00 0HL6K43T093AD [INF] Request starting HTTP/1.1 GET http://localhost:5000/   (e5be5b71)
+2017-07-26T15:22:27.7277900+03:00 0HL6K43T093AD [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:22:35.7229560+03:00 0HL6K43T093AD [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-26T15:22:36.1015480+03:00 0HL6K43T093AD [INF] User profile is available. Using '"/Users/andriyarysmyatov/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2017-07-26T15:22:38.8097760+03:00 0HL6K43T093AD [ERR] ERROR Error: jQuery requires a window with a document
+    at module.exports.module.exports (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:19055:12)
+    at HeaderComponent.ngAfterViewInit (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js:13654:9)
+    at callProviderLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15689:18)
+    at callElementProvidersLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15664:13)
+    at callLifecycleHooksChildrenFirst (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15648:17)
+    at checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16680:5)
+    at callViewAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:17035:21)
+    at execComponentViewsAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16967:13)
+    at Object.checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16678:5)
+    at ViewRef_.module.exports.ViewRef_.detectChanges (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:14746:63) (34058d77)
+2017-07-26T15:22:39.9391660+03:00 0HL6K43T093AE [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gs9CuABfQKCtL-Q4LPfoQ4hbv3Rsz6MGH7oOziAIsAI   (e5be5b71)
+2017-07-26T15:22:40.0071140+03:00 0HL6K43T093AD [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 12426.0585ms (afa2e885)
+2017-07-26T15:22:40.2184920+03:00 0HL6K43T093AD [INF] Request finished in 13837.918ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-26T15:22:41.8106990+03:00 0HL6K43T093AF [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T15:22:42.3121930+03:00 0HL6K43T093AF [INF] Node will restart because file changed: /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js (23d2f42c)
+2017-07-26T15:22:44.1205730+03:00  [INF] webpack built 58c21f0dd06b3b8bb7f9 in 20027ms (1f1bf919)
+2017-07-26T15:22:44.5548140+03:00 0HL6K43T093AE [INF] Request finished in 4615.537ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-26T15:22:46.6232670+03:00 0HL6K43T093AG [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-07-26T15:22:46.6510590+03:00 0HL6K43T093AH [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T15:22:47.0896020+03:00 0HL6K43T093AG [INF] Request finished in 468.4625ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-07-26T15:22:58.1124650+03:00 0HL6K43T093AI [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/regions   (e5be5b71)
+2017-07-26T15:22:58.1310160+03:00 0HL6K43T093AJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/keyparameters   (e5be5b71)
+2017-07-26T15:22:58.1311420+03:00 0HL6K43T093AK [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scenarios   (e5be5b71)
+2017-07-26T15:22:58.1661320+03:00 0HL6K43T093AL [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/keyparameterlevels   (e5be5b71)
+2017-07-26T15:22:58.7408390+03:00 0HL6K43T093AK [INF] Executing action method "NXS.Controllers.ScenarioController.GetScenarios (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:22:58.7408200+03:00 0HL6K43T093AJ [INF] Executing action method "NXS.Controllers.KeyParameterController.GetKeyParameters (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:22:58.7408200+03:00 0HL6K43T093AL [INF] Executing action method "NXS.Controllers.KeyParameterLevelController.GetKeyParameterLevels (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:22:58.7621000+03:00 0HL6K43T093AI [INF] Executing action method "NXS.Controllers.RegionsController.GetRegions (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:23:03.0539180+03:00 0HL6K43T093AL [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T15:23:03.0539030+03:00 0HL6K43T093AJ [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name]
+FROM [KeyParameterGroups] AS [m]
+ORDER BY [m].[Id] (6438bdd5)
+2017-07-26T15:23:03.0538830+03:00 0HL6K43T093AI [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name]
+FROM [ParentRegions] AS [m]
+ORDER BY [m].[Id] (6438bdd5)
+2017-07-26T15:23:03.0539200+03:00 0HL6K43T093AK [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T15:23:03.3963730+03:00 0HL6K43T093AI [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ParentRegions] AS [m]
+    WHERE [r].[ParentRegionId] = [m].[Id])
+ORDER BY [r].[ParentRegionId] (6438bdd5)
+2017-07-26T15:23:03.4076230+03:00 0HL6K43T093AJ [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k]
+WHERE EXISTS (
+    SELECT 1
+    FROM [KeyParameterGroups] AS [m]
+    WHERE [k].[KeyParameterGroupId] = [m].[Id])
+ORDER BY [k].[KeyParameterGroupId] (6438bdd5)
+2017-07-26T15:23:03.5435180+03:00 0HL6K43T093AK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:03.5435780+03:00 0HL6K43T093AL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:03.5927510+03:00 0HL6K43T093AK [INF] Executed action "NXS.Controllers.ScenarioController.GetScenarios (NXS)" in 5354.5856ms (afa2e885)
+2017-07-26T15:23:03.5935290+03:00 0HL6K43T093AL [INF] Executed action "NXS.Controllers.KeyParameterLevelController.GetKeyParameterLevels (NXS)" in 5355.5752ms (afa2e885)
+2017-07-26T15:23:03.6125490+03:00 0HL6K43T093AL [INF] Request finished in 5446.1526ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:03.6126170+03:00 0HL6K43T093AK [INF] Request finished in 5481.1021ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:03.7152800+03:00 0HL6K43T093AJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:03.7152850+03:00 0HL6K43T093AI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:03.7357580+03:00 0HL6K43T093AJ [INF] Executed action "NXS.Controllers.KeyParameterController.GetKeyParameters (NXS)" in 5497.8105ms (afa2e885)
+2017-07-26T15:23:03.7441700+03:00 0HL6K43T093AJ [INF] Request finished in 5612.9458ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:03.7563890+03:00 0HL6K43T093AI [INF] Executed action "NXS.Controllers.RegionsController.GetRegions (NXS)" in 5518.4371ms (afa2e885)
+2017-07-26T15:23:03.7678190+03:00 0HL6K43T093AI [INF] Request finished in 5656.104ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:04.9425500+03:00 0HL6K43T093AM [INF] Request starting HTTP/1.1 GET http://localhost:5000/uploadxls   (e5be5b71)
+2017-07-26T15:23:04.9641940+03:00 0HL6K43T093AM [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:23:04.9733610+03:00 0HL6K43T093AM [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-26T15:23:06.7108300+03:00 0HL6K43T093AM [ERR] ERROR Error: jQuery requires a window with a document
+    at module.exports.module.exports (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:19055:12)
+    at HeaderComponent.ngAfterViewInit (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/main-server.js:13654:9)
+    at callProviderLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15689:18)
+    at callElementProvidersLifecycles (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15664:13)
+    at callLifecycleHooksChildrenFirst (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:15648:17)
+    at checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16680:5)
+    at callViewAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:17035:21)
+    at execComponentViewsAction (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16967:13)
+    at Object.checkAndUpdateView (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:16678:5)
+    at ViewRef_.module.exports.ViewRef_.detectChanges (/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/ClientApp/dist/vendor.js:14746:63) (34058d77)
+2017-07-26T15:23:06.8018460+03:00 0HL6K43T093AM [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 1837.6235ms (afa2e885)
+2017-07-26T15:23:06.8104070+03:00 0HL6K43T093AM [INF] Request finished in 1867.6828ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-26T15:23:06.8519320+03:00 0HL6K43T093AN [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gs9CuABfQKCtL-Q4LPfoQ4hbv3Rsz6MGH7oOziAIsAI   (e5be5b71)
+2017-07-26T15:23:07.1755780+03:00 0HL6K43T093AN [INF] Request finished in 323.6344ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-26T15:23:08.2647150+03:00 0HL6K43T093AO [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-07-26T15:23:08.3762030+03:00  [INF] Connection id ""0HL6K43SJ9348"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-07-26T15:23:08.4601690+03:00 0HL6K43T093AP [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   (e5be5b71)
+2017-07-26T15:23:08.5843930+03:00 0HL6K43T093AH [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T15:23:08.5877160+03:00 0HL6K43T093AP [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/wwwroot/favicon.ico"' (27b0a520)
+2017-07-26T15:23:08.6009570+03:00 0HL6K43T093AH [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-26T15:23:08.6184810+03:00 0HL6K43T093AH [ERR] Connection id ""0HL6K43SJ9348"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-26T15:23:08.6290640+03:00 0HL6K43T093AH [INF] Request finished in 21977.0132ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-26T15:23:08.6716190+03:00 0HL6K43T093AP [INF] Request finished in 211.4385ms 200 image/x-icon (15c52c40)
+2017-07-26T15:23:14.0957760+03:00 0HL6K43T093AQ [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/region/0/scenario/1/keyparameter/4/keyparameterlevel/1/xls   (e5be5b71)
+2017-07-26T15:23:14.5826770+03:00 0HL6K43T093AQ [INF] Executing action method "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" with arguments (["0", "1", "4", "1"]) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:23:15.0428750+03:00 0HL6K43T093AQ [INF] Executed DbCommand (148ms) [Parameters=[@__keyParameterId_0='?', @__keyParameterLevelId_1='?', @__scenarioId_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[KeyParameterId] = @__keyParameterId_0) AND ([x].[KeyParameterLevelId] = @__keyParameterLevelId_1)) AND ([x].[ScenarioId] = @__scenarioId_2) (6438bdd5)
+2017-07-26T15:23:15.0678790+03:00 0HL6K43T093AQ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:15.0807360+03:00 0HL6K43T093AQ [INF] Executed action "NXS.Controllers.XlsUploadController.GetXlsFiles (NXS)" in 959.5198ms (afa2e885)
+2017-07-26T15:23:15.0913820+03:00 0HL6K43T093AQ [INF] Request finished in 995.4181ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:23.5115880+03:00 0HL6K43T093AR [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/region/0/scenario/1/keyparameter/4/keyparameterlevel/1/xls multipart/form-data; boundary=----WebKitFormBoundarygJoBUZT8ywKTydU2 6386395 (e5be5b71)
+2017-07-26T15:23:26.3536580+03:00 0HL6K43T093AR [INF] Executing action method "NXS.Controllers.XlsUploadController.Upload (NXS)" with arguments (["0", "4", "1", "1", "Microsoft.AspNetCore.Http.Internal.FormFile"]) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:23:27.7357890+03:00 0HL6K43T093AR [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 255), @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [XlsUploads] ([FileName], [KeyParameterId], [KeyParameterLevelId], [RegionId], [ScenarioId], [UploadDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [XlsUploads]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (6438bdd5)
+2017-07-26T15:23:27.8121400+03:00 0HL6K43T093AR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-26T15:23:27.8224700+03:00 0HL6K43T093AR [INF] Executed action "NXS.Controllers.XlsUploadController.Upload (NXS)" in 4269.9629ms (afa2e885)
+2017-07-26T15:23:27.8443440+03:00 0HL6K43T093AR [INF] Request finished in 4332.5351ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-26T15:23:32.6205590+03:00 0HL6K43T093AS [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T15:23:32.6333250+03:00 0HL6K43T093AS [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:23:32.7494400+03:00 0HL6K43T093AS [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T15:23:32.9182610+03:00 0HL6K43T093AS [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T15:23:33.1344970+03:00 0HL6K43T093AS [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T15:23:33.2492270+03:00 0HL6K43T093AS [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T15:23:33.2693340+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T15:23:33.5294170+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.5492790+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.5599080+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.5692130+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.5794910+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.5924290+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.6018260+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.6300310+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.6435900+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.6526620+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:23:33.7156340+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T15:23:33.7527410+03:00 0HL6K43T093AS [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T15:23:33.7904870+03:00 0HL6K43T093AS [INF] Executed DbCommand (1ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)
+2017-07-26T15:23:35.6179790+03:00 0HL6K43T093AS [INF] Executed action "NXS.Controllers.ExportDataController.XlsImportData (NXS)" in 2988.1797ms (afa2e885)
+2017-07-26T15:23:35.6392150+03:00 0HL6K43T093AS [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at NXS.Services.Excel.ExcelImportDataService.<ImportData>d__19.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Services/Excel/ExcelImportDataService.cs:line 99
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at NXS.Controllers.ExportDataController.<XlsImportData>d__6.MoveNext() in /Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/Controllers/ExportDataController.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionMethodAsync>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextActionFilterAsync>d__25.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeNextResourceFilter>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-26T15:23:35.8529990+03:00 0HL6K43T093AS [INF] Request finished in 3235.0273ms 500 text/html; charset=utf-8 (15c52c40)
+2017-07-26T15:24:07.2437200+03:00 0HL6K43T093AT [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/ExportData/xlsimportdata application/json 2 (e5be5b71)
+2017-07-26T15:24:07.2941110+03:00 0HL6K43T093AT [INF] Executing action method "NXS.Controllers.ExportDataController.XlsImportData (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-26T15:24:07.5161220+03:00 0HL6K43T093AT [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM dbo.Data (6438bdd5)
+2017-07-26T15:24:07.7433270+03:00 0HL6K43T093AT [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-07-26T15:24:07.8819970+03:00 0HL6K43T093AT [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?', @__p_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY (6438bdd5)
+2017-07-26T15:24:07.8934110+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k] (6438bdd5)
+2017-07-26T15:24:07.9263770+03:00 0HL6K43T093AT [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-07-26T15:24:07.9369150+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:07.9600460+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.0124820+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.0363870+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.0456550+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.0700210+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.0789940+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.1175460+03:00 0HL6K43T093AT [INF] Executed DbCommand (6ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.1260730+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.1366060+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[@__8__locals1_scenario_Id_0='?', @__8__locals2_keyParameter_Id_1='?', @__keyParameterLevel_Id_2='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[FileName], [x].[KeyParameterId], [x].[KeyParameterLevelId], [x].[RegionId], [x].[ScenarioId], [x].[UploadDate]
+FROM [XlsUploads] AS [x]
+WHERE (([x].[ScenarioId] = @__8__locals1_scenario_Id_0) AND ([x].[KeyParameterId] = @__8__locals2_keyParameter_Id_1)) AND ([x].[KeyParameterLevelId] = @__keyParameterLevel_Id_2) (6438bdd5)
+2017-07-26T15:24:08.1457690+03:00 0HL6K43T093AT [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r] (6438bdd5)
+2017-07-26T15:24:08.1563940+03:00 0HL6K43T093AT [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Name]
+FROM [XlsRegionTypes] AS [v]
+WHERE [v].[Name] = N'General region' (6438bdd5)
+2017-07-26T15:24:08.1674440+03:00 0HL6K43T093AT [INF] Executed DbCommand (3ms) [Parameters=[@__currRegionType_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Code], [v].[DataBgCol], [v].[DataBgRow], [v].[DataEndCol], [v].[DataEndRow], [v].[SheetName], [v].[VariableId], [v].[XlsRegionTypeId], [v].[YearBgCol], [v].[YearBgRow], [v].[YearEndCol], [v].[YearEndRow]
+FROM [VariableXls] AS [v]
+WHERE [v].[XlsRegionTypeId] = @__currRegionType_Id_0 (6438bdd5)

@@ -2,6 +2,7 @@ export interface SaveVariableXls {
     id: number;
     variableGroupId: number,
     variableId: number;
+    xlsRegionTypeId: number;
     sheetName: string;
     code: string;
     yearBgRow: number;

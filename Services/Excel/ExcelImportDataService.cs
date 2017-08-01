@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Persistence;
@@ -19,6 +20,8 @@ namespace NXS.Services.Excel
         private const string GlobalResultsSheetName = "Global Results";
         private const string GeneralParametersSheetName = "General parameters";
 
+        private string[] subVariableSkipedConst = {"total"};
+
         private const byte RegionRow = 1;
         private const byte RegionCol = 2;
 
@@ -32,6 +35,7 @@ namespace NXS.Services.Excel
         private readonly NxsDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
         public string WorkBookBasePath { get; set; }
+        private readonly ILogger _logger;
 
         public ExcelImportDataService(IScenarioRepository scenarioRepository,
                                         IRegionRepository regionRepository,
@@ -39,7 +43,8 @@ namespace NXS.Services.Excel
                                         ISubVariableRepository subVariableRepository,
                                         IDataRepository dataRepository,
                                         IUnitOfWork unitOfWork,
-                                        NxsDbContext context)
+                                        NxsDbContext context,
+                                        ILogger<ExcelImportDataService> logger)
         {
             _scenarioRepository = scenarioRepository;
             _regionRepository = regionRepository;
@@ -49,6 +54,7 @@ namespace NXS.Services.Excel
             _dataRepository = dataRepository;
             _context = context;
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
 
         public async Task ImportData()
@@ -77,7 +83,8 @@ namespace NXS.Services.Excel
                         var fileInfo = new FileInfo(filePath);
 
                         var regions = _context.Regions.ToList();
-                        var variableXls = _context.VariableXls.ToList();
+                        var currRegionType = _context.XlsRegionTypes.FirstOrDefault(v => v.Name == "General region");
+                        var variableXls = _context.VariableXls.Where(v => v.XlsRegionTypeId == currRegionType.Id).ToList();
 
                         // Open Xls file
                         using (var package = new ExcelPackage(fileInfo))
@@ -87,8 +94,13 @@ namespace NXS.Services.Excel
 
                             foreach (var region in regions)
                             {
-                                // change current region in xls 
+                                // change current region in xls     
+
                                 regionSheet.Cells[RegionRow, RegionCol].Value = region.Name;
+                                //regionSheet.Calculate();
+
+                                _logger.LogInformation($"EXCEL - Region is: {regionSheet.Cells[RegionRow, RegionCol].Value}");                                
+                                package.Save();
 
                                 foreach (var varXls in variableXls)
                                 {
@@ -109,6 +121,8 @@ namespace NXS.Services.Excel
                                     for (var row = varXls.DataBgRow; row <= varXls.DataEndRow; row++)
                                     {
                                         var subVariableName = regionSheet.Cells[row, varXls.DataBgCol].Value.ToString();
+                                        
+                                        if(subVariableSkipedConst.Contains(subVariableName)) continue;
 
                                         var subVariable = await GetSubVariable(subVariableName);
                                         if (subVariable == null)
@@ -121,6 +135,8 @@ namespace NXS.Services.Excel
                                         for (var col = varXls.DataBgCol + 1; col <= varXls.DataEndCol; col++)
                                         {
                                             var dataVal = regionSheet.Cells[row, col].Value;
+                                            _logger.LogInformation($"EXCEL CELL Value: {dataVal}");
+
                                             if (dataVal == null) continue;
 
                                             string dataValStr = string.Empty;
@@ -155,6 +171,7 @@ namespace NXS.Services.Excel
                                         }
                                     }
                                 }
+                                break;
                             }
                         }
                     }

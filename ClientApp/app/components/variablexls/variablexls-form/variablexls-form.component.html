@@ -8,12 +8,12 @@
         </div>
 
         <div class="row">
-            <form class="col-lg-8 col-lg-offset-2"  #f="ngForm" (ngSubmit)="submit()" novalidate>
+            <form class="col-lg-8 col-lg-offset-2" #f="ngForm" (ngSubmit)="submit()" novalidate>
                 <div class="row">
                     <div class="col-xs-6 form-group">
                         <label for="variablegroups">Variable Groups</label>
                         <select id="variablegroups" class="form-control" (change)="onVariableGroupChange()" [(ngModel)]="variableXls.variableGroupId"
-                        name="variableGroup">
+                            name="variableGroup">
                             <option value=""></option>
                             <option *ngFor="let vg of variableGroups" value="{{ vg.id }}">{{ vg.name }}</option>
                         </select>
@@ -25,10 +25,16 @@
                             <option *ngFor="let v of variables" value="{{ v.id }}">{{ v.name }}</option>
                         </select>
                     </div>
-
-                    <div class="col-xs-12 form-group">
+                    <div class="col-xs-6 form-group">
+                        <label for="regiontype">Region Type</label>
+                        <select id="regiontype" class="form-control" (change)="onRegionTypeChange()" [(ngModel)]="variableXls.xlsRegionTypeId" name="variableXls.xlsRegionTypeId">
+                            <option value=""></option>
+                            <option *ngFor="let rt of regionTypes" value="{{ rt.id }}">{{ rt.name }}</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6 form-group">
                         <label for="sheetName">Sheet name</label>
-                        <input id="sheetName" type="text" class="form-control" [(ngModel)]="variableXls.sheetName" name="sheetName" >
+                        <input id="sheetName" type="text" class="form-control" [(ngModel)]="variableXls.sheetName" name="sheetName">
                     </div>
                 </div>
                 <h3> Row and Col coordinates for Years </h3>

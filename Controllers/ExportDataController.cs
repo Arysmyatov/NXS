@@ -37,6 +37,7 @@ namespace NXS.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> XlsImportData()
         {
+            await XlsRemoveAllData();
             string webRootPath = _hostingEnvironment.WebRootPath;
             string contentRootPath = _hostingEnvironment.ContentRootPath;
 

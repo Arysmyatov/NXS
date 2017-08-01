@@ -43,6 +43,7 @@ namespace NXS
             services.AddScoped<IVariableRepository, VariableRepository>();
             services.AddScoped<ISubVariableRepository, SubVariableRepository>();
             services.AddScoped<IDataRepository, DataRepository>();
+            services.AddScoped<IVariableXlsRepository, VariableXlsRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
@@ -58,6 +59,7 @@ namespace NXS
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddFile("Logs/NXS-log-{Date}.txt");
             loggerFactory.AddDebug();
 
             if (env.IsDevelopment())

@@ -22,5 +22,6 @@ namespace NXS.Persistence
         public DbSet<KeyParameterLevel> KeyParameterLevels { get; set; }
         public DbSet<Data> Data { get; set; }
         public DbSet<XlsUpload> XlsUploads { get; set; }
+        public DbSet<XlsRegionType> XlsRegionTypes { get; set; }
     }
 }

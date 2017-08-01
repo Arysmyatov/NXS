@@ -12,12 +12,16 @@ import { SaveVariableXls } from "../../../../models/variablexls";
 export class VariableFormComponent implements OnInit {
     variables: any[];
     variableGroups: any[];
+    regionTypes: any[];
     selectedVariable: Variable;
+    selectedRegionType: any;
     variableGroup: any = {};
+    query: any = {};
     variableXls: SaveVariableXls =
     {
         id: 0,
         variableId: 0,
+        xlsRegionTypeId: 0,
         variableGroupId: 0,
         sheetName: "",
         code: "",
@@ -40,6 +44,13 @@ export class VariableFormComponent implements OnInit {
                 this.variableGroups = variables
             }
         );
+
+        this.graphDataService.getXlsRegionTypes().subscribe(
+            regionTypes => {
+                this.regionTypes = regionTypes
+            }
+        );
+
     }
 
     onVariableGroupChange() {
@@ -48,13 +59,26 @@ export class VariableFormComponent implements OnInit {
     }
 
     onVariableChange() {
-        var selectedVariable = this.variables.find(vg => vg.id == this.variableXls.variableId);
-        if (selectedVariable.variableXlsId == 0) {
-            this.setVariableXlsDefault();
-            return;
+        this.updateXlsVariable();        
+    }
+
+    onRegionTypeChange() {
+        this.updateXlsVariable();
+    }
+
+    updateXlsVariable() {
+        if(!this.variableXls.variableId ||
+           !this.variableXls.xlsRegionTypeId) {
+               return;
         }
-        this.graphDataService.getVariableXls(selectedVariable.variableXlsId).subscribe(
-            variableXls => this.setVariableXls(variableXls));
+
+        this.query.VariableId = this.variableXls.variableId;
+        this.query.XlsRegionTypeId = this.variableXls.xlsRegionTypeId;
+
+        this.graphDataService.getVariableXls(this.query).subscribe(
+            variableXls => this.setVariableXls(variableXls),
+            result => this.setVariableXlsDefault()
+        );
     }
 
     submit() {
@@ -108,6 +132,7 @@ export class VariableFormComponent implements OnInit {
     private setVariableXls(v: SaveVariableXls) {
         this.variableXls.id = v.id;
         this.variableXls.variableId = v.variableId;
+        this.variableXls.xlsRegionTypeId = v.xlsRegionTypeId;
         this.variableXls.sheetName = v.sheetName;
         this.variableXls.code = v.code;
         this.variableXls.yearBgRow = v.yearBgRow;

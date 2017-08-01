@@ -214,6 +214,8 @@ namespace NXS.Migrations
 
                     b.Property<int>("VariableId");
 
+                    b.Property<int>("XlsRegionTypeId");
+
                     b.Property<int>("YearBgCol");
 
                     b.Property<int>("YearBgRow");
@@ -227,7 +229,21 @@ namespace NXS.Migrations
                     b.HasIndex("VariableId")
                         .IsUnique();
 
+                    b.HasIndex("XlsRegionTypeId");
+
                     b.ToTable("VariableXls");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.XlsRegionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("XlsRegionTypes");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.XlsUpload", b =>
@@ -322,6 +338,11 @@ namespace NXS.Migrations
                     b.HasOne("NXS.Core.Models.Variable")
                         .WithOne("VariableXls")
                         .HasForeignKey("NXS.Core.Models.VariableXls", "VariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.XlsRegionType")
+                        .WithMany("VariableXls")
+                        .HasForeignKey("XlsRegionTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
