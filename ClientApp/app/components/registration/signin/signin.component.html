@@ -1,16 +1,30 @@
 <section class="bg-dark-blue" id="signin">
     <div class="container">
         <div class="row">
-            <form class="col-lg-4 col-lg-offset-4">
+            <form #f="ngForm" class="col-lg-4 col-lg-offset-4" (ngSubmit)="signIn(f)" novalidate>
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+                    <input id="email" type="text" class="form-control" [(ngModel)]="signinData.userName" name="userName" required #userName="ngModel"
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                    <div class="alert alert-danger" *ngIf="userName.touched && userName.errors && userName.errors.required">Please enter email.</div>
+                    <div class="alert alert-danger" *ngIf="userName.touched && userName.errors && userName.errors.pattern">Please enter correct email.</div>
                 </div>
+
                 <div class="form-group">
-                    <label for="pass">Password:</label>
-                    <input type="password" class="form-control" id="pass">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" class="form-control" [(ngModel)]="signinData.password" name="password" required #password="ngModel">
+                    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Please enter correct password.</div>
                 </div>
-                <button type="submit" class="btn btn-default">Sign in</button>
+
+
+                <div *ngIf="errors" class="alert alert-danger" role="alert">
+                    <strong>Error</strong> {{errors}}
+                </div>
+
+                <div id="signin-btn" class="form-group">
+                    <button type="submit" class="btn btn-default">Sign In</button> 
+                </div>
+
             </form>
         </div>
     </div>

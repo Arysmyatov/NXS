@@ -13,7 +13,7 @@
             <a routerLink="/contactus" routerLinkActive="active" class="menu-item">Contact us</a>
         </li>
         <li>
-            <a routerLink="/admin" routerLinkActive="active" class="menu-item">Admin</a>
+            <a *ngIf="auth.isLoggedIn()" routerLink="/admin" routerLinkActive="active" class="menu-item">Admin</a>
         </li>        
     </ul>
 </div>

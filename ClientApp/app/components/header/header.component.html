@@ -8,7 +8,9 @@
 			<a class="navbar-brand page-scroll" href="#page-top" routerLink="/home">The resource nexus</a>
 		</div>
 
-        <nxs-menu-reg></nxs-menu-reg>
+		<nxs-menu-reg *ngIf="!auth.isLoggedIn()"></nxs-menu-reg>
+		<nxs-user *ngIf="auth.isLoggedIn()"></nxs-user>
+		
         <nxs-menu></nxs-menu>
 
 	</div>

@@ -1,0 +1,35 @@
+div .alert.alert-danger {
+    margin-top: 3px;
+}
+
+#update-btn {
+    float: right;
+}
+
+#signout {
+    color: #bac2c6;
+    font-size: 16px;
+}
+
+#signout:hover {
+    color: white;
+    cursor: pointer;
+}
+
+#signout-wrapper {
+    float: right;
+    margin-top: 10px;
+}
+
+#signout-wrapper a {
+    float: right;
+}
+
+#user-profile-header {
+    margin-bottom: 24px;
+}
+
+#head-wrapper {
+    margin: 0px !important;
+    padding: 0px !important;
+}

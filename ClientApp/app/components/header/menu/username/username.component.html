@@ -1,0 +1,12 @@
+<div class="collapse navbar-collapse" id="nxs-menu-user">
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a routerLink="/userprofile" routerLinkActive="active" class="menu-item" title="User profile">{{ authService.userName }}</a>
+        </li>
+        <li>
+            <a id="sign-out" routerLink="/userprofile" routerLinkActive="active" class="menu-item" title="Sign Out" (click)="signout()">       
+                 <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>

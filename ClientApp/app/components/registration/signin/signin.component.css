@@ -1,0 +1,7 @@
+div .alert.alert-danger{
+    margin-top: 3px;
+}
+
+#signin-btn {
+    float: right;
+}

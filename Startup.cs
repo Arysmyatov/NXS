@@ -14,11 +14,22 @@ using AutoMapper;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Services.Excel;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using FluentValidation.AspNetCore;
+using NXS.Core.Auth;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using NXS.Helpers;
+using Microsoft.AspNetCore.Http;
 
 namespace NXS
 {
     public class Startup
     {
+        private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
+        private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
+
+
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -34,7 +45,7 @@ namespace NXS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<XlsUploadSettings>(Configuration.GetSection("XlsUploadSettings"));            
+            services.Configure<XlsUploadSettings>(Configuration.GetSection("XlsUploadSettings"));
             services.AddAutoMapper();
             services.AddScoped<IXlsUploadRepository, XLsUplodRepository>();
             services.AddScoped<IRegionRepository, RegionRepository>();
@@ -48,11 +59,44 @@ namespace NXS
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            // Add framework services.
-            services.AddMvc();
+            services.AddSingleton<IJwtFactory, JwtFactory>();
+
+            // jwt wire up
+            // Get options from app settings
+            var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
+
+            // Configure JwtIssuerOptions
+            services.Configure<JwtIssuerOptions>(options =>
+            {
+                options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
+                options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
+                options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+            });
+
+            // api user claim policy
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
+            });
+
+            services.AddIdentity<NxsUser, IdentityRole>
+                (o =>
+                {
+                    // configure identity options
+                    o.Password.RequireDigit = false;
+                    o.Password.RequireLowercase = false;
+                    o.Password.RequireUppercase = false;
+                    o.Password.RequireNonAlphanumeric = false;
+                    o.Password.RequiredLength = 6;
+                })
+                .AddEntityFrameworkStores<NxsDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,6 +119,31 @@ namespace NXS
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidIssuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)],
+
+                ValidateAudience = true,
+                ValidAudience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)],
+
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = _signingKey,
+
+                RequireExpirationTime = false,
+                ValidateLifetime = false,
+                ClockSkew = TimeSpan.Zero
+            };
+
+            app.UseJwtBearerAuthentication(new JwtBearerOptions
+            {
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                TokenValidationParameters = tokenValidationParameters
+            });
+
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>

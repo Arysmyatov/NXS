@@ -20,8 +20,6 @@ namespace NXS.Core.Models
 
         public VariableXls VariableXls { get; set; }
 
-        public string Code { get; set; }
-
         public Variable()
         {
             VariableXls = new VariableXls();

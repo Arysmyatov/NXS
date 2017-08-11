@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BusyModule, BusyConfig } from 'angular2-busy';
 import { VariableFormComponent, UploadXlsFileComponent, AdminHomeComponent } from "./index";
 import { VariableXlsRoutingModule } from "./variablexls-routing.module";
+import { AuthGuard } from "../../services/auth-gaurd.service";
 
 
 @NgModule({
@@ -26,5 +27,6 @@ import { VariableXlsRoutingModule } from "./variablexls-routing.module";
         UploadXlsFileComponent,
         AdminHomeComponent
     ]
+    
 })
 export class VariableXlsModule { }

@@ -24,6 +24,11 @@ namespace NXS.Mapping
             CreateMap<XlsRegionType, XlsRegionTypeResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>();
             CreateMap<XlsUpload, XlsUploadResource>();
+            CreateMap<UserProfileResource, NxsUser>();
+            CreateMap<NxsUser, UserProfileResource>();
+            CreateMap<RegistrationInfoResource, NxsUser>()
+                .ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
+
         }
     }
 }

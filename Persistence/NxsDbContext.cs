@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NXS.Core.Models;
 
 namespace NXS.Persistence
 {
-    public class NxsDbContext : DbContext
+    public class NxsDbContext : IdentityDbContext<NxsUser>
     {
         public NxsDbContext(DbContextOptions<NxsDbContext> options)
             : base(options)

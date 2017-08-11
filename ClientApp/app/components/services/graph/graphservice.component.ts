@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { TableEntities } from './tableEntity';
 import { TableEntity } from './tableEntity';
 import { bootstrap } from "bootstrap";

@@ -1,0 +1,1498 @@
+2017-08-11T18:17:44.6558940+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:17:52.9866920+03:00  [ERR]  (00000000)
+2017-08-11T18:17:52.9878710+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:17:55.2185820+03:00  [ERR]  (00000000)
+2017-08-11T18:17:55.2187170+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:17:55.3399630+03:00  [INF] webpack built 0ca3c43fe1f1ed014582 in 10736ms (020f1af5)
+2017-08-11T18:17:55.4361450+03:00  [ERR] Hash: 0ca3c43fe1f1ed014582
+Version: webpack 2.5.1
+Time: 10736ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.24a9ad23cccb084897c5.hot-update.js   4.84 kB       0  [emitted]         main-client
+    24a9ad23cccb084897c5.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.24a9ad23cccb084897c5.hot-update.js.map   5.59 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.24a9ad23cccb084897c5.hot-update.js, main-client.js.map, 0.24a9ad23cccb084897c5.hot-update.js.map (main-client) 974 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+    [2] delegated ./node_modules/@angular/core/@angular/core.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+   [91] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [92] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [93] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [100] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [177] ./~/querystring-es3/index.js 127 bytes {0}
+  [178] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [428] ./~/strip-ansi/index.js 161 bytes {0}
+  [431] ./wwwroot/less/creative.less 1.16 kB {0}
+  [447] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [457] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [480] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 467 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/registration/userprofile/userprofile.component.ts:35:26 
+    TS2339: Property 'updateProfile' does not exist on type 'AuthService'. (5701caab)
+2017-08-11T18:18:20.5453210+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:18:23.0325640+03:00  [ERR]  (00000000)
+2017-08-11T18:18:23.0339020+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:18:25.1101570+03:00  [ERR]  (00000000)
+2017-08-11T18:18:25.1102570+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:18:25.2894600+03:00  [INF] webpack built f6b431be413b0c700b80 in 4713ms (e2ef1b87)
+2017-08-11T18:18:25.3982190+03:00  [ERR] Hash: f6b431be413b0c700b80
+Version: webpack 2.5.1
+Time: 4713ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.0ca3c43fe1f1ed014582.hot-update.js   6.59 kB       0  [emitted]         main-client
+    0ca3c43fe1f1ed014582.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.0ca3c43fe1f1ed014582.hot-update.js.map   6.99 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.0ca3c43fe1f1ed014582.hot-update.js, main-client.js.map, 0.0ca3c43fe1f1ed014582.hot-update.js.map (main-client) 977 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [91] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [92] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [93] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [100] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [177] ./~/querystring-es3/index.js 127 bytes {0}
+  [178] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [431] ./wwwroot/less/creative.less 1.16 kB {0}
+  [447] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [448] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [451] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [457] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [480] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 468 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/registration/userprofile/userprofile.component.ts:37:26 
+    TS2339: Property 'updateProfile' does not exist on type 'AuthService'. (e4451265)
+2017-08-11T18:18:32.9128120+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:18:35.2281190+03:00  [INF] webpack built 361b447efcb1a1a5f8f2 in 2296ms (7c7ab9d2)
+2017-08-11T18:18:36.8564410+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:18:38.5048970+03:00  [INF] webpack built 361b447efcb1a1a5f8f2 in 1619ms (78e66d49)
+2017-08-11T18:19:33.9801780+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:19:36.1338800+03:00  [INF] webpack built 361b447efcb1a1a5f8f2 in 2124ms (ce051c42)
+2017-08-11T18:26:40.4120270+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:26:44.8301860+03:00  [INF] webpack built 615ca5ca44e3c5888d5e in 4386ms (74d04d11)
+2017-08-11T18:27:21.6111900+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:27:22.6354810+03:00  [ERR]  (00000000)
+2017-08-11T18:27:22.6356180+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:27:24.3053580+03:00  [ERR]  (00000000)
+2017-08-11T18:27:24.3056030+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:27:24.3926920+03:00  [INF] webpack built 704e1b2b5fbd35bb1093 in 2759ms (154e859e)
+2017-08-11T18:27:24.5059950+03:00  [ERR] Hash: 704e1b2b5fbd35bb1093
+Version: webpack 2.5.1
+Time: 2759ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.615ca5ca44e3c5888d5e.hot-update.js   3.49 kB       0  [emitted]         main-client
+    615ca5ca44e3c5888d5e.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.615ca5ca44e3c5888d5e.hot-update.js.map   4.31 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.615ca5ca44e3c5888d5e.hot-update.js, main-client.js.map, 0.615ca5ca44e3c5888d5e.hot-update.js.map (main-client) 977 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [91] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [92] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [93] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [100] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [177] ./~/querystring-es3/index.js 127 bytes {0}
+  [178] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [431] ./wwwroot/less/creative.less 1.16 kB {0}
+  [447] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [448] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [451] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [457] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [480] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 468 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/registration/userprofile/userprofile.component.ts:34:46 
+    TS1005: ';' expected. (1372b70e)
+2017-08-11T18:28:21.9127780+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:28:25.6276910+03:00  [INF] webpack built 5d3c8ef397e94a21e74f in 3695ms (422debe9)
+2017-08-11T18:28:33.0156380+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:28:35.4786800+03:00  [INF] webpack built 72ae0bc9246847773318 in 2459ms (46748676)
+2017-08-11T18:28:38.4553050+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:28:39.8097870+03:00  [INF] webpack built 72ae0bc9246847773318 in 1321ms (8bcb9810)
+2017-08-11T18:28:47.4085650+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:28:48.4410010+03:00  [INF] webpack built 72ae0bc9246847773318 in 1007ms (4a9ee6a8)
+2017-08-11T18:28:51.5167920+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:28:52.9485060+03:00  [INF] webpack built 72ae0bc9246847773318 in 1407ms (9cf5a757)
+2017-08-11T18:29:10.1262680+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:29:12.7267420+03:00  [INF] webpack built b8e55320c70c749891f1 in 2525ms (6f96c043)
+2017-08-11T18:29:13.0574410+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:29:13.4211260+03:00  [INF] webpack built b8e55320c70c749891f1 in 328ms (3aaa81b0)
+2017-08-11T18:35:05.7491410+03:00  [INF] webpack built f21816cdffe0d093babd in 13034ms (dc6f893f)
+2017-08-11T18:41:53.6952840+03:00  [INF] webpack built 9580dc516ff8fc4a2bfc in 14773ms (d3e4403c)
+2017-08-11T18:46:20.9948070+03:00 0HL70Q0EFIOO3 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 59 (e5be5b71)
+2017-08-11T18:46:21.5848150+03:00 0HL70Q0EFIOO3 [INF] User profile is available. Using '"/Users/andriyarysmyatov/.aspnet/DataProtection-Keys"' as key repository; keys will not be encrypted at rest. (a162847e)
+2017-08-11T18:46:21.8470120+03:00 0HL70Q0EFIOO3 [INF] Executing action method "NXS.Controllers.AuthController.Post (NXS)" with arguments (["CredentialsResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:46:24.2044560+03:00 0HL70Q0EFIOO3 [INF] Executed DbCommand (158ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:46:24.4904270+03:00 0HL70Q0EFIOO3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:46:24.6032600+03:00 0HL70Q0EFIOO3 [INF] Executed action "NXS.Controllers.AuthController.Post (NXS)" in 3203.3664ms (afa2e885)
+2017-08-11T18:46:24.6288200+03:00 0HL70Q0EFIOO3 [INF] Request finished in 3662.584ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-11T18:46:35.4949140+03:00 0HL70Q0EFIOO4 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/tryCatch.js.map   (e5be5b71)
+2017-08-11T18:46:35.4953360+03:00 0HL70Q0EFIOO5 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js.map   (e5be5b71)
+2017-08-11T18:46:35.5371700+03:00 0HL70Q0EFIOO6 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css?v=6V1XE9pBNVWZaG1AlsRZYfHMbu0miv3EsiQv-8jKmIg   (e5be5b71)
+2017-08-11T18:46:35.6357640+03:00 0HL70Q0EFIOO6 [INF] The file "/dist/vendor.css" was not modified (f1f8d725)
+2017-08-11T18:46:35.6469460+03:00 0HL70Q0EFIOO6 [INF] Request finished in 109.7266ms 304 text/css (15c52c40)
+2017-08-11T18:46:35.7206360+03:00 0HL70Q0EFIOO4 [INF] Request finished in 225.0175ms 404  (15c52c40)
+2017-08-11T18:46:35.7370160+03:00 0HL70Q0EFIOO5 [INF] Request finished in 239.1976ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T18:47:38.5023290+03:00 0HL70Q0EFIOO7 [INF] Request starting HTTP/1.1 GET http://localhost:5000/userprofile   (e5be5b71)
+2017-08-11T18:47:38.5089930+03:00 0HL70Q0EFIOO7 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:47:40.7787930+03:00 0HL70Q0EFIOO7 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T18:47:41.1728070+03:00 0HL70Q0EFIOO7 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 2665.4501ms (afa2e885)
+2017-08-11T18:47:41.1769630+03:00 0HL70Q0EFIOO7 [INF] Request finished in 2674.4843ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T18:47:41.3786490+03:00 0HL70Q0EFIOO8 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=83XtaLnj4n3VcVeHP1TBoU_H5jUyZQJ5qCvNEIL-co0   (e5be5b71)
+2017-08-11T18:47:41.3848000+03:00 0HL70Q0EFIOO9 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.js?v=1SSFCzDG9fcXVPXrJvJ89wdG-zqJrKZHrZz4DgVbAUc   (e5be5b71)
+2017-08-11T18:47:41.4095020+03:00 0HL70Q0EFIOO9 [INF] The file "/dist/vendor.js" was not modified (f1f8d725)
+2017-08-11T18:47:41.4096920+03:00 0HL70Q0EFIOO9 [INF] Request finished in 25.1524ms 304 application/javascript (15c52c40)
+2017-08-11T18:47:41.4140650+03:00 0HL70Q0EFIOO8 [INF] Request finished in 35.5309ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:47:42.2390250+03:00 0HL70Q0EFIOOA [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/tryCatch.js.map   (e5be5b71)
+2017-08-11T18:47:42.2415970+03:00 0HL70Q0EFIOOA [INF] Request finished in 2.6093ms 404  (15c52c40)
+2017-08-11T18:47:43.6294390+03:00 0HL70Q0EFIOOB [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js.map   (e5be5b71)
+2017-08-11T18:47:43.6610900+03:00 0HL70Q0EFIOOB [INF] Request finished in 31.6515ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T18:47:43.7927340+03:00 0HL70Q0EFIOOC [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/account application/json  (e5be5b71)
+2017-08-11T18:47:43.8517750+03:00 0HL70Q0EFIOOD [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T18:47:43.8728380+03:00 0HL70Q0EFIOOC [INF] Successfully validated the token. (60169667)
+2017-08-11T18:47:43.8857430+03:00 0HL70Q0EFIOOC [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-11T18:47:43.9349910+03:00 0HL70Q0EFIOOC [INF] Authorization was successful for user: "arismyatov@hotmail.com". (d7eb274a)
+2017-08-11T18:47:43.9403540+03:00 0HL70Q0EFIOOC [INF] Executing action method "NXS.Controllers.AccountController.Get (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:47:44.0394170+03:00 0HL70Q0EFIOOC [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:47:44.0806060+03:00 0HL70Q0EFIOOC [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:47:44.0883340+03:00 0HL70Q0EFIOOC [INF] Executed action "NXS.Controllers.AccountController.Get (NXS)" in 194.6724ms (afa2e885)
+2017-08-11T18:47:44.0888310+03:00 0HL70Q0EFIOOC [INF] Request finished in 296.1479ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T18:47:57.5985800+03:00 0HL70Q0EFIOOE [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/account application/json 81 (e5be5b71)
+2017-08-11T18:47:57.5992180+03:00 0HL70Q0EFIOOE [INF] Successfully validated the token. (60169667)
+2017-08-11T18:47:57.5993510+03:00 0HL70Q0EFIOOE [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-11T18:47:57.6056010+03:00 0HL70Q0EFIOOE [INF] Authorization was successful for user: "arismyatov@hotmail.com". (d7eb274a)
+2017-08-11T18:47:57.6281540+03:00 0HL70Q0EFIOOE [INF] Executing action method "NXS.Controllers.AccountController.Put (NXS)" with arguments (["NXS.Controllers.Resources.UserProfileResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:47:57.6412070+03:00 0HL70Q0EFIOOE [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:47:57.6911730+03:00 0HL70Q0EFIOOE [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:47:58.0248950+03:00 0HL70Q0EFIOOE [INF] Executed DbCommand (82ms) [Parameters=[@p16='?' (Size = 450), @p0='?', @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?', @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?', @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-11T18:47:58.0562660+03:00 0HL70Q0EFIOOE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:47:58.0565970+03:00 0HL70Q0EFIOOE [INF] Executed action "NXS.Controllers.AccountController.Put (NXS)" in 452.1361ms (afa2e885)
+2017-08-11T18:47:58.0576520+03:00 0HL70Q0EFIOOE [INF] Request finished in 459.1205ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T18:48:01.5497750+03:00 0HL70Q0EFIOOF [INF] Request starting HTTP/1.1 GET http://localhost:5000/userprofile   (e5be5b71)
+2017-08-11T18:48:01.5501800+03:00 0HL70Q0EFIOOF [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:48:01.5536840+03:00 0HL70Q0EFIOOF [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T18:48:01.5550600+03:00 0HL70Q0EFIOOF [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 4.8688ms (afa2e885)
+2017-08-11T18:48:01.5552120+03:00 0HL70Q0EFIOOF [INF] Request finished in 5.4732ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T18:48:01.6142090+03:00 0HL70Q0EFIOOG [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=83XtaLnj4n3VcVeHP1TBoU_H5jUyZQJ5qCvNEIL-co0   (e5be5b71)
+2017-08-11T18:48:01.6585950+03:00 0HL70Q0EFIOOG [INF] Request finished in 44.7304ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:48:03.0547890+03:00 0HL70Q0EFIOOH [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/account application/json  (e5be5b71)
+2017-08-11T18:48:03.0552010+03:00 0HL70Q0EFIOOH [INF] Successfully validated the token. (60169667)
+2017-08-11T18:48:03.0553070+03:00 0HL70Q0EFIOOH [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-11T18:48:03.0555620+03:00 0HL70Q0EFIOOH [INF] Authorization was successful for user: "arismyatov@hotmail.com". (d7eb274a)
+2017-08-11T18:48:03.0558290+03:00 0HL70Q0EFIOOH [INF] Executing action method "NXS.Controllers.AccountController.Get (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:48:03.0592490+03:00 0HL70Q0EFIOOH [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:48:03.0610930+03:00 0HL70Q0EFIOOH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:48:03.0614130+03:00 0HL70Q0EFIOOH [INF] Executed action "NXS.Controllers.AccountController.Get (NXS)" in 5.7825ms (afa2e885)
+2017-08-11T18:48:03.0618240+03:00 0HL70Q0EFIOOH [INF] Request finished in 7.0826ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T18:48:03.1007300+03:00 0HL70Q0EFIOOI [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T18:48:03.1463540+03:00  [INF] Connection id ""0HL70Q0EE8F1V"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T18:48:03.1852070+03:00 0HL70Q0EFIOOD [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-08-11T18:48:03.1860860+03:00 0HL70Q0EFIOOD [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T18:48:03.1906230+03:00 0HL70Q0EFIOOD [ERR] Connection id ""0HL70Q0EE8F1V"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T18:48:03.1907860+03:00 0HL70Q0EFIOOD [INF] Request finished in 19338.1399ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T18:48:03.4715930+03:00 0HL70Q0EFIOOJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   (e5be5b71)
+2017-08-11T18:48:03.4768170+03:00 0HL70Q0EFIOOJ [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/wwwroot/favicon.ico"' (27b0a520)
+2017-08-11T18:48:03.4940680+03:00 0HL70Q0EFIOOJ [INF] Request finished in 22.4038ms 200 image/x-icon (15c52c40)
+2017-08-11T18:48:28.7651340+03:00 0HL70Q0EFIOOK [INF] Request starting HTTP/1.1 PUT http://localhost:5000/api/account application/json 82 (e5be5b71)
+2017-08-11T18:48:28.7656000+03:00 0HL70Q0EFIOOK [INF] Successfully validated the token. (60169667)
+2017-08-11T18:48:28.7657100+03:00 0HL70Q0EFIOOK [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-11T18:48:28.7659430+03:00 0HL70Q0EFIOOK [INF] Authorization was successful for user: "arismyatov@hotmail.com". (d7eb274a)
+2017-08-11T18:48:28.7668220+03:00 0HL70Q0EFIOOK [INF] Executing action method "NXS.Controllers.AccountController.Put (NXS)" with arguments (["NXS.Controllers.Resources.UserProfileResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:48:28.7832460+03:00 0HL70Q0EFIOOK [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:48:28.7911020+03:00 0HL70Q0EFIOOK [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:48:28.8156020+03:00 0HL70Q0EFIOOK [INF] Executed DbCommand (15ms) [Parameters=[@p16='?' (Size = 450), @p0='?', @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?', @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?', @p7='?', @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?', @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT; (6438bdd5)
+2017-08-11T18:48:28.8188170+03:00 0HL70Q0EFIOOK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:48:28.8190560+03:00 0HL70Q0EFIOOK [INF] Executed action "NXS.Controllers.AccountController.Put (NXS)" in 53.1962ms (afa2e885)
+2017-08-11T18:48:28.8193860+03:00 0HL70Q0EFIOOK [INF] Request finished in 54.2051ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T18:48:36.5326010+03:00 0HL70Q0EFIOOL [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T18:48:36.5382670+03:00 0HL70Q0EFIOOL [INF] Request finished in 5.7224ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T18:48:42.1742780+03:00 0HL70Q0EFIOOM [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/507d22863ae5fb444053d6f58aff0884.png   (e5be5b71)
+2017-08-11T18:48:42.1878610+03:00 0HL70Q0EFIOOM [INF] Request finished in 13.6398ms 200 image/png; charset=UTF-8 (15c52c40)
+2017-08-11T18:48:56.2047160+03:00 0HL70Q0EFIOON [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 59 (e5be5b71)
+2017-08-11T18:48:56.2058150+03:00 0HL70Q0EFIOON [INF] Executing action method "NXS.Controllers.AuthController.Post (NXS)" with arguments (["CredentialsResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:48:56.2179980+03:00 0HL70Q0EFIOON [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:48:56.2515920+03:00 0HL70Q0EFIOON [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:48:56.2518010+03:00 0HL70Q0EFIOON [INF] Executed action "NXS.Controllers.AuthController.Post (NXS)" in 46.7833ms (afa2e885)
+2017-08-11T18:48:56.2519220+03:00 0HL70Q0EFIOON [INF] Request finished in 47.2886ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-11T18:49:01.6627100+03:00 0HL70Q0EFIOOO [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/account application/json  (e5be5b71)
+2017-08-11T18:49:01.6631550+03:00 0HL70Q0EFIOOO [INF] Successfully validated the token. (60169667)
+2017-08-11T18:49:01.6632530+03:00 0HL70Q0EFIOOO [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-08-11T18:49:01.6637460+03:00 0HL70Q0EFIOOO [INF] Authorization was successful for user: "arismyatov@hotmail.com". (d7eb274a)
+2017-08-11T18:49:01.6640390+03:00 0HL70Q0EFIOOO [INF] Executing action method "NXS.Controllers.AccountController.Get (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:49:01.6727390+03:00 0HL70Q0EFIOOO [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T18:49:01.6734090+03:00 0HL70Q0EFIOOO [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T18:49:01.6736800+03:00 0HL70Q0EFIOOO [INF] Executed action "NXS.Controllers.AccountController.Get (NXS)" in 9.8974ms (afa2e885)
+2017-08-11T18:49:01.6738450+03:00 0HL70Q0EFIOOO [INF] Request finished in 11.1724ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T18:52:14.9256310+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:52:22.1876970+03:00  [INF] webpack built 325717167fbfd96762cb in 7265ms (76e4943b)
+2017-08-11T18:52:22.2001930+03:00 0HL70Q0EFIOOP [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/9580dc516ff8fc4a2bfc.hot-update.json   (e5be5b71)
+2017-08-11T18:52:22.2601870+03:00 0HL70Q0EFIOOP [INF] Request finished in 60.4143ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T18:52:22.2686820+03:00 0HL70Q0EFIOOQ [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.9580dc516ff8fc4a2bfc.hot-update.js   (e5be5b71)
+2017-08-11T18:52:22.2701930+03:00 0HL70Q0EFIOOQ [INF] Request finished in 1.5279ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:54:01.6695430+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:54:03.8149020+03:00  [ERR]  (00000000)
+2017-08-11T18:54:03.8150400+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:54:05.3679480+03:00  [ERR]  (00000000)
+2017-08-11T18:54:05.3680500+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:54:05.4740490+03:00  [INF] webpack built 76aac240be9cb902a785 in 3782ms (feeb553c)
+2017-08-11T18:54:05.6585240+03:00  [ERR] Hash: 76aac240be9cb902a785
+Version: webpack 2.5.1
+Time: 3782ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.325717167fbfd96762cb.hot-update.js   2.09 kB       0  [emitted]         main-client
+    325717167fbfd96762cb.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.325717167fbfd96762cb.hot-update.js.map   1.92 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.325717167fbfd96762cb.hot-update.js, main-client.js.map, 0.325717167fbfd96762cb.hot-update.js.map (main-client) 979 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [93] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [94] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [95] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [102] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [178] ./~/querystring-es3/index.js 127 bytes {0}
+  [179] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [432] ./wwwroot/less/creative.less 1.16 kB {0}
+  [448] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [449] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [452] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [459] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [482] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 469 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls.module.ts:30:9 
+    TS2304: Cannot find name 'AuthGuard'. (f171e6a9)
+2017-08-11T18:54:06.3623690+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:54:10.1637910+03:00  [INF] webpack built 1856ab11fd9455c416f6 in 3723ms (3d254a71)
+2017-08-11T18:54:10.1752460+03:00 0HL70Q0EFIOOR [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/325717167fbfd96762cb.hot-update.json   (e5be5b71)
+2017-08-11T18:54:10.4995740+03:00 0HL70Q0EFIOOR [INF] Request finished in 324.6535ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T18:54:10.5166660+03:00 0HL70Q0EFIOOS [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.325717167fbfd96762cb.hot-update.js   (e5be5b71)
+2017-08-11T18:54:10.5312570+03:00 0HL70Q0EFIOOS [INF] Request finished in 14.6939ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:54:16.3420730+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:54:22.4482990+03:00  [INF] webpack built 3e7586f0daefe344f9f6 in 6063ms (fc8f99af)
+2017-08-11T18:54:22.8476620+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:54:23.2494450+03:00  [INF] webpack built 3e7586f0daefe344f9f6 in 368ms (34bb6fe3)
+2017-08-11T18:54:54.3952810+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:54:55.2726660+03:00  [ERR]  (00000000)
+2017-08-11T18:54:55.2727760+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:54:56.5159140+03:00  [ERR]  (00000000)
+2017-08-11T18:54:56.5160110+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T18:54:56.5638420+03:00  [INF] webpack built 88325fe2df27a767ae7f in 2149ms (cc508f06)
+2017-08-11T18:54:56.6440480+03:00  [ERR] Hash: 88325fe2df27a767ae7f
+Version: webpack 2.5.1
+Time: 2149ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.3e7586f0daefe344f9f6.hot-update.js   1.88 kB       0  [emitted]         main-client
+    3e7586f0daefe344f9f6.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.3e7586f0daefe344f9f6.hot-update.js.map   1.58 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.3e7586f0daefe344f9f6.hot-update.js, main-client.js.map, 0.3e7586f0daefe344f9f6.hot-update.js.map (main-client) 979 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [93] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [94] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [95] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [102] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [178] ./~/querystring-es3/index.js 127 bytes {0}
+  [179] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [432] ./wwwroot/less/creative.less 1.16 kB {0}
+  [448] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [449] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [452] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [459] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [482] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 469 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:26:9 
+    TS2304: Cannot find name 'AuthGuard'. (7678850f)
+2017-08-11T18:55:48.9385050+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:55:51.8121500+03:00  [ERR]  (00000000)
+2017-08-11T18:55:51.8122720+03:00  [ERR] [at-loader] Checking finished with 11 errors (ec2b962b)
+2017-08-11T18:55:52.5477500+03:00  [ERR]  (00000000)
+2017-08-11T18:55:52.5478490+03:00  [ERR] [at-loader] Checking finished with 11 errors (ec2b962b)
+2017-08-11T18:55:52.5973070+03:00  [INF] webpack built 34948d190786598232a8 in 3641ms (c326da21)
+2017-08-11T18:55:52.6824450+03:00  [ERR] Hash: 34948d190786598232a8
+Version: webpack 2.5.1
+Time: 3641ms
+                                   Asset       Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png    30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg     263 kB                     [big]  
+                          main-client.js    1.04 MB       0  [emitted]  [big]  main-client
+    0.88325fe2df27a767ae7f.hot-update.js  646 bytes       0  [emitted]         main-client
+    88325fe2df27a767ae7f.hot-update.json   43 bytes          [emitted]         
+                      main-client.js.map    1.26 MB       0  [emitted]         main-client
+0.88325fe2df27a767ae7f.hot-update.js.map    1.38 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.88325fe2df27a767ae7f.hot-update.js, main-client.js.map, 0.88325fe2df27a767ae7f.hot-update.js.map (main-client) 978 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [93] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [94] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [95] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [102] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [178] ./~/querystring-es3/index.js 127 bytes {0}
+  [179] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [432] ./wwwroot/less/creative.less 1.16 kB {0}
+  [448] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [449] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [452] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [459] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [482] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 469 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:21:13 
+    TS1005: ',' expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:22:9 
+    TS1005: ',' expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:22:11 
+    TS1146: Declaration expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:23:5 
+    TS1128: Declaration or statement expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:23:6 
+    TS1128: Declaration or statement expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:27:14 
+    TS1005: ';' expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:30:1 
+    TS1128: Declaration or statement expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:30:2 
+    TS1128: Declaration or statement expected.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:24:5 
+    TS7028: Unused label.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:24:14 
+    TS2695: Left side of comma operator is unused and has no side effects.
+
+ERROR in [at-loader] ./ClientApp/app/components/variablexls/variablexls-routing.module.ts:27:5 
+    TS2304: Cannot find name 'providers'. (9bb3fae1)
+2017-08-11T18:56:00.5473460+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:56:02.5008320+03:00  [INF] webpack built ad72032c6bcc5e77a3b2 in 1925ms (18c302af)
+2017-08-11T18:56:59.7697580+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:57:03.4535570+03:00  [INF] webpack built 046ce0f02b25482fb036 in 3661ms (d308c0b3)
+2017-08-11T18:57:03.7327780+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:57:04.1376920+03:00  [INF] webpack built 046ce0f02b25482fb036 in 383ms (b1fc554a)
+2017-08-11T18:57:29.9099170+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:57:32.5861560+03:00  [INF] webpack built 8c0833c141f42b3a1e06 in 2654ms (924449a9)
+2017-08-11T18:57:32.9173360+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:57:33.3450300+03:00  [INF] webpack built 8c0833c141f42b3a1e06 in 378ms (46b7715e)
+2017-08-11T18:57:41.5516030+03:00  [INF] webpack building... (478286db)
+2017-08-11T18:57:42.0793320+03:00  [INF] webpack built 8c0833c141f42b3a1e06 in 503ms (f33b5c99)
+2017-08-11T18:57:48.0428460+03:00 0HL70Q0EFIOOT [INF] Request starting HTTP/1.1 GET http://localhost:5000/home   (e5be5b71)
+2017-08-11T18:57:48.0946150+03:00 0HL70Q0EFIOOT [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:57:48.1055190+03:00 0HL70Q0EFIOOT [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T18:57:48.1405590+03:00 0HL70Q0EFIOOT [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 57.1484ms (afa2e885)
+2017-08-11T18:57:48.1409940+03:00 0HL70Q0EFIOOT [INF] Request finished in 98.5444ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T18:57:48.1824080+03:00 0HL70Q0EFIOOU [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=Ot9855jTZitWc8q6FeR8_g9Bw2Teh9Bu7ejAror_nhY   (e5be5b71)
+2017-08-11T18:57:48.2407020+03:00 0HL70Q0EFIOOU [INF] Request finished in 59.0463ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:57:50.0024420+03:00 0HL70Q0EFIOOV [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T18:57:50.0077140+03:00 0HL70Q0EFIOOV [INF] Request finished in 5.278ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T18:57:50.0246090+03:00 0HL70Q0EFIOP0 [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T18:57:50.0801190+03:00  [INF] Connection id ""0HL70Q0EE8F20"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T18:57:50.0802610+03:00  [INF] Connection id ""0HL70Q0EE8F20"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T18:57:50.0954270+03:00 0HL70Q0EFIOOI [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+2017-08-11T18:57:50.0955480+03:00 0HL70Q0EFIOOI [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T18:57:50.1034530+03:00 0HL70Q0EFIOOI [ERR] Connection id ""0HL70Q0EE8F20"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T18:57:50.1036090+03:00 0HL70Q0EFIOOI [INF] Request finished in 586975.7872ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T18:57:50.6036640+03:00 0HL70Q0EFIOP1 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   (e5be5b71)
+2017-08-11T18:57:50.6047410+03:00 0HL70Q0EFIOP1 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/wwwroot/favicon.ico"' (27b0a520)
+2017-08-11T18:57:50.6076090+03:00 0HL70Q0EFIOP1 [INF] Request finished in 3.9519ms 200 image/x-icon (15c52c40)
+2017-08-11T18:57:57.7178150+03:00 0HL70Q0EFIOP2 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T18:57:57.7184020+03:00 0HL70Q0EFIOP2 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T18:57:57.7185550+03:00 0HL70Q0EFIOP2 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T18:57:57.7189330+03:00 0HL70Q0EFIOP2 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 0.649ms (afa2e885)
+2017-08-11T18:57:57.7190470+03:00 0HL70Q0EFIOP2 [INF] Request finished in 1.2814ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T18:57:57.7592550+03:00 0HL70Q0EFIOP3 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=Ot9855jTZitWc8q6FeR8_g9Bw2Teh9Bu7ejAror_nhY   (e5be5b71)
+2017-08-11T18:57:57.7824380+03:00 0HL70Q0EFIOP3 [INF] Request finished in 23.3282ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T18:57:59.3057790+03:00 0HL70Q0EFIOP4 [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T18:57:59.3727820+03:00  [INF] Connection id ""0HL70Q0EE8F25"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T18:57:59.3804960+03:00 0HL70Q0EFIOP0 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-08-11T18:57:59.3808130+03:00 0HL70Q0EFIOP0 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T18:57:59.3858940+03:00 0HL70Q0EFIOP0 [ERR] Connection id ""0HL70Q0EE8F25"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T18:57:59.3860610+03:00 0HL70Q0EFIOP0 [INF] Request finished in 9361.068ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:00:36.7015680+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:00:41.4853460+03:00  [INF] webpack built b7d117eec4f5de01f389 in 4744ms (7676ea95)
+2017-08-11T19:00:41.5022510+03:00 0HL70Q0EFIOP5 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/8c0833c141f42b3a1e06.hot-update.json   (e5be5b71)
+2017-08-11T19:00:41.6546050+03:00 0HL70Q0EFIOP5 [INF] Request finished in 152.3296ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T19:00:41.6624870+03:00 0HL70Q0EFIOP6 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.8c0833c141f42b3a1e06.hot-update.js   (e5be5b71)
+2017-08-11T19:00:41.6646990+03:00 0HL70Q0EFIOP6 [INF] Request finished in 2.1776ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:00:41.8486540+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:00:42.1854170+03:00  [INF] webpack built b7d117eec4f5de01f389 in 301ms (2e40a364)
+2017-08-11T19:00:42.7620670+03:00 0HL70Q0EFIOP7 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T19:00:42.7694650+03:00 0HL70Q0EFIOP7 [INF] Request finished in 7.4124ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T19:00:46.6147300+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:00:48.9595610+03:00  [INF] webpack built a05d7e083ed3142be442 in 2322ms (35e827ec)
+2017-08-11T19:00:48.9650700+03:00 0HL70Q0EFIOP8 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/b7d117eec4f5de01f389.hot-update.json   (e5be5b71)
+2017-08-11T19:00:49.0825540+03:00 0HL70Q0EFIOP8 [INF] Request finished in 117.4443ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T19:00:49.0899270+03:00 0HL70Q0EFIOP9 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.b7d117eec4f5de01f389.hot-update.js   (e5be5b71)
+2017-08-11T19:00:49.0934010+03:00 0HL70Q0EFIOP9 [INF] Request finished in 3.5016ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:00:56.3180750+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:00:57.6937580+03:00  [INF] webpack built a05d7e083ed3142be442 in 1337ms (f761d9b0)
+2017-08-11T19:01:03.2123280+03:00 0HL70Q0EFIOPA [INF] Request starting HTTP/1.1 GET http://localhost:5000/home   (e5be5b71)
+2017-08-11T19:01:03.2145620+03:00 0HL70Q0EFIOPA [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:03.2157810+03:00 0HL70Q0EFIOPA [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:03.2231980+03:00 0HL70Q0EFIOPA [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 9.2365ms (afa2e885)
+2017-08-11T19:01:03.2233660+03:00 0HL70Q0EFIOPA [INF] Request finished in 11.1597ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:03.2832130+03:00 0HL70Q0EFIOPB [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gYCXxuQbjX-2lqmCitZCO6zHWy1sUcKZmiXurwLOBLw   (e5be5b71)
+2017-08-11T19:01:03.3334110+03:00 0HL70Q0EFIOPB [INF] Request finished in 50.1533ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:04.8714220+03:00 0HL70Q0EFIOPC [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T19:01:04.8785410+03:00 0HL70Q0EFIOPD [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:04.8875870+03:00 0HL70Q0EFIOPC [INF] Request finished in 16.1461ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:04.9692850+03:00  [INF] Connection id ""0HL70Q0EE8F26"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:04.9889860+03:00 0HL70Q0EFIOP4 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+2017-08-11T19:01:04.9892550+03:00 0HL70Q0EFIOP4 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:05.0035510+03:00 0HL70Q0EFIOP4 [ERR] Connection id ""0HL70Q0EE8F26"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:05.0037250+03:00 0HL70Q0EFIOP4 [INF] Request finished in 185689.3805ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:05.2587950+03:00 0HL70Q0EFIOPE [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   (e5be5b71)
+2017-08-11T19:01:05.2593240+03:00 0HL70Q0EFIOPE [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/wwwroot/favicon.ico"' (27b0a520)
+2017-08-11T19:01:05.2607560+03:00 0HL70Q0EFIOPE [INF] Request finished in 1.948ms 200 image/x-icon (15c52c40)
+2017-08-11T19:01:09.5099360+03:00 0HL70Q0EFIOPF [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T19:01:09.5104240+03:00 0HL70Q0EFIOPF [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:09.5106180+03:00 0HL70Q0EFIOPF [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:09.5112600+03:00 0HL70Q0EFIOPF [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 0.8741ms (afa2e885)
+2017-08-11T19:01:09.5113940+03:00 0HL70Q0EFIOPF [INF] Request finished in 1.492ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:09.5526250+03:00 0HL70Q0EFIOPG [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gYCXxuQbjX-2lqmCitZCO6zHWy1sUcKZmiXurwLOBLw   (e5be5b71)
+2017-08-11T19:01:09.5948330+03:00 0HL70Q0EFIOPG [INF] Request finished in 41.977ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:11.1507460+03:00 0HL70Q0EFIOPH [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T19:01:11.1599340+03:00 0HL70Q0EFIOPH [INF] Request finished in 9.19ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:11.1675360+03:00 0HL70Q0EFIOPI [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:11.3047990+03:00  [INF] Connection id ""0HL70Q0EE8F2C"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:11.3049000+03:00  [INF] Connection id ""0HL70Q0EE8F2C"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:11.3091600+03:00 0HL70Q0EFIOPD [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:11.3094140+03:00 0HL70Q0EFIOPD [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:11.3140590+03:00 0HL70Q0EFIOPD [ERR] Connection id ""0HL70Q0EE8F2C"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:11.3142000+03:00 0HL70Q0EFIOPD [INF] Request finished in 6435.4025ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:17.8208340+03:00 0HL70Q0EFIOPJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/signin   (e5be5b71)
+2017-08-11T19:01:17.8217780+03:00 0HL70Q0EFIOPJ [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:17.8241790+03:00 0HL70Q0EFIOPJ [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:17.8246390+03:00 0HL70Q0EFIOPJ [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 2.8558ms (afa2e885)
+2017-08-11T19:01:17.8248370+03:00 0HL70Q0EFIOPJ [INF] Request finished in 3.9788ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:17.8621330+03:00 0HL70Q0EFIOPK [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=gYCXxuQbjX-2lqmCitZCO6zHWy1sUcKZmiXurwLOBLw   (e5be5b71)
+2017-08-11T19:01:17.9054240+03:00 0HL70Q0EFIOPK [INF] Request finished in 43.2751ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:19.4744950+03:00 0HL70Q0EFIOPL [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:19.5278820+03:00  [INF] Connection id ""0HL70Q0EE8F2B"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:19.5400680+03:00 0HL70Q0EFIOPI [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-08-11T19:01:19.5402370+03:00 0HL70Q0EFIOPI [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:19.5476600+03:00 0HL70Q0EFIOPI [ERR] Connection id ""0HL70Q0EE8F2B"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:19.5478420+03:00 0HL70Q0EFIOPI [INF] Request finished in 8379.9594ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:26.3418720+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:01:29.1429440+03:00  [INF] webpack built a6dbb8bccc282e0308f4 in 2752ms (f684682b)
+2017-08-11T19:01:29.1636160+03:00 0HL70Q0EFIOPM [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/a05d7e083ed3142be442.hot-update.json   (e5be5b71)
+2017-08-11T19:01:29.2934840+03:00 0HL70Q0EFIOPM [INF] Request finished in 129.9173ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:29.3002330+03:00 0HL70Q0EFIOPN [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.a05d7e083ed3142be442.hot-update.js   (e5be5b71)
+2017-08-11T19:01:29.3020230+03:00 0HL70Q0EFIOPN [INF] Request finished in 1.8235ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:32.8037560+03:00 0HL70Q0EFIOPO [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T19:01:32.8040280+03:00 0HL70Q0EFIOPO [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:32.8041560+03:00 0HL70Q0EFIOPO [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:32.8095490+03:00 0HL70Q0EFIOPO [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 5.5069ms (afa2e885)
+2017-08-11T19:01:32.8096840+03:00 0HL70Q0EFIOPO [INF] Request finished in 6.0188ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:32.8441300+03:00 0HL70Q0EFIOPP [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=5OzKiNon-POqcWwFCM5ITy65QPq4blXutNjP1QiYHxw   (e5be5b71)
+2017-08-11T19:01:32.8713530+03:00 0HL70Q0EFIOPP [INF] Request finished in 27.2976ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:34.6061980+03:00 0HL70Q0EFIOPQ [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:34.6628510+03:00  [INF] Connection id ""0HL70Q0EE8F2G"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:34.6760940+03:00 0HL70Q0EFIOPL [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:34.6762790+03:00 0HL70Q0EFIOPL [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:34.6877610+03:00 0HL70Q0EFIOPL [ERR] Connection id ""0HL70Q0EE8F2G"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:34.6879230+03:00 0HL70Q0EFIOPL [INF] Request finished in 15212.7414ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:38.0234020+03:00 0HL70Q0EFIOPR [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/507d22863ae5fb444053d6f58aff0884.png   (e5be5b71)
+2017-08-11T19:01:38.0342170+03:00 0HL70Q0EFIOPR [INF] Request finished in 10.8222ms 200 image/png; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:41.3809340+03:00 0HL70Q0EFIOPS [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T19:01:41.3812460+03:00 0HL70Q0EFIOPS [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:41.3813640+03:00 0HL70Q0EFIOPS [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:41.3821630+03:00 0HL70Q0EFIOPS [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 0.8622ms (afa2e885)
+2017-08-11T19:01:41.3823130+03:00 0HL70Q0EFIOPS [INF] Request finished in 1.4097ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:41.4236910+03:00 0HL70Q0EFIOPT [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=5OzKiNon-POqcWwFCM5ITy65QPq4blXutNjP1QiYHxw   (e5be5b71)
+2017-08-11T19:01:41.4480470+03:00 0HL70Q0EFIOPT [INF] Request finished in 24.3626ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:43.1820990+03:00 0HL70Q0EFIOPU [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:43.2483480+03:00  [INF] Connection id ""0HL70Q0EE8F2L"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:43.2514090+03:00 0HL70Q0EFIOPQ [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-08-11T19:01:43.2515100+03:00 0HL70Q0EFIOPQ [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:43.2569680+03:00 0HL70Q0EFIOPQ [ERR] Connection id ""0HL70Q0EE8F2L"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:43.2571610+03:00 0HL70Q0EFIOPQ [INF] Request finished in 8650.6044ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:48.9055570+03:00 0HL70Q0EFIOPV [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T19:01:48.9058960+03:00 0HL70Q0EFIOPV [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:48.9062190+03:00 0HL70Q0EFIOPV [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:48.9066900+03:00 0HL70Q0EFIOPV [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 0.8688ms (afa2e885)
+2017-08-11T19:01:48.9068470+03:00 0HL70Q0EFIOPV [INF] Request finished in 1.3371ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:48.9487910+03:00 0HL70Q0EFIOQ0 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=5OzKiNon-POqcWwFCM5ITy65QPq4blXutNjP1QiYHxw   (e5be5b71)
+2017-08-11T19:01:48.9943860+03:00 0HL70Q0EFIOQ0 [INF] Request finished in 45.6218ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:50.6870630+03:00 0HL70Q0EFIOQ1 [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:50.6906620+03:00  [INF] Connection id ""0HL70Q0EE8F2M"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:50.7377710+03:00 0HL70Q0EFIOPU [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:50.7378780+03:00 0HL70Q0EFIOPU [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:50.7464240+03:00 0HL70Q0EFIOPU [ERR] Connection id ""0HL70Q0EE8F2M"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:50.7468860+03:00 0HL70Q0EFIOPU [INF] Request finished in 7564.3115ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:01:53.4366660+03:00 0HL70Q0EFIOQ2 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T19:01:53.4564130+03:00 0HL70Q0EFIOQ2 [INF] Request finished in 19.7326ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:56.6018200+03:00 0HL70Q0EFIOQ3 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin   (e5be5b71)
+2017-08-11T19:01:56.6023590+03:00 0HL70Q0EFIOQ3 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:01:56.6025020+03:00 0HL70Q0EFIOQ3 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:01:56.6028800+03:00 0HL70Q0EFIOQ3 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 0.6101ms (afa2e885)
+2017-08-11T19:01:56.6030850+03:00 0HL70Q0EFIOQ3 [INF] Request finished in 1.2341ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:01:56.6398630+03:00 0HL70Q0EFIOQ4 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=5OzKiNon-POqcWwFCM5ITy65QPq4blXutNjP1QiYHxw   (e5be5b71)
+2017-08-11T19:01:56.6603050+03:00 0HL70Q0EFIOQ4 [INF] Request finished in 19.3689ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:01:58.1548490+03:00 0HL70Q0EFIOQ5 [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:01:58.2016140+03:00  [INF] Connection id ""0HL70Q0EE8F2P"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:01:58.2161200+03:00 0HL70Q0EFIOQ1 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:58.2162930+03:00 0HL70Q0EFIOQ1 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:01:58.2281760+03:00 0HL70Q0EFIOQ1 [ERR] Connection id ""0HL70Q0EE8F2P"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:01:58.2283340+03:00 0HL70Q0EFIOQ1 [INF] Request finished in 7540.9583ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:03:12.7964190+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:03:15.1505410+03:00  [ERR]  (00000000)
+2017-08-11T19:03:15.1506530+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T19:03:16.7968090+03:00  [ERR]  (00000000)
+2017-08-11T19:03:16.7969990+03:00  [ERR] [at-loader] Checking finished with 1 errors (2b84c4c9)
+2017-08-11T19:03:16.9304900+03:00  [INF] webpack built 91f9f39700efb4ca426e in 4073ms (c537a70f)
+2017-08-11T19:03:17.3190780+03:00  [ERR] Hash: 91f9f39700efb4ca426e
+Version: webpack 2.5.1
+Time: 4073ms
+                                   Asset      Size  Chunks                    Chunk Names
+    507d22863ae5fb444053d6f58aff0884.png   30.5 kB                            
+    6ebdb1f01dc905110782925239a570f8.jpg    263 kB                     [big]  
+                          main-client.js   1.04 MB       0  [emitted]  [big]  main-client
+    0.a6dbb8bccc282e0308f4.hot-update.js   1.67 kB       0  [emitted]         main-client
+    a6dbb8bccc282e0308f4.hot-update.json  43 bytes          [emitted]         
+                      main-client.js.map   1.26 MB       0  [emitted]         main-client
+0.a6dbb8bccc282e0308f4.hot-update.js.map   1.12 kB       0  [emitted]         main-client
+chunk    {0} main-client.js, 0.a6dbb8bccc282e0308f4.hot-update.js, main-client.js.map, 0.a6dbb8bccc282e0308f4.hot-update.js.map (main-client) 979 kB [entry] [rendered]
+    [1] external "vendor_2ae68e8844c7aa867016" 42 bytes {0} [not cacheable]
+   [93] ./ClientApp/boot-client.ts 1.19 kB {0} [built]
+   [94] (webpack)-hot-middleware/client.js?path=%2F__webpack_hmr 6.68 kB {0}
+   [95] delegated ./node_modules/event-source-polyfill/eventsource.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [102] ./ClientApp/app/app.module.client.ts 2.67 kB {0} [built]
+  [178] ./~/querystring-es3/index.js 127 bytes {0}
+  [179] ./~/reflect-metadata/Reflect.js 48 kB {0}
+  [432] ./wwwroot/less/creative.less 1.16 kB {0}
+  [448] (webpack)-hot-middleware/client-overlay.js 1.82 kB {0}
+  [449] (webpack)-hot-middleware/process-update.js 3.88 kB {0}
+  [452] delegated ./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [458] delegated ./node_modules/zone.js/dist/zone.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [459] delegated ./node_modules/bootstrap/js/affix.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [481] delegated ./node_modules/webpack/buildin/module.js from dll-reference vendor_2ae68e8844c7aa867016 42 bytes {0} [not cacheable] [built]
+  [482] multi event-source-polyfill webpack-hot-middleware/client?path=%2F__webpack_hmr ./ClientApp/boot-client.ts 52 bytes {0}
+     + 469 hidden modules
+
+ERROR in [at-loader] ./ClientApp/app/components/services/services.component.ts:11:25 
+    TS2304: Cannot find name 'AuthService'. (26f879db)
+2017-08-11T19:03:18.6221030+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:03:22.0744820+03:00  [INF] webpack built ccb378a71bf47c615172 in 3375ms (bd634690)
+2017-08-11T19:03:22.0878860+03:00 0HL70Q0EFIOQ6 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/a6dbb8bccc282e0308f4.hot-update.json   (e5be5b71)
+2017-08-11T19:03:22.3032540+03:00 0HL70Q0EFIOQ6 [INF] Request finished in 216.0318ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T19:03:22.3106820+03:00 0HL70Q0EFIOQ7 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.a6dbb8bccc282e0308f4.hot-update.js   (e5be5b71)
+2017-08-11T19:03:22.3162050+03:00 0HL70Q0EFIOQ7 [INF] Request finished in 5.5403ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:04:29.0090030+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:04:31.2356300+03:00  [INF] webpack built afa2904c1af215451e5e in 2192ms (409c05d3)
+2017-08-11T19:04:31.5359620+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:04:31.7030110+03:00  [INF] webpack built afa2904c1af215451e5e in 133ms (ac8ea6bd)
+2017-08-11T19:04:35.6584690+03:00 0HL70Q0EFIOQ8 [INF] Request starting HTTP/1.1 GET http://localhost:5000/services   (e5be5b71)
+2017-08-11T19:04:35.6622980+03:00 0HL70Q0EFIOQ8 [INF] Executing action method "NXS.Controllers.HomeController.Index (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:04:35.6683520+03:00 0HL70Q0EFIOQ8 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-08-11T19:04:35.6833450+03:00 0HL70Q0EFIOQ8 [INF] Executed action "NXS.Controllers.HomeController.Index (NXS)" in 21.7252ms (afa2e885)
+2017-08-11T19:04:35.6835780+03:00 0HL70Q0EFIOQ8 [INF] Request finished in 26.1585ms 200 text/html; charset=utf-8 (15c52c40)
+2017-08-11T19:04:35.7476310+03:00 0HL70Q0EFIOQ9 [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/main-client.js?v=im8Dq-QXkBf_m5bMaYp2xR174Pdt6voAaggVAgKjn8M   (e5be5b71)
+2017-08-11T19:04:35.8002710+03:00 0HL70Q0EFIOQ9 [INF] Request finished in 51.6345ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:04:37.2461590+03:00 0HL70Q0EFIOQA [INF] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr   (e5be5b71)
+2017-08-11T19:04:37.2891950+03:00  [INF] Connection id ""0HL70Q0EE8F2Q"" communication error. (7fa6c29c)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -32 EPIPE broken pipe
+2017-08-11T19:04:37.3034020+03:00 0HL70Q0EFIOQ5 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:04:37.3035490+03:00 0HL70Q0EFIOQ5 [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-08-11T19:04:37.3182450+03:00 0HL70Q0EFIOQ5 [ERR] Connection id ""0HL70Q0EE8F2Q"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-08-11T19:04:37.3185630+03:00 0HL70Q0EFIOQ5 [INF] Request finished in 159156.2099ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-08-11T19:04:37.6095020+03:00 0HL70Q0EFIOQB [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico   (e5be5b71)
+2017-08-11T19:04:37.6098790+03:00 0HL70Q0EFIOQB [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"/Users/andriyarysmyatov/Documents/Documents - Andriy’s MacBook Pro/Work/theresourcenexus/project_0_3/NXS/wwwroot/favicon.ico"' (27b0a520)
+2017-08-11T19:04:37.6120890+03:00 0HL70Q0EFIOQB [INF] Request finished in 1.3588ms 200 image/x-icon (15c52c40)
+2017-08-11T19:05:00.9067740+03:00  [INF] webpack building... (478286db)
+2017-08-11T19:05:02.5376250+03:00  [INF] webpack built b54b1b244a8c65565de7 in 1601ms (06fe8a81)
+2017-08-11T19:05:02.5471890+03:00 0HL70Q0EFIOQC [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/afa2904c1af215451e5e.hot-update.json   (e5be5b71)
+2017-08-11T19:05:02.6354230+03:00 0HL70Q0EFIOQC [INF] Request finished in 88.3729ms 200 application/json; charset=UTF-8 (15c52c40)
+2017-08-11T19:05:02.6415560+03:00 0HL70Q0EFIOQD [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.afa2904c1af215451e5e.hot-update.js   (e5be5b71)
+2017-08-11T19:05:02.6433120+03:00 0HL70Q0EFIOQD [INF] Request finished in 1.7394ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-08-11T19:05:30.5177270+03:00 0HL70Q0EFIOQE [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 59 (e5be5b71)
+2017-08-11T19:05:30.6215770+03:00 0HL70Q0EFIOQE [INF] Executing action method "NXS.Controllers.AuthController.Post (NXS)" with arguments (["CredentialsResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:05:30.7746610+03:00 0HL70Q0EFIOQE [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T19:05:30.8124180+03:00 0HL70Q0EFIOQE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:05:30.8127640+03:00 0HL70Q0EFIOQE [INF] Executed action "NXS.Controllers.AuthController.Post (NXS)" in 286.6325ms (afa2e885)
+2017-08-11T19:05:30.8129460+03:00 0HL70Q0EFIOQE [INF] Request finished in 296.3545ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-11T19:05:41.8523920+03:00 0HL70Q0EFIOQF [INF] Request starting HTTP/1.1 GET http://localhost:5000/dist/6ebdb1f01dc905110782925239a570f8.jpg   (e5be5b71)
+2017-08-11T19:05:41.8676280+03:00 0HL70Q0EFIOQF [INF] Request finished in 15.2125ms 200 image/jpeg; charset=UTF-8 (15c52c40)
+2017-08-11T19:06:22.8143000+03:00 0HL70Q0EFIOQG [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login application/json 59 (e5be5b71)
+2017-08-11T19:06:22.8152070+03:00 0HL70Q0EFIOQG [INF] Executing action method "NXS.Controllers.AuthController.Post (NXS)" with arguments (["CredentialsResource"]) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:22.8177300+03:00 0HL70Q0EFIOQG [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (6438bdd5)
+2017-08-11T19:06:22.8411340+03:00 0HL70Q0EFIOQG [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:22.8413360+03:00 0HL70Q0EFIOQG [INF] Executed action "NXS.Controllers.AuthController.Post (NXS)" in 26.8045ms (afa2e885)
+2017-08-11T19:06:22.8415330+03:00 0HL70Q0EFIOQG [INF] Request finished in 27.3018ms 200 text/plain; charset=utf-8 (15c52c40)
+2017-08-11T19:06:26.7459330+03:00 0HL70Q0EFIOQH [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/regions   (e5be5b71)
+2017-08-11T19:06:26.7541280+03:00 0HL70Q0EFIOQI [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/scenarios   (e5be5b71)
+2017-08-11T19:06:26.7718560+03:00 0HL70Q0EFIOQJ [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/variables   (e5be5b71)
+2017-08-11T19:06:26.7767620+03:00 0HL70Q0EFIOQK [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/keyparameters   (e5be5b71)
+2017-08-11T19:06:26.7823870+03:00 0HL70Q0EFIOQL [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/keyparameterlevels   (e5be5b71)
+2017-08-11T19:06:26.7959770+03:00 0HL70Q0EFIOQJ [INF] Executing action method "NXS.Controllers.VariablesController.GetVariables (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:26.8229790+03:00 0HL70Q0EFIOQH [INF] Executing action method "NXS.Controllers.RegionsController.GetRegions (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:26.8234690+03:00 0HL70Q0EFIOQK [INF] Executing action method "NXS.Controllers.KeyParameterController.GetKeyParameters (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:26.8280830+03:00 0HL70Q0EFIOQI [INF] Executing action method "NXS.Controllers.ScenarioController.GetScenarios (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:26.8316280+03:00 0HL70Q0EFIOQL [INF] Executing action method "NXS.Controllers.KeyParameterLevelController.GetKeyParameterLevels (NXS)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-08-11T19:06:26.9308530+03:00 0HL70Q0EFIOQL [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[Name]
+FROM [KeyParameterLevels] AS [k] (6438bdd5)
+2017-08-11T19:06:26.9963800+03:00 0HL70Q0EFIOQI [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [Scenarios] AS [s] (6438bdd5)
+2017-08-11T19:06:27.0548750+03:00 0HL70Q0EFIOQL [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:27.0553110+03:00 0HL70Q0EFIOQI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:27.0667580+03:00 0HL70Q0EFIOQL [INF] Executed action "NXS.Controllers.KeyParameterLevelController.GetKeyParameterLevels (NXS)" in 279.4963ms (afa2e885)
+2017-08-11T19:06:27.0690560+03:00 0HL70Q0EFIOQL [INF] Request finished in 286.5706ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T19:06:27.0728880+03:00 0HL70Q0EFIOQI [INF] Executed action "NXS.Controllers.ScenarioController.GetScenarios (NXS)" in 296.3446ms (afa2e885)
+2017-08-11T19:06:27.0735360+03:00 0HL70Q0EFIOQI [INF] Request finished in 319.3673ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T19:06:27.1485490+03:00 0HL70Q0EFIOQJ [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name]
+FROM [VariableGroups] AS [m]
+ORDER BY [m].[Id] (6438bdd5)
+2017-08-11T19:06:27.1519050+03:00 0HL70Q0EFIOQK [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name]
+FROM [KeyParameterGroups] AS [m]
+ORDER BY [m].[Id] (6438bdd5)
+2017-08-11T19:06:27.1689900+03:00 0HL70Q0EFIOQH [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name]
+FROM [ParentRegions] AS [m]
+ORDER BY [m].[Id] (6438bdd5)
+2017-08-11T19:06:27.2379500+03:00 0HL70Q0EFIOQK [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [k].[Id], [k].[KeyParameterGroupId], [k].[Name]
+FROM [KeyParameters] AS [k]
+WHERE EXISTS (
+    SELECT 1
+    FROM [KeyParameterGroups] AS [m]
+    WHERE [k].[KeyParameterGroupId] = [m].[Id])
+ORDER BY [k].[KeyParameterGroupId] (6438bdd5)
+2017-08-11T19:06:27.2419290+03:00 0HL70Q0EFIOQH [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[Id], [r].[Name], [r].[ParentRegionId]
+FROM [Regions] AS [r]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ParentRegions] AS [m]
+    WHERE [r].[ParentRegionId] = [m].[Id])
+ORDER BY [r].[ParentRegionId] (6438bdd5)
+2017-08-11T19:06:27.3053810+03:00 0HL70Q0EFIOQH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:27.3129820+03:00 0HL70Q0EFIOQK [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:27.3161130+03:00 0HL70Q0EFIOQH [INF] Executed action "NXS.Controllers.RegionsController.GetRegions (NXS)" in 539.8123ms (afa2e885)
+2017-08-11T19:06:27.3202290+03:00 0HL70Q0EFIOQH [INF] Request finished in 570.6958ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T19:06:27.3215300+03:00 0HL70Q0EFIOQJ [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name], [v].[VariableGroupId], [v0].[Id], [v0].[Code], [v0].[DataBgCol], [v0].[DataBgRow], [v0].[DataEndCol], [v0].[DataEndRow], [v0].[SheetName], [v0].[VariableId], [v0].[XlsRegionTypeId], [v0].[YearBgCol], [v0].[YearBgRow], [v0].[YearEndCol], [v0].[YearEndRow]
+FROM [Variables] AS [v]
+LEFT JOIN [VariableXls] AS [v0] ON [v0].[VariableId] = [v].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [VariableGroups] AS [m]
+    WHERE [v].[VariableGroupId] = [m].[Id])
+ORDER BY [v].[VariableGroupId] (6438bdd5)
+2017-08-11T19:06:27.3246340+03:00 0HL70Q0EFIOQK [INF] Executed action "NXS.Controllers.KeyParameterController.GetKeyParameters (NXS)" in 543.7509ms (afa2e885)
+2017-08-11T19:06:27.3250880+03:00 0HL70Q0EFIOQK [INF] Request finished in 548.2343ms 200 application/json; charset=utf-8 (15c52c40)
+2017-08-11T19:06:27.3677550+03:00 0HL70Q0EFIOQJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-08-11T19:06:27.3790840+03:00 0HL70Q0EFIOQJ [INF] Executed action "NXS.Controllers.VariablesController.GetVariables (NXS)" in 602.223ms (afa2e885)
+2017-08-11T19:06:27.3818460+03:00 0HL70Q0EFIOQJ [INF] Request finished in 608.7684ms 200 application/json; charset=utf-8 (15c52c40)

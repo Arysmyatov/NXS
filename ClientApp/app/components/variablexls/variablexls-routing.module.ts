@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { VariableFormComponent, UploadXlsFileComponent, AdminHomeComponent } from "./index";
+import { AuthGuard } from "../../services/auth-gaurd.service";
 
 @NgModule({
     imports: [
@@ -15,12 +16,16 @@ import { VariableFormComponent, UploadXlsFileComponent, AdminHomeComponent } fro
             },
             {
                 path: "admin",
-                component: AdminHomeComponent
+                component: AdminHomeComponent,
+                canActivate: [ AuthGuard ] 
             }
         ])
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        AuthGuard
     ]
 })
 export class VariableXlsRoutingModule { }

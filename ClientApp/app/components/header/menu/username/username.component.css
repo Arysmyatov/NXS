@@ -1,13 +1,16 @@
-#menu-reg{
+#nxs-menu-user{
     float: right;
-    margin-left: 67px;
     margin-right: 35px;
 }
 
-#menu-reg li a {
+#nxs-menu-user li a {
     margin-right: -10px;
 }
 
-#menu-reg li a {
+#nxs-menu-user li a {
     text-transform: none;
+}
+
+#sign-out i {
+    font-size: 14px;
 }
