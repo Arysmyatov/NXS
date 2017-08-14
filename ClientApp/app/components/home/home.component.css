@@ -1,0 +1,16 @@
+#main-img {
+    min-height: 260px;
+}
+#tagline {
+    font-size: 23px;
+}
+
+h1 {
+    height: 80px;
+}
+#bottom-text
+{
+    font-style: italic;
+    font-size: 17px;
+    max-width: 500px;
+}

@@ -1,0 +1,19 @@
+:host-context(.navbar-right) .menu-item {
+    color: black;
+}
+
+#services {
+  min-height: 100%;
+}
+
+#my-services {
+    margin-top: 200px;
+}
+
+h2 {
+  font-size: 47px;
+}
+
+p {
+  font-size: 19px;
+}
