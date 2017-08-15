@@ -118,7 +118,7 @@ namespace NXS
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                //app.UseExceptionHandler("/Home/Error");
             }
 
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
