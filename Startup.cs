@@ -108,9 +108,9 @@ namespace NXS
             // loggerFactory.AddFile("Logs/NXS-log-{Date}.txt");
             // loggerFactory.AddDebug();
 
+            app.UseDeveloperExceptionPage();
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true
