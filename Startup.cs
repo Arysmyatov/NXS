@@ -65,6 +65,8 @@ namespace NXS
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
+            services.AddCors();
+
             // jwt wire up
             // Get options from app settings
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
@@ -146,6 +148,12 @@ namespace NXS
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
+            app.UseCors(builder =>
+                builder.WithOrigins("http://www.theresourcenexus.co.uk", 
+                                     "http://theresourcenexus.co.uk",
+                                     "http://localhost:5000")
+                                     .AllowAnyHeader());
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -156,6 +164,7 @@ namespace NXS
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
         }
     }
 }
