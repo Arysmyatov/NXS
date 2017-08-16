@@ -1,6 +1,13 @@
 <section class="bg-dark-blue" id="signin">
     <div class="container">
         <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Sign In</h2>
+                <hr class="light">
+            </div>
+        </div>
+
+        <div class="row">
             <form #f="ngForm" class="col-lg-4 col-lg-offset-4" (ngSubmit)="signIn(f)" novalidate>
                 <div class="form-group">
                     <label for="email">Email address:</label>

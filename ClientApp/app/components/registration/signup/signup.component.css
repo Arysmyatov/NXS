@@ -1,5 +1,16 @@
-
-
 #signup-btn {
     float: right;
+}
+
+form label {
+    color: #333;
+    font-weight: normal !important;
+}
+
+textarea.form-control, input.form-control {
+    padding: 17px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 0px;
+    box-shadow: none;
 }

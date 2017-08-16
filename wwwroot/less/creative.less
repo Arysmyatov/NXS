@@ -19,7 +19,7 @@ hr {
 }
 
 hr.light {
-    border-color: white;
+    border-color: #868686;
 }
 
 a {
@@ -80,7 +80,7 @@ p {
 }
 
 .text-faded {
-    color: fade(white, 70%);
+    color: fade(black, 70%);
 }
 
 section {
@@ -145,8 +145,8 @@ aside {
     }
     @media (min-width: 768px) {
         // background-color: transparent;
-        background-color: transparent;
-        border-color: fade(#333, 30%);
+        background-color: white;
+        border-color: fade(#333, 10%);
         .navbar-header .navbar-brand {
             color: fade(#333, 70%);
             &:hover,
@@ -192,7 +192,7 @@ header {
     .background-cover;
     background-position: center;
     background-image: url('../img/nxs-img-bg.jpg');
-    background-color: #afafaf;
+    background-color: #f9f9f9;
     text-align: center;
     color: #3d4d54;
     .header-content {
@@ -341,7 +341,7 @@ header {
 
 // Button Styles
 .btn-default {
-    .button-variant(@gray-darker;white;white);
+    .button-variant(@gray-darker; #ececec; darkgrey);
 }
 
 .btn-primary {
@@ -350,8 +350,7 @@ header {
 
 .btn {
     .sans-serif-font;
-    border: none;
-    border-radius: 300px;
+    border-radius: 100px;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -392,7 +391,7 @@ body {
 #about {
     min-height: 100%;
     #about-header {
-        margin-top: 60px;
+        margin-top: 20px;
         h2 {
             font-size: 35px;
         }
@@ -420,7 +419,7 @@ body {
 #services {
     min-height: 100%;    
     h2{
-        margin-top: 60px;
+        margin-top: 20px;
         font-size: 35px;
         text-transform: uppercase;
     }
@@ -432,7 +431,7 @@ body {
 #publications {
     min-height: 100%;        
     h2 {
-        margin-top: 60px;
+        margin-top: 20px;
         font-size: 35px;
         text-transform: uppercase;
     }

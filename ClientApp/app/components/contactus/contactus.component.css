@@ -1,10 +1,15 @@
-div .alert.alert-danger{
-    margin-top: 3px;
+#about {
+    min-height: 100%;
 }
 
-#signin-btn {
-    float: right;
+h2 {
+    margin-top: 0px;
+    font-size: 35px;
+    text-transform: uppercase;
 }
+p {
+    font-size: 19px;
+}    
 
 form label {
     color: #333;
@@ -17,4 +22,8 @@ textarea.form-control, input.form-control {
     box-sizing: border-box;
     border-radius: 0px;
     box-shadow: none;
+}
+
+#send-msg-grp {
+    float: right;
 }

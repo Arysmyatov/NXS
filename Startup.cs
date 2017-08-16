@@ -29,7 +29,6 @@ namespace NXS
         private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
         private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
 
-
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -108,9 +107,9 @@ namespace NXS
             // loggerFactory.AddFile("Logs/NXS-log-{Date}.txt");
             // loggerFactory.AddDebug();
 
-            app.UseDeveloperExceptionPage();
             if (env.IsDevelopment())
             {
+                app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true
@@ -118,7 +117,7 @@ namespace NXS
             }
             else
             {
-                //app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error");
             }
 
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
