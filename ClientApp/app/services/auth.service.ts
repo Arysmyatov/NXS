@@ -12,12 +12,14 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import '../rxjs-operators';
 import { Credentials } from "../shared/models/credentials.interface";
 import { UserProfile } from "../shared/models/user.profile.interface";
+import { JwtHelper } from "angular2-jwt";
 
 @Injectable()
 export class AuthService extends BaseService {
 
   baseUrl: string = "";
   userName: string = "";
+  role: string = "";
 
   // Observable navItem source
   private _authNavStatusSource = new BehaviorSubject<boolean>(false);
@@ -34,6 +36,21 @@ export class AuthService extends BaseService {
     // header component resulting in authed user nav links disappearing despite the fact user is still logged in
     this._authNavStatusSource.next(this.loggedIn);
     this.baseUrl = configService.getApiURI();
+  }
+
+  getUserFromLocalSorage() {
+    let token = localStorage.getItem('auth_token');
+    this.loggedIn = !!token;
+    this.userName = localStorage.getItem('user_name');
+    this.getUserRole(token);
+  }
+
+  getUserRole(token: string) {
+    if (token) {
+      var jwtHelper = new JwtHelper();
+      var decodedToken = jwtHelper.decodeToken(token);
+      this.role = decodedToken["rol"] || "";
+    }
   }
 
   register(userRegistration: UserRegistration): Observable<UserRegistration> {
@@ -60,6 +77,7 @@ export class AuthService extends BaseService {
         localStorage.setItem('auth_token', res.auth_token);
         this.loggedIn = true;
         this.setUserName(res.userName);
+        this.getUserRole(res.auth_token);
 
         this._authNavStatusSource.next(true);
         return true;
@@ -83,9 +101,13 @@ export class AuthService extends BaseService {
     return this.loggedIn;
   }
 
-  setUserName(userName: string){
+  setUserName(userName: string) {
     this.userName = userName;
-    localStorage.setItem('user_name', userName);    
+    localStorage.setItem('user_name', userName);
   }
+
+  public isInRole(roleName) {
+    return this.role == roleName;
+  }  
 
 }

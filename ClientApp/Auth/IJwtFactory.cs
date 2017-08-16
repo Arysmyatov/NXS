@@ -3,9 +3,9 @@ using System.Security.Claims;
 
 namespace NXS.Auth
 {
- public interface IJwtFactory
+    public interface IJwtFactory
     {
         Task<string> GenerateEncodedToken(string userName, ClaimsIdentity identity);
-        ClaimsIdentity GenerateClaimsIdentity(string userName,string id);
+        ClaimsIdentity GenerateClaimsIdentity(string userName, string id);
     }
 }

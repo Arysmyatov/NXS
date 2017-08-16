@@ -14,11 +14,13 @@ div .alert.alert-danger {
 #signout:hover {
     color: white;
     cursor: pointer;
+    color: #242424;    
 }
 
 #signout-wrapper {
     float: right;
     margin-top: 10px;
+    color: #333;
 }
 
 #signout-wrapper a {
@@ -32,4 +34,17 @@ div .alert.alert-danger {
 #head-wrapper {
     margin: 0px !important;
     padding: 0px !important;
+}
+
+form label {
+    color: #333;
+    font-weight: normal !important;
+}
+
+textarea.form-control, input.form-control {
+    padding: 17px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 0px;
+    box-shadow: none;
 }

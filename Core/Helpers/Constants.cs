@@ -12,6 +12,7 @@ namespace NXS.Helpers
             public static class JwtClaims
             {
                 public const string ApiAccess = "api_access";
+                public const string AdminRole = "Admin";
             }
         }
     }
