@@ -35,7 +35,6 @@ namespace NXS.Controllers
 
 
         [HttpGet]
-        [Authorize(Policy = "RequireAdministratorRole")]
         public async Task<IActionResult> Get()
         {
             if (!ModelState.IsValid)
