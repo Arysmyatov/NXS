@@ -6,9 +6,12 @@ namespace NXS.Core
 {
     public interface IRegionRepository
     {
-        Task<Region> GetRegion(int id, bool includeRelated = true); 
+        Task<Region> GetRegion(int id, bool includeRelated = true);
+        Task<Region> GetRegionByName(string name, bool includeRelated = true);
         void Add(Region region);
         void Remove(Region region);
         Task<QueryResult<Region>> GetRegions(RegionQuery filter);
+        IEnumerable<Region> GetRegions();
+        Task<Region> GetWorldRegion();
     }
 }

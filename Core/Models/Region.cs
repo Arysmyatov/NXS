@@ -17,13 +17,5 @@ namespace NXS.Core.Models
         [StringLength(255)]
         public string Name { get; set; }
         public int ParentRegionId { get; set; }
-
-        public ICollection<Data> Data { get; set; }
-        public ICollection<XlsUpload> XlsUploads { get; set; }
-
-        public Region() {
-            Data = new Collection<Data>();
-            XlsUploads = new Collection<XlsUpload>();
-        }        
     }
 }

@@ -23,12 +23,14 @@ namespace NXS.Controllers
         }
         
         [HttpGet]
-        public async Task<IEnumerable<XlsRegionTypeResource>> GetXlsRegionTypes()
-        {
-            var regionTypes = await context.XlsRegionTypes.ToListAsync();
 
-            var variableResource = mapper.Map<List<XlsRegionType>, List<XlsRegionTypeResource>>(regionTypes);
-            return variableResource;
+        public async Task<IEnumerable<RegionAgrigationTypeResource>> GetXlsRegionTypes()
+        {
+            var regionTypes = await context.RegionAgrigationTypes.ToListAsync();
+
+            var regionAgrigationTypeResource = mapper.Map<List<RegionAgrigationType>, List<RegionAgrigationTypeResource>>(regionTypes);
+            return regionAgrigationTypeResource;
         }        
+        
     }
 }

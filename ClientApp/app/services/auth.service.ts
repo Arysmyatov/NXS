@@ -28,9 +28,10 @@ export class AuthService extends BaseService {
 
   private loggedIn = false;
 
-  constructor(private http: Http, private configService: ConfigService) {
+  constructor(private http: Http,
+              private configService: ConfigService) {
     super();
-    this.loggedIn = !!localStorage.getItem('auth_token');
+    this.loggedIn = !!localStorage.getItem('token');
     this.userName = localStorage.getItem('user_name');
     // ?? not sure if this the best way to broadcast the status but seems to resolve issue on page refresh where auth status is lost in
     // header component resulting in authed user nav links disappearing despite the fact user is still logged in
@@ -39,7 +40,7 @@ export class AuthService extends BaseService {
   }
 
   getUserFromLocalSorage() {
-    let token = localStorage.getItem('auth_token');
+    let token = localStorage.getItem('token');
     this.loggedIn = !!token;
     this.userName = localStorage.getItem('user_name');
     this.getUserRole(token);
@@ -74,7 +75,7 @@ export class AuthService extends BaseService {
       )
       .map(res => res.json())
       .map(res => {
-        localStorage.setItem('auth_token', res.auth_token);
+        localStorage.setItem('token', res.auth_token);
         this.loggedIn = true;
         this.setUserName(res.userName);
         this.getUserRole(res.auth_token);
@@ -85,14 +86,8 @@ export class AuthService extends BaseService {
       .catch(this.handleError);
   }
 
-
-  getProfile() {
-    return this.http.get('/api/keyparameterlevels')
-      .map(res => res.json());
-  }
-
   logout() {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('token');
     this.loggedIn = false;
     this._authNavStatusSource.next(false);
   }
@@ -108,6 +103,6 @@ export class AuthService extends BaseService {
 
   public isInRole(roleName) {
     return this.role == roleName;
-  }  
+  }
 
 }

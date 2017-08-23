@@ -9,6 +9,6 @@ namespace NXS.Core
         public bool IsSortAscending { get; set; }
         public int Page { get; set; }
         public byte PageSize { get; set; }        
-        
+        public bool? IsPaging { get; set; }
     }
 }

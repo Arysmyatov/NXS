@@ -15,11 +15,5 @@ namespace NXS.Core.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
-        public ICollection<Data> Data { get; set; }
-
-        public SubVariable() {
-            Data = new Collection<Data>();
-        }           
     }
 }

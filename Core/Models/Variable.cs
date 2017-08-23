@@ -18,11 +18,8 @@ namespace NXS.Core.Models
 
         public int VariableGroupId { get; set; }
 
-        public VariableXls VariableXls { get; set; }
+        public VariableXls VariableXls { get; set; }                
 
-        public Variable()
-        {
-            VariableXls = new VariableXls();
-        }
+        public VariableXlsDescription VariableXlsDescription { get; set; }
     }
 }

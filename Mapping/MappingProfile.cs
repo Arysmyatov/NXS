@@ -21,7 +21,7 @@ namespace NXS.Mapping
             CreateMap<Data, DataResource>();
             CreateMap<DataQueryResource, DataQuery>();
             CreateMap<VariableXls, VariableXlsResource>();
-            CreateMap<XlsRegionType, XlsRegionTypeResource>();
+            CreateMap<RegionAgrigationType, RegionAgrigationTypeResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>();
             CreateMap<XlsUpload, XlsUploadResource>();
             CreateMap<UserProfileResource, NxsUser>();

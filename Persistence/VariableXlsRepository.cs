@@ -13,10 +13,10 @@ namespace NXS.Persistence
             this.context = context;
         }
 
-        public VariableXls GetVariableXlsAsync(int variableId, int rerionTypeId)
+        public VariableXls GetVariableXlsAsync(int variableId)
         {
             return context.VariableXls
-              .FirstOrDefault(x => x.VariableId == variableId &&  x.XlsRegionTypeId == rerionTypeId);
+              .FirstOrDefault(x => x.VariableId == variableId);
         }
 
         public void Add(VariableXls xlsUpload)

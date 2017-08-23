@@ -8,7 +8,7 @@ namespace NXS.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-// Top
+            // Top
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('GDP', (SELECT ID FROM VariableGroups WHERE Name = 'Top'))");
             migrationBuilder.Sql("INSERT INTO Variables (Name, VariableGroupId) VALUES ('Population', (SELECT ID FROM VariableGroups WHERE Name = 'Top'))");
 

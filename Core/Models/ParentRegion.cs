@@ -18,8 +18,11 @@ namespace NXS.Core.Models
         public string Name { get; set; }
         public ICollection<Region> Regions { get; set; }
 
+        public ICollection<NxsUser> Users { get; set; }
+
         public ParentRegion() {
             Regions = new Collection<Region>();
+            Users = new Collection<NxsUser>();
         }
     }
 }

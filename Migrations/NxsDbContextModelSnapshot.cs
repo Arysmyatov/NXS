@@ -123,6 +123,84 @@ namespace NXS.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.AgrigationXlsDescription", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AttributeCol");
+
+                    b.Property<int>("CommodityCol");
+
+                    b.Property<int>("CommoditySetCol");
+
+                    b.Property<int>("ProcessSetCol");
+
+                    b.Property<int>("RegionAgrigationTypeId");
+
+                    b.Property<int>("RowBg");
+
+                    b.Property<int>("RowEnd");
+
+                    b.Property<string>("SheetName");
+
+                    b.Property<int>("SubVariableCol");
+
+                    b.Property<int>("UserConstraintCol");
+
+                    b.Property<int>("VariableId");
+
+                    b.Property<int>("YearColBg");
+
+                    b.Property<int>("YearColEnd");
+
+                    b.Property<int>("YearRowBg");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VariableId");
+
+                    b.ToTable("AgrigationXlsDescriptions");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.Attribute", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Attributes");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.Commodity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Commodities");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.CommoditySet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CommoditySet");
+                });
+
             modelBuilder.Entity("NXS.Core.Models.Data", b =>
                 {
                     b.Property<int>("Id")
@@ -237,6 +315,8 @@ namespace NXS.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
 
+                    b.Property<int?>("ParentRegionId");
+
                     b.Property<string>("PasswordHash");
 
                     b.Property<string>("PhoneNumber");
@@ -259,6 +339,8 @@ namespace NXS.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex");
 
+                    b.HasIndex("ParentRegionId");
+
                     b.ToTable("AspNetUsers");
                 });
 
@@ -274,6 +356,18 @@ namespace NXS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ParentRegions");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.ProcessSet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProcessSet");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.Region", b =>
@@ -292,6 +386,18 @@ namespace NXS.Migrations
                     b.HasIndex("ParentRegionId");
 
                     b.ToTable("Regions");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.RegionAgrigationType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RegionAgrigationTypes");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.Scenario", b =>
@@ -322,6 +428,79 @@ namespace NXS.Migrations
                     b.ToTable("SubVariables");
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.SubVariableData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AttributeId");
+
+                    b.Property<int?>("CommodityId");
+
+                    b.Property<int?>("CommoditySetId");
+
+                    b.Property<int>("KeyParameterId");
+
+                    b.Property<int>("KeyParameterLevelId");
+
+                    b.Property<int?>("ProcessSetId");
+
+                    b.Property<int>("RegionAgrigationTypeId");
+
+                    b.Property<int?>("RegionId");
+
+                    b.Property<int>("ScenarioId");
+
+                    b.Property<int>("SubVariableId");
+
+                    b.Property<int?>("UserConstraintId");
+
+                    b.Property<decimal>("Value");
+
+                    b.Property<int>("VariableId");
+
+                    b.Property<string>("Year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttributeId");
+
+                    b.HasIndex("CommoditySetId");
+
+                    b.HasIndex("KeyParameterId");
+
+                    b.HasIndex("KeyParameterLevelId");
+
+                    b.HasIndex("ProcessSetId");
+
+                    b.HasIndex("RegionAgrigationTypeId");
+
+                    b.HasIndex("RegionId");
+
+                    b.HasIndex("ScenarioId");
+
+                    b.HasIndex("SubVariableId");
+
+                    b.HasIndex("UserConstraintId");
+
+                    b.HasIndex("VariableId");
+
+                    b.ToTable("SubVariableData");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.UserConstraint", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserConstraint");
+                });
+
             modelBuilder.Entity("NXS.Core.Models.Variable", b =>
                 {
                     b.Property<int>("Id")
@@ -338,6 +517,58 @@ namespace NXS.Migrations
                     b.HasIndex("VariableGroupId");
 
                     b.ToTable("Variables");
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.VariableData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AttributeId");
+
+                    b.Property<int?>("CommodityId");
+
+                    b.Property<int?>("CommoditySetId");
+
+                    b.Property<int>("KeyParameterId");
+
+                    b.Property<int>("KeyParameterLevelId");
+
+                    b.Property<int?>("ProcessSetId");
+
+                    b.Property<int?>("RegionId");
+
+                    b.Property<int>("ScenarioId");
+
+                    b.Property<int?>("UserConstraintId");
+
+                    b.Property<decimal>("Value");
+
+                    b.Property<int>("VariableId");
+
+                    b.Property<string>("Year");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttributeId");
+
+                    b.HasIndex("CommoditySetId");
+
+                    b.HasIndex("KeyParameterId");
+
+                    b.HasIndex("KeyParameterLevelId");
+
+                    b.HasIndex("ProcessSetId");
+
+                    b.HasIndex("RegionId");
+
+                    b.HasIndex("ScenarioId");
+
+                    b.HasIndex("UserConstraintId");
+
+                    b.HasIndex("VariableId");
+
+                    b.ToTable("VariableData");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.VariableGroup", b =>
@@ -375,8 +606,6 @@ namespace NXS.Migrations
 
                     b.Property<int>("VariableId");
 
-                    b.Property<int>("XlsRegionTypeId");
-
                     b.Property<int>("YearBgCol");
 
                     b.Property<int>("YearBgRow");
@@ -390,21 +619,44 @@ namespace NXS.Migrations
                     b.HasIndex("VariableId")
                         .IsUnique();
 
-                    b.HasIndex("XlsRegionTypeId");
-
                     b.ToTable("VariableXls");
                 });
 
-            modelBuilder.Entity("NXS.Core.Models.XlsRegionType", b =>
+            modelBuilder.Entity("NXS.Core.Models.VariableXlsDescription", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<int>("AttributeCol");
+
+                    b.Property<int>("CommodityCol");
+
+                    b.Property<int>("CommoditySetCol");
+
+                    b.Property<int>("ProcessSetCol");
+
+                    b.Property<int>("RegionCol");
+
+                    b.Property<int>("RowBg");
+
+                    b.Property<int>("RowEnd");
+
+                    b.Property<string>("SheetName");
+
+                    b.Property<int>("UserConstraintCol");
+
+                    b.Property<int>("VariableId");
+
+                    b.Property<int>("YearColBg");
+
+                    b.Property<int>("YearColEnd");
 
                     b.HasKey("Id");
 
-                    b.ToTable("XlsRegionTypes");
+                    b.HasIndex("VariableId")
+                        .IsUnique();
+
+                    b.ToTable("VariableXlsDescriptions");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.XlsUpload", b =>
@@ -420,8 +672,6 @@ namespace NXS.Migrations
 
                     b.Property<int>("KeyParameterLevelId");
 
-                    b.Property<int?>("RegionId");
-
                     b.Property<int>("ScenarioId");
 
                     b.Property<DateTime>("UploadDate");
@@ -429,8 +679,6 @@ namespace NXS.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("KeyParameterLevelId");
-
-                    b.HasIndex("RegionId");
 
                     b.HasIndex("ScenarioId");
 
@@ -474,6 +722,14 @@ namespace NXS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.AgrigationXlsDescription", b =>
+                {
+                    b.HasOne("NXS.Core.Models.Variable", "Variable")
+                        .WithMany()
+                        .HasForeignKey("VariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("NXS.Core.Models.Data", b =>
                 {
                     b.HasOne("NXS.Core.Models.KeyParameter", "KeyParameter")
@@ -487,7 +743,7 @@ namespace NXS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("NXS.Core.Models.Region", "Region")
-                        .WithMany("Data")
+                        .WithMany()
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -497,7 +753,7 @@ namespace NXS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("NXS.Core.Models.SubVariable", "SubVariable")
-                        .WithMany("Data")
+                        .WithMany()
                         .HasForeignKey("SubVariableId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -515,11 +771,71 @@ namespace NXS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.NxsUser", b =>
+                {
+                    b.HasOne("NXS.Core.Models.ParentRegion", "ParentRegion")
+                        .WithMany("Users")
+                        .HasForeignKey("ParentRegionId");
+                });
+
             modelBuilder.Entity("NXS.Core.Models.Region", b =>
                 {
                     b.HasOne("NXS.Core.Models.ParentRegion")
                         .WithMany("Regions")
                         .HasForeignKey("ParentRegionId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NXS.Core.Models.SubVariableData", b =>
+                {
+                    b.HasOne("NXS.Core.Models.Attribute", "Attribute")
+                        .WithMany()
+                        .HasForeignKey("AttributeId");
+
+                    b.HasOne("NXS.Core.Models.CommoditySet", "CommoditySet")
+                        .WithMany()
+                        .HasForeignKey("CommoditySetId");
+
+                    b.HasOne("NXS.Core.Models.KeyParameter", "KeyParameter")
+                        .WithMany()
+                        .HasForeignKey("KeyParameterId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.KeyParameterLevel", "KeyParameterLevel")
+                        .WithMany()
+                        .HasForeignKey("KeyParameterLevelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.ProcessSet", "ProcessSet")
+                        .WithMany()
+                        .HasForeignKey("ProcessSetId");
+
+                    b.HasOne("NXS.Core.Models.RegionAgrigationType", "RegionAgrigationType")
+                        .WithMany()
+                        .HasForeignKey("RegionAgrigationTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId");
+
+                    b.HasOne("NXS.Core.Models.Scenario", "Scenario")
+                        .WithMany()
+                        .HasForeignKey("ScenarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.SubVariable", "SubVariable")
+                        .WithMany()
+                        .HasForeignKey("SubVariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.UserConstraint", "UserConstraint")
+                        .WithMany()
+                        .HasForeignKey("UserConstraintId");
+
+                    b.HasOne("NXS.Core.Models.Variable", "Variable")
+                        .WithMany()
+                        .HasForeignKey("VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -531,16 +847,62 @@ namespace NXS.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("NXS.Core.Models.VariableData", b =>
+                {
+                    b.HasOne("NXS.Core.Models.Attribute", "Attribute")
+                        .WithMany()
+                        .HasForeignKey("AttributeId");
+
+                    b.HasOne("NXS.Core.Models.CommoditySet", "CommoditySet")
+                        .WithMany()
+                        .HasForeignKey("CommoditySetId");
+
+                    b.HasOne("NXS.Core.Models.KeyParameter", "KeyParameter")
+                        .WithMany()
+                        .HasForeignKey("KeyParameterId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.KeyParameterLevel", "KeyParameterLevel")
+                        .WithMany()
+                        .HasForeignKey("KeyParameterLevelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.ProcessSet", "ProcessSet")
+                        .WithMany()
+                        .HasForeignKey("ProcessSetId");
+
+                    b.HasOne("NXS.Core.Models.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId");
+
+                    b.HasOne("NXS.Core.Models.Scenario", "Scenario")
+                        .WithMany()
+                        .HasForeignKey("ScenarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NXS.Core.Models.UserConstraint", "UserConstraint")
+                        .WithMany()
+                        .HasForeignKey("UserConstraintId");
+
+                    b.HasOne("NXS.Core.Models.Variable", "Variable")
+                        .WithMany()
+                        .HasForeignKey("VariableId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("NXS.Core.Models.VariableXls", b =>
                 {
                     b.HasOne("NXS.Core.Models.Variable")
                         .WithOne("VariableXls")
                         .HasForeignKey("NXS.Core.Models.VariableXls", "VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
 
-                    b.HasOne("NXS.Core.Models.XlsRegionType")
-                        .WithMany("VariableXls")
-                        .HasForeignKey("XlsRegionTypeId")
+            modelBuilder.Entity("NXS.Core.Models.VariableXlsDescription", b =>
+                {
+                    b.HasOne("NXS.Core.Models.Variable", "Variable")
+                        .WithOne("VariableXlsDescription")
+                        .HasForeignKey("NXS.Core.Models.VariableXlsDescription", "VariableId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -550,10 +912,6 @@ namespace NXS.Migrations
                         .WithMany("XlsUploads")
                         .HasForeignKey("KeyParameterLevelId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("NXS.Core.Models.Region")
-                        .WithMany("XlsUploads")
-                        .HasForeignKey("RegionId");
 
                     b.HasOne("NXS.Core.Models.Scenario")
                         .WithMany("XlsUploads")

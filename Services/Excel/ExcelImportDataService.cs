@@ -4,75 +4,114 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Persistence;
+using NXS.Services.Abstract;
 using OfficeOpenXml;
 
 namespace NXS.Services.Excel
 {
     public class ExcelImportDataService : IExcelImportDataService
     {
-        #region Constants
-
-        private const string ByRegionSheetName = "By region";
-        private const string GlobalResultsSheetName = "Global Results";
-        private const string GeneralParametersSheetName = "General parameters";
-
-        private string[] subVariableSkipedConst = {"total"};
-
-        private const byte RegionRow = 1;
-        private const byte RegionCol = 2;
-
-        #endregion
-
-        private readonly IScenarioRepository _scenarioRepository;
-        private readonly IRegionRepository _regionRepository;
+        public readonly IScenarioRepository ScenarioRepository;
+        public IRegionRepository RegionRepository { get; set; }
+        public IProcessSetRepository ProcessSetRepository { get; set; }
+        public ICommodityRepository CommodityRepository { get; set; }
+        public ICommoditySetRepository CommoditySetRepository { get; set; }
+        public IAttributeRepository AttributeRepository { get; set; }
+        public IUserConstraintRepository UserConstraintRepository { get; set; }
+        public IVariableDataRepository VariableDataRepository { get; set; }
+        public ISubVariableRepository SubVariableRepository { get; set; }
+        public ISubVariableDataRepository SubVariableDataRepository { get; set; }
+        private readonly AggregationSumCulculationService _aggregationSumCulculationService;
+        private readonly AggregationSumWorldCulculationService _aggregationSumWorldCulculationService;
         private readonly IVariableRepository _variableRepository;
-        private readonly ISubVariableRepository _subVariableRepository;
+        private readonly IVariableXlsDescriptionRepository _variableXlsDescriptionRepository;
+        private readonly IAgrigationXlsDescriptionRepository _agrigationXlsDescriptionRepository;
+        private readonly IRegionAgrigationTypeRepository _regionAgrigationTypeRepository;      
         private readonly IDataRepository _dataRepository;
         private readonly NxsDbContext _context;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IDataXlsImport<VariableData> _variableDataHandler;
+        private readonly AggregationDataHandlerAbstract _agrigationDataHandler;
+        private readonly AggregationDataHandlerAbstract _agrigationDataHandlerWorld;
+        public IUnitOfWork UnitOfWork { get; set; }
+        public ExcelWorkbook CurrentWorkBook { get; set; }
+        public int CurrentSecenarioId { get; set; }
+        public int CurrentKeyParameterId { get; set; }
+        public int CurrentKeyParameterLevelId { get; set; }
+        public int CurrentVariableId { get; set; }
+        public VariableXlsDescription CurrentVariableXlsDescription { get; set; }
+        public AgrigationXlsDescription CurrentAgrigationXlsDescription { get; set; }
         public string WorkBookBasePath { get; set; }
-        private readonly ILogger _logger;
+
+        //private readonly ILogger _logger;
 
         public ExcelImportDataService(IScenarioRepository scenarioRepository,
                                         IRegionRepository regionRepository,
                                         IVariableRepository variableRepository,
+                                        IVariableXlsDescriptionRepository variableXlsDescriptionRepository,
+                                        IAgrigationXlsDescriptionRepository agrigationXlsDescriptionRepository,
                                         ISubVariableRepository subVariableRepository,
+                                        ISubVariableDataRepository subVariableDataRepository,
+                                        IProcessSetRepository processSetRepository,
+                                        ICommodityRepository commodityRepository,
+                                        ICommoditySetRepository commoditySetRepository,
+                                        IAttributeRepository attributeRepository,
+                                        IUserConstraintRepository userConstraintRepository,
+                                        IVariableDataRepository variableDataRepository,
+                                        IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
+                                        AggregationSumCulculationService aggregationSumulCalculationService,                                        
+                                        AggregationSumWorldCulculationService aggregationSumWorldCulculationService,
                                         IDataRepository dataRepository,
                                         IUnitOfWork unitOfWork,
-                                        NxsDbContext context,
-                                        ILogger<ExcelImportDataService> logger)
+                                        //ILogger<ExcelImportDataService> logger,
+                                        NxsDbContext context)
         {
-            _scenarioRepository = scenarioRepository;
-            _regionRepository = regionRepository;
+            ScenarioRepository = scenarioRepository;
+            RegionRepository = regionRepository;
+            ProcessSetRepository = processSetRepository;
+            CommodityRepository = commodityRepository;
+            CommoditySetRepository = commoditySetRepository;
+            AttributeRepository = attributeRepository;
+            UserConstraintRepository = userConstraintRepository;
+            VariableDataRepository = variableDataRepository;
+            SubVariableRepository = subVariableRepository;
+            SubVariableDataRepository = subVariableDataRepository;
+            _aggregationSumCulculationService = aggregationSumulCalculationService;            
+            _aggregationSumWorldCulculationService = aggregationSumWorldCulculationService;
             _variableRepository = variableRepository;
-            _subVariableRepository = subVariableRepository;
-            _scenarioRepository = scenarioRepository;
+            _variableXlsDescriptionRepository = variableXlsDescriptionRepository;
+            _agrigationXlsDescriptionRepository = agrigationXlsDescriptionRepository;
             _dataRepository = dataRepository;
             _context = context;
-            _unitOfWork = unitOfWork;
-            _logger = logger;
+            UnitOfWork = unitOfWork;
+            //_logger = logger;
+            _variableDataHandler = new VariableDataHandler(this);
+            _agrigationDataHandler = new AggregationDataHandler(this);
+            _agrigationDataHandlerWorld = new AggregationDataHandlerWorld(this);
         }
 
         public async Task ImportData()
         {
-            var scenarios = await _scenarioRepository.GetScenarios(new ScenarioQuery());
+            var scenarios = await ScenarioRepository.GetScenarios(new ScenarioQuery());
             var keyParameters = _context.KeyParameters.ToList();
             var keyParameterLevels = _context.KeyParameterLevels.ToList();
 
             foreach (var scenario in scenarios.Items)
             {
+                CurrentSecenarioId = scenario.Id;
+
                 foreach (var keyParameter in keyParameters)
                 {
+                    CurrentKeyParameterId = keyParameter.Id;
+
                     foreach (var keyParameterLevel in keyParameterLevels)
                     {
+                        CurrentKeyParameterLevelId = keyParameterLevel.Id;
                         var xlsFile = _context.XlsUploads.FirstOrDefault(x => x.ScenarioId == scenario.Id &&
                                                                               x.KeyParameterId == keyParameter.Id &&
                                                                               x.KeyParameterLevelId == keyParameterLevel.Id);
-
                         if (xlsFile == null)
                         {
                             continue;
@@ -82,142 +121,78 @@ namespace NXS.Services.Excel
                         var filePath = $"{WorkBookBasePath}/{xlsFile.FileName}";
                         var fileInfo = new FileInfo(filePath);
 
-                        var regions = _context.Regions.ToList();
-                        var currRegionType = _context.XlsRegionTypes.FirstOrDefault(v => v.Name == "General region");
-                        var variableXls = _context.VariableXls.Where(v => v.XlsRegionTypeId == currRegionType.Id).ToList();
-
                         // Open Xls file
                         using (var package = new ExcelPackage(fileInfo))
                         {
-                            // Set sheet for the region data
-                            var regionSheet = package.Workbook.Worksheets[ByRegionSheetName];
+                            this.CurrentWorkBook = package.Workbook;
 
-                            foreach (var region in regions)
-                            {
-                                // change current region in xls     
+                            // get Variable Data
+                            await GetVariableDataAggreegation();
 
-                                regionSheet.Cells[RegionRow, RegionCol].Value = region.Name;
-                                //regionSheet.Calculate();
+                            // get Sub Variable data
+                            await GetSubVariableDataAggregategation();
 
-                                _logger.LogInformation($"EXCEL - Region is: {regionSheet.Cells[RegionRow, RegionCol].Value}");                                
-                                package.Save();
-
-                                foreach (var varXls in variableXls)
-                                {
-                                    var years = GetYears(varXls, regionSheet);
-                                    if (years == null)
-                                    {
-                                        continue;
-                                    }
-
-                                    var variable = await _variableRepository.GetVariable(varXls.VariableId);
-                                    if (variable == null ||
-                                       variable.Name == "GDP" ||
-                                       variable.Name == "Population")
-                                    {
-                                        continue;
-                                    }
-
-                                    for (var row = varXls.DataBgRow; row <= varXls.DataEndRow; row++)
-                                    {
-                                        var subVariableName = regionSheet.Cells[row, varXls.DataBgCol].Value.ToString();
-                                        
-                                        if(subVariableSkipedConst.Contains(subVariableName)) continue;
-
-                                        var subVariable = await GetSubVariable(subVariableName);
-                                        if (subVariable == null)
-                                        {
-                                            // create new sub variable
-                                            subVariable = await CreateNewSubVariable(subVariableName);
-                                        }
-
-                                        var yearIndex = 0;
-                                        for (var col = varXls.DataBgCol + 1; col <= varXls.DataEndCol; col++)
-                                        {
-                                            var dataVal = regionSheet.Cells[row, col].Value;
-                                            _logger.LogInformation($"EXCEL CELL Value: {dataVal}");
-
-                                            if (dataVal == null) continue;
-
-                                            string dataValStr = string.Empty;
-                                            try
-                                            {
-                                                dataValStr = dataVal.ToString();
-                                            }
-                                            catch (Exception ex)
-                                            {
-                                                // ToDo: log cach error
-                                                continue;
-                                            }
-
-                                            // Create and save data
-
-                                            var data = new Data
-                                            {
-                                                RegionId = region.Id,
-                                                ScenarioId = scenario.Id,
-                                                KeyParameterId = keyParameter.Id,
-                                                KeyParameterLevelId = keyParameterLevel.Id,
-                                                VariableId = varXls.VariableId,
-                                                SubVariableId = subVariable.Id,
-                                                Year = years[yearIndex],
-                                                Value = decimal.Parse(dataValStr)
-                                            };
-
-                                            _dataRepository.Add(data);
-                                            await _unitOfWork.CompleteAsync();
-
-                                            yearIndex++;
-                                        }
-                                    }
-                                }
-                                break;
-                            }
+                            // get Sub Variable World data
+                           await GetSubVariableDataAggregategationWorld();
                         }
                     }
                 }
             }
+
+            await CalculateSums();
+            await CalculateWorldSums();            
         }
 
-        private string[] GetYears(VariableXls variableXls, ExcelWorksheet workSheet)
+
+        #region private methods 
+
+        private async Task GetVariableDataAggreegation()
         {
-            if (variableXls.YearBgRow == 0 && variableXls.YearBgCol == 0 &&
-               variableXls.YearEndRow == 0 && variableXls.YearEndCol == 0)
+            var variableXlsDescriptions = _variableXlsDescriptionRepository.GetVariableXlsDescriptions().ToArray();
+            foreach (var variableXlsDescription in variableXlsDescriptions)
             {
-                return null;
+                this.CurrentVariableXlsDescription = variableXlsDescription;
+                this.CurrentVariableId = this.CurrentVariableXlsDescription.VariableId;
+                var data = await _variableDataHandler.GetDataFromXlsAsync();
+                await _variableDataHandler.InsertDataToDbAsync(data);
             }
-            var yeras = new string[variableXls.YearEndCol - variableXls.YearBgCol + 1];
-            var yearIndex = 0;
+        }
 
-            for (var col = variableXls.YearBgCol; col <= variableXls.YearEndCol; col++)
+        private async Task GetSubVariableDataAggregategation()
+        {
+            var agrigationXlsDescriptions = _agrigationXlsDescriptionRepository.GetDescriptions().ToArray();
+            foreach (var agrigationXlsDescription in agrigationXlsDescriptions)
             {
-                var yearVal = workSheet.Cells[variableXls.YearBgRow, col].Value;
-                if (yearVal == null)
-                {
-                    continue;
-                }
-                yeras[yearIndex] = yearVal.ToString();
-                yearIndex++;
+                this.CurrentAgrigationXlsDescription = agrigationXlsDescription;
+                this.CurrentVariableId = this.CurrentAgrigationXlsDescription.VariableId;
+                var data = await _agrigationDataHandler.GetDataFromXlsAsync();
+                await _agrigationDataHandler.InsertDataToDbAsync(data);
             }
-
-            return yeras;
         }
 
-        private async Task<SubVariable> GetSubVariable(string name)
+        private async Task GetSubVariableDataAggregategationWorld()
         {
-            var subVariables = await _subVariableRepository.GetSubVariables(new SubVariableQuery { Name = name });
-
-            return subVariables.Items.FirstOrDefault();
+            var agrigationXlsDescriptionsWorld = _agrigationXlsDescriptionRepository.GetWorldDescriptions().ToArray();
+            foreach (var agrigationXlsDescription in agrigationXlsDescriptionsWorld)
+            {
+                this.CurrentAgrigationXlsDescription = agrigationXlsDescription;
+                this.CurrentVariableId = this.CurrentAgrigationXlsDescription.VariableId;
+                var data = await _agrigationDataHandlerWorld.GetDataFromXlsAsync();
+                await _agrigationDataHandlerWorld.InsertDataToDbAsync(data);
+            }
         }
 
-        private async Task<SubVariable> CreateNewSubVariable(string name)
+        private async Task CalculateSums()
         {
-            // create new sub variable
-            var subVariable = new SubVariable { Name = name };
-            _subVariableRepository.Add(subVariable);
-            await _unitOfWork.CompleteAsync();
-
-            return subVariable;
+            await _aggregationSumCulculationService.UpdateSumsAsync();
         }
+
+        private async Task CalculateWorldSums()
+        {
+            await _aggregationSumWorldCulculationService.UpdateSumsAsync();
+        }
+        
+        #endregion private methods 
+
     }
 }

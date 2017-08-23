@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NXS.Core.Models
 {
 
-    [Table("VariableData")]
+    [Table("ProcessSet")]
     public class ProcessSet
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

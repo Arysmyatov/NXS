@@ -21,6 +21,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using NXS.Helpers;
 using Microsoft.AspNetCore.Http;
+using NXS.Services.Abstract;
+using NXS.Services.Logger;
 
 namespace NXS
 {
@@ -51,12 +53,24 @@ namespace NXS
             services.AddScoped<IScenarioRepository, ScenarioRepository>();
             services.AddScoped<IVariableGroupRepository, VariableGroupRepository>();
             services.AddScoped<IVariableRepository, VariableRepository>();
+            services.AddScoped<IVariableXlsDescriptionRepository, VariableXlsDescriptionRepository>();
             services.AddScoped<ISubVariableRepository, SubVariableRepository>();
             services.AddScoped<IDataRepository, DataRepository>();
+            services.AddScoped<IVariableDataRepository, VariableDataRepository>();
+            services.AddScoped<ISubVariableDataRepository, SubVariableDataRepository>();
             services.AddScoped<IVariableXlsRepository, VariableXlsRepository>();
+            services.AddScoped<IProcessSetRepository, ProcessSetRepository>();
+            services.AddScoped<ICommodityRepository, CommodityRepository>();
+            services.AddScoped<ICommoditySetRepository, CommoditySetRepository>();
+            services.AddScoped<IAttributeRepository, AttributeRepository>();
+            services.AddScoped<IUserConstraintRepository, UserConstraintRepository>();
+            services.AddScoped<IRegionAgrigationTypeRepository, RegionAgrigationTypeRepository>();
+            services.AddScoped<IAgrigationXlsDescriptionRepository, AgrigationXlsDescriptionRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
+            services.AddTransient<AggregationSumCulculationService, AggregationSumCulculationService>();
+            services.AddTransient<AggregationSumWorldCulculationService, AggregationSumWorldCulculationService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -82,7 +96,7 @@ namespace NXS
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiUser", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
-                options.AddPolicy("RequireAdministratorRole", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.AdminRole));               
+                options.AddPolicy("RequireAdministratorRole", policy => policy.RequireClaim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.AdminRole));
             });
 
             services.AddIdentity<NxsUser, IdentityRole>
@@ -102,10 +116,13 @@ namespace NXS
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            // loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            // loggerFactory.AddFile("Logs/NXS-log-{Date}.txt");
+            loggerFactory
+                    .AddConsole();
+            loggerFactory.AddProvider(new NxsLoggerProvider());
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddFile("Logs/NXS-log-{Date}.txt");
             // loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
@@ -149,7 +166,7 @@ namespace NXS
             app.UseStaticFiles();
 
             app.UseCors(builder =>
-                builder.WithOrigins("http://www.theresourcenexus.co.uk", 
+                builder.WithOrigins("http://www.theresourcenexus.co.uk",
                                      "http://theresourcenexus.co.uk",
                                      "http://localhost:5000")
                                      .AllowAnyHeader());

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { AuthHttp } from "angular2-jwt/angular2-jwt";
 import 'rxjs/add/operator/map';
 import { SaveVariableXls } from "../../models/variablexls";
 
@@ -9,10 +10,10 @@ export class GraphDataService {
   private readonly variableXlsEndpoint = '/api/variablexls';  
   private readonly xlsRegionTypesEndpoint = '/api/xlsregiontypes';  
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private authHttp: AuthHttp) { }
 
   getRegions() {
-    return this.http.get('/api/regions')
+    return this.authHttp.get('/api/regions')
       .map(res => res.json());
   }
 

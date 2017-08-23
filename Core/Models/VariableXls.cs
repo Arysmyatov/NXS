@@ -22,6 +22,5 @@ namespace NXS.Core.Models
         public int DataEndRow { get; set; }
         public int DataEndCol { get; set; }
         public int VariableId { get; set; }
-        public int XlsRegionTypeId { get; set; }
     }
 }

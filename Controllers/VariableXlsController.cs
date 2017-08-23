@@ -30,7 +30,7 @@ namespace NXS.Controllers
         [HttpGet]
         public IActionResult GetVariableXls(VariableXlsQueryResource filterResource)
         {
-            var variableXls =  _variableXlsRepository.GetVariableXlsAsync(filterResource.VariableId.Value, filterResource.XlsRegionTypeId.Value);
+            var variableXls =  _variableXlsRepository.GetVariableXlsAsync(filterResource.VariableId.Value);
 
             if (variableXls == null)
                 return NotFound();

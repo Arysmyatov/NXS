@@ -8,22 +8,29 @@ namespace NXS.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("INSERT INTO ParentRegions (Name) VALUES ('EU')");
+            migrationBuilder.Sql("INSERT INTO ParentRegions (Name) VALUES ('ETM')");
+            migrationBuilder.Sql("INSERT INTO ParentRegions (Name) VALUES ('TMXR')");
 
-            // Regions
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('BNL', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('DEU', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('EEN', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('EES', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('FRA', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('IAM', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('IBE', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SDF', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('UKI', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SWZ', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('NOI', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
-            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('World', (SELECT ID FROM ParentRegions WHERE Name = 'EU'))");
+            // Regions for ETM
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('BNL', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('DEU', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('EEN', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('EES', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('FRA', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('IAM', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('IBE', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SDF', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('UKI', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SWZ', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('NOI', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('World', (SELECT ID FROM ParentRegions WHERE Name = 'ETM'))");
 
+            // Regions for TMXR
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('CTR', (SELECT ID FROM ParentRegions WHERE Name = 'TMXR'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('NES', (SELECT ID FROM ParentRegions WHERE Name = 'TMXR'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('NOE', (SELECT ID FROM ParentRegions WHERE Name = 'TMXR'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('OCC', (SELECT ID FROM ParentRegions WHERE Name = 'TMXR'))");
+            migrationBuilder.Sql("INSERT INTO Regions (Name, ParentRegionId) VALUES ('SSE', (SELECT ID FROM ParentRegions WHERE Name = 'TMXR'))");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -52,5 +52,9 @@ namespace NXS.Persistence
             return result;
         }
 
+        public async Task<SubVariable> GetSubVariable(string name)
+        {
+            return await context.SubVariables.SingleOrDefaultAsync(sv => sv.Name == name);
+        }
     }
 }
