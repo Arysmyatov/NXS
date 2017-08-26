@@ -34,5 +34,7 @@ namespace NXS.Persistence
         public DbSet<UserConstraint> UserConstraints { get; set; }
         public DbSet<VariableData> VariableData { get; set; }   
         public DbSet<AgrigationXlsDescription> AgrigationXlsDescriptions { get; set; }                
+        public DbSet<AgreegationSubVariable> AgreegationSubVariables { get; set; }
+        public DbSet<AgreegationSubVariableSubVariable> AgreegationSubVariableSubVariables { get; set; }                
     }
 }

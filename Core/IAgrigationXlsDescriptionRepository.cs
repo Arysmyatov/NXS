@@ -10,6 +10,7 @@ namespace NXS.Core
         void Add(AgrigationXlsDescription description);
         void Remove(AgrigationXlsDescription description);
         IEnumerable<AgrigationXlsDescription> GetDescriptions();
+        IEnumerable<AgrigationXlsDescription> GetDescriptionsGdp();        
         IEnumerable<AgrigationXlsDescription> GetWorldDescriptions();
     }
 }

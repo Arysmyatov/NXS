@@ -53,6 +53,8 @@ namespace NXS.Persistence
 
             var query = context.Regions.AsQueryable();
 
+            // skip world region
+            query = query.Where(r => r.Name != RegionConstants.WorldRegionName);
             query = query.ApplyFiltering(queryObj);
 
             var columnsMap = new Dictionary<string, Expression<Func<Region, object>>>()
@@ -72,7 +74,8 @@ namespace NXS.Persistence
 
         public IEnumerable<Region> GetRegions()
         {
-            var result = context.Regions.AsEnumerable();
+            // skip world region
+            var result = context.Regions.Where(r => r.Name != RegionConstants.WorldRegionName).AsEnumerable();
             return result;
         }
 

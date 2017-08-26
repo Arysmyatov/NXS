@@ -99,6 +99,15 @@ namespace NXS.Extensions
         }
 
 
+        public static IQueryable<AgreegationSubVariable> ApplyFiltering(this IQueryable<AgreegationSubVariable> query, AgreegationSubVariableQuery queryObj)
+        {
+            if (queryObj.VariableId.HasValue)
+                query = query.Where(v => v.VariableId == queryObj.VariableId.Value);
+
+            return query;
+        }
+        
+
         public static IQueryable<SubVariable> ApplyFiltering(this IQueryable<SubVariable> query, SubVariableQuery queryObj)
         {
             if (!string.IsNullOrEmpty(queryObj.Name))

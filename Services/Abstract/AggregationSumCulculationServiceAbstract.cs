@@ -34,7 +34,7 @@ namespace NXS.Services.Abstract
         }
 
 
-        public async Task UpdateSumsAsync()
+        public virtual async Task UpdateSumsAsync()
         {
             var currentPage = 1;
             bool processing;
@@ -43,8 +43,14 @@ namespace NXS.Services.Abstract
             {
                 subVariableDataQuery.Page = currentPage;
 
-                var subVariableData = await _subVariableDataRepository.GetSubVariableData(subVariableDataQuery);
-                var subVariableDataArray = subVariableData.Items.ToArray();
+                // Get Sub variables without GDP
+                var subVariableData = await _subVariableDataRepository.GetSubVariableDataWithoutGdp(subVariableDataQuery);
+                var subVariableDataArray = subVariableData.Items.Where(i => i.AttributeId != null ||
+                                                                            i.CommodityId != null ||
+                                                                            i.CommoditySetId != null ||
+                                                                            i.ProcessSetId != null ||
+                                                                            i.UserConstraintId != null
+                                                                        ).ToArray();
 
                 foreach (var dataItem in subVariableDataArray)
                 {
@@ -60,7 +66,11 @@ namespace NXS.Services.Abstract
                 processing = subVariableDataArray.Count() == PageSize;
 
             } while (processing);
+
+
+
         }
+
 
         protected VariableDataQuery GetVariableDataQuery(SubVariableData dataItem)
         {

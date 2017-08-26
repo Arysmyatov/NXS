@@ -33,6 +33,7 @@ namespace NXS.Services.Excel
         private readonly IDataRepository _dataRepository;
         private readonly NxsDbContext _context;
         private readonly IDataXlsImport<VariableData> _variableDataHandler;
+        private readonly IDataXlsImport<SubVariableData> _aggregationDataHandlerGdp;
         private readonly AggregationDataHandlerAbstract _agrigationDataHandler;
         private readonly AggregationDataHandlerAbstract _agrigationDataHandlerWorld;
         public IUnitOfWork UnitOfWork { get; set; }
@@ -90,6 +91,7 @@ namespace NXS.Services.Excel
             _variableDataHandler = new VariableDataHandler(this);
             _agrigationDataHandler = new AggregationDataHandler(this);
             _agrigationDataHandlerWorld = new AggregationDataHandlerWorld(this);
+            _aggregationDataHandlerGdp = new AggregationDataHandlerGdp(this);
         }
 
         public async Task ImportData()
@@ -132,15 +134,18 @@ namespace NXS.Services.Excel
                             // get Sub Variable data
                             await GetSubVariableDataAggregategation();
 
+                            // get Sub Variable GDP 
+                            await GetSubVariableDataAggregategationGdp();
+
                             // get Sub Variable World data
-                           await GetSubVariableDataAggregategationWorld();
+                            await GetSubVariableDataAggregategationWorld();
                         }
                     }
                 }
             }
 
             await CalculateSums();
-            await CalculateWorldSums();            
+            await CalculateWorldSums();
         }
 
 
@@ -158,6 +163,7 @@ namespace NXS.Services.Excel
             }
         }
 
+
         private async Task GetSubVariableDataAggregategation()
         {
             var agrigationXlsDescriptions = _agrigationXlsDescriptionRepository.GetDescriptions().ToArray();
@@ -169,6 +175,20 @@ namespace NXS.Services.Excel
                 await _agrigationDataHandler.InsertDataToDbAsync(data);
             }
         }
+
+
+        private async Task GetSubVariableDataAggregategationGdp()
+        {
+            var agrigationXlsDescriptions = _agrigationXlsDescriptionRepository.GetDescriptionsGdp().ToArray();
+            foreach (var agrigationXlsDescription in agrigationXlsDescriptions)
+            {
+                this.CurrentAgrigationXlsDescription = agrigationXlsDescription;
+                this.CurrentVariableId = this.CurrentAgrigationXlsDescription.VariableId;
+                var data = await _aggregationDataHandlerGdp.GetDataFromXlsAsync();
+                await _aggregationDataHandlerGdp.InsertDataToDbAsync(data);
+            }
+        }
+        
 
         private async Task GetSubVariableDataAggregategationWorld()
         {

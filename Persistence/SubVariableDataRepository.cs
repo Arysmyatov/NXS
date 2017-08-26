@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NXS.Core;
 using NXS.Core.Models;
+using NXS.Core.NxsConstants;
 using NXS.Extensions;
 
 namespace NXS.Persistence
@@ -33,7 +34,7 @@ namespace NXS.Persistence
         public void Update(SubVariableData subVariableData)
         {
             context.SubVariableData.Update(subVariableData);
-        }        
+        }
 
         public void Remove(SubVariableData subVariable)
         {
@@ -45,23 +46,45 @@ namespace NXS.Persistence
             return context.SubVariableData;
         }
 
-        public async Task<QueryResult<SubVariableData>> GetSubVariableData(SubVariableDataQuery queryObj)
+        public async Task<QueryResult<SubVariableData>> GetSubVariableData(SubVariableDataQuery queryObj, bool includeRelated = false)
         {
             var result = new QueryResult<SubVariableData>();
 
-            var query = context.SubVariableData
-              .AsQueryable();
-
-            query = query.ApplyFiltering(queryObj);
-
+            var query = getSubVariableData(queryObj, includeRelated);
             result.TotalItems = await query.CountAsync();
-
-            query = query.ApplyPaging(queryObj);
-
             result.Items = await query.ToListAsync();
 
             return result;
         }
 
+
+        public async Task<QueryResult<SubVariableData>> GetSubVariableDataWithoutGdp(SubVariableDataQuery queryObj, bool includeRelated = false)
+        {
+            var result = new QueryResult<SubVariableData>();
+
+            var query = getSubVariableData(queryObj, includeRelated);
+            query = query.Where(sv => sv.Variable.Name != NxsVariablesConstants.Variables.Gdp);
+
+            result.TotalItems = await query.CountAsync();
+            result.Items = await query.ToListAsync();
+
+            return result;
+        }
+
+
+        private IQueryable<SubVariableData> getSubVariableData(SubVariableDataQuery queryObj, bool includeRelated = false)
+        {
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+            query = query.ApplyPaging(queryObj);
+            if (includeRelated)
+            {
+                query = query.Include(sv => sv.SubVariable);
+            }
+
+            return query;
+        }
+        
     }
 }

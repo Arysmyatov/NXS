@@ -20,6 +20,7 @@ namespace NXS.Mapping
             CreateMap<KeyParameterLevel, KeyParameterLevelResource>();
             CreateMap<Data, DataResource>();
             CreateMap<DataQueryResource, DataQuery>();
+            CreateMap<DataQueryResource, SubVariableDataQuery>();            
             CreateMap<VariableXls, VariableXlsResource>();
             CreateMap<RegionAgrigationType, RegionAgrigationTypeResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>();

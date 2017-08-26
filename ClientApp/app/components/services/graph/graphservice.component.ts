@@ -206,6 +206,7 @@ export class GraphComponent {
         this.graphColumns = [];
         this.graphColumns.push(['x']);
         this.graphColumns[itemIndex] = this.graphColumns[0].concat(data.years);
+        this.tableEntities.yearList = data.years;
 
         for (let subVariable of data.subVariables) {
             this.graphColumns.push([subVariable]);
@@ -259,5 +260,4 @@ export class GraphComponent {
 
         this.tableEntities.entities.push(tebaleEntity);
     }
-
 }

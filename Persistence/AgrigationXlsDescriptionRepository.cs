@@ -38,7 +38,13 @@ namespace NXS.Persistence
             return GetDescriptions(RegionConstants.Types.World);
         }
 
-        
+
+        public IEnumerable<AgrigationXlsDescription> GetDescriptionsGdp()
+        {
+            return context.AgrigationXlsDescriptions.Where(a => a.Variable.Name == NxsVariablesConstants.Variables.Gdp);
+        }
+
+
         public void Add(AgrigationXlsDescription AgrigationXlsDescription)
         {
             context.AgrigationXlsDescriptions.Add(AgrigationXlsDescription);
@@ -53,8 +59,9 @@ namespace NXS.Persistence
 
         private IEnumerable<AgrigationXlsDescription> GetDescriptions(string regionTypeName)
         {
-            return context.AgrigationXlsDescriptions.Where(a => a.RegionAgrigationType.Name == regionTypeName);
+            return context.AgrigationXlsDescriptions.Where(a => a.RegionAgrigationType.Name == regionTypeName &&
+                                                                a.Variable.Name != NxsVariablesConstants.Variables.Gdp);
         }
-        
+
     }
 }

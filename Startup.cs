@@ -23,6 +23,7 @@ using NXS.Helpers;
 using Microsoft.AspNetCore.Http;
 using NXS.Services.Abstract;
 using NXS.Services.Logger;
+using NXS.Migrations;
 
 namespace NXS
 {
@@ -66,6 +67,7 @@ namespace NXS
             services.AddScoped<IUserConstraintRepository, UserConstraintRepository>();
             services.AddScoped<IRegionAgrigationTypeRepository, RegionAgrigationTypeRepository>();
             services.AddScoped<IAgrigationXlsDescriptionRepository, AgrigationXlsDescriptionRepository>();
+            services.AddScoped<IAgreegationSubVariableRepository, AgreegationSubVariableRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
@@ -116,8 +118,10 @@ namespace NXS
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, NxsDbContext context)
         {
+            // DbInitializer.InitializeAync(context);
+
             loggerFactory
                     .AddConsole();
             loggerFactory.AddProvider(new NxsLoggerProvider());
