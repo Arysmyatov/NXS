@@ -24,6 +24,7 @@ using Microsoft.AspNetCore.Http;
 using NXS.Services.Abstract;
 using NXS.Services.Logger;
 using NXS.Migrations;
+using NXS.Services.Email;
 
 namespace NXS
 {
@@ -37,8 +38,13 @@ namespace NXS
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            if (env.IsDevelopment())
+            {
+                builder = builder.AddUserSecrets<Startup>();
+            }
+            builder = builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
@@ -74,11 +80,13 @@ namespace NXS
             services.AddTransient<AggregationSumCulculationService, AggregationSumCulculationService>();
             services.AddTransient<AggregationSumWorldCulculationService, AggregationSumWorldCulculationService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
+            services.AddTransient<IEmailService, EmailService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
+            services.AddSingleton<IConfiguration>(Configuration);
 
             services.AddCors();
 

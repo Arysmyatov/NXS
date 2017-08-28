@@ -42,7 +42,7 @@ namespace NXS.Migrations
                                                                                 "[YearRowBg]) VALUES " +
                                                                                 "((SELECT ID FROM Variables WHERE Name = 'GDP'), " +
                                                                                 "(SELECT ID FROM RegionAgrigationTypes WHERE Name = 'By Region'), " +
-                                                                                "'0', '0', '0', '0', '3', '14', 'Global Results', '2', '0', '3', '17', '2')");        
+                                                                                "'0', '0', '0', '0', '3', '14', 'General parameters', '2', '0', '3', '17', '2')");        
         
         }
 
