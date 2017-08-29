@@ -25,6 +25,7 @@ using NXS.Services.Abstract;
 using NXS.Services.Logger;
 using NXS.Migrations;
 using NXS.Services.Email;
+using NXS.Services.User;
 
 namespace NXS
 {
@@ -74,12 +75,14 @@ namespace NXS
             services.AddScoped<IRegionAgrigationTypeRepository, RegionAgrigationTypeRepository>();
             services.AddScoped<IAgrigationXlsDescriptionRepository, AgrigationXlsDescriptionRepository>();
             services.AddScoped<IAgreegationSubVariableRepository, AgreegationSubVariableRepository>();
+            services.AddScoped<IContactUsMessageRepository, ContactUsMessageRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IXlsService, XlsService>();
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
             services.AddTransient<AggregationSumCulculationService, AggregationSumCulculationService>();
             services.AddTransient<AggregationSumWorldCulculationService, AggregationSumWorldCulculationService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
+            services.AddTransient<IUserActivityService, UserActivityService>();
             services.AddTransient<IEmailService, EmailService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

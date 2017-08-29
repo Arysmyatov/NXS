@@ -15,21 +15,22 @@ namespace NXS.Controllers
     [Route("/api/contactus")]
     public class ContactUsController : Controller
     {
-        private readonly IEmailService _emailService;        
+        private readonly IMapper _mapper;        
+        private readonly IUserActivityService _userActivityService;        
 
-        public ContactUsController(IEmailService emailService)
+        public ContactUsController(IUserActivityService userActivityService, IMapper mapper)
         {
-            this._emailService = emailService;
+            _mapper = mapper;
+            _userActivityService = userActivityService;
         }
 
 
-        //public async Task<IActionResult> Post([FromBody] SaveVariableXlsResource variableXlsResource)
         [HttpPost]        
-        public async Task<IActionResult> PostEmail()
+        public async Task<IActionResult> PostEmail([FromBody] ContactUsMessageResource model)
         {
-            await _emailService.SendEmailAsync("Contact us request", "Test");
+            var contactUsMessage = _mapper.Map<ContactUsMessage>(model);
+            await _userActivityService.AddContactUsMessageAsync(contactUsMessage);
             return Ok();
-        }        
-        
+        }
     }
 }

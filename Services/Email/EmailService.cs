@@ -22,11 +22,11 @@ namespace NXS.Services.Email
         }
 
         
-        public async Task SendEmailAsync(string subject, string message)
+        public async Task SendEmailAsync(string email, string subject, string message)
         {
             var emailMessage = new MimeMessage();
 
-            emailMessage.From.Add(new MailboxAddress("theresourcenexus@gmail.com", "theresourcenexus@gmail.com"));
+            emailMessage.From.Add(new MailboxAddress(email, email));
             emailMessage.To.Add(new MailboxAddress("", _emailTo));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)

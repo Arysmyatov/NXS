@@ -17,5 +17,7 @@ ul {
   font-size: 35px;
 }
 #publications p {
-  font-size: 19px;
+  font-size: 22px;
+  color: #232222;
+  font-weight: 400;         
 }

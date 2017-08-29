@@ -36,5 +36,6 @@ namespace NXS.Persistence
         public DbSet<AgrigationXlsDescription> AgrigationXlsDescriptions { get; set; }                
         public DbSet<AgreegationSubVariable> AgreegationSubVariables { get; set; }
         public DbSet<AgreegationSubVariableSubVariable> AgreegationSubVariableSubVariables { get; set; }                
+        public DbSet<ContactUsMessage> ContactUsMessages { get; set; }                
     }
 }

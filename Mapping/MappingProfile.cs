@@ -20,7 +20,7 @@ namespace NXS.Mapping
             CreateMap<KeyParameterLevel, KeyParameterLevelResource>();
             CreateMap<Data, DataResource>();
             CreateMap<DataQueryResource, DataQuery>();
-            CreateMap<DataQueryResource, SubVariableDataQuery>();            
+            CreateMap<DataQueryResource, SubVariableDataQuery>();
             CreateMap<VariableXls, VariableXlsResource>();
             CreateMap<RegionAgrigationType, RegionAgrigationTypeResource>();
             CreateMap<SaveVariableXlsResource, VariableXls>();
@@ -29,7 +29,8 @@ namespace NXS.Mapping
             CreateMap<NxsUser, UserProfileResource>();
             CreateMap<RegistrationInfoResource, NxsUser>()
                 .ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
-
+            CreateMap<ContactUsMessage, ContactUsMessageResource>();
+            CreateMap<ContactUsMessageResource, ContactUsMessage>();
         }
     }
 }
