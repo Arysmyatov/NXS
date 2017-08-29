@@ -10,5 +10,6 @@ namespace NXS.Core
         void Add(Scenario region);
         void Remove(Scenario region);
         Task<QueryResult<Scenario>> GetScenarios(ScenarioQuery filter);
+        Task<IEnumerable<Scenario>> GetScenarios();
     }
 }

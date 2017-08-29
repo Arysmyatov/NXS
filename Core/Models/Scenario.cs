@@ -15,14 +15,5 @@ namespace NXS.Core.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
-        public ICollection<Data> Data { get; set; }
-
-        public ICollection<XlsUpload> XlsUploads { get; set; }        
-
-        public Scenario() {
-            Data = new Collection<Data>();
-            XlsUploads = new Collection<XlsUpload>();
-        }     
     }
 }

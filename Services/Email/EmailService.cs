@@ -12,6 +12,7 @@ namespace NXS.Services.Email
         private readonly string _credentialsUserName;
         private readonly string _credentialsPassword;
         private readonly string _emailTo;
+        private readonly string _emailToSecond;
 
 
         public EmailService(IConfiguration iconfiguration){
@@ -19,6 +20,7 @@ namespace NXS.Services.Email
             _credentialsUserName = _iconfiguration.GetValue<string>("SmtpClient:CredentialsUserName");
             _credentialsPassword = _iconfiguration.GetValue<string>("SmtpClient:CredentialsPassword");
             _emailTo = _iconfiguration.GetValue<string>("SmtpClient:EmailTo");
+            _emailToSecond = _iconfiguration.GetValue<string>("SmtpClient:EmailTo1");
         }
 
         
@@ -28,6 +30,9 @@ namespace NXS.Services.Email
 
             emailMessage.From.Add(new MailboxAddress(email, email));
             emailMessage.To.Add(new MailboxAddress("", _emailTo));
+            if(!string.IsNullOrEmpty(_emailToSecond)) {
+                emailMessage.To.Add(new MailboxAddress("", _emailToSecond));
+            }
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {

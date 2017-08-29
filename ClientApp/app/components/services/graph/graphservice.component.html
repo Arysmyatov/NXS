@@ -1,6 +1,6 @@
 <section class="bg-dark-blue" id="service-1">
     <div class="container">
-        <div>
+        <div id="comment">
             Select region(s), scenario(s) and variable
         </div>
 
@@ -87,23 +87,23 @@
                         <accordion id="acc-keyparam" [showArrows]="true">
                             <accordion-group *ngFor="let kpg of keyParameters | KeyParameterPipe:'Bottom'" heading="{{kpg.name}}">
                                 <div class="radio keyparameter" *ngFor="let kp of kpg.keyParameters">
-                                    <span style="min-width: 80px; color: black">{{kp.name}}</span>
-                                    <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+                                    <span class="key-param-name">{{kp.name}}</span>
+                                    <span class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)" >Low</button>
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)" >Middle</button>
                                         <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
-                                    </div>                                    
+                                    </span>                                    
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" *ngFor="let kp of keyParametersBottom">
-                            {{kp.name}}
-                            <div class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
+                        <div class="radio variable keyparameter" *ngFor="let kp of keyParametersBottom">
+                            <span class="key-param-name-1">{{kp.name}}</span>                            
+                            <span class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
                                 <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)">Low</button>
                                 <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)">Middle</button>
                                 <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
-                            </div>
+                            </span>
                         </div>
 
                     </div>

@@ -43,7 +43,6 @@ namespace NXS.Migrations
                                                                                 "((SELECT ID FROM Variables WHERE Name = 'GDP'), " +
                                                                                 "(SELECT ID FROM RegionAgrigationTypes WHERE Name = 'By Region'), " +
                                                                                 "'0', '0', '0', '0', '3', '14', 'General parameters', '2', '0', '3', '17', '2')");        
-        
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

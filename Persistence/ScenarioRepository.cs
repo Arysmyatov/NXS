@@ -54,5 +54,10 @@ namespace NXS.Persistence
 
       return result; 
     }
+
+    public async Task<IEnumerable<Scenario>> GetScenarios()
+    {
+      return await context.Scenarios.ToListAsync();
+    }    
   }
 }

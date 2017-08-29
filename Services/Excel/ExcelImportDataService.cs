@@ -96,18 +96,18 @@ namespace NXS.Services.Excel
 
         public async Task ImportData()
         {
-            var scenarios = await ScenarioRepository.GetScenarios(new ScenarioQuery());
-            var keyParameters = _context.KeyParameters.ToList();
-            var keyParameterLevels = _context.KeyParameterLevels.ToList();
+            var scenarios = await _context.Scenarios.ToListAsync();
 
-            foreach (var scenario in scenarios.Items)
+            foreach (var scenario in scenarios)
             {
                 CurrentSecenarioId = scenario.Id;
+                var keyParameters = _context.KeyParameters.ToList();
 
                 foreach (var keyParameter in keyParameters)
                 {
                     CurrentKeyParameterId = keyParameter.Id;
 
+                    var keyParameterLevels = _context.KeyParameterLevels.ToList();
                     foreach (var keyParameterLevel in keyParameterLevels)
                     {
                         CurrentKeyParameterLevelId = keyParameterLevel.Id;
@@ -144,10 +144,9 @@ namespace NXS.Services.Excel
                 }
             }
 
-            await CalculateSums();
-            await CalculateWorldSums();
+           await CalculateSums();
+           await CalculateWorldSums();
         }
-
 
         #region private methods 
 

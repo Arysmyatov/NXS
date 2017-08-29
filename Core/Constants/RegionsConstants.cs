@@ -5,7 +5,23 @@ namespace NXS.Core.NxsConstants
 {
     public static class RegionConstants
     {
-        public static class Types {
+        public static Dictionary<string, string> ToSkipWords
+        {
+            get
+            {
+                return new Dictionary<string, string> { { "TOTAL", "Total" } };
+            }
+        }
+
+
+        public static bool IsNotAllowed(string regionName)
+        {
+            return ToSkipWords.ContainsKey(regionName.ToUpper());
+        }
+
+
+        public static class Types
+        {
             public static string ByRegion { get; } = "By Region";
             public static string World { get; } = "World";
         }

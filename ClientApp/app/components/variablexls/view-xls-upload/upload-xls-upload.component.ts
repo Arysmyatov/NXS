@@ -37,12 +37,6 @@ export class UploadXlsFileComponent implements OnInit {
     private xlsFileService: XlsFileService) { }
 
   ngOnInit() {
-    this.graphDataService.getRegions().subscribe(
-      regionGroups => {
-        this.regions = regionGroups[0].regions
-      }
-    );
-
     this.graphDataService.getScenarios().subscribe(
       scenarios => {
         this.scenarios = scenarios

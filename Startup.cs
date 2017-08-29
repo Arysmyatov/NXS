@@ -87,6 +87,7 @@ namespace NXS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            //services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Production")));
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
             services.AddSingleton<IConfiguration>(Configuration);

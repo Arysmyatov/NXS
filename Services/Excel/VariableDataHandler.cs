@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using NXS.Core;
 using NXS.Core.Models;
+using NXS.Core.NxsConstants;
 using NXS.Services.Abstract;
 using OfficeOpenXml;
 
@@ -46,6 +47,10 @@ namespace NXS.Services.Excel
                     if (variableXlsDescription.RegionCol > 0)
                     {
                         _currentRegionId = await GetRegionIdAsync(row);
+                        if(_currentRegionId == 0) {
+                            row++;
+                            continue;
+                        }
                     }
                     if (variableXlsDescription.ProcessSetCol > 0)
                     {
@@ -75,8 +80,11 @@ namespace NXS.Services.Excel
                 }
                 catch (Exception)
                 {
-                    // ToDo: log exception
+                    // ToDo: log exception                    
                     continue;
+                }
+                finally {
+                    row++;
                 }
 
             } while (_currentRegionId > 0);
@@ -106,6 +114,10 @@ namespace NXS.Services.Excel
             var region = await _excelImportDataService.RegionRepository.GetRegionByName(regionName);
             if (region == null)
             {
+                // skip if not allowed name
+                if(RegionConstants.IsNotAllowed(regionName)) {
+                    return 0;
+                }
                 region = new Region { Name = regionName };
                 _excelImportDataService.RegionRepository.Add(region);
                 await _excelImportDataService.UnitOfWork.CompleteAsync();
