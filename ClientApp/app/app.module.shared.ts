@@ -14,6 +14,7 @@ import { AuthService } from "./services/auth.service";
 import { PublicationsModule } from "./components/publications/index";
 import { AUTH_PROVIDERS } from "angular2-jwt/angular2-jwt";
 import { UserProfileService } from "./services/userprofile.service";
+import { ContactUsService } from "./services/contactus.service";
 
 export const sharedConfig: NgModule = {
     bootstrap: [AppComponent],
@@ -43,6 +44,7 @@ export const sharedConfig: NgModule = {
         ConfigService,
         AuthService,
         UserProfileService,
+        ContactUsService,
         AUTH_PROVIDERS
     ]
 };

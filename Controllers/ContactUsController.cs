@@ -30,7 +30,7 @@ namespace NXS.Controllers
         {
             var contactUsMessage = _mapper.Map<ContactUsMessage>(model);
             await _userActivityService.AddContactUsMessageAsync(contactUsMessage);
-            return Ok();
+            return Ok(model);
         }
     }
 }
