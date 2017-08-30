@@ -36,7 +36,9 @@ namespace NXS.Core
 
         int CurrentKeyParameterId { get; set; }
 
-        int CurrentKeyParameterLevelId { get; set; }      
+        int CurrentKeyParameterLevelId { get; set; }   
+        
+        int CurrentRegionId { get; set; }                   
 
         ExcelWorkbook CurrentWorkBook { get; set; }
 

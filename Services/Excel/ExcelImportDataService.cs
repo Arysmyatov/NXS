@@ -29,7 +29,7 @@ namespace NXS.Services.Excel
         private readonly IVariableRepository _variableRepository;
         private readonly IVariableXlsDescriptionRepository _variableXlsDescriptionRepository;
         private readonly IAgrigationXlsDescriptionRepository _agrigationXlsDescriptionRepository;
-        private readonly IRegionAgrigationTypeRepository _regionAgrigationTypeRepository;      
+        private readonly IRegionAgrigationTypeRepository _regionAgrigationTypeRepository;
         private readonly IDataRepository _dataRepository;
         private readonly NxsDbContext _context;
         private readonly IDataXlsImport<VariableData> _variableDataHandler;
@@ -42,6 +42,7 @@ namespace NXS.Services.Excel
         public int CurrentKeyParameterId { get; set; }
         public int CurrentKeyParameterLevelId { get; set; }
         public int CurrentVariableId { get; set; }
+        public int CurrentRegionId { get; set; }        
         public VariableXlsDescription CurrentVariableXlsDescription { get; set; }
         public AgrigationXlsDescription CurrentAgrigationXlsDescription { get; set; }
         public string WorkBookBasePath { get; set; }
@@ -62,7 +63,7 @@ namespace NXS.Services.Excel
                                         IUserConstraintRepository userConstraintRepository,
                                         IVariableDataRepository variableDataRepository,
                                         IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
-                                        AggregationSumCulculationService aggregationSumulCalculationService,                                        
+                                        AggregationSumCulculationService aggregationSumulCalculationService,
                                         AggregationSumWorldCulculationService aggregationSumWorldCulculationService,
                                         IDataRepository dataRepository,
                                         IUnitOfWork unitOfWork,
@@ -79,7 +80,7 @@ namespace NXS.Services.Excel
             VariableDataRepository = variableDataRepository;
             SubVariableRepository = subVariableRepository;
             SubVariableDataRepository = subVariableDataRepository;
-            _aggregationSumCulculationService = aggregationSumulCalculationService;            
+            _aggregationSumCulculationService = aggregationSumulCalculationService;
             _aggregationSumWorldCulculationService = aggregationSumWorldCulculationService;
             _variableRepository = variableRepository;
             _variableXlsDescriptionRepository = variableXlsDescriptionRepository;
@@ -144,9 +145,34 @@ namespace NXS.Services.Excel
                 }
             }
 
-           await CalculateSums();
-           await CalculateWorldSums();
+            await CalculateSums();
+            await CalculateWorldSums();
         }
+
+
+
+
+
+        public async Task ImportDataDirect()
+        {
+            // Get All not processe xls files 
+            var notProcessedxlsFiles = await  _context.XlsUploads.Where(x => x.IsProcessed == false).ToArrayAsync();
+            foreach(var xlsFileDescription in notProcessedxlsFiles) {
+                SetCurrentFilterVariables(xlsFileDescription);                
+            }
+
+
+
+        }
+
+        private void SetCurrentFilterVariables(XlsUpload xlsFileDescription)
+        {
+            CurrentSecenarioId = xlsFileDescription.ScenarioId;
+            CurrentKeyParameterId = xlsFileDescription.KeyParameterId;
+            CurrentKeyParameterLevelId = xlsFileDescription.KeyParameterLevelId;
+            CurrentRegionId = xlsFileDescription.RegionId == null ? 0 : xlsFileDescription.RegionId.Value;
+        }
+
 
         #region private methods 
 
@@ -187,7 +213,7 @@ namespace NXS.Services.Excel
                 await _aggregationDataHandlerGdp.InsertDataToDbAsync(data);
             }
         }
-        
+
 
         private async Task GetSubVariableDataAggregategationWorld()
         {
@@ -210,7 +236,7 @@ namespace NXS.Services.Excel
         {
             await _aggregationSumWorldCulculationService.UpdateSumsAsync();
         }
-        
+
         #endregion private methods 
 
     }

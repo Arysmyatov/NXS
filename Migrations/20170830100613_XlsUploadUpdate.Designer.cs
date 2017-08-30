@@ -8,9 +8,10 @@ using NXS.Persistence;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    partial class NxsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170830100613_XlsUploadUpdate")]
+    partial class XlsUploadUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -722,13 +723,9 @@ namespace NXS.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<bool?>("IsProcessed");
-
                     b.Property<int>("KeyParameterId");
 
                     b.Property<int>("KeyParameterLevelId");
-
-                    b.Property<DateTime?>("ProcessDate");
 
                     b.Property<int?>("RegionId");
 

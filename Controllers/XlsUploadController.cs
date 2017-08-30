@@ -48,6 +48,30 @@ namespace NXS.Controllers
             return Ok(mapper.Map<XlsUpload, XlsUploadResource>(xlsFile));
         }
 
+
+        [HttpPost]
+        [Route("/api/uploadxls")]
+        public async Task<IActionResult> UploadXls([FromForm] XlsFileResource xlsFileResource)
+        {
+            var file = xlsFileResource.File;
+            if (file == null) return BadRequest("Null file");
+            if (file.Length == 0) return BadRequest("Empty file");
+            if (file.Length > xlsUploadSettings.MaxBytes) return BadRequest("Max file size exceeded");
+            if (!xlsUploadSettings.IsSupported(file.FileName)) return BadRequest("Invalid file type.");
+
+            var uploadsFolderPath = Path.Combine(host.WebRootPath, "uploads");
+
+            var xlsFile = await xlsService.UploadFileWithRegion(xlsFileResource.Region, 
+                                                                xlsFileResource.KeyParameter, 
+                                                                xlsFileResource.KeyParameterLevel, 
+                                                                xlsFileResource.Scenario, 
+                                                                file, 
+                                                                uploadsFolderPath);
+
+            return Ok(mapper.Map<XlsUpload, XlsUploadResource>(xlsFile));
+        }
+
+
         [HttpGet]
         [Route("/api/region/{regionId}/scenario/{scenarioId}/keyParameter/{keyParameterId}/keyparameterlevel/{keyparameterLevelId}/xls")]
         public async Task<IEnumerable<XlsUploadResource>> GetXlsFiles(int regionId, int scenarioId, int keyParameterId, int keyparameterLevelId)

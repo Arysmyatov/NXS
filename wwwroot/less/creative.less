@@ -269,16 +269,24 @@ header {
     display: block;
     max-width: 650px;
     margin: 0 auto;
+
+    .img-responsive {
+        min-height: 100px;
+    }
+
     .portfolio-box-caption {
         color: white;
-        opacity: 0;
+        opacity: 0.5;
         display: block;
-        background: fade(@theme-primary, 90%);
         position: absolute;
         bottom: 0;
         text-align: center;
         width: 100%;
         height: 100%;
+        border: 1px;
+        border-color: gray;
+        border-style: solid;
+        border-radius: 7px;              
         .transition-all;
         .portfolio-box-caption-content {
             width: 100%;
@@ -420,6 +428,9 @@ body {
 
 #services {
     min-height: 100%;    
+    .my-services-head {
+        font-size: 22px;
+    }    
     h2{
         margin-top: 20px;
         font-size: 35px;
