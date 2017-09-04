@@ -133,7 +133,7 @@ export class UploadXlsFileComponent implements OnInit {
     var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
     var file = nativeElement.files[0];
     nativeElement.value = '';
-    this.xlsFileService.upload(this.regionId, this.scenarioId, this.keyParameterId, this.keyParameterLevelId, file)
+    this.xlsFileService.upload(this.scenarioId, this.keyParameterId, this.keyParameterLevelId, file)
       .subscribe(xlsFile => {
         this.xlsFiles.push(xlsFile);
         this.toasty.success({

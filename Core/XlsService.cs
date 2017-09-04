@@ -41,7 +41,30 @@ namespace NXS.Core
         }
 
 
-        public async Task<XlsUpload> UploadFile(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
+        public async Task<XlsUpload> UploadFile(int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
+        {
+            var relationalPath = await GetFilePathAsync(keyParameterId, keyParameterLevelId, scenarioId);
+            var xlsFileFullPath = Path.Combine(uploadsFolderPath, relationalPath);            
+            var fileName = await xlsStorage.StoreXls(xlsFileFullPath, file);
+            var relationalFileName = Path.Combine(relationalPath, fileName); 
+
+            var xlsUpload = new XlsUpload
+            {
+                KeyParameterId = keyParameterId,
+                KeyParameterLevelId = keyParameterLevelId,
+                ScenarioId = scenarioId,
+                FileName = relationalFileName,
+                UploadDate = DateTime.Now
+            };
+
+            xlsUploadRepository.Add(xlsUpload);
+            await _unitOfWork.CompleteAsync();
+
+            return xlsUpload;
+        }
+
+
+        public async Task<XlsUpload> UploadFile_(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
         {
             var fileName = await xlsStorage.StoreXls(uploadsFolderPath, file);
 
@@ -97,6 +120,18 @@ namespace NXS.Core
 
             return filePath;
         }
+
+        private async Task<string> GetFilePathAsync(int keyParameterId, int keyParameterLevelId, int scenarioId)
+        {
+            var keyParameter = await _context.KeyParameters.FindAsync(keyParameterId);
+            var keyParameterLevel = await _context.KeyParameterLevels.FindAsync(keyParameterLevelId);
+            var scenario = await _context.Scenarios.FindAsync(scenarioId);
+
+            var filePath = $"{scenario.Name}/{keyParameter.Name}/{keyParameterLevel.Name}";
+
+            return filePath;
+        }
+
 
 
     }

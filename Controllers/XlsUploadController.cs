@@ -43,7 +43,7 @@ namespace NXS.Controllers
             if (!xlsUploadSettings.IsSupported(file.FileName)) return BadRequest("Invalid file type.");
 
             var uploadsFolderPath = Path.Combine(host.WebRootPath, "uploads");
-            var xlsFile = await xlsService.UploadFile(regionId, keyParameterId, keyParameterLevelId, scenarioId, file, uploadsFolderPath);
+            var xlsFile = await xlsService.UploadFile(keyParameterId, keyParameterLevelId, scenarioId, file, uploadsFolderPath);
 
             return Ok(mapper.Map<XlsUpload, XlsUploadResource>(xlsFile));
         }
@@ -61,12 +61,11 @@ namespace NXS.Controllers
 
             var uploadsFolderPath = Path.Combine(host.WebRootPath, "uploads");
 
-            var xlsFile = await xlsService.UploadFileWithRegion(xlsFileResource.Region, 
-                                                                xlsFileResource.KeyParameter, 
-                                                                xlsFileResource.KeyParameterLevel, 
-                                                                xlsFileResource.Scenario, 
-                                                                file, 
-                                                                uploadsFolderPath);
+            var xlsFile = await xlsService.UploadFile(xlsFileResource.KeyParameter,
+                                                      xlsFileResource.KeyParameterLevel,
+                                                      xlsFileResource.Scenario,
+                                                      file,
+                                                      uploadsFolderPath);
 
             return Ok(mapper.Map<XlsUpload, XlsUploadResource>(xlsFile));
         }
@@ -78,7 +77,7 @@ namespace NXS.Controllers
         {
             var xlsFiles = await xlsService.GetXlsUploads(regionId, keyParameterId, keyparameterLevelId, scenarioId);
 
-            if(xlsFiles == null) return null;
+            if (xlsFiles == null) return null;
 
             return mapper.Map<List<XlsUpload>, List<XlsUploadResource>>(xlsFiles.ToList());
         }

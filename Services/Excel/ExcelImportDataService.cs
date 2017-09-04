@@ -8,6 +8,8 @@ using NXS.Core;
 using NXS.Core.Models;
 using NXS.Persistence;
 using NXS.Services.Abstract;
+using NXS.Services.Abstract.XlsFormulaUpdater;
+using NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions;
 using OfficeOpenXml;
 
 namespace NXS.Services.Excel
@@ -26,6 +28,7 @@ namespace NXS.Services.Excel
         public ISubVariableDataRepository SubVariableDataRepository { get; set; }
         private readonly AggregationSumCulculationService _aggregationSumCulculationService;
         private readonly AggregationSumWorldCulculationService _aggregationSumWorldCulculationService;
+        private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;
         private readonly IVariableRepository _variableRepository;
         private readonly IVariableXlsDescriptionRepository _variableXlsDescriptionRepository;
         private readonly IAgrigationXlsDescriptionRepository _agrigationXlsDescriptionRepository;
@@ -42,7 +45,7 @@ namespace NXS.Services.Excel
         public int CurrentKeyParameterId { get; set; }
         public int CurrentKeyParameterLevelId { get; set; }
         public int CurrentVariableId { get; set; }
-        public int CurrentRegionId { get; set; }        
+        public int CurrentRegionId { get; set; }
         public VariableXlsDescription CurrentVariableXlsDescription { get; set; }
         public AgrigationXlsDescription CurrentAgrigationXlsDescription { get; set; }
         public string WorkBookBasePath { get; set; }
@@ -65,6 +68,7 @@ namespace NXS.Services.Excel
                                         IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
                                         AggregationSumCulculationService aggregationSumulCalculationService,
                                         AggregationSumWorldCulculationService aggregationSumWorldCulculationService,
+                                        IXlsFormulaUpdaterService xlsFormulaUpdaterService,
                                         IDataRepository dataRepository,
                                         IUnitOfWork unitOfWork,
                                         //ILogger<ExcelImportDataService> logger,
@@ -82,6 +86,7 @@ namespace NXS.Services.Excel
             SubVariableDataRepository = subVariableDataRepository;
             _aggregationSumCulculationService = aggregationSumulCalculationService;
             _aggregationSumWorldCulculationService = aggregationSumWorldCulculationService;
+            _xlsFormulaUpdaterService = xlsFormulaUpdaterService;
             _variableRepository = variableRepository;
             _variableXlsDescriptionRepository = variableXlsDescriptionRepository;
             _agrigationXlsDescriptionRepository = agrigationXlsDescriptionRepository;
@@ -129,36 +134,46 @@ namespace NXS.Services.Excel
                         {
                             this.CurrentWorkBook = package.Workbook;
 
+                            // update all formulas in xls file
+                            UpdateXlsFormulas();
+                            package.Save();
+
                             // get Variable Data
-                            await GetVariableDataAggreegation();
+                            // await GetVariableDataAggreegation();
 
                             // get Sub Variable data
-                            await GetSubVariableDataAggregategation();
+                            //await GetSubVariableDataAggregategation();
 
                             // get Sub Variable GDP 
-                            await GetSubVariableDataAggregategationGdp();
+                            //await GetSubVariableDataAggregategationGdp();
 
                             // get Sub Variable World data
-                            await GetSubVariableDataAggregategationWorld();
+                            //await GetSubVariableDataAggregategationWorld();
                         }
                     }
                 }
             }
 
-            await CalculateSums();
-            await CalculateWorldSums();
+            //await CalculateSums();
+            //await CalculateWorldSums();
         }
 
 
-
+        private void UpdateXlsFormulas()
+        {
+            _xlsFormulaUpdaterService.VariableDescriptions = XlsVariableDescriptions.AllDescriptions;
+            _xlsFormulaUpdaterService.SetWorkbook(this.CurrentWorkBook);
+            _xlsFormulaUpdaterService.Update();
+        }
 
 
         public async Task ImportDataDirect()
         {
             // Get All not processe xls files 
-            var notProcessedxlsFiles = await  _context.XlsUploads.Where(x => x.IsProcessed == false).ToArrayAsync();
-            foreach(var xlsFileDescription in notProcessedxlsFiles) {
-                SetCurrentFilterVariables(xlsFileDescription);                
+            var notProcessedxlsFiles = await _context.XlsUploads.Where(x => x.IsProcessed == false).ToArrayAsync();
+            foreach (var xlsFileDescription in notProcessedxlsFiles)
+            {
+                SetCurrentFilterVariables(xlsFileDescription);
             }
 
 

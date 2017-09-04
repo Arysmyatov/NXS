@@ -6,10 +6,14 @@ export class XlsFileService {
 
     constructor(private http: Http) { }
 
-    upload(regionId, scenarioId, keyParameterId, keyParameterLevelId, xlsFile) {
+    upload(scenarioId, keyParameterId, keyParameterLevelId, xlsFile) {
         var formData = new FormData();
+        formData.append('scenario', scenarioId);
+        formData.append('keyParameter', keyParameterId);
+        formData.append('keyParameterLevel', keyParameterLevelId);
         formData.append('file', xlsFile);
-        return this.http.post(`/api/region/${regionId}/scenario/${scenarioId}/keyparameter/${keyParameterId}/keyparameterlevel/${keyParameterLevelId}/xls`, formData)
+
+        return this.http.post("/api/uploadxls", formData)
             .map(res => res.json());
     }
 

@@ -26,6 +26,8 @@ using NXS.Services.Logger;
 using NXS.Migrations;
 using NXS.Services.Email;
 using NXS.Services.User;
+using NXS.Services.Abstract.XlsFormulaUpdater;
+using NXS.Services.Excel.FormulaUpdater;
 
 namespace NXS
 {
@@ -81,6 +83,7 @@ namespace NXS
             services.AddTransient<IExcelImportDataService, ExcelImportDataService>();
             services.AddTransient<AggregationSumCulculationService, AggregationSumCulculationService>();
             services.AddTransient<AggregationSumWorldCulculationService, AggregationSumWorldCulculationService>();
+            services.AddTransient<IXlsFormulaUpdaterService, XlsFormulaUpdaterService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
             services.AddTransient<IUserActivityService, UserActivityService>();
             services.AddTransient<IEmailService, EmailService>();
