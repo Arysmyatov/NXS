@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NXS.Services.Abstract.XlsStucture;
 
 namespace NXS.Services.Abstract.XlsFormulaUpdater
 {

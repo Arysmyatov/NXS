@@ -86,6 +86,9 @@ namespace NXS.Extensions
             if (queryObj.VariableId.HasValue)
                 query = query.Where(v => v.VariableId == queryObj.VariableId.Value);
 
+            if (queryObj.SubVariableId.HasValue)
+                query = query.Where(v => v.SubVariableId == queryObj.SubVariableId.Value);
+
             if (queryObj.KeyParameterId.HasValue)
                 query = query.Where(v => v.KeyParameterId == queryObj.KeyParameterId.Value);
 

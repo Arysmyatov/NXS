@@ -1,4 +1,4 @@
-namespace NXS.Services.Abstract.XlsFormulaUpdater
+namespace NXS.Services.Abstract.XlsStucture
 {
     public interface IXlsCell
     {

@@ -94,7 +94,7 @@ export class UploadXlsFileComponent implements OnInit {
   }
 
   exportAllData() {
-    this.busy = this.xlsFileService.exportAllDataFromXls()
+    this.busy = this.xlsFileService.importAllDataFromXls()
       .subscribe(result => {
         this.toasty.success({
           title: "Export",

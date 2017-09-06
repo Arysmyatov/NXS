@@ -1,6 +1,6 @@
-using NXS.Services.Abstract.XlsFormulaUpdater;
+using NXS.Services.Abstract.XlsStucture;
 
-namespace NXS.Services.Excel.FormulaUpdater
+namespace NXS.Services.Excel.Structure
 {
     public class XlsRange: IXlsRange
     {

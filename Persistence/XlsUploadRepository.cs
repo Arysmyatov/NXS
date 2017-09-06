@@ -21,6 +21,16 @@ namespace NXS.Persistence
               .ToListAsync();
         }
 
+
+        public async Task<IEnumerable<XlsUpload>> GetXlsUploadsNotProcessdAsync()
+        {
+            return await context.XlsUploads
+              .Where(x => x.IsProcessed == null 
+                      || !x.IsProcessed.Value)
+              .ToListAsync();
+        }        
+
+
         public async Task<XlsUpload> GetXlsLastUplodAsync(int regionId, int keyParameterId,  int keyParameterLevelId, int scenarioId)
         {
             return await context.XlsUploads

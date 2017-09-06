@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NXS.Services.Abstract.XlsFormulaUpdater;
 using NXS.Services.Excel.FormulaUpdater.XlsVariableAttributesDescriptions;
 using NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions;
+using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
 {

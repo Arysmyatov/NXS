@@ -29,6 +29,11 @@ namespace NXS.Persistence
           .SingleOrDefaultAsync(v => v.Id == id);
     }
 
+    public async Task<Variable> GetVariable(string name, string variableGroupName) {
+        return await context.Variables
+          .SingleOrDefaultAsync(v => v.Name == name && v.VariableGroup.Name == variableGroupName);
+    }
+
     public void Add(Variable Variable) 
     {
       context.Variables.Add(Variable);

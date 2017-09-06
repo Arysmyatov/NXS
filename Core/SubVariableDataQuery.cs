@@ -8,6 +8,7 @@ namespace NXS.Core
         public int? RegionAgrigationTypeId { get; set; }
         public int? ScenarioId { get; set; }
         public int? VariableId { get; set; }
+        public int? SubVariableId { get; set; }        
         public int? KeyParameterId { get; set; }
         public int? KeyParameterLevelId { get; set; }
         public string Year { get; set; }

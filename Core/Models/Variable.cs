@@ -21,5 +21,7 @@ namespace NXS.Core.Models
         public VariableXls VariableXls { get; set; }                
 
         public VariableXlsDescription VariableXlsDescription { get; set; }
+
+        public VariableGroup VariableGroup { get; set; }
     }
 }

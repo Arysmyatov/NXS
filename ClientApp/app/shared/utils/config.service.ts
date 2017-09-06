@@ -7,6 +7,7 @@ export class ConfigService {
  
     constructor() {
         this._apiURI = "http://theresourcenexus.co.uk/api";
+        //this._apiURI = "http://localhost:5000/api";
      }
  
      getApiURI() {

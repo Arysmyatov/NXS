@@ -22,7 +22,7 @@ export class XlsFileService {
             .map(res => res.json());
     }
 
-    exportAllDataFromXls() {
-        return this.http.post('api/ExportData/xlsimportdata', {});
+    importAllDataFromXls() {
+        return this.http.post('api/importData/xlsimportdata', {});
     }
 }

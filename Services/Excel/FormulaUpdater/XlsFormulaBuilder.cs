@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using NXS.Services.Abstract.XlsFormulaUpdater;
+using NXS.Services.Abstract.XlsStucture;
 
 namespace NXS.Services.Excel.FormulaUpdater
 {

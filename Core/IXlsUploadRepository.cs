@@ -10,6 +10,8 @@ namespace NXS.Core
 
         Task<XlsUpload> GetXlsLastUplodAsync(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId);
 
+        Task<IEnumerable<XlsUpload>> GetXlsUploadsNotProcessdAsync();
+
         void Add(XlsUpload vehicle);
     }
 }

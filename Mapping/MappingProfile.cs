@@ -27,6 +27,8 @@ namespace NXS.Mapping
             CreateMap<XlsUpload, XlsUploadResource>();
             CreateMap<UserProfileResource, NxsUser>();
             CreateMap<NxsUser, UserProfileResource>();
+            CreateMap<SubVariableData, SubVariableData>()
+                .ForMember(sv => sv.Id, opt => opt.Ignore());
             CreateMap<RegistrationInfoResource, NxsUser>()
                 .ForMember(au => au.UserName, map => map.MapFrom(vm => vm.Email));
             CreateMap<ContactUsMessage, ContactUsMessageResource>();

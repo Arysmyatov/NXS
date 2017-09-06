@@ -12,22 +12,29 @@ using NXS.Persistence;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using NXS.Core;
+using NXS.Services.Abstract.XlsImport;
 
 namespace NXS.Controllers
 {
     [Route("api/[controller]")]
-    public class ExportDataController : Controller
+    public class ImportDataController : Controller
     {
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly IExcelImportDataService _excelImportDataService;
+        private readonly IXlsImportVariableDataService _xlsImportVariableDataService;
         private readonly IXlsService _xlsService;
 
         private readonly NxsDbContext _context;
 
-        public ExportDataController(IHostingEnvironment hostingEnvironment, NxsDbContext context, IXlsService xlsService, IExcelImportDataService excelImportDataService)
+        public ImportDataController(IHostingEnvironment hostingEnvironment, 
+                                    NxsDbContext context, 
+                                    IXlsService xlsService, 
+                                    IXlsImportVariableDataService xlsImportVariableDataService,
+                                    IExcelImportDataService excelImportDataService)
         {
             _context = context;
             _xlsService = xlsService;
+            _xlsImportVariableDataService = xlsImportVariableDataService;
             _excelImportDataService = excelImportDataService;
             _hostingEnvironment = hostingEnvironment;
         }
@@ -39,10 +46,13 @@ namespace NXS.Controllers
         {
             // await XlsRemoveAllData();
             string webRootPath = _hostingEnvironment.WebRootPath;
-            string contentRootPath = _hostingEnvironment.ContentRootPath;
+            string uploadsPath = $"{_hostingEnvironment.ContentRootPath}/wwwroot/uploads"; ;
 
-            _excelImportDataService.WorkBookBasePath = contentRootPath + "/wwwroot/uploads";
-            await _excelImportDataService.ImportData();
+            //_excelImportDataService.WorkBookBasePath = contentRootPath + "/wwwroot/uploads";
+            //await _excelImportDataService.ImportData();
+
+            _xlsImportVariableDataService.SetWorkBookBasePath(uploadsPath);
+            await _xlsImportVariableDataService.Import();
 
             return Ok();
         }

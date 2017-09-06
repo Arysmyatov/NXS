@@ -47,7 +47,7 @@ namespace NXS.Controllers
                 return newDataResource;
             }
 
-            var years = queryResult.Items.Select(i => i.Year).Distinct();
+            var years = queryResult.Items.Select(i => i.Year).OrderBy(y => y).Distinct();
             var subVariables = queryResult.Items.Select(i => i.SubVariable.Name).Distinct().ToList();
 
             newDataResource.Years = years;
@@ -56,7 +56,9 @@ namespace NXS.Controllers
 
             for (var i = 0; i < subVariables.Count(); i++)
             {
-                var items = queryResult.Items.Where(d => d.SubVariable.Name == subVariables[i]).Select(d => d.Value).ToArray();
+                var items = queryResult.Items.Where(d => d.SubVariable.Name == subVariables[i])
+                                             .OrderBy(y => y.Year)
+                                             .Select(d => d.Value).ToArray();
                 var itemsToAdd = new decimal[years.Count()];
                 for(var j = 0; j < items.Length; j++){
                     itemsToAdd[j] = items[j];
