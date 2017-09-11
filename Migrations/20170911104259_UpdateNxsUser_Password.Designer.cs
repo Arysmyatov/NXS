@@ -11,9 +11,10 @@ using System;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    partial class NxsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170911104259_UpdateNxsUser_Password")]
+    partial class UpdateNxsUser_Password
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -39,7 +39,7 @@ namespace NXS.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        private readonly IXlsService xlsService;
+        // private readonly IXlsService xlsService;
 
         [HttpPost("[action]")]
         public async Task<IActionResult> XlsImportData()

@@ -10,6 +10,8 @@ namespace NXS.Core
         void Add(SubVariableData subVariableData);
         void Update(SubVariableData subVariableData);
         void Remove(SubVariableData subVariableData);
+        void RemoveGeneral(SubVariableDataQuery queryObj);
+        void RemoveWorld(SubVariableDataQuery queryObj);
         IEnumerable<SubVariableData> GetSubVariableData();
         Task<QueryResult<SubVariableData>> GetSubVariableData(SubVariableDataQuery queryObj, bool includeRelated = false);
         Task<QueryResult<SubVariableData>> GetSubVariableDataWithoutGdp(SubVariableDataQuery queryObj, bool includeRelated = false);

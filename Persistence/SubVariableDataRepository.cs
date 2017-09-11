@@ -41,6 +41,45 @@ namespace NXS.Persistence
             context.Remove(subVariable);
         }
 
+        public void Remove(SubVariableDataQuery queryObj)
+        {
+            queryObj.IsPaging = false;
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+
+            context.SubVariableData.RemoveRange(query);
+        }
+
+        public void RemoveGeneral(SubVariableDataQuery queryObj)
+        {
+            queryObj.IsPaging = false;
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+            query = query.Where(sv => sv.Region.Name != RegionConstants.WorldRegionName &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Gdp &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Population);
+
+            context.SubVariableData.RemoveRange(query);
+        }
+
+
+        public void RemoveWorld(SubVariableDataQuery queryObj)
+        {
+            queryObj.IsPaging = false;
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+            query = query.Where(sv => sv.Region.Name == RegionConstants.WorldRegionName &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Gdp &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Population);
+
+            context.SubVariableData.RemoveRange(query);
+        }
+
+
+
         public IEnumerable<SubVariableData> GetSubVariableData()
         {
             return context.SubVariableData;
@@ -85,6 +124,6 @@ namespace NXS.Persistence
 
             return query;
         }
-        
+
     }
 }

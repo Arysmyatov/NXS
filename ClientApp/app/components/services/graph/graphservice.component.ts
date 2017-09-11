@@ -220,7 +220,13 @@ export class GraphComponent {
                 this.selectedKeyParameter.name + " - " + this.selectedKeyParameterLevel.name,
                 graphData);
         }
-        this.c3_ChartData.columns = this.graphColumns;
+        //this.c3_ChartData.columns = this.graphColumns;
+        this.c3_ChartData = {
+            x: 'x',
+            xFormat: '%Y',
+            columns: this.graphColumns,
+            type: 'spline'
+        };
     }
 
     builHeadGraphColumns() {

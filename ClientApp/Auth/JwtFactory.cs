@@ -7,9 +7,9 @@ using NXS.Core.Models;
 using Microsoft.Extensions.Options;
 
 namespace NXS.Auth
-{ 
- public class JwtFactory : IJwtFactory
- {
+{
+    public class JwtFactory : IJwtFactory
+    {
         private readonly JwtIssuerOptions _jwtOptions;
 
         public JwtFactory(IOptions<JwtIssuerOptions> jwtOptions)
@@ -43,7 +43,7 @@ namespace NXS.Auth
             return encodedJwt;
         }
 
-        public ClaimsIdentity GenerateClaimsIdentity(string userName,string id)
+        public ClaimsIdentity GenerateClaimsIdentity(string userName, string id)
         {
             return new ClaimsIdentity(new GenericIdentity(userName, "Token"), new[]
             {

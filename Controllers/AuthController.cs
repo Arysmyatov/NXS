@@ -8,6 +8,13 @@ using System.Linq;
 using NXS.Core.Auth;
 using NXS.Core.Models;
 using NXS.Core.Helpers;
+using System.Collections.Generic;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
+using System.Text;
+using NXS.Helpers;
 
 namespace NXS.Controllers
 {
@@ -16,70 +23,125 @@ namespace NXS.Controllers
     public class AuthController : Controller
     {
         private readonly UserManager<NxsUser> _userManager;
-        private readonly IJwtFactory _jwtFactory;
         private readonly JsonSerializerSettings _serializerSettings;
-        private readonly JwtIssuerOptions _jwtOptions;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(UserManager<NxsUser> userManager, IJwtFactory jwtFactory, IOptions<JwtIssuerOptions> jwtOptions)
+        private readonly string _secetKey;
+
+        public AuthController(UserManager<NxsUser> userManager,
+                                IConfiguration configuration)
         {
             _userManager = userManager;
-            _jwtFactory = jwtFactory;
-            _jwtOptions = jwtOptions.Value;
+            _configuration = configuration;
 
             _serializerSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented
             };
+
+            _secetKey = _configuration.GetValue<string>("AuthOptions:Key");
         }
 
         // POST api/auth/login
         [HttpPost("login")]
-        public async Task<IActionResult> Post([FromBody]CredentialsResource credentials)
+        public async Task<IActionResult> Post([FromBody]CredentialsResource model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var identity = await GetClaimsIdentity(credentials.UserName, credentials.Password);
-            if (identity == null)
+            var user = await _userManager.FindByEmailAsync(model.UserName);
+
+            if (user == null)
             {
-                return BadRequest(Errors.AddErrorToModelState("login_failure", "Invalid username or password.", ModelState));
+                return BadRequest("User not found");
             }
 
-            // Serialize and return the response
+            var isSucceeded = await _userManager.CheckPasswordAsync(user, model.Password);
+            if (!isSucceeded)
+            {
+				return BadRequest("The password is not correct");
+            }
+
+			var claims = new List<Claim>
+			{
+			    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                new Claim(JwtRegisteredClaimNames.Sid, user.Id),
+			    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+			};
+
+			var userRoles = await _userManager.GetRolesAsync(user);
+			if (userRoles != null)
+			{
+				if (userRoles.Contains("Admin"))
+				{
+                    claims.Add(new Claim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.AdminRole));
+				}
+				else
+				{
+					claims.Add(new Claim(Constants.Strings.JwtClaimIdentifiers.Rol, Constants.Strings.JwtClaims.ApiAccess));
+				}
+
+				var userRole = userRoles.FirstOrDefault();
+				if (!string.IsNullOrEmpty(userRole))
+				{
+					claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, userRole));
+				}
+			}
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtIssuerOptions:Key"]));
+			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+			var token = new JwtSecurityToken(_configuration["JwtIssuerOptions:Issuer"],
+			  _configuration["JwtIssuerOptions:Issuer"],
+			  claims,
+			  expires: DateTime.Now.AddDays(10),
+			  signingCredentials: creds);
+
+            var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
+             
             var response = new
             {
-                id = identity.Claims.Single(c => c.Type == "id").Value,
-                userName = credentials.UserName,
-                auth_token = await _jwtFactory.GenerateEncodedToken(credentials.UserName, identity),
-                expires_in = (int)_jwtOptions.ValidFor.TotalSeconds
+                userName = model.UserName,
+				auth_token = jwtToken
             };
-
-            var json = JsonConvert.SerializeObject(response, _serializerSettings);
-            return new OkObjectResult(json);
+ 
+            return Ok(response);
         }
+
 
         private async Task<ClaimsIdentity> GetClaimsIdentity(string userName, string password)
         {
-            if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password))
             {
-                // get the user to verifty
-                var userToVerify = await _userManager.FindByNameAsync(userName);
-                var user = this.User;
-
-                if (userToVerify != null)
-                {
-                    // check the credentials  
-                    if (await _userManager.CheckPasswordAsync(userToVerify, password))
-                    {
-                        return await Task.FromResult(await _jwtFactory.GenerateClaimsIdentity(userName, userToVerify.Id));
-                    }
-                }
+                await Task.FromResult<ClaimsIdentity>(null);
             }
 
-            // Credentials are invalid, or account doesn't exist
-            return await Task.FromResult<ClaimsIdentity>(null);
+            var user = await _userManager.FindByNameAsync(userName);
+
+            if (user != null)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.UserName)
+                    
+                };
+                if(userRoles != null) {
+                    var userRole = userRoles.FirstOrDefault();
+                    if(!string.IsNullOrEmpty(userRole)){
+						claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, userRole));
+                    }
+                }
+
+                ClaimsIdentity claimsIdentity =
+                new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
+                    ClaimsIdentity.DefaultRoleClaimType);
+                return claimsIdentity;
+            }
+ 
+            return await Task.FromResult<ClaimsIdentity>(null);;
         }
     }
 }

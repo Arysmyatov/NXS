@@ -19,18 +19,22 @@ namespace NXS.Services.Excel.DataImport
         public ExcelWorkbook CurrentWorkBook { get; set; }
         public string _workBookBasePath { get; set; }
         private readonly IDataImporter _generalRegionDataImporter;
+        private readonly IDataImporter _worldRegionDataImporter;
         private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;        
         private IXlsUploadRepository _xlsUploadRepository { get; set; }
 
 
         public XlsImportVariableDataService(IXlsUploadRepository xlsUploadRepository,
                                             IXlsFormulaUpdaterService xlsFormulaUpdaterService,
-                                            IGeneralRegionDataImporter generalRegionDataImporter)
+                                            GeneralRegionDataImporter generalRegionDataImporter,
+                                            WorldRegionDataImporter worldRegionDataImporter)
         {
             _xlsUploadRepository = xlsUploadRepository;
-            _generalRegionDataImporter = generalRegionDataImporter;
             _xlsFormulaUpdaterService = xlsFormulaUpdaterService;
+            _generalRegionDataImporter = generalRegionDataImporter;            
+            _worldRegionDataImporter = worldRegionDataImporter;            
             _generalRegionDataImporter.XlsImportVariableDataService = this;
+            _worldRegionDataImporter.XlsImportVariableDataService = this;
         }
 
 
@@ -56,10 +60,14 @@ namespace NXS.Services.Excel.DataImport
                 {
                     CurrentWorkBook = package.Workbook;
 
-                    UpdateXlsFormulas();
-                    package.Save();
+                    // UpdateXlsFormulas();
+                    // package.Save();
 
-                    await _generalRegionDataImporter.ImportDataAsync();
+                    //await _generalRegionDataImporter.RemoveDataAsync();
+                    //await _generalRegionDataImporter.ImportDataAsync();
+
+                    //await _worldRegionDataImporter.RemoveDataAsync();
+                    await _worldRegionDataImporter.ImportDataAsync();
                 }
             }
         }

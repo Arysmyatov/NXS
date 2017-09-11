@@ -9,5 +9,7 @@ namespace NXS.Services.Abstract.XlsImport
         int CurrentRegionAggregationTypeId { get; set; }
 
         Task ImportDataAsync();
+
+        Task RemoveDataAsync();
     }
 }
