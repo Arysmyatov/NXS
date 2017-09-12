@@ -8,7 +8,15 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-4 form-group">
+            <div class="col-xs-3 form-group">
+                <label for="parentregions">Parent regions</label>
+                <select id="parentregions" class="form-control" (change)="onParentRegionsChange()" [(ngModel)]="parentRegionId" name="parentregions">
+                    <option value=""></option>
+                    <option *ngFor="let pr of parentRegions" value="{{ pr.id }}">{{ pr.name }}</option>
+                </select>
+            </div>
+
+            <div class="col-xs-3 form-group">
                 <label for="scenarios">Scenario</label>
                 <select id="scenarios" class="form-control" (change)="onScenarioChange()" [(ngModel)]="scenarioId" name="scenario">
                     <option value=""></option>
@@ -16,16 +24,15 @@
                 </select>
             </div>
 
-            <div class="col-xs-4 form-group">
+            <div class="col-xs-3 form-group">
                 <label for="keyparameter">Key parameter </label>
-                <select id="keyparameter" class="form-control" (change)="onKeyParameterChange()" [(ngModel)]="keyParameterId"
-                    name="keyParameter">
+                <select id="keyparameter" class="form-control" (change)="onKeyParameterChange()" [(ngModel)]="keyParameterId" name="keyParameter">
                     <option value=""></option>
                     <option *ngFor="let k of keyParameters" value="{{ k.id }}">{{ k.name }}</option>
                 </select>
             </div>
 
-            <div class="col-xs-4 form-group">
+            <div class="col-xs-3 form-group">
                 <label for="keyparameterlevel">Key parameter level</label>
                 <select id="keyparameterlevel" class="form-control" (change)="onKeyParameterLevelChange()" [(ngModel)]="keyParameterLevelId"
                     name="keyParameterLevel">
@@ -42,15 +49,19 @@
                 <ul>
                     <li *ngFor="let f of xlsFiles"> {{ f.fileName }} </li>
                 </ul>
-                <input type="file" (change)="uploadXls()" #fileInput>
+                
+                <label class="fileContainer">
+                    Click here to upload .xlsx file...
+                    <input type="file" (change)="uploadXls()" #fileInput>
+                </label>                
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12 form-group">
-                <button class="btn btn-primary" (click)="exportAllData()">Update all data</button>
+                <button class="btn btn-default" (click)="exportAllData()">Update all data</button>
             </div>
         </div>
 
-    </div>  
+    </div>
 </section>

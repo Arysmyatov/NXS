@@ -7,7 +7,7 @@ namespace NXS.Core
 {
     public interface IXlsService
     {
-        Task<XlsUpload> UploadFile(int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath);
+        Task<XlsUpload> UploadFile(int parentRegion, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath);
         Task<IEnumerable<XlsUpload>> GetXlsUploads(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId);
         Task<XlsUpload> GetXlsLastUpload(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId);
         Task<XlsUpload> UploadFileWithRegion(int regionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file,  string uploadsFolderPath);

@@ -9,6 +9,7 @@ namespace NXS.Core.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
+        public int ParentRegionId  { get; set; }
         public int ScenarioId  { get; set; }
         public int? RegionId  { get; set; }
         public int KeyParameterId  { get; set; }

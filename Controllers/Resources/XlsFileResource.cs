@@ -5,6 +5,7 @@ namespace NXS.Controllers.Resources
 {
     public class XlsFileResource
     {
+        public int ParentRegion { get; set; }
         public int Scenario { get; set; }
         public int KeyParameter { get; set; }
         public int KeyParameterLevel { get; set; }

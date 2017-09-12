@@ -6,8 +6,9 @@ export class XlsFileService {
 
     constructor(private http: Http) { }
 
-    upload(scenarioId, keyParameterId, keyParameterLevelId, xlsFile) {
+    upload(parentRegionId, scenarioId, keyParameterId, keyParameterLevelId, xlsFile) {
         var formData = new FormData();
+        formData.append('parentRegion', parentRegionId);
         formData.append('scenario', scenarioId);
         formData.append('keyParameter', keyParameterId);
         formData.append('keyParameterLevel', keyParameterLevelId);

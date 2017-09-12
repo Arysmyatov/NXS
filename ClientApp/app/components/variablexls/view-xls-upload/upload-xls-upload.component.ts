@@ -5,6 +5,7 @@ import { GraphDataService } from "../../../services/graphdata.service";
 import { XlsFileService } from "../../../services/xls-file.service";
 import { ToastyService } from 'ng2-toasty';
 import { Subscription } from "rxjs/Subscription";
+import { ParentRegionsService } from '../../../services/parentregions.service';
 
 @Component({
   selector: 'app-uploadxls-form',
@@ -20,7 +21,9 @@ export class UploadXlsFileComponent implements OnInit {
   regions: any[] = [];
   regionId: number = 0;
   scenarios: any[] = [];
-  scenarioId: number = 0;
+  scenarioId: number = 0;  
+  parentRegions: any[] = [];
+  parentRegionId: number = 0;    
   keyParameters: any[] = [];
   keyParameterId: number = 0;
   keyParameterLevels: any[] = [];
@@ -34,12 +37,19 @@ export class UploadXlsFileComponent implements OnInit {
     private progressService: ProgressService,
     private browserXhr: BrowserXhr,
     private graphDataService: GraphDataService,
+    private parentRegionsService: ParentRegionsService,
     private xlsFileService: XlsFileService) { }
 
   ngOnInit() {
     this.graphDataService.getScenarios().subscribe(
       scenarios => {
         this.scenarios = scenarios
+      }
+    );
+
+    this.parentRegionsService.getParentRegions().subscribe(
+      regions => {
+        this.parentRegions = regions
       }
     );
 
@@ -73,6 +83,10 @@ export class UploadXlsFileComponent implements OnInit {
 
   onKeyParameterChange(region) {
     this.getXlsFiles();
+  }
+
+  onParentRegionsChange(region){
+    this.getXlsFiles();    
   }
 
   getXlsFiles() {
@@ -133,7 +147,7 @@ export class UploadXlsFileComponent implements OnInit {
     var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
     var file = nativeElement.files[0];
     nativeElement.value = '';
-    this.xlsFileService.upload(this.scenarioId, this.keyParameterId, this.keyParameterLevelId, file)
+    this.xlsFileService.upload(this.parentRegionId, this.scenarioId, this.keyParameterId, this.keyParameterLevelId, file)
       .subscribe(xlsFile => {
         this.xlsFiles.push(xlsFile);
         this.toasty.success({

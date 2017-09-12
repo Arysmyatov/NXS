@@ -41,7 +41,7 @@ namespace NXS.Core
         }
 
 
-        public async Task<XlsUpload> UploadFile(int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
+        public async Task<XlsUpload> UploadFile(int parentRegionId, int keyParameterId, int keyParameterLevelId, int scenarioId, IFormFile file, string uploadsFolderPath)
         {
             var relationalPath = await GetFilePathAsync(keyParameterId, keyParameterLevelId, scenarioId);
             var xlsFileFullPath = Path.Combine(uploadsFolderPath, relationalPath);            
@@ -50,6 +50,7 @@ namespace NXS.Core
 
             var xlsUpload = new XlsUpload
             {
+                ParentRegionId = parentRegionId,
                 KeyParameterId = keyParameterId,
                 KeyParameterLevelId = keyParameterLevelId,
                 ScenarioId = scenarioId,
