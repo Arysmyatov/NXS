@@ -80,7 +80,7 @@ export class GraphComponent {
 
     ngOnInit() {
         this.graphDataService.getRegions().subscribe(
-            regionGroup => this.regions = regionGroup.regions
+            regions=> this.regions = regions
         );
 
         this.graphDataService.getScenarios().subscribe(
