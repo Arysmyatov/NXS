@@ -91,6 +91,7 @@ namespace NXS
             services.AddTransient<IXlsFormulaUpdaterService, XlsFormulaUpdaterService>();
             services.AddTransient<GeneralRegionDataImporter, GeneralRegionDataImporter>();
             services.AddTransient<WorldRegionDataImporter, WorldRegionDataImporter>();
+            services.AddTransient<GdpDataImporter, GdpDataImporter>();
             services.AddTransient<IXlsImportVariableDataService, XlsImportVariableDataService>();
             services.AddTransient<IXlsStorage, FileSystemXlsStorage>();
             services.AddTransient<IUserActivityService, UserActivityService>();

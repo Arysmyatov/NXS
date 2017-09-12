@@ -13,7 +13,7 @@ using OfficeOpenXml;
 namespace NXS.Services.Excel.DataImport
 {
     public class GeneralRegionDataImporter : RegionDataImporterAbstarct
-    {
+    {        
 
         public GeneralRegionDataImporter(IRegionRepository regionRepository,
                                          IVariableRepository variableRepository,

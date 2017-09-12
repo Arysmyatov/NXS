@@ -79,6 +79,31 @@ namespace NXS.Persistence
         }
 
 
+        public void RemoveGdp(SubVariableDataQuery queryObj)
+        {
+            queryObj.IsPaging = false;
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Gdp &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Population);
+
+            context.SubVariableData.RemoveRange(query);
+        }
+
+
+        public void RemovePopulation(SubVariableDataQuery queryObj)
+        {
+            queryObj.IsPaging = false;
+            var query = context.SubVariableData
+              .AsQueryable();
+            query = query.ApplyFiltering(queryObj);
+            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Population &&
+                                      sv.Variable.Name != NxsVariablesConstants.Variables.Gdp);
+
+            context.SubVariableData.RemoveRange(query);
+        }
+
 
         public IEnumerable<SubVariableData> GetSubVariableData()
         {
