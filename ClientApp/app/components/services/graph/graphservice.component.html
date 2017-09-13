@@ -23,8 +23,7 @@
                         <h3 class="panel-title">Scenarios</h3>
                     </div>
                     <div id="scenarios" class="panel-body">
-                        <div class="scenario" [class.selected]="query.scenarioId == scenario.id" *ngFor="let scenario of scenarios"
-                             (click)="selectScenario(scenario)">
+                        <div class="scenario" [class.selected]="query.scenarioId == scenario.id" *ngFor="let scenario of scenarios" (click)="selectScenario(scenario)">
                             {{scenario.name}}
                         </div>
                     </div>
@@ -39,23 +38,20 @@
                     </div>
                     <div id="variables" class="panel-body">
 
-                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesTop"
-                             (click)="selectVariable(vr)">
+                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesTop" (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
 
                         <accordion id="acc-variables" [showArrows]="true">
                             <accordion-group *ngFor="let vg of variables" heading="{{vg.name}}" [class.selected]="selectedVariable && selectedVariable.group == vg.id"
                                 (click)="openVg(vg)">
-                                <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of vg.variables"
-                                     (click)="selectVariable(vr)">
+                                <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of vg.variables" (click)="selectVariable(vr)">
                                     {{vr.name}}
                                 </div>
                             </accordion-group>
                         </accordion>
 
-                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesBottom"
-                            (click)="selectVariable(vr)">
+                        <div class="radio variable" [class.selected]="query.variableId == vr.id" *ngFor="let vr of variablesBottom" (click)="selectVariable(vr)">
                             {{vr.name}}
                         </div>
 
@@ -89,26 +85,23 @@
                                 <div class="radio keyparameter" *ngFor="let kp of kpg.keyParameters">
                                     <span class="key-param-name">{{kp.name}}</span>
                                     <span class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
-                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)" >Low</button>
-                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)" >Middle</button>
-                                        <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
-                                    </span>                                    
+                                        <button type="button" class="btn btn-default btn-keylevel" *ngFor="let kpl of keyParameterLevels" (click)="selectKeyParameter(kp, kpl.id)" [class.selected]="isCurrentKeyParameterSelted(kp.id, kpl.id)" > {{ kpl.name }} </button>
+                                    </span>
                                 </div>
                             </accordion-group>
                         </accordion>
 
                         <div class="radio variable keyparameter" *ngFor="let kp of keyParametersBottom">
-                            <span class="key-param-name-1">{{kp.name}}</span>                            
+                            <span class="key-param-name-1">{{kp.name}}</span>
                             <span class="btn-group btn-group-xs" role="group" aria-label="Extra-small button group">
-                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 1)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 1)">Low</button>
-                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 2)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 2)">Middle</button>
-                                <button type="button" class="btn btn-default btn-keylevel" (click)="selectKeyParameter(kp, 3)" [class.selected]="isCurrentKeyParameterSelted(kp.id, 3)">High</button>
+                                <button type="button" class="btn btn-default btn-keylevel" *ngFor="let kpl of keyParameterLevels" (click)="selectKeyParameter(kp, kpl.id)" [class.selected]="isCurrentKeyParameterSelted(kp.id, kpl.id)" > {{ kpl.name }} </button>
                             </span>
                         </div>
 
                     </div>
                 </div>
             </div>
+            
             <div id="query-result" class="col-lg-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">

@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using NXS.Core.Models;
+
 namespace NXS.Controllers.Resources
 {
     public class DataQueryResource
@@ -5,8 +8,7 @@ namespace NXS.Controllers.Resources
         public int? RegionId { get; set; }
         public int? ScenarioId { get; set; }
         public int? VariableId { get; set; }
-        public int? KeyParameterId { get; set; }
-        public int? KeyParameterLevelId { get; set; }
+        public IEnumerable<KeyParameterResource> KeyParameterResources { get; set; }
         public string SortBy { get; set; }
         public bool IsSortAscending { get; set; }
         public int Page { get; set; }

@@ -14,6 +14,7 @@ import { KeyParameterLevel } from "./KeyParameterLevel";
 import { KeyParameterGroup } from "./keyParametersGroup";
 import { Data } from "./data";
 import { ToastyService } from "ng2-toasty";
+import { KeyParameterData } from "./keyParameterData";
 
 @Component({
     selector: "graph-service",
@@ -31,6 +32,9 @@ export class GraphComponent {
     selectedVariable: Variable;
     selectedKeyParameter: KeyParameter;
     selectedKeyParameterLevel: KeyParameterLevel;
+
+    selectedKeyParameters: KeyParameter[];
+    keyParameterData: KeyParameterData[];
 
     variableGroup: number;
     graphData: GraphEntity[];
@@ -80,7 +84,7 @@ export class GraphComponent {
 
     ngOnInit() {
         this.graphDataService.getRegions().subscribe(
-            regions=> this.regions = regions
+            regions => this.regions = regions
         );
 
         this.graphDataService.getScenarios().subscribe(
@@ -96,9 +100,12 @@ export class GraphComponent {
         );
 
         this.graphDataService.getKeyParameterLevels().subscribe(
+            keyParameterLevels => this.keyParameterLevels = keyParameterLevels
+        );
+
+        this.graphDataService.getKeyParameterLevels().subscribe(
             keyParameterLevels => {
                 this.keyParameterLevels = keyParameterLevels;
-                this.selectedKeyParameterLevel = this.keyParameterLevels[0];
             }
         );
     }
@@ -150,22 +157,29 @@ export class GraphComponent {
     }
 
     selectKeyParameter(keyParameter: KeyParameter, keyParameterLevelId: number) {
-        this.query.keyParameterId = keyParameter.id;
-        this.query.keyParameterLevelId = keyParameterLevelId;
+        keyParameter.keyParameterLevelId = keyParameterLevelId;
+        if(this.selectedKeyParameters == null) {
+            this.selectedKeyParameters = [];
+        }
 
-        this.selectedKeyParameter = keyParameter;
-        this.selectedKeyParameterLevel = new KeyParameterLevel(keyParameterLevelId, "");
+        var idOfkeyParam = this.selectedKeyParameters.findIndex(item => item.id == keyParameter.id);
+        if (idOfkeyParam >= 0) {
+            this.selectedKeyParameters.splice(idOfkeyParam, 1);
+        }
+        this.selectedKeyParameters.push(keyParameter);
+
+        this.query.KeyParameterResources = this.selectedKeyParameters;
 
         this.builGraph();
     }
 
     isCurrentKeyParameterSelted(parameterId: number, levelId: number): boolean {
-        if (!this.query.keyParameterId || !this.query.keyParameterLevelId) {
+        if (!this.selectedKeyParameters || this.selectedKeyParameters.length <= 0) {
             return false;
         }
 
-        return this.query.keyParameterId == parameterId &&
-            this.query.keyParameterLevelId == levelId;
+        var idOfkeyParam = this.selectedKeyParameters.findIndex(item => item.id == parameterId && item.keyParameterLevelId == levelId);
+        return idOfkeyParam >= 0;
     }
 
 
@@ -173,8 +187,8 @@ export class GraphComponent {
         if (!this.query.regionId ||
             !this.query.scenarioId ||
             !this.query.variableId ||
-            !this.query.keyParameterId ||
-            !this.query.keyParameterLevelId) {
+            !this.selectedKeyParameters ||
+             this.selectedKeyParameters.length <= 0) {
             this.builHeadGraphColumns();
             return;
         }
@@ -182,11 +196,10 @@ export class GraphComponent {
 
         this.graphDataService.getData(this.query).subscribe(
             data => {
-                if (!data ||
-                    !data.years ||
-                    data.years.length == 0) {
+                if (!data || data.length == 0) {
                     return;
                 }
+                this.addData(data);
                 this.addDataItemsToGraph(data);
             });
     }
@@ -201,26 +214,43 @@ export class GraphComponent {
         });
     }
 
-    addDataItemsToGraph(data: Data) {
+    addData(data: KeyParameterData[]) {
+        this.keyParameterData = data;
+    }    
+
+    addDataItemsToGraph(data1: Data) {
         let itemIndex = 0;
+        if(!this.keyParameterData || this.keyParameterData.length <= 0){
+            return;
+        }
+
+        var years = this.keyParameterData[0].years;
+
         this.graphColumns = [];
         this.graphColumns.push(['x']);
-        this.graphColumns[itemIndex] = this.graphColumns[0].concat(data.years);
-        this.tableEntities.yearList = data.years;
+        this.graphColumns[itemIndex] = this.graphColumns[0].concat(years);
+        this.tableEntities.yearList = years;
 
-        for (let subVariable of data.subVariables) {
-            this.graphColumns.push([subVariable]);
-            itemIndex++;
-            let graphData = data.values[itemIndex - 1];
-            this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData);
+        for (let data of this.keyParameterData) {
+            if(!data.subVariables || data.subVariables.length == 0) continue;
 
-            this.addItemToQuerieList(this.selectedRegion.name,
-                this.selectedScenario.name,
-                subVariable,
-                this.selectedKeyParameter.name + " - " + this.selectedKeyParameterLevel.name,
-                graphData);
+            let currentKeyParameter      = this.getKeyParameterById(data.keyParameterId);
+            let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
+
+            for (let subVariable of data.subVariables) {
+                this.graphColumns.push([subVariable]);
+                itemIndex++;
+                let graphData : number[] = data.values[itemIndex - 1];
+                this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData);
+    
+                this.addItemToQuerieList(this.selectedRegion.name,
+                    this.selectedScenario.name,
+                    subVariable,
+                    currentKeyParameter.name + " - " + currentKeyParameterLevel.name,
+                    graphData);
+            }                
         }
-        //this.c3_ChartData.columns = this.graphColumns;
+
         this.c3_ChartData = {
             x: 'x',
             xFormat: '%Y',
@@ -228,6 +258,17 @@ export class GraphComponent {
             type: 'spline'
         };
     }
+
+    getKeyParameterById(id: number): KeyParameter{
+        let keyParams = this.selectedKeyParameters.filter(kp => kp.id == id);
+        return keyParams[0];
+    }
+
+    getKeyParameterLevelById(id: number): KeyParameterLevel{
+        let keyParamLevel = this.keyParameterLevels.filter(kp => kp.id == id);
+        return keyParamLevel[0];
+    }
+
 
     builHeadGraphColumns() {
         this.graphColumns = [];
@@ -249,7 +290,7 @@ export class GraphComponent {
         this.tableEntities = new TableEntities(['2010', '2015', '2020', '2025', '2030', '2035', '2040', '2045', '2050']);
     }
 
-    addItemToQuerieList(region: string, scenario: string, variable: string, keyParameter: string, data: any[]) {
+    addItemToQuerieList(region: string, scenario: string, variable: string, keyParameter: string, data: number[]) {
         let tebaleEntity = new TableEntity();
         tebaleEntity.region = region;
         tebaleEntity.scenario = scenario;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,14 +33,33 @@ namespace NXS.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<DataResource> GetData(DataQueryResource filterResource)
+        public async Task<IActionResult> Post([FromBody] DataQueryResource filterResource)
         {
-            var filter = mapper.Map<DataQueryResource, SubVariableDataQuery>(filterResource);
+            var dataResourceResult = new List<DataResource>();
+
+            foreach(var keyParameterResource in filterResource.KeyParameterResources) {
+                dataResourceResult.Add(await GetDataResourceAsync(filterResource, keyParameterResource));
+            }
+
+            return Ok(dataResourceResult);
+        }
+
+
+
+        private async Task<DataResource> GetDataResourceAsync(DataQueryResource filterResource, 
+                                                              KeyParameterResource keyParameterResource)
+        {
+            var filter = mapper.Map<DataQueryResource, SubVariableDataQuery>(filterResource);            
             filter.IsPaging = false;
+            filter.KeyParameterId = keyParameterResource.Id;
+            filter.KeyParameterLevelId = keyParameterResource.KeyParameterLevelId;
+
             var queryResult = await _subVariablesData.GetSubVariableData(filter, true);
 
-            var newDataResource = new DataResource();
+            var newDataResource = new DataResource {
+                KeyParameterId = keyParameterResource.Id,
+                KeyParameterLevelId = keyParameterResource.KeyParameterLevelId
+            };
 
             if (queryResult == null ||
               !queryResult.Items.Any())
@@ -66,9 +86,8 @@ namespace NXS.Controllers
                 newDataResource.Values.Add(itemsToAdd);
             }
 
-            return newDataResource;
+            return newDataResource;            
         }
-
 
         private async Task<DataResource> GetData_(DataQueryResource filterResource)
         {

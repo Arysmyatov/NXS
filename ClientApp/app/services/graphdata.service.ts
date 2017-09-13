@@ -65,11 +65,16 @@ export class GraphDataService extends BaseService {
     return this.http.post(this.configService.endpoints.variablexls, variableXls)
       .map(res => res.json());
   }
-  
-   getData(filter) {
-    return this.http.get(this.dataEndpoint + '?' + this.toQueryString(filter))
+
+  getData(filter) {
+    return this.http.post(this.dataEndpoint, filter)
       .map(res => res.json());
   } 
+
+  //  getData(filter) {
+  //   return this.http.get(this.dataEndpoint + '?' + this.toQueryString(filter))
+  //     .map(res => res.json());
+  // } 
 
   toQueryString(obj) {
     var parts = [];

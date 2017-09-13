@@ -1,7 +1,7 @@
 export class KeyParameter {
     id: number;
     name: string;
-    level: number;
+    keyParameterLevelId: number;
 
     constructor(idValue: number, nameValue: string) {
         this.id = idValue;
