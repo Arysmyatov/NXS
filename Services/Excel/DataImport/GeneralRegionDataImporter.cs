@@ -38,7 +38,8 @@ namespace NXS.Services.Excel.DataImport
         public override async Task ImportDataAsync()
         {
             await SetCurrentRegionAgrigationTypeId();
-            var regions = getRegionsEur();
+            var regions = await getRegions();
+
             foreach (var regionName in regions)
             {
                 await SetCurrentRegionIdAsync(regionName);
@@ -82,6 +83,17 @@ namespace NXS.Services.Excel.DataImport
         }
 
 
+        private async Task<IEnumerable<string>> getRegions()
+        {
+            var regionQuery = new RegionQuery{
+                ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId
+            };
+            var regions = await _regionRepository.GetRegionsAsync(regionQuery);
+            if(regions == null || regions.TotalItems == 0) {
+                return new string[0];
+            }
+            return regions.Items.Select(r => r.Name);
+        }
 
 
         private IEnumerable<string> getRegionsEur()

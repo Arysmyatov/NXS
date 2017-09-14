@@ -15,6 +15,7 @@ import { KeyParameterGroup } from "./keyParametersGroup";
 import { Data } from "./data";
 import { ToastyService } from "ng2-toasty";
 import { KeyParameterData } from "./keyParameterData";
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: "graph-service",
@@ -83,6 +84,12 @@ export class GraphComponent {
     }
 
     ngOnInit() {
+        var keyParameterSources = [
+            this.graphDataService.getKeyParameters(),
+            this.graphDataService.getKeyParameterLevels()
+        ];
+
+
         this.graphDataService.getRegions().subscribe(
             regions => this.regions = regions
         );
@@ -95,19 +102,21 @@ export class GraphComponent {
             variables => this.filterVariables(variables)
         );
 
-        this.graphDataService.getKeyParameters().subscribe(
-            keyParameters => this.filterKeyParameters(keyParameters)
-        );
-
-        this.graphDataService.getKeyParameterLevels().subscribe(
-            keyParameterLevels => this.keyParameterLevels = keyParameterLevels
-        );
-
         this.graphDataService.getKeyParameterLevels().subscribe(
             keyParameterLevels => {
                 this.keyParameterLevels = keyParameterLevels;
             }
         );
+
+        Observable.forkJoin(keyParameterSources).subscribe(data => {
+            let keyParameters = data[0];
+            this.keyParameterLevels = data[1];
+
+            this.filterKeyParameters(keyParameters);
+            this.initKeyParameters();
+            }
+        );
+    
     }
 
     filterKeyParameters(keyParametersAll: KeyParameterGroup[]) {
@@ -276,6 +285,10 @@ export class GraphComponent {
         return keyParamLevel[0];
     }
 
+    getKeyParameterLevelByName(name: string): KeyParameterLevel {
+        let keyParamLevel = this.keyParameterLevels.filter(kp => kp.name == name);
+        return keyParamLevel[0];
+    }
 
     builHeadGraphColumns() {
         this.graphColumns = [];
@@ -313,5 +326,21 @@ export class GraphComponent {
         }
 
         this.tableEntities.entities.push(tebaleEntity);
+    }
+
+    initKeyParameters() {
+        var allKeyParameters = [];
+
+        for (let keyParam of this.keyParameters) {
+            allKeyParameters = allKeyParameters.concat(keyParam.keyParameters);
+        }
+
+        let mediumKeyParamLevel = this.getKeyParameterLevelByName("Medium");
+
+        this.selectedKeyParameters = allKeyParameters;
+
+        for (let keyParam of this.selectedKeyParameters) {
+            keyParam.keyParameterLevelId = mediumKeyParamLevel.id;
+        }
     }
 }

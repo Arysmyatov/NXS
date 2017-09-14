@@ -47,7 +47,7 @@ namespace NXS.Persistence
             context.Remove(Region);
         }
 
-        public async Task<QueryResult<Region>> GetRegions(RegionQuery queryObj)
+        public async Task<QueryResult<Region>> GetRegionsAsync(RegionQuery queryObj)
         {
             var result = new QueryResult<Region>();
 

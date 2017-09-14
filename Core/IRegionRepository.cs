@@ -10,7 +10,7 @@ namespace NXS.Core
         Task<Region> GetRegionByName(string name, bool includeRelated = true);
         void Add(Region region);
         void Remove(Region region);
-        Task<QueryResult<Region>> GetRegions(RegionQuery filter);
+        Task<QueryResult<Region>> GetRegionsAsync(RegionQuery filter);
         IEnumerable<Region> GetRegions();
         Task<Region> GetWorldRegion();
     }

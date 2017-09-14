@@ -64,8 +64,8 @@ namespace NXS.Services.Excel.DataImport
                 {
                     CurrentWorkBook = package.Workbook;
 
-                    // UpdateXlsFormulas();
-                    // package.Save();
+                    UpdateXlsFormulas();
+                    package.Save();
 
                     await _generalRegionDataImporter.RemoveDataAsync();
                     await _generalRegionDataImporter.ImportDataAsync();
@@ -92,6 +92,7 @@ namespace NXS.Services.Excel.DataImport
             CurrentScenarioId = xlsUpload.ScenarioId;
             CurrentKeyParameterId = xlsUpload.KeyParameterId;
             CurrentKeyParameterLevelId = xlsUpload.KeyParameterLevelId;
+            CurrentParentRegionId = xlsUpload.ParentRegionId;
         }
 
         private void UpdateXlsFormulas()

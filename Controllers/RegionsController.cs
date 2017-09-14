@@ -58,7 +58,7 @@ namespace NXS.Controllers
                 return BadRequest("There is no binded regions for the user");
             }    
             
-            var userRegions = await _regionRepository.GetRegions(new RegionQuery{
+            var userRegions = await _regionRepository.GetRegionsAsync(new RegionQuery{
                 ParentRegionId = user.ParentRegion.Id
             });
 
