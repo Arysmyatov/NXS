@@ -138,3 +138,19 @@
 .panel-title a {
     font-weight: 600;
 }
+
+tr {
+    height: 5px;
+}
+
+tr > td {
+    line-height: 0.4;
+}
+
+.result-no-data {
+    height: 90px;
+    line-height: 90px;
+    font-size: 17px;
+    text-align: center;
+    color: gray;    
+}

@@ -158,7 +158,7 @@ export class GraphComponent {
 
     selectKeyParameter(keyParameter: KeyParameter, keyParameterLevelId: number) {
         keyParameter.keyParameterLevelId = keyParameterLevelId;
-        if(this.selectedKeyParameters == null) {
+        if (this.selectedKeyParameters == null) {
             this.selectedKeyParameters = [];
         }
 
@@ -188,7 +188,7 @@ export class GraphComponent {
             !this.query.scenarioId ||
             !this.query.variableId ||
             !this.selectedKeyParameters ||
-             this.selectedKeyParameters.length <= 0) {
+            this.selectedKeyParameters.length <= 0) {
             this.builHeadGraphColumns();
             return;
         }
@@ -216,15 +216,22 @@ export class GraphComponent {
 
     addData(data: KeyParameterData[]) {
         this.keyParameterData = data;
-    }    
+    }
 
     addDataItemsToGraph(data1: Data) {
         let itemIndex = 0;
-        if(!this.keyParameterData || this.keyParameterData.length <= 0){
+        if (!this.keyParameterData || this.keyParameterData.length <= 0) {
             return;
         }
 
-        var years = this.keyParameterData[0].years;
+        let years = [];
+        for (let keyParamData of this.keyParameterData) {
+            if (keyParamData.years == null || keyParamData.years.length <= 0) {
+                continue;
+            }
+            years = keyParamData.years;
+            break;
+        }
 
         this.graphColumns = [];
         this.graphColumns.push(['x']);
@@ -232,23 +239,23 @@ export class GraphComponent {
         this.tableEntities.yearList = years;
 
         for (let data of this.keyParameterData) {
-            if(!data.subVariables || data.subVariables.length == 0) continue;
+            if (!data.subVariables || data.subVariables.length == 0) continue;
 
-            let currentKeyParameter      = this.getKeyParameterById(data.keyParameterId);
+            let currentKeyParameter = this.getKeyParameterById(data.keyParameterId);
             let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
 
             for (let subVariable of data.subVariables) {
                 this.graphColumns.push([subVariable]);
                 itemIndex++;
-                let graphData : number[] = data.values[itemIndex - 1];
+                let graphData: number[] = data.values[itemIndex - 1];
                 this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData);
-    
+
                 this.addItemToQuerieList(this.selectedRegion.name,
                     this.selectedScenario.name,
                     subVariable,
                     currentKeyParameter.name + " - " + currentKeyParameterLevel.name,
                     graphData);
-            }                
+            }
         }
 
         this.c3_ChartData = {
@@ -259,12 +266,12 @@ export class GraphComponent {
         };
     }
 
-    getKeyParameterById(id: number): KeyParameter{
+    getKeyParameterById(id: number): KeyParameter {
         let keyParams = this.selectedKeyParameters.filter(kp => kp.id == id);
         return keyParams[0];
     }
 
-    getKeyParameterLevelById(id: number): KeyParameterLevel{
+    getKeyParameterLevelById(id: number): KeyParameterLevel {
         let keyParamLevel = this.keyParameterLevels.filter(kp => kp.id == id);
         return keyParamLevel[0];
     }
