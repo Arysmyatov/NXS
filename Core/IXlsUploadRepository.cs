@@ -12,6 +12,8 @@ namespace NXS.Core
 
         Task<IEnumerable<XlsUpload>> GetXlsUploadsNotProcessdAsync();
 
-        void Add(XlsUpload vehicle);
+        void Add(XlsUpload xlsUpload);
+
+        void Update(XlsUpload xlsUpload);
     }
 }

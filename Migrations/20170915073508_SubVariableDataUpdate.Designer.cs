@@ -11,9 +11,10 @@ using System;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    partial class NxsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170915073508_SubVariableDataUpdate")]
+    partial class SubVariableDataUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -374,7 +375,7 @@ namespace NXS.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
 
-                    b.Property<int>("ParentRegionId");
+                    b.Property<int?>("ParentRegionId");
 
                     b.Property<string>("PasswordHash");
 
@@ -874,8 +875,7 @@ namespace NXS.Migrations
                 {
                     b.HasOne("NXS.Core.Models.ParentRegion", "ParentRegion")
                         .WithMany("Users")
-                        .HasForeignKey("ParentRegionId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ParentRegionId");
                 });
 
             modelBuilder.Entity("NXS.Core.Models.Region", b =>

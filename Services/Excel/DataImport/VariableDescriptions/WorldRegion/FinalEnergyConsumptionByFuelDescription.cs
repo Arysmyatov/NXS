@@ -1,20 +1,20 @@
 using NXS.Services.Abstract.XlsStucture;
 using NXS.Services.Excel.Structure;
 
-namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
+namespace NXS.Services.Excel.DataImport.VariableDescriptions.WorldRegion
 {
-    public class FinalEnergyConsumptionByFuelDescription : GeneralVariableAbstract
+    public class FinalEnergyConsumptionByFuelDescription : WorldVariableAbstract
     {
         private XlsRange _firstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 184,
+                Row = 193,
                 Col = 2
             },
             CellEnd = new XlsCell
             {
-                Row = 190,
+                Row = 199,
                 Col = 11
             }
         };
@@ -23,12 +23,12 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
         {
             CellBg = new XlsCell
             {
-                Row = 192,
+                Row = 201,
                 Col = 2
             },
             CellEnd = new XlsCell
             {
-                Row = 194,
+                Row = 203,
                 Col = 11
             }
         };
@@ -47,8 +47,8 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
                 _secondRange
             };
 
-            Year.CellBg.Row = 183;
-            Year.CellEnd.Row = 183;
+            Year.CellBg.Row  = 192;
+            Year.CellEnd.Row = 192;
         }
     }
 }

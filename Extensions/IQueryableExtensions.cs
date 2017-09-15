@@ -74,14 +74,19 @@ namespace NXS.Extensions
 
         public static IQueryable<SubVariableData> ApplyFiltering(this IQueryable<SubVariableData> query, SubVariableDataQuery queryObj)
         {
+            if (queryObj.ParentRegionId.HasValue)
+                query = query.Where(v => v.ParentRegionId == queryObj.ParentRegionId.Value);
+
             if (queryObj.RegionId.HasValue)
                 query = query.Where(v => v.RegionId == queryObj.RegionId.Value);
+            else
+                query = query.Where(v => v.RegionId == null);
 
             if (queryObj.RegionAgrigationTypeId.HasValue)
-                query = query.Where(v => v.RegionAgrigationTypeId == queryObj.RegionAgrigationTypeId.Value);            
+                query = query.Where(v => v.RegionAgrigationTypeId == queryObj.RegionAgrigationTypeId.Value);
 
             if (queryObj.ScenarioId.HasValue)
-                query = query.Where(v => v.ScenarioId == queryObj.ScenarioId.Value);                
+                query = query.Where(v => v.ScenarioId == queryObj.ScenarioId.Value);
 
             if (queryObj.VariableId.HasValue)
                 query = query.Where(v => v.VariableId == queryObj.VariableId.Value);
@@ -109,7 +114,7 @@ namespace NXS.Extensions
 
             return query;
         }
-        
+
 
         public static IQueryable<SubVariable> ApplyFiltering(this IQueryable<SubVariable> query, SubVariableQuery queryObj)
         {
@@ -159,7 +164,7 @@ namespace NXS.Extensions
 
         public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, IQueryObject queryObj)
         {
-            if (queryObj.IsPaging != null && 
+            if (queryObj.IsPaging != null &&
                !queryObj.IsPaging.Value)
             {
                 return query;

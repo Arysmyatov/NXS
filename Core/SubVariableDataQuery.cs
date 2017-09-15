@@ -4,6 +4,7 @@ namespace NXS.Core
 {
     public class SubVariableDataQuery : IQueryObject
     {
+        public int? ParentRegionId { get; set; }
         public int? RegionId { get; set; }
         public int? RegionAgrigationTypeId { get; set; }
         public int? ScenarioId { get; set; }

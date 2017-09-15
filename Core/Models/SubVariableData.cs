@@ -16,6 +16,8 @@ namespace NXS.Core.Models
 
         public int KeyParameterLevelId { get; set; }
 
+        public int? ParentRegionId { get; set; }
+        
         public int? RegionId { get; set; }
 
         public int VariableId { get; set; }
@@ -48,6 +50,8 @@ namespace NXS.Core.Models
 
         public Region Region { get; set; }
 
+        public ParentRegion ParentRegion { get; set; }        
+        
         public ProcessSet ProcessSet { get; set; }
 
         public Attribute Attribute { get; set; }

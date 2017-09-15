@@ -3,18 +3,18 @@ using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
 {
-    public class FinalEnergyConsumptionByFuelDescription : GeneralVariableAbstract
+    public class ElectricityCapacityDescription : GeneralVariableAbstract
     {
         private XlsRange _firstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 184,
+                Row = 53,
                 Col = 2
             },
             CellEnd = new XlsCell
             {
-                Row = 190,
+                Row = 62,
                 Col = 11
             }
         };
@@ -23,32 +23,48 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
         {
             CellBg = new XlsCell
             {
-                Row = 192,
+                Row = 64,
                 Col = 2
             },
             CellEnd = new XlsCell
             {
-                Row = 194,
+                Row = 66,
                 Col = 11
             }
         };
 
 
-        public FinalEnergyConsumptionByFuelDescription()
+        private XlsRange _thirdRange = new XlsRange
+        {
+            CellBg = new XlsCell
+            {
+                Row = 68,
+                Col = 2
+            },
+            CellEnd = new XlsCell
+            {
+                Row = 70,
+                Col = 11
+            }
+        };
+
+
+        public ElectricityCapacityDescription()
         {
             VariableDbDescription = new VariableDbDescription
             {
-                VariableGroupName = "Final Energy Consumption",
-                VariableName = "Final Energy Consumption : By fuel"
+                VariableGroupName = "Electricity",
+                VariableName = "Capacity"
             };
 
             XlsRanges = new IXlsRange[] {
                 _firstRange,
-                _secondRange
+                _secondRange,
+                _thirdRange
             };
 
-            Year.CellBg.Row = 183;
-            Year.CellEnd.Row = 183;
+            Year.CellBg.Row  = 52;
+            Year.CellEnd.Row = 52;
         }
     }
 }

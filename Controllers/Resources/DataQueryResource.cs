@@ -5,6 +5,7 @@ namespace NXS.Controllers.Resources
 {
     public class DataQueryResource
     {
+        public int? ParentRegionId { get; set; }        
         public int? RegionId { get; set; }
         public int? ScenarioId { get; set; }
         public int? VariableId { get; set; }

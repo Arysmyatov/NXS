@@ -70,6 +70,7 @@ namespace NXS.Services.Excel.DataImport
         {
             var queryObj = new SubVariableDataQuery
             {
+                ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId,
                 ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
                 KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
                 KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId
@@ -190,6 +191,7 @@ namespace NXS.Services.Excel.DataImport
                         VariableId = CurrenVariableId,
                         SubVariableId = CurrentSubVariableId,
                         RegionId = CurrenRegionId,
+                        ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId,
                         ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
                         KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
                         KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId,

@@ -3,19 +3,19 @@ using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
 {
-    public class FinalEnergyConsumptionByFuelDescription : GeneralVariableAbstract
+    public class EmissionesCo2EmissionsByRegionDescription: GeneralVariableAbstract
     {
         private XlsRange _firstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 184,
-                Col = 2
+                Row = 0,
+                Col = 0
             },
             CellEnd = new XlsCell
             {
-                Row = 190,
-                Col = 11
+                Row = 0,
+                Col = 0
             }
         };
 
@@ -23,32 +23,30 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.General
         {
             CellBg = new XlsCell
             {
-                Row = 192,
-                Col = 2
+                Row = 0,
+                Col = 0
             },
             CellEnd = new XlsCell
             {
-                Row = 194,
-                Col = 11
+                Row = 0,
+                Col = 0
             }
         };
 
 
-        public FinalEnergyConsumptionByFuelDescription()
+        public EmissionesCo2EmissionsByRegionDescription()
         {
             VariableDbDescription = new VariableDbDescription
             {
-                VariableGroupName = "Final Energy Consumption",
-                VariableName = "Final Energy Consumption : By fuel"
+                VariableGroupName = "Emissiones",
+                VariableName = "CO2 emissions by region"
             };
 
             XlsRanges = new IXlsRange[] {
-                _firstRange,
-                _secondRange
             };
 
-            Year.CellBg.Row = 183;
-            Year.CellEnd.Row = 183;
+            Year.CellBg.Row = 0;
+            Year.CellEnd.Row = 0;
         }
     }
 }

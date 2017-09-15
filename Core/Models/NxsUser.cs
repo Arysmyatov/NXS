@@ -7,6 +7,7 @@ namespace NXS.Core.Models
         // Extended Properties
        public string FirstName { get; set; }
        public string LastName { get; set; }
+       public int ParentRegionId { get; set; }
        public ParentRegion ParentRegion { get; set; }
     }
 }

@@ -13,7 +13,10 @@ using OfficeOpenXml;
 namespace NXS.Services.Excel.DataImport
 {
     public class GeneralRegionDataImporter : RegionDataImporterAbstarct
-    {        
+    {
+        public const string RegionsSheetName = "General parameters";
+        public const int RegionsRowBg = 3;
+        public const int RegionsColBg = 2;
 
         public GeneralRegionDataImporter(IRegionRepository regionRepository,
                                          IVariableRepository variableRepository,
@@ -21,7 +24,7 @@ namespace NXS.Services.Excel.DataImport
                                          ISubVariableDataRepository subVariableDataRepository,
                                          IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
                                          IMapper mapper,
-                                         IUnitOfWork unitOfWork): base(
+                                         IUnitOfWork unitOfWork) : base(
                                                         regionRepository,
                                                         variableRepository,
                                                         subVariableRepository,
@@ -38,13 +41,14 @@ namespace NXS.Services.Excel.DataImport
         public override async Task ImportDataAsync()
         {
             await SetCurrentRegionAgrigationTypeId();
-            var regions = await getRegions();
+            var regions = getRegions();
 
             foreach (var regionName in regions)
             {
                 await SetCurrentRegionIdAsync(regionName);
-                SetCurrentWorkSheet(ByRegionWorkSheetName);
+                await RemoveDataAsync();
 
+                SetCurrentWorkSheet(ByRegionWorkSheetName);
                 SetRegionInXls(regionName);
                 RecalculateXlsResults();
 
@@ -57,6 +61,7 @@ namespace NXS.Services.Excel.DataImport
         {
             var queryObj = new SubVariableDataQuery
             {
+                RegionId = CurrentRegionId,
                 ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
                 KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
                 KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId
@@ -68,7 +73,8 @@ namespace NXS.Services.Excel.DataImport
 
         #region Private methods
 
-        protected override IVariableDescription[] GetVariableDescriptions() {
+        protected override IVariableDescription[] GetVariableDescriptions()
+        {
             return GeneralVariableDescriptions.GetAllDescriptions();
         }
 
@@ -82,18 +88,48 @@ namespace NXS.Services.Excel.DataImport
             CurrentWorkSheet.Cells[1, 2].Value = regionName;
         }
 
-
-        private async Task<IEnumerable<string>> getRegions()
+        private IEnumerable<string> getRegions()
         {
-            var regionQuery = new RegionQuery{
-                ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId
-            };
-            var regions = await _regionRepository.GetRegionsAsync(regionQuery);
-            if(regions == null || regions.TotalItems == 0) {
-                return new string[0];
-            }
-            return regions.Items.Select(r => r.Name);
+            SetCurrentWorkSheet(RegionsSheetName);
+
+            var row = RegionsRowBg;
+            var regions = new List<string>();
+            
+            var currentRegion = string.Empty;
+
+            do
+            {
+                var regionCellVal = CurrentWorkSheet.Cells[row, RegionsColBg].Value;
+                if (regionCellVal == null)
+                {
+                    break;
+                }
+
+                currentRegion = regionCellVal.ToString();
+                if (string.IsNullOrEmpty(currentRegion) || currentRegion == "World")
+                {
+                    break;
+                }
+                regions.Add(currentRegion);
+                row++;
+            } while (true);
+
+            return regions.ToArray();
         }
+
+
+
+        // private async Task<IEnumerable<string>> getRegions()
+        // {
+        //     var regionQuery = new RegionQuery{
+        //         ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId
+        //     };
+        //     var regions = await _regionRepository.GetRegionsAsync(regionQuery);
+        //     if(regions == null || regions.TotalItems == 0) {
+        //         return new string[0];
+        //     }
+        //     return regions.Items.Select(r => r.Name);
+        // }
 
 
         private IEnumerable<string> getRegionsEur()

@@ -6,6 +6,7 @@ namespace NXS.Services.Excel.Structure
     {
         public IXlsCell CellBg { get; set; }
         public IXlsCell CellEnd { get; set; }
+        public string Prefix { get; set; }
 
         public XlsRange()
         {

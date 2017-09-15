@@ -43,5 +43,9 @@ namespace NXS.Persistence
         {
             context.XlsUploads.Add(xlsUpload);
         }
+
+        public void Update(XlsUpload xlsUpload) {
+            context.XlsUploads.Update(xlsUpload);
+        }
     }
 }

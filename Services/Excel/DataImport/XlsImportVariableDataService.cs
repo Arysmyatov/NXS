@@ -23,13 +23,15 @@ namespace NXS.Services.Excel.DataImport
         private readonly IDataImporter _gdpDataImporter;
         private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;        
         private IXlsUploadRepository _xlsUploadRepository { get; set; }
+        private IUnitOfWork _unitOfWork;
 
 
         public XlsImportVariableDataService(IXlsUploadRepository xlsUploadRepository,
                                             IXlsFormulaUpdaterService xlsFormulaUpdaterService,
                                             GeneralRegionDataImporter generalRegionDataImporter,
                                             WorldRegionDataImporter worldRegionDataImporter,
-                                            GdpDataImporter gdpDataImporter)
+                                            GdpDataImporter gdpDataImporter,
+                                            IUnitOfWork unitOfWork)
         {
             _xlsUploadRepository = xlsUploadRepository;
             _xlsFormulaUpdaterService = xlsFormulaUpdaterService;
@@ -39,6 +41,7 @@ namespace NXS.Services.Excel.DataImport
             _generalRegionDataImporter.XlsImportVariableDataService = this;
             _worldRegionDataImporter.XlsImportVariableDataService = this;
             _gdpDataImporter.XlsImportVariableDataService = this;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -67,20 +70,22 @@ namespace NXS.Services.Excel.DataImport
                     UpdateXlsFormulas();
                     package.Save();
 
-                    await _generalRegionDataImporter.RemoveDataAsync();
+                    //await _generalRegionDataImporter.RemoveDataAsync();
                     await _generalRegionDataImporter.ImportDataAsync();
 
                     await _worldRegionDataImporter.RemoveDataAsync();
                     await _worldRegionDataImporter.ImportDataAsync();
 
-                    await _worldRegionDataImporter.RemoveDataAsync();
-                    await _worldRegionDataImporter.ImportDataAsync();   
-
                     await _gdpDataImporter.RemoveDataAsync();
-                    await _gdpDataImporter.ImportDataAsync();                    
+                    await _gdpDataImporter.ImportDataAsync();
                 }
+
+                xlsUpload.IsProcessed = true;
+                _xlsUploadRepository.Update(xlsUpload);
+                await _unitOfWork.CompleteAsync();
             }
         }
+
 
         public void SetWorkBookBasePath(string basePath) {
             _workBookBasePath = basePath;

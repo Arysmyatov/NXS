@@ -193,8 +193,7 @@ export class GraphComponent {
 
 
     builGraph() {
-        if (!this.query.regionId ||
-            !this.query.scenarioId ||
+        if (!this.query.scenarioId ||
             !this.query.variableId ||
             !this.selectedKeyParameters ||
             this.selectedKeyParameters.length <= 0) {
@@ -259,7 +258,9 @@ export class GraphComponent {
                 let graphData: number[] = data.values[itemIndex - 1];
                 this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData);
 
-                this.addItemToQuerieList(this.selectedRegion.name,
+                let selectedRegionName = this.selectedRegion == null ? "" : this.selectedRegion.name;
+
+                this.addItemToQuerieList(selectedRegionName,
                     this.selectedScenario.name,
                     subVariable,
                     currentKeyParameter.name + " - " + currentKeyParameterLevel.name,
@@ -342,5 +343,7 @@ export class GraphComponent {
         for (let keyParam of this.selectedKeyParameters) {
             keyParam.keyParameterLevelId = mediumKeyParamLevel.id;
         }
+
+        this.query.KeyParameterResources = this.selectedKeyParameters;
     }
 }

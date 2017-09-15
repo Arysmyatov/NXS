@@ -67,7 +67,7 @@ export class GraphDataService extends BaseService {
   }
 
   getData(filter) {
-    return this.http.post(this.dataEndpoint, filter)
+    return this.authHttp.post(this.dataEndpoint, filter)
       .map(res => res.json());
   } 
 

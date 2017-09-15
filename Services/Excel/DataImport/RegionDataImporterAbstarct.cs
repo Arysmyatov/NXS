@@ -19,7 +19,7 @@ namespace NXS.Services.Excel.DataImport
         protected string[] CurrentYears { get; set; }
         protected ExcelWorkbook CurrentWorkBook { get; set; }
         protected ExcelWorksheet CurrentWorkSheet { get; set; }
-        protected int CurrenRegionId { get; set; }
+        protected int? CurrentRegionId { get; set; }
         protected int CurrenVariableId { get; set; }
         protected int SubVariableCol { get; set; }
         public IXlsImportVariableDataService XlsImportVariableDataService { get; set; }
@@ -147,7 +147,7 @@ namespace NXS.Services.Excel.DataImport
             var subVariableDataByRange = new List<SubVariableData>();
             for (var curentRow = currentRange.CellBg.Row; curentRow <= currentRange.CellEnd.Row; curentRow++)
             {
-                await SetCurrentSubVariableId(curentRow, SubVariableCol);
+                await SetCurrentSubVariableId(curentRow, SubVariableCol, currentRange.Prefix);
 
                 var yearIndex = 0;
                 for (var curentCol = currentRange.CellBg.Col + 1; curentCol <= currentRange.CellEnd.Col; curentCol++)
@@ -158,7 +158,8 @@ namespace NXS.Services.Excel.DataImport
                         RegionAgrigationTypeId = CurrentRegionAggregationTypeId,
                         VariableId = CurrenVariableId,
                         SubVariableId = CurrentSubVariableId,
-                        RegionId = CurrenRegionId,
+                        RegionId = CurrentRegionId,
+                        ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId,
                         ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
                         KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
                         KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId,
@@ -198,14 +199,16 @@ namespace NXS.Services.Excel.DataImport
         }
 
 
-        protected async Task SetCurrentSubVariableId(int currentRow, int subVariableCol)
+        protected async Task SetCurrentSubVariableId(int currentRow, int subVariableCol, string currentRangePref = "")
         {
             var subVariableVal = CurrentWorkSheet.Cells[currentRow, subVariableCol].Value;
             if (subVariableVal == null)
             {
                 CurrentSubVariableId = 0;
             }
-            var subVariableName = subVariableVal.ToString();
+            var subVariableName = string.IsNullOrEmpty(currentRangePref) ? $"{currentRangePref} - {subVariableVal.ToString()}" 
+                                                                            : subVariableVal.ToString();
+
             var subVariable = await _subVariableRepository.GetSubVariable(subVariableName);
 
             if (subVariable == null)
@@ -248,7 +251,7 @@ namespace NXS.Services.Excel.DataImport
                 _regionRepository.Add(region);
                 await _unitOfWork.CompleteAsync();
             }
-            CurrenRegionId = region.Id;
+            CurrentRegionId = region.Id;
         }
 
 

@@ -36,8 +36,9 @@ namespace NXS.Services.Excel.DataImport
 
         public override async Task ImportDataAsync()
         {
-            await SetCurrentRegionAgrigationTypeId();    
-            await SetCurrentRegionIdAsync(_worldRegionName);
+            await SetCurrentRegionAgrigationTypeId();
+            //await SetCurrentRegionIdAsync(_worldRegionName);
+            CurrentRegionId = null;
             SetCurrentWorkSheet(ByRegionWorkSheetName);
 
             await ImportDataByVariableDescriptionsAsync();
@@ -48,9 +49,11 @@ namespace NXS.Services.Excel.DataImport
         {
             var queryObj = new SubVariableDataQuery
             {
-                ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
+                ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId,
+                RegionId = null,
                 KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
-                KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId
+                KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId,
+                VariableId = CurrenVariableId
             };
             _subVariableDataRepository.RemoveWorld(queryObj);
             await _unitOfWork.CompleteAsync();
