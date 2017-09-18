@@ -6,29 +6,27 @@ using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
 {
-    // SHOULD BE IMPLEMENTED LATER
-
-    public class Co2EmissionBySectorVariableDescription : XlsVariableDescriptionAbstract
+    public class Co2EmissionBySectorC_A03aVariableDescription  : XlsVariableDescriptionAbstract
     {
 
         private XlsRange FirstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 201,
+                Row = 216,
                 Col = 3
             },
             CellEnd = new XlsCell
             {
-                Row = 205,
+                Row = 218,
                 Col = 11
             }
         };
 
 
-        public Co2EmissionBySectorVariableDescription()
+        public Co2EmissionBySectorC_A03aVariableDescription()
         {
-            XlsRanges = new XlsRange[] { };
+            XlsRanges = new XlsRange[] { FirstRange };
 
             XlsSrcDescription = new XlsSrcDescription
             {
@@ -48,7 +46,7 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                             "L"
                         },
                 RowBg = 5,
-                RowEnd = 988
+                RowEnd = 1000
             };
 
             XlsAttributeVariableDescriptions = new List<IXlsAttributeVariableDescription> {

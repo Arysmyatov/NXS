@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Services.Abstract.XlsImport;
@@ -32,6 +33,7 @@ namespace NXS.Services.Excel.DataImport
         protected readonly IUnitOfWork _unitOfWork;
         protected int CurrentSubVariableId { get; set; }
         public int CurrentRegionAggregationTypeId { get; set; }
+        private readonly ILogger _logger;
 
 
         public RegionDataImporterAbstarct(IRegionRepository regionRepository,
@@ -40,7 +42,8 @@ namespace NXS.Services.Excel.DataImport
                                          ISubVariableDataRepository subVariableDataRepository,
                                          IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
                                          IMapper mapper,
-                                         IUnitOfWork unitOfWork)
+                                         IUnitOfWork unitOfWork,
+                                         ILoggerFactory loggerFactory)
         {
             _regionRepository = regionRepository;
             _variableRepository = variableRepository;
@@ -49,6 +52,7 @@ namespace NXS.Services.Excel.DataImport
             _regionAgrigationTypeRepository = regionAgrigationTypeRepository;
             _automapper = mapper;
             _unitOfWork = unitOfWork;
+            _logger = loggerFactory.CreateLogger("NXS.Services.Excel.DataImport.RegionDataImporterAbstarct");
         }
 
 
@@ -65,13 +69,17 @@ namespace NXS.Services.Excel.DataImport
 
             foreach (var xlsVariableDescription in xlsVariableDescriptions)
             {
+                _logger.LogInformation($"Started the import for { xlsVariableDescription.SheetName } - { xlsVariableDescription.GetType() }  ");                
+
+
                 SetCurrentWorkSheet(xlsVariableDescription.SheetName);
                 await SetCurrentVariableIdAsync(xlsVariableDescription.VariableDbDescription);
                 SubVariableCol = xlsVariableDescription.SubVariable.Col;
 
                 var subVariableData = await GetDataByVariableDescriptionAsync(xlsVariableDescription);
                 await AddSubVariableDataInDbAsync(subVariableData);
-                //await SaveSubVariableDataInDbAsync(subVariableData);
+
+                _logger.LogInformation($"Finish the import for { xlsVariableDescription.SheetName } - { xlsVariableDescription.GetType() }  ");                                
             }
         }
 
@@ -206,7 +214,7 @@ namespace NXS.Services.Excel.DataImport
             {
                 CurrentSubVariableId = 0;
             }
-            var subVariableName = string.IsNullOrEmpty(currentRangePref) ? $"{currentRangePref} - {subVariableVal.ToString()}" 
+            var subVariableName = !string.IsNullOrEmpty(currentRangePref) ? $"{currentRangePref} - {subVariableVal.ToString()}" 
                                                                             : subVariableVal.ToString();
 
             var subVariable = await _subVariableRepository.GetSubVariable(subVariableName);

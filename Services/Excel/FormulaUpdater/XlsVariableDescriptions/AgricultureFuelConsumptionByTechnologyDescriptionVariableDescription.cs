@@ -6,38 +6,37 @@ using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
 {
-    // SHOULD BE IMPLEMENTED LATER
-
-    public class Co2EmissionBySectorVariableDescription : XlsVariableDescriptionAbstract
+    public class AgricultureFuelConsumptionByTechnologyDescriptionVariableDescription : XlsVariableDescriptionAbstract
     {
-
         private XlsRange FirstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 201,
+                Row = 792,
                 Col = 3
             },
             CellEnd = new XlsCell
             {
-                Row = 205,
+                Row = 799,
                 Col = 11
             }
         };
 
 
-        public Co2EmissionBySectorVariableDescription()
+        public AgricultureFuelConsumptionByTechnologyDescriptionVariableDescription()
         {
-            XlsRanges = new XlsRange[] { };
+            XlsRanges = new XlsRange[] {
+                FirstRange
+            };
 
             XlsSrcDescription = new XlsSrcDescription
             {
-                XlsSheetName = "C_A03a",
+                XlsSheetName = "C_A10b",
                 RegionColLetter = "B",
-                CommoditySetColLetter = "C",
+                ProcessSetColLetter = "C",
+                CommoditySetColLetter= "D",
 
                 YearColLetters = new string[] {
-                            "D",
                             "E",
                             "F",
                             "G",
@@ -45,19 +44,23 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                             "I",
                             "J",
                             "K",
-                            "L"
+                            "L",
+                            "M"                
                         },
                 RowBg = 5,
-                RowEnd = 988
+                RowEnd = 1000
             };
 
             XlsAttributeVariableDescriptions = new List<IXlsAttributeVariableDescription> {
-                new CommoditySetAttribute {
+                new ProcessSetAtribute{
                     ColLetter = "M",
                     SrcColLetter = "C"
+                },
+                new CommodityAttribute{
+                    ColLetter = "N",
+                    SrcColLetter = "D"
                 }
-            };            
-            
+            };                 
         }
     }
 }

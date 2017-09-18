@@ -12,7 +12,9 @@ namespace NXS
 
         public static IWebHost BuildWebHost(string[] args) =>
                     WebHost.CreateDefaultBuilder(args)
-                        .UseStartup<Startup>()
-                        .Build();
+                           .UseSetting("detailedErrors", "true")
+                           .UseStartup<Startup>()
+                           .CaptureStartupErrors(true)
+                           .Build();
     }
 }

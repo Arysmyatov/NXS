@@ -38,6 +38,9 @@
     <None Remove="Logs\NXS-log-20170907.txt" />
     <None Remove="Logs\NXS-log-20170908.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
     <Exec Command="npm install" />

@@ -27,5 +27,12 @@ namespace NXS.Core.NxsConstants
         }
 
         public static string WorldRegionName { get; } = "World";
+
+        public static class ParentRegions
+        {
+            public static string Etm { get; } = "ETM";
+            public static string Tmxr { get; } = "TMXR";
+        }
+        
     }
 }

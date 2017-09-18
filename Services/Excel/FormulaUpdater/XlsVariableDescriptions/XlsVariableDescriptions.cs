@@ -17,6 +17,14 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
         private static IXlsVariableDescription TradeInExportVariableDescription = new TradeInExportVariableDescription();
         private static IXlsVariableDescription TransportDemandByFuelTypeVariableDescription = new TransportDemandByFuelTypeVariableDescription();
         private static IXlsVariableDescription IndustryConsumptionByEndUseSectorsVariableDescription = new IndustryConsumptionByEndUseSectorsVariableDescription();
+        private static IXlsVariableDescription ElcHeatIndelcVariableDescription = new ElcHeatIndelcVariableDescription();
+        private static IXlsVariableDescription AgricultureFuelConsumptionByTechnologyDescriptionVariableDescription = new AgricultureFuelConsumptionByTechnologyDescriptionVariableDescription();
+        private static IXlsVariableDescription CommercialFuelConsumptionByTechnologyDescriptionVariableDescription = new CommercialFuelConsumptionByTechnologyDescriptionVariableDescription();
+        private static IXlsVariableDescription ResidentialFuelConsumptionByTechnologyDescriptionVariableDescription = new ResidentialFuelConsumptionByTechnologyDescriptionVariableDescription();
+        private static IXlsVariableDescription Co2EmissionBySectorC_A03aVariableDescription = new Co2EmissionBySectorC_A03aVariableDescription();
+        private static IXlsVariableDescription Co2EmissionBySectorC_A3bVariableDescription = new Co2EmissionBySectorC_A3bVariableDescription();
+        private static IXlsVariableDescription Co2EmissionBySectorC_A3cVariableDescription = new Co2EmissionBySectorC_A3cVariableDescription();
+        private static IXlsVariableDescription Co2EmissionBySectorC_A08dVariableDescription = new Co2EmissionBySectorC_A08dVariableDescription();
 
         public static IXlsVariableDescription[] AllDescriptions
         {
@@ -34,7 +42,15 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                 TradeInExportVariableDescription,
                 // TransportDemandVariableDescription
                 TransportDemandByFuelTypeVariableDescription,
-                IndustryConsumptionByEndUseSectorsVariableDescription
+                IndustryConsumptionByEndUseSectorsVariableDescription,
+                ElcHeatIndelcVariableDescription,
+                AgricultureFuelConsumptionByTechnologyDescriptionVariableDescription,
+                CommercialFuelConsumptionByTechnologyDescriptionVariableDescription,
+                ResidentialFuelConsumptionByTechnologyDescriptionVariableDescription,
+                Co2EmissionBySectorC_A03aVariableDescription,
+                Co2EmissionBySectorC_A3bVariableDescription,
+                Co2EmissionBySectorC_A3cVariableDescription,
+                Co2EmissionBySectorC_A08dVariableDescription
             };
         }
     }

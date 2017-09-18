@@ -6,33 +6,59 @@ using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
 {
-    // SHOULD BE IMPLEMENTED LATER
-
-    public class Co2EmissionBySectorVariableDescription : XlsVariableDescriptionAbstract
+    public class Co2EmissionBySectorC_A3bVariableDescription  : XlsVariableDescriptionAbstract
     {
 
         private XlsRange FirstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 201,
+                Row = 219,
                 Col = 3
             },
             CellEnd = new XlsCell
             {
-                Row = 205,
+                Row = 219,
+                Col = 11
+            }
+        };
+
+        private XlsRange SecondRange = new XlsRange
+        {
+            CellBg = new XlsCell
+            {
+                Row = 222,
+                Col = 3
+            },
+            CellEnd = new XlsCell
+            {
+                Row = 223,
+                Col = 11
+            }
+        };
+
+        private XlsRange ThirdRange = new XlsRange
+        {
+            CellBg = new XlsCell
+            {
+                Row = 229,
+                Col = 3
+            },
+            CellEnd = new XlsCell
+            {
+                Row = 229,
                 Col = 11
             }
         };
 
 
-        public Co2EmissionBySectorVariableDescription()
+        public Co2EmissionBySectorC_A3bVariableDescription()
         {
-            XlsRanges = new XlsRange[] { };
+            XlsRanges = new XlsRange[] { FirstRange, SecondRange, ThirdRange };
 
             XlsSrcDescription = new XlsSrcDescription
             {
-                XlsSheetName = "C_A03a",
+                XlsSheetName = "C_A03b",
                 RegionColLetter = "B",
                 CommoditySetColLetter = "C",
 
@@ -48,7 +74,7 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                             "L"
                         },
                 RowBg = 5,
-                RowEnd = 988
+                RowEnd = 1000
             };
 
             XlsAttributeVariableDescriptions = new List<IXlsAttributeVariableDescription> {
@@ -57,7 +83,7 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                     SrcColLetter = "C"
                 }
             };            
-            
+                        
         }
     }
 }

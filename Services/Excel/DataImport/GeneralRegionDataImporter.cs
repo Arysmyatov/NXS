@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Services.Abstract.XlsImport;
@@ -24,14 +25,16 @@ namespace NXS.Services.Excel.DataImport
                                          ISubVariableDataRepository subVariableDataRepository,
                                          IRegionAgrigationTypeRepository regionAgrigationTypeRepository,
                                          IMapper mapper,
-                                         IUnitOfWork unitOfWork) : base(
+                                         IUnitOfWork unitOfWork,
+                                         ILoggerFactory loggerFactory) : base(
                                                         regionRepository,
                                                         variableRepository,
                                                         subVariableRepository,
                                                         subVariableDataRepository,
                                                         regionAgrigationTypeRepository,
                                                         mapper,
-                                                        unitOfWork)
+                                                        unitOfWork,
+                                                        loggerFactory)
         {
             base.ByRegionWorkSheetName = "By region";
             base.RegionAggregationTypeName = "By Region";

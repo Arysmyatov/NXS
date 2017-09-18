@@ -1,43 +1,42 @@
 using System.Collections.Generic;
 using NXS.Services.Abstract.XlsFormulaUpdater;
-using NXS.Services.Abstract.XlsStucture;
 using NXS.Services.Excel.FormulaUpdater.XlsVariableAttributesDescriptions;
 using NXS.Services.Excel.Structure;
 
 namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
 {
-    // SHOULD BE IMPLEMENTED LATER
-
-    public class Co2EmissionBySectorVariableDescription : XlsVariableDescriptionAbstract
+    public class ElcHeatIndelcVariableDescription : XlsVariableDescriptionAbstract
     {
 
         private XlsRange FirstRange = new XlsRange
         {
             CellBg = new XlsCell
             {
-                Row = 201,
+                Row = 823,
                 Col = 3
             },
             CellEnd = new XlsCell
             {
-                Row = 205,
+                Row = 837,
                 Col = 11
             }
         };
 
 
-        public Co2EmissionBySectorVariableDescription()
+        public ElcHeatIndelcVariableDescription()
         {
-            XlsRanges = new XlsRange[] { };
+            XlsRanges = new XlsRange[] {
+                FirstRange
+            };
 
             XlsSrcDescription = new XlsSrcDescription
             {
-                XlsSheetName = "C_A03a",
+                XlsSheetName = "C_A01b",
                 RegionColLetter = "B",
-                CommoditySetColLetter = "C",
+                ProcessSetColLetter = "C",
+                CommodityColLetter= "D",
 
                 YearColLetters = new string[] {
-                            "D",
                             "E",
                             "F",
                             "G",
@@ -45,19 +44,24 @@ namespace NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions
                             "I",
                             "J",
                             "K",
-                            "L"
+                            "L",
+                            "M"                
                         },
                 RowBg = 5,
-                RowEnd = 988
+                RowEnd = 981
             };
 
             XlsAttributeVariableDescriptions = new List<IXlsAttributeVariableDescription> {
-                new CommoditySetAttribute {
+                new ProcessSetAtribute{
                     ColLetter = "M",
                     SrcColLetter = "C"
+                },
+                new CommodityAttribute{
+                    ColLetter = "N",
+                    SrcColLetter = "D"
                 }
             };            
-            
-        }
+
+        }        
     }
 }
