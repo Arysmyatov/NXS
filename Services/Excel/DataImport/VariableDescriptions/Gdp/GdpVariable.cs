@@ -10,7 +10,7 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.Gdp
             CellBg = new XlsCell
             {
                 Row = 35,
-                Col = 2
+                Col = 3
             },
             CellEnd = new XlsCell
             {

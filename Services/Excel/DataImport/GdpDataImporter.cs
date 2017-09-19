@@ -182,7 +182,7 @@ namespace NXS.Services.Excel.DataImport
                 await SetCurrentRegionId(regionName);
 
                 var yearIndex = 0;
-                for (var curentCol = currentRange.CellBg.Col + 1; curentCol <= currentRange.CellEnd.Col; curentCol++)
+                for (var curentCol = currentRange.CellBg.Col; curentCol <= currentRange.CellEnd.Col; curentCol++)
                 {
                     var currentValue = GetCurrentValue(curentRow, curentCol);
                     var subVariableData = new SubVariableData
@@ -201,7 +201,7 @@ namespace NXS.Services.Excel.DataImport
                     subVariableDataByRange.Add(subVariableData);
                     yearIndex++;
                 }
-                
+
                 curentRow++;
                 regionName = GetXlsValue(curentRow, SubVariableCol);
             };
@@ -275,13 +275,16 @@ namespace NXS.Services.Excel.DataImport
         {
             var region = await _regionRepository.GetRegionByName(regionName);
 
-            // if (region == null)
-            // {
-            //     region = new Region { Name = regionName,
-            //     ParentRegionId =  CurrenParentRegion.Id};
-            //     _subVariableRepository.Add(subVariable);
-            //     await _unitOfWork.CompleteAsync();
-            // }
+            if (region == null)
+            {
+                region = new Region
+                {
+                    Name = regionName,
+                    ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId
+                };
+                _regionRepository.Add(region);
+                await _unitOfWork.CompleteAsync();
+            }
 
             CurrenRegionId = region.Id;
         }

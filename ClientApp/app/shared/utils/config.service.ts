@@ -16,7 +16,7 @@ export class ConfigService {
  
     constructor() {
         //this._apiURI = "http://theresourcenexus.co.uk/api";
-        // this._apiURI = "http://localhost:5000/api";
+        //this._apiURI = "http://localhost:5000/api";
         this._apiURI = "http://nxs.azurewebsites.net/api";
         this.endpoints = {
             region: `${this._apiURI}/regions`,

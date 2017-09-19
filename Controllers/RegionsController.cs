@@ -45,24 +45,30 @@ namespace NXS.Controllers
         {
             var userName = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            if(string.IsNullOrEmpty(userName)){
+            if (string.IsNullOrEmpty(userName))
+            {
                 return BadRequest("There is no user data in the request");
             }
             var user = _context.Users.Where(u => u.UserName == userName)
                                      .Include(u => u.ParentRegion).FirstOrDefault();
 
-            if(user == null){
+            if (user == null)
+            {
                 return BadRequest("There is no user data in the request");
-            }    
-            if(user.ParentRegion == null){
+            }
+            if (user.ParentRegion == null)
+            {
                 return BadRequest("There is no binded regions for the user");
-            }    
-            
-            var userRegions = await _regionRepository.GetRegionsAsync(new RegionQuery{
-                ParentRegionId = user.ParentRegion.Id
+            }
+
+            var userRegions = await _regionRepository.GetRegionsAsync(new RegionQuery
+            {
+                ParentRegionId = user.ParentRegion.Id,
+                IsPaging = false
             });
 
-            if(userRegions == null || userRegions.TotalItems == 0){
+            if (userRegions == null || userRegions.TotalItems == 0)
+            {
                 return BadRequest("There is no binded regions for the user");
             }
 

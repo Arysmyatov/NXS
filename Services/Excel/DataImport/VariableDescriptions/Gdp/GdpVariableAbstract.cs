@@ -15,12 +15,14 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.Gdp
                 Col = 2
             }; set => throw new System.NotImplementedException();
         }
-        public string SheetName { get => "General parameters"; set => throw new System.NotImplementedException(); }
+        public string SheetName { get; set; }
         public IEnumerable<IXlsRange> XlsRanges { get; set; }
         public IYearDescription Year { get; set; }
 
         public GdpVariableAbstract()
         {
+            SheetName = "General parameters";
+
             Year = new YearDescription
             {
                 CellBg = new XlsCell { Col = 3 },

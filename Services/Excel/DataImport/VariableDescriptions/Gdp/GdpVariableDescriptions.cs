@@ -8,7 +8,9 @@ namespace NXS.Services.Excel.DataImport.VariableDescriptions.Gdp
         {
             return new IVariableDescription[] {
                 new GdpVariable(),
-                new PopulationVariable()
+                new PopulationVariable(),
+                new CarbonPriceVariable(),
+                new SystemCostsVariable()
             };
         }
     }

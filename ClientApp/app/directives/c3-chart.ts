@@ -24,7 +24,15 @@ export class C3Chart implements OnChanges {
         var chart = c3.generate({
             bindto: ele,
             data: chartData,
-            axis: chartAxis
+            axis: chartAxis,
+            grid: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: true
+                }
+            }            
         });
     }
 }
