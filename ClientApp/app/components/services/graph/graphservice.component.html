@@ -67,6 +67,7 @@
                     <div class="panel-body">
                         <div id="c3_line_chart" [chartData]="c3_ChartData" [chartAxis]="c3_axis" [chartOptions]="bubble_ChartOptions" [chartType]="LineChart"
                             c3chart></div>
+                        <input id="slider2" type ="range" [attr.min]="chartSlider.minVal" [attr.max]="chartSlider.maxVal" [attr.step]="chartSlider.step" [attr.value]="chartSlider.currentYear"  #ref (change)="changeCurrentYear(ref.value)"/>                            
                     </div>
                 </div>
             </div>
@@ -101,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="query-result" class="col-lg-9">
                 <div class="panel panel-default">
                     <div class="panel-heading">

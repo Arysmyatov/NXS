@@ -7,7 +7,6 @@ import { C3Chart } from '../../directives/c3-chart';
 import { AccordionModule} from "ngx-accordion";
 import { ServicesComponent, GraphComponent, ServicesRoutingModule } from "./index";
 
-
 @NgModule({
     imports: [
         CommonModule,

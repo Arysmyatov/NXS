@@ -16,6 +16,7 @@ import { Data } from "./data";
 import { ToastyService } from "ng2-toasty";
 import { KeyParameterData } from "./keyParameterData";
 import { Observable } from 'rxjs/Observable';
+import { ChartSliderData } from "./chartSliderData";
 
 @Component({
     selector: "graph-service",
@@ -33,7 +34,8 @@ export class GraphComponent {
     selectedVariable: Variable;
     selectedKeyParameter: KeyParameter;
     selectedKeyParameterLevel: KeyParameterLevel;
-
+    chartSlider: ChartSliderData;
+    
     selectedKeyParameters: KeyParameter[];
     keyParameterData: KeyParameterData[];
 
@@ -64,7 +66,8 @@ export class GraphComponent {
         x: {
             type: 'timeseries',
             tick: {
-                format: '%Y'
+                format: '%Y',
+                count: 15
             }
         },
         y: {
@@ -89,7 +92,8 @@ export class GraphComponent {
             this.graphDataService.getKeyParameterLevels()
         ];
 
-
+        this.chartSlider = new ChartSliderData(0);
+        
         this.graphDataService.getRegions().subscribe(
             regions => this.regions = regions
         );
@@ -208,7 +212,7 @@ export class GraphComponent {
                     return;
                 }
                 this.addData(data);
-                this.addDataItemsToGraph(data);
+                this.addDataItemsToGraph();
             });
     }
 
@@ -226,7 +230,13 @@ export class GraphComponent {
         this.keyParameterData = data;
     }
 
-    addDataItemsToGraph(data1: Data) {
+    initSlider(years: string[]){
+        this.chartSlider.minVal = +years[0];
+        this.chartSlider.step = +years[1] - +years[0];
+        this.chartSlider.maxVal = +years[years.length - 1];                        
+    }
+
+    addDataItemsToGraph() {
         let itemIndex = 0;
         if (!this.keyParameterData || this.keyParameterData.length <= 0) {
             return;
@@ -238,6 +248,7 @@ export class GraphComponent {
                 continue;
             }
             years = keyParamData.years;
+            this.initSlider(years);
             break;
         }
 
@@ -246,17 +257,29 @@ export class GraphComponent {
         this.graphColumns[itemIndex] = this.graphColumns[0].concat(years);
         this.tableEntities.yearList = years;
 
+        let itemCount = years.indexOf(this.chartSlider.currentYear.toString()) + 1;
+        if(itemCount == null || itemCount < 0){
+            itemCount = years.length;
+        }
+
         for (let data of this.keyParameterData) {
             if (!data.subVariables || data.subVariables.length == 0) continue;
 
             let currentKeyParameter = this.getKeyParameterById(data.keyParameterId);
             let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
 
+            // add zero line
+            itemIndex++;            
+            this.graphColumns.push(["zeroline"]);
+            for(let zeroVal = 0; zeroVal <  years.length; zeroVal++){
+                this.graphColumns[itemIndex].push(0);
+            }
+
             for (let subVariable of data.subVariables) {
                 this.graphColumns.push([subVariable]);
                 itemIndex++;
-                let graphData: number[] = data.values[itemIndex - 1];
-                this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData);
+                let graphData: number[] = data.values[itemIndex - 2];
+                this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData.slice(0, itemCount));
 
                 let selectedRegionName = this.selectedRegion == null ? "" : this.selectedRegion.name;
 
@@ -345,5 +368,10 @@ export class GraphComponent {
         }
 
         this.query.KeyParameterResources = this.selectedKeyParameters;
+    }
+
+    changeCurrentYear(val){
+        this.chartSlider.currentYear = val;
+        this.addDataItemsToGraph();
     }
 }
