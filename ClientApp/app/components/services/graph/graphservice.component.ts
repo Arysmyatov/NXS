@@ -35,7 +35,7 @@ export class GraphComponent {
     selectedKeyParameter: KeyParameter;
     selectedKeyParameterLevel: KeyParameterLevel;
     chartSlider: ChartSliderData;
-    
+
     selectedKeyParameters: KeyParameter[];
     keyParameterData: KeyParameterData[];
 
@@ -59,7 +59,11 @@ export class GraphComponent {
         x: 'x',
         xFormat: '%Y',
         columns: this.graphColumns,
-        type: 'spline'
+        type: 'spline',
+        color: function (color, d) {
+            // d will be 'id' when called for legends
+            return d.id && d.id === 'zeroline' ?  'grey' : color;
+        }        
     };
 
     public c3_axis = {
@@ -93,7 +97,7 @@ export class GraphComponent {
         ];
 
         this.chartSlider = new ChartSliderData(0);
-        
+
         this.graphDataService.getRegions().subscribe(
             regions => this.regions = regions
         );
@@ -118,9 +122,8 @@ export class GraphComponent {
 
             this.filterKeyParameters(keyParameters);
             this.initKeyParameters();
-            }
+        }
         );
-    
     }
 
     filterKeyParameters(keyParametersAll: KeyParameterGroup[]) {
@@ -212,6 +215,7 @@ export class GraphComponent {
                     return;
                 }
                 this.addData(data);
+                this.initSlider(this.getYears());
                 this.addDataItemsToGraph();
             });
     }
@@ -230,10 +234,20 @@ export class GraphComponent {
         this.keyParameterData = data;
     }
 
-    initSlider(years: string[]){
-        this.chartSlider.minVal = +years[0];
-        this.chartSlider.step = +years[1] - +years[0];
-        this.chartSlider.maxVal = +years[years.length - 1];                        
+    getYears(): string[]{
+        let keyParameterData = this.keyParameterData.find(kp => kp.years != null && kp.years.length > 0);
+        return keyParameterData.years;
+    }
+
+    initSlider(years: string[]) {
+        if(!years || years.length == 0)
+        {
+            return;
+        }
+        this.chartSlider.minVal = 0;
+        this.chartSlider.step = 1;
+        this.chartSlider.maxVal = years.length - 1;
+        this.chartSlider.currentYear = this.chartSlider.maxVal;
     }
 
     addDataItemsToGraph() {
@@ -242,23 +256,15 @@ export class GraphComponent {
             return;
         }
 
-        let years = [];
-        for (let keyParamData of this.keyParameterData) {
-            if (keyParamData.years == null || keyParamData.years.length <= 0) {
-                continue;
-            }
-            years = keyParamData.years;
-            this.initSlider(years);
-            break;
-        }
+        let years = this.getYears();
 
         this.graphColumns = [];
         this.graphColumns.push(['x']);
         this.graphColumns[itemIndex] = this.graphColumns[0].concat(years);
         this.tableEntities.yearList = years;
 
-        let itemCount = years.indexOf(this.chartSlider.currentYear.toString()) + 1;
-        if(itemCount == null || itemCount < 0){
+        let itemCount = this.chartSlider.currentYear + 1;
+        if (itemCount == null || itemCount < 0) {
             itemCount = years.length;
         }
 
@@ -269,9 +275,9 @@ export class GraphComponent {
             let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
 
             // add zero line
-            itemIndex++;            
+            itemIndex++;
             this.graphColumns.push(["zeroline"]);
-            for(let zeroVal = 0; zeroVal <  years.length; zeroVal++){
+            for (let zeroVal = 0; zeroVal < years.length; zeroVal++) {
                 this.graphColumns[itemIndex].push(0);
             }
 
@@ -295,7 +301,10 @@ export class GraphComponent {
             x: 'x',
             xFormat: '%Y',
             columns: this.graphColumns,
-            type: 'spline'
+            type: 'spline',
+            color: function (color, d) {
+                return d.id && d.id === 'zeroline' ?  'grey' : color;
+            }            
         };
     }
 
@@ -326,7 +335,10 @@ export class GraphComponent {
             x: 'x',
             xFormat: '%Y',
             columns: this.graphColumns,
-            type: 'spline'
+            type: 'spline',
+            color: function (color, d) {
+                return d.id && d.id === 'zeroline' ?  'white' : color;
+            }                        
         };
     }
 
@@ -370,8 +382,27 @@ export class GraphComponent {
         this.query.KeyParameterResources = this.selectedKeyParameters;
     }
 
-    changeCurrentYear(val){
-        this.chartSlider.currentYear = val;
+    changeCurrentYear(val) {
+        this.chartSlider.currentYear = +val;
         this.addDataItemsToGraph();
+    }
+
+    playChart() {
+        this.chartSlider.isPlaying = !this.chartSlider.isPlaying;
+        if (this.chartSlider.currentYear >= this.chartSlider.maxVal) {
+            this.chartSlider.currentYear = this.chartSlider.minVal;
+        }
+
+        Observable.interval(700)
+            .takeWhile(() => this.chartSlider.isPlaying)
+            .subscribe(i => {
+                if (this.chartSlider.currentYear >= this.chartSlider.maxVal) {
+                    this.chartSlider.currentYear = this.chartSlider.maxVal;
+                    this.chartSlider.isPlaying = false;
+                }
+                this.chartSlider.currentYear += this.chartSlider.step;
+                this.addDataItemsToGraph();
+            })
+
     }
 }

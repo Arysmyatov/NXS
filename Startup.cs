@@ -1,8 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -14,16 +10,12 @@ using AutoMapper;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Services.Excel;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using FluentValidation.AspNetCore;
-using NXS.Core.Auth;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using NXS.Helpers;
 using Microsoft.AspNetCore.Http;
 using NXS.Services.Abstract;
 using NXS.Services.Logger;
-using NXS.Migrations;
 using NXS.Services.Email;
 using NXS.Services.User;
 using NXS.Services.Abstract.XlsFormulaUpdater;
@@ -31,9 +23,6 @@ using NXS.Services.Excel.FormulaUpdater;
 using NXS.Services.Abstract.XlsImport;
 using NXS.Services.Excel.DataImport;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Newtonsoft.Json.Serialization;
 
 namespace NXS
 {
