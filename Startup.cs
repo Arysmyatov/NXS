@@ -106,12 +106,6 @@ namespace NXS
 
             services.AddCors();
 
-            // jwt wire up
-            // Get options from app settings
-            var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
-            var AuthOptionsFromConfig = Configuration.GetSection("AuthOptions");
-            var secretKey = AuthOptionsFromConfig["Key"];
-
             // api user claim policy
             services.AddAuthorization(options =>
             {

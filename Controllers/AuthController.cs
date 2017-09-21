@@ -26,7 +26,6 @@ namespace NXS.Controllers
         private readonly JsonSerializerSettings _serializerSettings;
         private readonly IConfiguration _configuration;
 
-        private readonly string _secetKey;
 
         public AuthController(UserManager<NxsUser> userManager,
                                 IConfiguration configuration)
@@ -38,8 +37,6 @@ namespace NXS.Controllers
             {
                 Formatting = Formatting.Indented
             };
-
-            _secetKey = _configuration.GetValue<string>("AuthOptions:Key");
         }
 
         // POST api/auth/login
