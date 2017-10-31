@@ -24,7 +24,7 @@ export class UserProfileService extends BaseService {
   }
 
   updateProfile(userProfile: UserProfile) {
-    return this.authHttp.put(this.baseUrl + "/account", JSON.stringify(userProfile))
+    return this.authHttp.put(this.baseUrl + "/account", userProfile)
       .map(response => response.json())
       .catch(this.handleError);
   }

@@ -40,13 +40,9 @@ namespace NXS.Controllers
 
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]        
         public async Task<IActionResult> Get()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             var userName = _contextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             var nxsUser = await _userManager.FindByNameAsync(userName);
             if (nxsUser == null)

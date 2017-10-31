@@ -15,6 +15,7 @@ import { KeyParameterGroup } from "./keyParametersGroup";
 import { Data } from "./data";
 import { ToastyService } from "ng2-toasty";
 import { KeyParameterData } from "./keyParameterData";
+import { KeyParameterDailyData } from "./keyParameterDailyData";
 import { Observable } from 'rxjs/Observable';
 import { ChartSliderData } from "./chartSliderData";
 
@@ -38,7 +39,8 @@ export class GraphComponent {
 
     selectedKeyParameters: KeyParameter[];
     keyParameterData: KeyParameterData[];
-
+    keyParameterDailyData: KeyParameterDailyData[];
+    
     variableGroup: number;
     graphData: GraphEntity[];
     graphColumns: any[];
@@ -54,25 +56,30 @@ export class GraphComponent {
     keyParametersBottom: KeyParameter[];
     keyParameterLevels: KeyParameterLevel[];
     data: Data[];
+    midTermGenerationVarName = "Mid Term Generation";
+    isEvolutionShow = false;
 
     public c3_ChartData = {
-        x: 'x',
-        xFormat: '%Y',
+        x: 'x',        
+        xFormat: '%Y-%m',        
         columns: this.graphColumns,
         type: 'spline',
         color: function (color, d) {
-            // d will be 'id' when called for legends
             return d.id && d.id === 'zeroline' ?  'grey' : color;
-        }        
+        }                
+    };
+
+    public c3_subchart = {
+        show: false
     };
 
     public c3_axis = {
         x: {
+            extent: ['2010-01', '2010-12'],            
             type: 'timeseries',
             tick: {
-                format: '%Y',
-                count: 15
-            }
+                format: '%Y-%m'
+            },
         },
         y: {
             label: {
@@ -207,18 +214,44 @@ export class GraphComponent {
             this.builHeadGraphColumns();
             return;
         }
-        this.builHeadGraphColumns();
 
-        this.graphDataService.getData(this.query).subscribe(
-            data => {
-                if (!data || data.length == 0) {
-                    return;
-                }
-                this.addData(data);
-                this.initSlider(this.getYears());
-                this.addDataItemsToGraph();
-            });
+        if(this.selectedVariable.name == this.midTermGenerationVarName) {
+            this.buildGeneralGraphForElectricity();
+            return;
+        } 
+
+        this.buildGeneralGraph();        
     }
+
+
+    buildGeneralGraph() {
+        this.builHeadGraphColumns();
+        
+                this.graphDataService.getData(this.query).subscribe(
+                    data => {
+                        if (!data || data.length == 0) {
+                            return;
+                        }
+                        this.addData(data);
+                        this.initSlider(this.getYears());
+                        this.addDataItemsToGraph();
+                    });        
+    }
+
+
+    buildGeneralGraphForElectricity() {
+        this.builElectricityHeadGraphColumns();
+            this.graphDataService.getDailyData(this.query).subscribe(
+                data => {
+                    if (!data || data.length == 0) {
+                        return;
+                    }
+                    this.keyParameterDailyData = data;
+                    // this.initSlider(this.getYears());
+                    this.addDailyDataItemsToGraph();
+                });        
+    }
+
 
     riseNoDataMessage() {
         this.toasty.warning({
@@ -237,6 +270,11 @@ export class GraphComponent {
     getYears(): string[]{
         let keyParameterData = this.keyParameterData.find(kp => kp.years != null && kp.years.length > 0);
         return keyParameterData.years;
+    }
+
+    getDates(): string[]{
+        let keyParameterDailyData = this.keyParameterDailyData.find(kp => kp.date != null && kp.date.length > 0);
+        return keyParameterDailyData.date;
     }
 
     initSlider(years: string[]) {
@@ -297,9 +335,12 @@ export class GraphComponent {
             }
         }
 
+        this.c3_subchart.show = false;
+        this.isEvolutionShow  = true;
+
         this.c3_ChartData = {
             x: 'x',
-            xFormat: '%Y',
+            xFormat: '%Y-%m',            
             columns: this.graphColumns,
             type: 'spline',
             color: function (color, d) {
@@ -307,6 +348,55 @@ export class GraphComponent {
             }            
         };
     }
+
+
+    addDailyDataItemsToGraph() {
+        let itemIndex = 0;
+        if (!this.keyParameterDailyData || this.keyParameterDailyData.length <= 0) {
+            return;
+        }
+
+        let dates = this.getDates();
+
+        this.graphColumns = [];
+        this.graphColumns.push(['x']);
+        this.graphColumns[itemIndex] = this.graphColumns[0].concat(dates);
+        this.tableEntities.yearList = dates;
+
+        let itemCount = dates.length;
+        let data =  this.keyParameterDailyData[0];
+        //for (let data of this.keyParameterDailyData) {
+            if (!data.subVariables || data.subVariables.length == 0) return;
+
+            let currentKeyParameter = this.getKeyParameterById(data.keyParameterId);
+            let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
+
+            let valuesIndex = 0;
+            for (let subVariable of data.subVariables) {
+                this.graphColumns.push([subVariable]);
+                itemIndex++;
+                let graphData: number[] = data.values[valuesIndex++];
+                this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData.slice(0, itemCount));
+            }
+        this.isEvolutionShow = false;
+        this.c3_subchart.show = true;
+        this.c3_ChartData = {
+            x: 'x',
+            xFormat: '%Y-%m',
+            columns: this.graphColumns,
+            type: 'spline',
+            color: function (color, d) {
+                return d.id && d.id === 'zeroline' ?  'grey' : color;
+            }            
+        };
+    }
+
+
+
+
+
+
+
 
     getKeyParameterById(id: number): KeyParameter {
         let keyParams = this.selectedKeyParameters.filter(kp => kp.id == id);
@@ -341,6 +431,30 @@ export class GraphComponent {
             }                        
         };
     }
+
+
+    builElectricityHeadGraphColumns() {
+        this.graphColumns = [];
+        this.graphColumns.push(['x', '2017-01-01', '2017-02-01', '2017-03-01', 
+                                     '2017-04-01', '2017-05-01', '2017-06-01', 
+                                     '2017-07-01', '2017-08-01', '2017-09-01', 
+                                     '2017-10-01', '2017-11-01', '2017-12-01']);
+
+        if (this.tableEntities && this.tableEntities.entities) {
+            this.tableEntities.entities = [];
+        }
+
+        this.c3_ChartData = {
+            x: 'x',
+            xFormat: '%Y-%m',
+            columns: this.graphColumns,
+            type: 'spline',
+            color: function (color, d) {
+                return d.id && d.id === 'zeroline' ?  'white' : color;
+            }                        
+        };
+    }    
+
 
     initQueryColumns() {
         this.tableEntities = new TableEntities(['2010', '2015', '2020', '2025', '2030', '2035', '2040', '2045', '2050']);

@@ -139,7 +139,7 @@ namespace NXS.Services.Excel
                             package.Save();
 
                             // get Variable Data
-                            // await GetVariableDataAggreegation();
+                            //await GetVariableDataAggreegation();
 
                             // get Sub Variable data
                             //await GetSubVariableDataAggregategation();

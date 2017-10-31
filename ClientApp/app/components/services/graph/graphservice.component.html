@@ -65,11 +65,11 @@
                         <h3 class="panel-title">Graph</h3>
                     </div>
                     <div class="panel-body">
-                        <div id="c3_line_chart" [chartData]="c3_ChartData" [chartAxis]="c3_axis" [chartOptions]="bubble_ChartOptions" [chartType]="LineChart"
+                        <div id="c3_line_chart" [chartData]="c3_ChartData" [chartAxis]="c3_axis" [chartOptions]="bubble_ChartOptions" [chartType]="LineChart" [subchart]="c3_subchart"
                             c3chart>
                         </div>
 
-                        <div class="evolution-controll">
+                        <div *ngIf="isEvolutionShow" class="evolution-controll">
 
                             <div class="play-button" (click)="playChart()">
                                 <i [class.fa-play]="!chartSlider.isPlaying" [class.fa-pause]="chartSlider.isPlaying" [class.stoped]="!chartSlider.isPlaying" class="fa"></i>

@@ -57,6 +57,7 @@ namespace NXS
             services.AddScoped<IScenarioRepository, ScenarioRepository>();
             services.AddScoped<IVariableGroupRepository, VariableGroupRepository>();
             services.AddScoped<IVariableRepository, VariableRepository>();
+            services.AddScoped<ISubVariableDailyDataRepository, SubVariableDailyDataRepository>();
             services.AddScoped<IVariableXlsDescriptionRepository, VariableXlsDescriptionRepository>();
             services.AddScoped<ISubVariableRepository, SubVariableRepository>();
             services.AddScoped<IDataRepository, DataRepository>();

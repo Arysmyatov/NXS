@@ -10,6 +10,7 @@ import { SaveVariableXls } from "../../models/variablexls";
 export class GraphDataService extends BaseService {
   baseUrl: string = "";
   private readonly dataEndpoint = '/api/data';  
+  private readonly dailyDataEndpoint = '/api/dailydata';   
 
   constructor(private http: Http, private authHttp: AuthHttp, private configService: ConfigService) { 
     super();
@@ -70,6 +71,12 @@ export class GraphDataService extends BaseService {
     return this.authHttp.post(this.dataEndpoint, filter)
       .map(res => res.json());
   } 
+
+  getDailyData(filter) {
+    return this.authHttp.post(this.dailyDataEndpoint, filter)
+      .map(res => res.json());
+  } 
+  
 
   //  getData(filter) {
   //   return this.http.get(this.dataEndpoint + '?' + this.toQueryString(filter))

@@ -5,7 +5,6 @@ using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Linq;
-using NXS.Core.Auth;
 using NXS.Core.Models;
 using NXS.Core.Helpers;
 using System.Collections.Generic;

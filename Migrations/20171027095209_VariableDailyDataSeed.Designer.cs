@@ -11,9 +11,10 @@ using System;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    partial class NxsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171027095209_VariableDailyDataSeed")]
+    partial class VariableDailyDataSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

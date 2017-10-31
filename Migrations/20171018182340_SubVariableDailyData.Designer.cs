@@ -11,9 +11,10 @@ using System;
 namespace NXS.Migrations
 {
     [DbContext(typeof(NxsDbContext))]
-    partial class NxsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171018182340_SubVariableDailyData")]
+    partial class SubVariableDailyData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -499,11 +500,11 @@ namespace NXS.Migrations
 
                     b.Property<int?>("CommoditySetId");
 
+                    b.Property<DateTime>("Date");
+
                     b.Property<int>("KeyParameterId");
 
                     b.Property<int>("KeyParameterLevelId");
-
-                    b.Property<int>("Month");
 
                     b.Property<int?>("ParentRegionId");
 
@@ -522,8 +523,6 @@ namespace NXS.Migrations
                     b.Property<decimal>("Value");
 
                     b.Property<int>("VariableId");
-
-                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 
