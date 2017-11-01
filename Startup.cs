@@ -89,7 +89,7 @@ namespace NXS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
-            //services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Production")));
+            // services.AddDbContext<NxsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Production")));
 
             services.AddIdentity<NxsUser, IdentityRole>(
                 o =>

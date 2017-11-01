@@ -57,6 +57,7 @@ export class GraphComponent {
     keyParameterLevels: KeyParameterLevel[];
     data: Data[];
     midTermGenerationVarName = "Mid Term Generation";
+    electricityPriceVarName  = "Electricity price";
     isEvolutionShow = false;
 
     public c3_ChartData = {
@@ -215,7 +216,8 @@ export class GraphComponent {
             return;
         }
 
-        if(this.selectedVariable.name == this.midTermGenerationVarName) {
+        if(this.selectedVariable.name == this.midTermGenerationVarName ||
+           this.selectedVariable.name ==  this.electricityPriceVarName) {
             this.buildGeneralGraphForElectricity();
             return;
         } 
@@ -340,7 +342,7 @@ export class GraphComponent {
 
         this.c3_ChartData = {
             x: 'x',
-            xFormat: '%Y-%m',            
+            xFormat: '%Y',            
             columns: this.graphColumns,
             type: 'spline',
             color: function (color, d) {
