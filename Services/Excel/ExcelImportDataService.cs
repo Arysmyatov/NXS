@@ -128,6 +128,10 @@ namespace NXS.Services.Excel
                         // Open file
                         var filePath = $"{WorkBookBasePath}/{xlsFile.FileName}";
                         var fileInfo = new FileInfo(filePath);
+                        if(!Directory.Exists(filePath))
+                        {
+                            continue;
+                        }
 
                         // Open Xls file
                         using (var package = new ExcelPackage(fileInfo))
@@ -139,16 +143,27 @@ namespace NXS.Services.Excel
                             package.Save();
 
                             // get Variable Data
-                            //await GetVariableDataAggreegation();
+                            await GetVariableDataAggreegation();
 
                             // get Sub Variable data
-                            //await GetSubVariableDataAggregategation();
+                            await GetSubVariableDataAggregategation();
 
                             // get Sub Variable GDP 
-                            //await GetSubVariableDataAggregategationGdp();
+                            await GetSubVariableDataAggregategationGdp();
 
                             // get Sub Variable World data
-                            //await GetSubVariableDataAggregategationWorld();
+                            await GetSubVariableDataAggregategationWorld();
+                        }
+
+                        try
+                        {
+                            Directory.Delete(fileInfo.FullName);
+
+                            _context.XlsUploads.Remove(xlsFile);
+                            await _context.SaveChangesAsync();
+                        }
+                        catch
+                        {
                         }
                     }
                 }

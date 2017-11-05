@@ -53,10 +53,9 @@ namespace NXS.Services.Excel.DataImport
             var queryObj = new SubVariableDataQuery
             {
                 ParentRegionId = XlsImportVariableDataService.CurrentParentRegionId,
-                RegionId = null,
+                ScenarioId = XlsImportVariableDataService.CurrentScenarioId,
                 KeyParameterId = XlsImportVariableDataService.CurrentKeyParameterId,
-                KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId,
-                VariableId = CurrenVariableId
+                KeyParameterLevelId = XlsImportVariableDataService.CurrentKeyParameterLevelId
             };
             _subVariableDataRepository.RemoveWorld(queryObj);
             await _unitOfWork.CompleteAsync();

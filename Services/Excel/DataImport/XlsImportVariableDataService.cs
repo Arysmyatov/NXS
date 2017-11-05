@@ -1,8 +1,10 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using NXS.Core;
 using NXS.Core.Models;
+using NXS.Persistence;
 using NXS.Services.Abstract.XlsFormulaUpdater;
 using NXS.Services.Abstract.XlsImport;
 using NXS.Services.Excel.FormulaUpdater.XlsVariableDescriptions;
@@ -21,12 +23,14 @@ namespace NXS.Services.Excel.DataImport
         private readonly IDataImporter _generalRegionDataImporter;
         private readonly IDataImporter _worldRegionDataImporter;
         private readonly IDataImporter _gdpDataImporter;
-        private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;        
+        private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;
+        private NxsDbContext _context { get; set; }
         private IXlsUploadRepository _xlsUploadRepository { get; set; }
         private IUnitOfWork _unitOfWork;
 
 
         public XlsImportVariableDataService(IXlsUploadRepository xlsUploadRepository,
+                                            NxsDbContext context,
                                             IXlsFormulaUpdaterService xlsFormulaUpdaterService,
                                             GeneralRegionDataImporter generalRegionDataImporter,
                                             WorldRegionDataImporter worldRegionDataImporter,
@@ -34,10 +38,11 @@ namespace NXS.Services.Excel.DataImport
                                             IUnitOfWork unitOfWork)
         {
             _xlsUploadRepository = xlsUploadRepository;
+            _context = context;
             _xlsFormulaUpdaterService = xlsFormulaUpdaterService;
-            _generalRegionDataImporter = generalRegionDataImporter;            
-            _worldRegionDataImporter = worldRegionDataImporter;            
-            _gdpDataImporter = gdpDataImporter;            
+            _generalRegionDataImporter = generalRegionDataImporter;
+            _worldRegionDataImporter = worldRegionDataImporter;
+            _gdpDataImporter = gdpDataImporter;
             _generalRegionDataImporter.XlsImportVariableDataService = this;
             _worldRegionDataImporter.XlsImportVariableDataService = this;
             _gdpDataImporter.XlsImportVariableDataService = this;
@@ -70,13 +75,15 @@ namespace NXS.Services.Excel.DataImport
                     UpdateXlsFormulas();
                     package.Save();
 
-                    //await _generalRegionDataImporter.RemoveDataAsync();
+                    RemoveSubVAriableData();
+
+                    // await _generalRegionDataImporter.RemoveDataAsync();
                     await _generalRegionDataImporter.ImportDataAsync();
 
-                    await _worldRegionDataImporter.RemoveDataAsync();
+                    // await _worldRegionDataImporter.RemoveDataAsync();
                     await _worldRegionDataImporter.ImportDataAsync();
 
-                    await _gdpDataImporter.RemoveDataAsync();
+                    // await _gdpDataImporter.RemoveDataAsync();
                     await _gdpDataImporter.ImportDataAsync();
                 }
 
@@ -87,10 +94,11 @@ namespace NXS.Services.Excel.DataImport
         }
 
 
-        public void SetWorkBookBasePath(string basePath) {
+        public void SetWorkBookBasePath(string basePath)
+        {
             _workBookBasePath = basePath;
         }
-        
+
 
         private void SetCurrentParameterIds(XlsUpload xlsUpload)
         {
@@ -105,6 +113,17 @@ namespace NXS.Services.Excel.DataImport
             _xlsFormulaUpdaterService.VariableDescriptions = XlsVariableDescriptions.AllDescriptions;
             _xlsFormulaUpdaterService.SetWorkbook(CurrentWorkBook);
             _xlsFormulaUpdaterService.Update();
-        }        
+        }
+
+        private void RemoveSubVAriableData()
+        {
+            var query = _context.SubVariableData.Where(sv => sv.ParentRegionId == CurrentParentRegionId &&
+                sv.ScenarioId == CurrentScenarioId &&
+                sv.KeyParameterId == CurrentKeyParameterId &&
+                sv.KeyParameterLevelId == CurrentKeyParameterLevelId).AsQueryable();
+
+            _context.SubVariableData.RemoveRange(query);
+            _context.SaveChanges();
+        }
     }
 }

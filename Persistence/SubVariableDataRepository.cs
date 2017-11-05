@@ -85,8 +85,7 @@ namespace NXS.Persistence
             var query = context.SubVariableData
               .AsQueryable();
             query = query.ApplyFiltering(queryObj);
-            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Gdp &&
-                                      sv.Variable.Name != NxsVariablesConstants.Variables.Population);
+            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Gdp);
 
             context.SubVariableData.RemoveRange(query);
         }
@@ -98,8 +97,7 @@ namespace NXS.Persistence
             var query = context.SubVariableData
               .AsQueryable();
             query = query.ApplyFiltering(queryObj);
-            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Population &&
-                                      sv.Variable.Name != NxsVariablesConstants.Variables.Gdp);
+            query = query.Where(sv => sv.Variable.Name == NxsVariablesConstants.Variables.Population);
 
             context.SubVariableData.RemoveRange(query);
         }
