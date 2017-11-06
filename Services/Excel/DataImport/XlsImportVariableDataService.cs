@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using NXS.Core;
 using NXS.Core.Models;
 using NXS.Persistence;
@@ -24,9 +25,11 @@ namespace NXS.Services.Excel.DataImport
         private readonly IDataImporter _worldRegionDataImporter;
         private readonly IDataImporter _gdpDataImporter;
         private readonly IXlsFormulaUpdaterService _xlsFormulaUpdaterService;
+        private readonly ILogger _logger;
         private NxsDbContext _context { get; set; }
         private IXlsUploadRepository _xlsUploadRepository { get; set; }
         private IUnitOfWork _unitOfWork;
+
 
 
         public XlsImportVariableDataService(IXlsUploadRepository xlsUploadRepository,
@@ -35,7 +38,8 @@ namespace NXS.Services.Excel.DataImport
                                             GeneralRegionDataImporter generalRegionDataImporter,
                                             WorldRegionDataImporter worldRegionDataImporter,
                                             GdpDataImporter gdpDataImporter,
-                                            IUnitOfWork unitOfWork)
+                                            IUnitOfWork unitOfWork,
+                                            ILoggerFactory loggerFactory)
         {
             _xlsUploadRepository = xlsUploadRepository;
             _context = context;
@@ -47,6 +51,7 @@ namespace NXS.Services.Excel.DataImport
             _worldRegionDataImporter.XlsImportVariableDataService = this;
             _gdpDataImporter.XlsImportVariableDataService = this;
             _unitOfWork = unitOfWork;
+            _logger = loggerFactory.CreateLogger("NXS.Services.Excel.DataImport.XlsImportVariableDataService");
         }
 
 
@@ -90,6 +95,18 @@ namespace NXS.Services.Excel.DataImport
                 xlsUpload.IsProcessed = true;
                 _xlsUploadRepository.Update(xlsUpload);
                 await _unitOfWork.CompleteAsync();
+
+                // Remove File
+                try
+                {
+                    fileInfo.Delete();
+                    _logger.LogInformation($"File: {filePath} is deleted");
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError(ex, $"Error - Delete file: {filePath}");
+                }
+
             }
         }
 
