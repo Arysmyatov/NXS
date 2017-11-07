@@ -62,7 +62,7 @@ export class GraphComponent {
 
     public c3_ChartData = {
         x: 'x',        
-        xFormat: '%Y-%m',        
+        xFormat: '%Y',        
         columns: this.graphColumns,
         type: 'spline',
         color: function (color, d) {
@@ -310,6 +310,7 @@ export class GraphComponent {
 
         for (let data of this.keyParameterData) {
             if (!data.subVariables || data.subVariables.length == 0) continue;
+            let dataIndex = 0;
 
             let currentKeyParameter = this.getKeyParameterById(data.keyParameterId);
             let currentKeyParameterLevel = this.getKeyParameterLevelById(data.keyParameterLevelId);
@@ -324,7 +325,7 @@ export class GraphComponent {
             for (let subVariable of data.subVariables) {
                 this.graphColumns.push([subVariable]);
                 itemIndex++;
-                let graphData: number[] = data.values[itemIndex - 2];
+                let graphData: number[] = data.values[dataIndex++];
                 this.graphColumns[itemIndex] = this.graphColumns[itemIndex].concat(graphData.slice(0, itemCount));
 
                 let selectedRegionName = this.selectedRegion == null ? "" : this.selectedRegion.name;
@@ -349,6 +350,7 @@ export class GraphComponent {
                 return d.id && d.id === 'zeroline' ?  'grey' : color;
             }            
         };
+        this.c3_axis.x.tick.format = "%Y";
     }
 
 
@@ -391,6 +393,7 @@ export class GraphComponent {
                 return d.id && d.id === 'zeroline' ?  'grey' : color;
             }            
         };
+        this.c3_axis.x.tick.format = "%Y-%m";
     }
 
 
