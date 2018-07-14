@@ -162,6 +162,8 @@ namespace NXS
             app.UseCors(builder =>
                 builder.WithOrigins("http://www.theresourcenexus.co.uk",
                                      "http://theresourcenexus.co.uk",
+                                     "carbonrisk.co.uk",
+                                     "www.carbonrisk.co.uk",
                                      "http://localhost:5000")
                                      .AllowAnyHeader());
 
